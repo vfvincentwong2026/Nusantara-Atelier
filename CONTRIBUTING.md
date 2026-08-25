@@ -1,16 +1,19 @@
-## 5. `CONTRIBUTING.md` — 贡献指南
+# 贡献指南 · Contributing to Nusantara Atelier
 
-```markdown
-# Nusantara Atelier — 贡献指南
+中文 | [English](#english)
 
-感谢你考虑为 Nusantara Atelier 做出贡献！
+---
 
-## 🧑‍💻 开发环境
+## 中文
+
+感谢你对 Nusantara Atelier 的关注！我们欢迎任何形式的贡献。
+
+### 🧑‍💻 开发环境
 
 ```bash
 # 克隆项目
-git clone https://github.com/vfvincentwong2026/nusantara-atelier.git
-cd nusantara-atelier
+git clone https://github.com/vfvincentwong2026/Nusantara-Atelier.git
+cd Nusantara-Atelier
 
 # 安装依赖
 pnpm install
@@ -19,24 +22,14 @@ pnpm install
 cp .env.example .env
 
 # 启动开发服务器
+cd apps/web
 pnpm dev
 📁 代码规范
-TypeScript/JavaScript
-使用 ESLint + Prettier
-
-遵循 Next.js 官方风格指南
-
-所有函数必须有 JSDoc 注释
-
-Python
-使用 Black 格式化
-
-使用 Ruff 做 lint
-
-类型注解必须完整
-
-Git 提交
-bash
+语言	规范
+TypeScript/JavaScript	ESLint + Prettier，遵循 Next.js 官方风格
+Python	Black 格式化 + Ruff lint + 完整类型注解
+📝 Git 提交规范
+text
 feat: 添加新功能
 fix: 修复 bug
 docs: 更新文档
@@ -44,16 +37,7 @@ style: 代码格式化
 refactor: 重构代码
 test: 添加测试
 chore: 构建工具变动
-🧪 测试
-bash
-# 前端测试
-cd apps/web
-pnpm test
-
-# Workers 测试
-cd workers/ai-worker
-wrangler test
-📝 提交 PR 流程
+🔄 提交 PR 流程
 Fork 本仓库
 
 创建分支 git checkout -b feature/your-feature
@@ -64,227 +48,284 @@ Fork 本仓库
 
 创建 Pull Request
 
-📋 PR 模板
-markdown
-## 变更内容
-- [ ] 新增功能
-- [ ] 修复 bug
-- [ ] 更新文档
+English
+Thank you for your interest in Nusantara Atelier! We welcome all contributions.
 
-## 测试情况
-- [ ] 本地测试通过
-- [ ] 单元测试通过
+Development Environment
+bash
+git clone https://github.com/vfvincentwong2026/Nusantara-Atelier.git
+cd Nusantara-Atelier
+pnpm install
+cp .env.example .env
+cd apps/web
+pnpm dev
+Code Standards
+Language	Standards
+TypeScript/JavaScript	ESLint + Prettier, Next.js style guide
+Python	Black + Ruff + full type annotations
+Commit Convention
+text
+feat: new feature
+fix: bug fix
+docs: documentation update
+style: code formatting
+refactor: code refactoring
+test: add tests
+chore: build tool changes
+PR Process
+Fork the repository
 
-## 关联 Issue
-Closes #xxx
-📞 联系方式
-项目维护者：@vfvincentwong2026
+Create branch git checkout -b feature/your-feature
 
-讨论区：GitHub Issues
+Commit git commit -m "feat: add your feature"
+
+Push git push origin feature/your-feature
+
+Open a Pull Request
 
 text
 
 ---
 
-## 6. `DATA_MODEL.md` — 数据模型（案例库结构化）
+### 2. `docs/PROJECT_DESCRIPTION.md` — 项目详细介绍
+
+```markdown
+# Nusantara Atelier — 项目详细介绍
+
+## 📖 项目背景
+
+印尼豪宅市场正处于高速增长期，但设计施工行业长期存在三大痛点：
+
+### 痛点一：设计周期长
+- 优秀设计师排期 2-4 周
+- 反复沟通、反复改稿
+- 客户等待焦虑，流失率高
+
+### 痛点二：报价不透明
+- 手工算量，容易出错
+- 多次询价，效率低下
+- 中途加价，客户不信任
+
+### 痛点三：案例看不到
+- 只有效果图，没有真实落地参考
+- 客户无法想象“我家会是什么样”
+- 决策犹豫，转化率低
+
+---
+
+## 💎 解决方案
+
+**Nusantara Atelier** 将中国成熟的豪宅设计经验与印尼本地市场深度结合，用 AI 技术让「设计 + 估价」从 4 周缩短到 30 分钟。
+
+### 核心能力
+
+| 能力 | 说明 |
+|------|------|
+| **真实案例库** | 拥有大量已落地豪宅案例（法式/现代/侘寂/意式极简），AI 推荐有据可依 |
+| **AI 设计生成** | 上传户型图/照片，AI 自动生成 3D 设计方案 |
+| **精确报价引擎** | 基于真实成交数据，自动算量 + 生成物料清单 + 预算 |
+| **客户沉浸体验** | 3D 漫游，让客户提前“走进”自己的家 |
+
+---
+
+## 👥 目标用户
+
+| 用户类型 | 需求 |
+|----------|------|
+| **印尼豪宅业主** | 快速获得设计方案和预算，做决策参考 |
+| **开发商** | 为样板间/售楼处提供快速设计展示 |
+| **设计师** | 提高提案效率，用 AI 辅助设计 |
+
+---
+
+## 📊 报价模型
+
+基于案例库的真实成交数据，报价引擎按以下维度计算：
+总价 = 面积 × 单方造价 × 风格系数 × 地区系数 × 档次系数
+
+其中：
+
+单方造价：来自案例库的真实数据
+
+风格系数：法式 1.0 / 现代 0.9 / 侘寂 0.85 / 意式极简 0.95
+
+地区系数：雅加达 1.0 / 巴厘岛 1.05 / 泗水 0.9
+
+档次系数：标准 1.0 / 豪华 1.3 / 顶级 1.6
+
+text
+
+---
+
+## 🏠 案例库概览
+
+### ⑤号设计 — 法式/现代系列
+
+| 项目名称 | 地点 | 风格 | 面积(㎡) |
+|----------|------|------|----------|
+| 汀岸晓庐 | 杭州 | 法式 | — |
+| 曼陀花园 | 杭州 | 法式 | — |
+| 香格里拉 | 杭州 | 现代 | 600 |
+| 森山半岛 | 义乌 | 现代 | 1200 |
+| 玺园 | 绍兴 | 法式轻奢 | — |
+| 桃花源 | 义乌 | 法式 | 630 |
+| 桃花源 | 义乌 | 侘寂 | 855 |
+| 桃花源 | 义乌 | 侘寂 | 500 |
+| 科尔世纪外滩 | 杭州 | 现代小法 | 200 |
+| 绿谷云溪 | 义乌 | 侘寂 | 450 |
+| 御香园 | 绍兴 | 现代奶油 | 780 |
+| 皇庭水岸·顶有 | 莆田 | 意式极简 | 520 |
+| 佳源珑府 | 桐乡 | 意式极简 | 430 |
+
+### 派尚设计 — 别墅系列
+
+| 项目名称 | 地点 | 面积(㎡) | 硬装(元/㎡) | 软装(元/㎡) |
+|----------|------|----------|-------------|-------------|
+| 万科松山湖璞舍 | 东莞 | 1100 | 5500 | 4500 |
+| 正弘悦云棠 | 郑州 | 207 | 4500 | 4000 |
+| 长沙叠墅 | 长沙 | 280 | 4500 | 4000 |
+| 华润鹭栖湖 | 嘉兴 | 230 | — | — |
+| 广州中建御溪谷 | 广州 | 420 | — | — |
+
+> 📌 完整案例数据见 [DATA_MODEL.md](DATA_MODEL.md)
+3. docs/ARCHITECTURE.md — 技术架构文档
+markdown
+# Nusantara Atelier — 技术架构
+
+## 🏗️ 总体架构
+┌─────────────────────────────────────────────────────────────────────┐
+│ 用户层 │
+│ ┌─────────────────────────────────────────────────────────────┐ │
+│ │ Next.js 14 (Cloudflare Pages) │ │
+│ │ 首页展示 → 上传图纸 → AI设计 → 3D预览 → 报价 │ │
+│ └─────────────────────────────────────────────────────────────┘ │
+├─────────────────────────────────────────────────────────────────────┤
+│ API 层 │
+│ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ │
+│ │ Pages │ │ Workers │ │ Workers │ │
+│ │ Functions │→ │ (AI Worker) │ │ (CAD Worker) │ │
+│ │ (Next.js │ │ Python/JS │ │ Python/ │ │
+│ │ API Routes) │ │ │ │ ezdxf │ │
+│ └──────────────┘ └──────────────┘ └──────────────┘ │
+├─────────────────────────────────────────────────────────────────────┤
+│ 数据层 │
+│ ┌──────────────┐ ┌──────────────┐ ┌──────────────┐ │
+│ │ Cloudflare │ │ Cloudflare │ │ Cloudflare │ │
+│ │ D1 │ │ R2 │ │ Workers AI │ │
+│ │ (SQLite) │ │ (文件存储) │ │ (AI 推理) │ │
+│ └──────────────┘ └──────────────┘ └──────────────┘ │
+└─────────────────────────────────────────────────────────────────────┘
+
+text
+
+---
+
+## 🧩 服务详解
+
+### 1. Cloudflare Pages — 前端网站
+
+**职责**：
+- 托管 Next.js 应用（SSR/ISR/静态）
+- Pages Functions 提供轻量级 API
+- 与 Workers 通过 Service Binding 通信
+
+### 2. Cloudflare Workers — 后端服务
+
+#### AI Worker (`workers/ai-worker/`)
+- 调用 LLM 生成设计方案
+- 匹配案例库
+- 输出物料清单
+
+#### CAD Worker (`workers/cad-worker/`) — Python
+- 解析 DXF/DWG 图纸
+- 提取房间尺寸、门窗位置
+- 输出结构化数据
+
+### 3. Cloudflare D1 — 数据库
+
+**核心表**：
+- `cases` — 案例库
+- `materials` — 材料价格
+- `quotes` — 报价记录
+
+### 4. Cloudflare R2 — 文件存储
+nusantara-atelier/
+├── cases/ # 案例图片
+├── uploads/ # 客户上传文件
+├── models/ # 3D 模型
+└── exports/ # 导出的 PDF
+
+text
+
+### 5. Cloudflare Workers AI — AI 推理
+
+```javascript
+// 调用示例
+const response = await env.AI.run('@cf/meta/llama-3-8b-instruct', {
+  messages: [
+    { role: 'system', content: '你是豪宅设计专家...' },
+    { role: 'user', content: `客户面积${area}㎡，偏好${style}风格` }
+  ]
+});
+text
+
+---
+
+### 4. `docs/DATA_MODEL.md` — 数据模型
 
 ```markdown
 # Nusantara Atelier — 数据模型
 
-## 📊 案例库数据模型
+## 📊 核心数据结构
 
-### cases.json 结构
+### 案例 (Case)
 
-```json
-{
-  "cases": [
-    {
-      "id": "case_001",
-      "project_name": "汀岸晓庐",
-      "location": "杭州",
-      "country": "中国",
-      "style": "法式",
-      "area": 630,
-      "hard_cost_per_sqm": 5500,
-      "soft_cost_per_sqm": 4500,
-      "images": [
-        "/cases/tingan-xiaolu/01.jpg",
-        "/cases/tingan-xiaolu/02.jpg"
-      ],
-      "tags": ["奢华", "雕花", "对称", "罗马柱"],
-      "description": "法式风格别墅，以对称布局和精美雕花为特色",
-      "material_highlights": {
-        "floor": "大理石拼花",
-        "wall": "护墙板 + 艺术涂料",
-        "ceiling": "石膏线条 + 水晶吊灯"
-      }
-    },
-    {
-      "id": "case_002",
-      "project_name": "万科松山湖璞舍",
-      "location": "东莞",
-      "country": "中国",
-      "style": "现代",
-      "area": 1100,
-      "hard_cost_per_sqm": 5500,
-      "soft_cost_per_sqm": 4500,
-      "images": [
-        "/cases/dg-pushe/01.jpg",
-        "/cases/dg-pushe/02.jpg"
-      ],
-      "tags": ["极简", "大平层", "湖景"],
-      "description": "现代极简别墅，与自然景观融合",
-      "material_highlights": {
-        "floor": "灰色大理石",
-        "wall": "微水泥",
-        "ceiling": "无主灯设计"
-      }
-    }
-  ],
-  "styles": {
-    "法式": {
-      "id": "french",
-      "icon": "🏛️",
-      "description": "对称布局、精美雕花、罗马柱、水晶吊灯",
-      "keywords": ["奢华", "雕花", "对称", "古典"]
-    },
-    "现代": {
-      "id": "modern",
-      "icon": "🏙️",
-      "description": "极简线条、大面积玻璃、无主灯设计",
-      "keywords": ["极简", "通透", "自然"]
-    },
-    "侘寂": {
-      "id": "wabi-sabi",
-      "icon": "🍂",
-      "description": "自然材质、中性色调、宁静感",
-      "keywords": ["质朴", "宁静", "自然", "禅意"]
-    },
-    "意式极简": {
-      "id": "italian-minimal",
-      "icon": "🇮🇹",
-      "description": "精致细节、高级质感、理性美学",
-      "keywords": ["精致", "高级", "理性"]
-    },
-    "现代奶油": {
-      "id": "cream-modern",
-      "icon": "🍦",
-      "description": "柔和的奶油色系、圆润线条、温馨感",
-      "keywords": ["柔和", "温馨", "圆润"]
-    },
-    "法式轻奢": {
-      "id": "french-luxury",
-      "icon": "✨",
-      "description": "法式优雅 + 现代轻奢",
-      "keywords": ["优雅", "轻奢", "混搭"]
-    }
-  }
+```typescript
+interface Case {
+  id: string;
+  project_name: string;
+  location: string;
+  country: string;
+  style: '法式' | '现代' | '侘寂' | '意式极简' | '现代奶油' | '法式轻奢';
+  area: number | null;
+  hard_cost_per_sqm: number | null;
+  soft_cost_per_sqm: number | null;
+  images: string[];
+  tags: string[];
+  description: string;
+  source: '⑤号设计' | '派尚设计';
 }
-报价请求模型 (QuoteRequest)
+报价请求 (QuoteRequest)
 typescript
 interface QuoteRequest {
-  area: number;                    // 面积 (㎡)
-  style: 'french' | 'modern' | 'wabi-sabi' | 'italian-minimal' | 'cream-modern' | 'french-luxury';
+  area: number;
+  style: string;
   tier: 'standard' | 'luxury' | 'ultra-luxury';
-  location: string;                // 城市
+  location: string;
   rooms: number;
   floors: number;
   has_pool: boolean;
   has_garden: boolean;
 }
-报价结果模型 (QuoteResult)
+报价结果 (QuoteResult)
 typescript
 interface QuoteResult {
   total_usd: number;
   total_idr: number;
   breakdown: {
-    structure: number;             // 结构
-    finishing: number;             // 装修
-    mep: number;                   // 机电
-    landscape: number;             // 园林
-    furniture: number;             // 家具
-    design_fee: number;            // 设计费
-    contingency: number;           // 预备金
+    structure: number;
+    finishing: number;
+    mep: number;
+    landscape: number;
+    furniture: number;
+    design_fee: number;
+    contingency: number;
   };
-  material_list: MaterialItem[];   // 物料清单
-  reference_case: ReferenceCase;   // 参考案例
+  material_list: MaterialItem[];
+  reference_case: Case;
   generated_at: Date;
 }
-
-interface MaterialItem {
-  category: string;                // 石材/木材/卫浴/涂料
-  name: string;
-  brand: string;
-  unit: string;
-  quantity: number;
-  unit_price_idr: number;
-  unit_price_usd: number;
-  total_idr: number;
-  total_usd: number;
-  supplier: string;
-}
-风格 → 材料映射表
-风格	地面	墙面	天花	核心材质
-法式	大理石拼花	护墙板 + 墙布	石膏线条 + 吊灯	大理石、实木、水晶
-现代	大板瓷砖/微水泥	艺术涂料/木饰面	无主灯/平顶	微水泥、玻璃、金属
-侘寂	微水泥/木地板	艺术涂料/藤编	原木梁/平顶	木材、石材、棉麻
-意式极简	大理石/木地板	木饰面/金属	无主灯/极简	大理石、金属、皮革
-现代奶油	木地板/柔光砖	艺术涂料/弧形	弧形吊顶	木材、布艺、哑光
-法式轻奢	大理石/拼花	护墙板/金属	石膏线 + 灯带	大理石、金属、丝绒
-价格库 (materials.json)
-json
-{
-  "categories": {
-    "stone": {
-      "name": "石材",
-      "items": [
-        { "name": "印尼大理石 - 白色", "brand": "CITATAH", "unit": "㎡", "price_idr": 1500000, "price_usd": 95 },
-        { "name": "印尼大理石 - 灰色", "brand": "CITATAH", "unit": "㎡", "price_idr": 1200000, "price_usd": 76 },
-        { "name": "Palimanan 石", "brand": "Palimanan", "unit": "㎡", "price_idr": 800000, "price_usd": 51 }
-      ]
-    },
-    "wood": {
-      "name": "木材",
-      "items": [
-        { "name": "柚木地板", "brand": "Touchwood", "unit": "㎡", "price_idr": 2500000, "price_usd": 160 },
-        { "name": "印茄木地板", "brand": "Merbau", "unit": "㎡", "price_idr": 1800000, "price_usd": 115 },
-        { "name": "Ulin 铁木", "brand": "Kaltimber", "unit": "㎡", "price_idr": 3000000, "price_usd": 192 }
-      ]
-    },
-    "sanitary": {
-      "name": "卫浴",
-      "items": [
-        { "name": "智能马桶", "brand": "TOTO", "unit": "套", "price_idr": 25000000, "price_usd": 1600 },
-        { "name": "花洒套装", "brand": "Hansgrohe", "unit": "套", "price_idr": 8000000, "price_usd": 512 }
-      ]
-    }
-  }
-}
-📊 数据关系图
-text
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│   cases     │────▶│   styles    │     │  materials  │
-│  (项目案例)  │     │   (风格)    │     │  (材料价格)  │
-└─────────────┘     └─────────────┘     └─────────────┘
-       │                   │                    │
-       │                   │                    │
-       ▼                   ▼                    ▼
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│   quotes    │────▶│  materials  │     │  suppliers  │
-│  (报价记录)  │     │  (物料清单)  │     │  (供应商)   │
-└─────────────┘     └─────────────┘     └─────────────┘
-数据导入脚本
-bash
-# 导入案例数据到 D1
-wrangler d1 execute nusantara-db --command="
-INSERT INTO cases (project_name, location, style, area, hard_cost_per_sqm, soft_cost_per_sqm, images, tags)
-VALUES
-('汀岸晓庐', '杭州', '法式', 630, 5500, 4500, '[\"/cases/tingan/01.jpg\"]', '[\"奢华\",\"雕花\"]'),
-('万科松山湖璞舍', '东莞', '现代', 1100, 5500, 4500, '[\"/cases/pushe/01.jpg\"]', '[\"极简\",\"湖景\"]')
-"
-附录：案例数据 JSON（完整版）
-以下是 ⑤号设计 和 派尚设计 全部项目的结构化数据，可以直接复制到 cases.json 中使用：
-
+📁 完整案例库 JSON
 json
 {
   "cases": [
@@ -299,246 +340,287 @@ json
       "soft_cost_per_sqm": null,
       "images": [],
       "tags": ["法式", "杭州"],
-      "description": "",
       "source": "⑤号设计"
-    },
-    {
-      "id": "case_002",
-      "project_name": "曼陀花园",
-      "location": "杭州",
-      "country": "中国",
-      "style": "法式",
-      "area": null,
-      "hard_cost_per_sqm": null,
-      "soft_cost_per_sqm": null,
-      "images": [],
-      "tags": ["法式", "杭州"],
-      "description": "",
-      "source": "⑤号设计"
-    },
-    {
-      "id": "case_003",
-      "project_name": "香格里拉",
-      "location": "杭州",
-      "country": "中国",
-      "style": "现代",
-      "area": 600,
-      "hard_cost_per_sqm": null,
-      "soft_cost_per_sqm": null,
-      "images": [],
-      "tags": ["现代", "杭州", "600㎡"],
-      "description": "",
-      "source": "⑤号设计"
-    },
-    {
-      "id": "case_004",
-      "project_name": "森山半岛",
-      "location": "义乌",
-      "country": "中国",
-      "style": "现代",
-      "area": 1200,
-      "hard_cost_per_sqm": null,
-      "soft_cost_per_sqm": null,
-      "images": [],
-      "tags": ["现代", "义乌", "1200㎡"],
-      "description": "",
-      "source": "⑤号设计"
-    },
-    {
-      "id": "case_005",
-      "project_name": "玺园",
-      "location": "绍兴",
-      "country": "中国",
-      "style": "法式轻奢",
-      "area": null,
-      "hard_cost_per_sqm": null,
-      "soft_cost_per_sqm": null,
-      "images": [],
-      "tags": ["法式轻奢", "绍兴"],
-      "description": "",
-      "source": "⑤号设计"
-    },
-    {
-      "id": "case_006",
-      "project_name": "桃花源",
-      "location": "义乌",
-      "country": "中国",
-      "style": "法式",
-      "area": 630,
-      "hard_cost_per_sqm": null,
-      "soft_cost_per_sqm": null,
-      "images": [],
-      "tags": ["法式", "义乌", "630㎡"],
-      "description": "",
-      "source": "⑤号设计"
-    },
-    {
-      "id": "case_007",
-      "project_name": "桃花源·佗寂",
-      "location": "义乌",
-      "country": "中国",
-      "style": "侘寂",
-      "area": 855,
-      "hard_cost_per_sqm": null,
-      "soft_cost_per_sqm": null,
-      "images": [],
-      "tags": ["侘寂", "义乌", "855㎡"],
-      "description": "",
-      "source": "⑤号设计"
-    },
-    {
-      "id": "case_008",
-      "project_name": "桃花源·佰寂",
-      "location": "义乌",
-      "country": "中国",
-      "style": "侘寂",
-      "area": 500,
-      "hard_cost_per_sqm": null,
-      "soft_cost_per_sqm": null,
-      "images": [],
-      "tags": ["侘寂", "义乌", "500㎡"],
-      "description": "",
-      "source": "⑤号设计"
-    },
-    {
-      "id": "case_009",
-      "project_name": "科尔世纪外滩",
-      "location": "杭州",
-      "country": "中国",
-      "style": "现代小法",
-      "area": 200,
-      "hard_cost_per_sqm": null,
-      "soft_cost_per_sqm": null,
-      "images": [],
-      "tags": ["现代小法", "杭州", "200㎡"],
-      "description": "",
-      "source": "⑤号设计"
-    },
-    {
-      "id": "case_010",
-      "project_name": "绿谷云溪",
-      "location": "义乌",
-      "country": "中国",
-      "style": "侘寂",
-      "area": 450,
-      "hard_cost_per_sqm": null,
-      "soft_cost_per_sqm": null,
-      "images": [],
-      "tags": ["侘寂", "义乌", "450㎡"],
-      "description": "",
-      "source": "⑤号设计"
-    },
-    {
-      "id": "case_011",
-      "project_name": "御香园",
-      "location": "绍兴",
-      "country": "中国",
-      "style": "现代奶油",
-      "area": 780,
-      "hard_cost_per_sqm": null,
-      "soft_cost_per_sqm": null,
-      "images": [],
-      "tags": ["现代奶油", "绍兴", "780㎡"],
-      "description": "",
-      "source": "⑤号设计"
-    },
-    {
-      "id": "case_012",
-      "project_name": "皇庭水岸·顶有",
-      "location": "莆田",
-      "country": "中国",
-      "style": "意式极简",
-      "area": 520,
-      "hard_cost_per_sqm": null,
-      "soft_cost_per_sqm": null,
-      "images": [],
-      "tags": ["意式极简", "莆田", "520㎡"],
-      "description": "",
-      "source": "⑤号设计"
-    },
-    {
-      "id": "case_013",
-      "project_name": "佳源珑府",
-      "location": "桐乡",
-      "country": "中国",
-      "style": "意式极简",
-      "area": 430,
-      "hard_cost_per_sqm": null,
-      "soft_cost_per_sqm": null,
-      "images": [],
-      "tags": ["意式极简", "桐乡", "430㎡"],
-      "description": "",
-      "source": "⑤号设计"
-    },
-    {
-      "id": "case_014",
-      "project_name": "万科松山湖璞舍",
-      "location": "东莞",
-      "country": "中国",
-      "style": "现代",
-      "area": 1100,
-      "hard_cost_per_sqm": 5500,
-      "soft_cost_per_sqm": 4500,
-      "images": [],
-      "tags": ["现代", "东莞", "1100㎡", "硬装5500", "软装4500"],
-      "description": "",
-      "source": "派尚设计"
-    },
-    {
-      "id": "case_015",
-      "project_name": "正弘悦云棠",
-      "location": "郑州",
-      "country": "中国",
-      "style": "现代",
-      "area": 207,
-      "hard_cost_per_sqm": 4500,
-      "soft_cost_per_sqm": 4000,
-      "images": [],
-      "tags": ["现代", "郑州", "207㎡", "硬装4500", "软装4000"],
-      "description": "",
-      "source": "派尚设计"
-    },
-    {
-      "id": "case_016",
-      "project_name": "长沙叠墅",
-      "location": "长沙",
-      "country": "中国",
-      "style": "现代",
-      "area": 280,
-      "hard_cost_per_sqm": 4500,
-      "soft_cost_per_sqm": 4000,
-      "images": [],
-      "tags": ["现代", "长沙", "280㎡", "硬装4500", "软装4000", "艾特奖TOP10"],
-      "description": "2024年第十三届艾特奖全国杰出设计大奖 TOP10",
-      "source": "派尚设计"
-    },
-    {
-      "id": "case_017",
-      "project_name": "华润鹭栖湖",
-      "location": "嘉兴",
-      "country": "中国",
-      "style": "现代",
-      "area": 230,
-      "hard_cost_per_sqm": null,
-      "soft_cost_per_sqm": null,
-      "images": [],
-      "tags": ["现代", "嘉兴", "230㎡", "华润最美样板房"],
-      "description": "华润内部评选最美样板房",
-      "source": "派尚设计"
-    },
-    {
-      "id": "case_018",
-      "project_name": "广州中建御溪谷",
-      "location": "广州",
-      "country": "中国",
-      "style": "现代",
-      "area": 420,
-      "hard_cost_per_sqm": null,
-      "soft_cost_per_sqm": null,
-      "images": [],
-      "tags": ["现代", "广州", "420㎡"],
-      "description": "",
-      "source": "派尚设计"
     }
+    // ... 完整列表见附录
   ]
 }
+📌 完整案例数据（18个项目）已整理，详见仓库 /data/cases.json
+
+text
+
+---
+
+### 5. `docs/API.md` — API 接口文档
+
+```markdown
+# Nusantara Atelier — API 文档
+
+## 基础信息
+
+- **Base URL:** `https://api.nusantara-atelier.com/v1`
+- **格式:** JSON
+- **认证:** 暂不需要（MVP 阶段）
+
+---
+
+## 接口列表
+
+### 1. 上传文件
+POST /upload
+
+text
+
+**请求参数** (multipart/form-data):
+
+| 参数 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| file | File | ✅ | 户型图/照片 (JPG/PNG/PDF/DXF) |
+
+**响应示例**:
+
+```json
+{
+  "success": true,
+  "file_id": "file_001",
+  "url": "https://r2.../uploads/file_001.jpg"
+}
+2. AI 设计生成
+text
+POST /design
+请求参数 (JSON):
+
+json
+{
+  "file_id": "file_001",
+  "style": "法式",
+  "area": 600,
+  "rooms": 5,
+  "floors": 2
+}
+响应示例:
+
+json
+{
+  "success": true,
+  "design_id": "design_001",
+  "case_matched": {
+    "project_name": "汀岸晓庐",
+    "style": "法式",
+    "images": ["..."]
+  },
+  "materials": [
+    { "category": "石材", "name": "大理石", "quantity": 120, "unit": "㎡" }
+  ]
+}
+3. 报价生成
+text
+POST /quote
+请求参数 (JSON):
+
+json
+{
+  "design_id": "design_001",
+  "area": 600,
+  "style": "法式",
+  "tier": "luxury",
+  "location": "Jakarta"
+}
+响应示例:
+
+json
+{
+  "success": true,
+  "quote": {
+    "total_usd": 480000,
+    "total_idr": 7200000000,
+    "breakdown": {
+      "structure": 120000,
+      "finishing": 180000,
+      "mep": 60000,
+      "landscape": 40000,
+      "furniture": 60000,
+      "design_fee": 20000
+    },
+    "material_list": [...]
+  }
+}
+text
+
+---
+
+### 6. `docs/CASES.md` — 案例展示页面（客户视角）
+
+```markdown
+# 我们的作品 · Our Projects
+
+> 以下案例来自中国顶级豪宅项目，为印尼市场提供设计参考与品质标杆。
+
+---
+
+## 🏛️ 法式风格 · French Style
+
+### 汀岸晓庐 · 杭州
+
+| 项目信息 | |
+|----------|---|
+| 地点 | 杭州，中国 |
+| 风格 | 法式 |
+| 设计 | ⑤号设计 |
+
+> 对称布局、精美雕花、罗马柱、水晶吊灯
+
+---
+
+### 曼陀花园 · 杭州
+
+| 项目信息 | |
+|----------|---|
+| 地点 | 杭州，中国 |
+| 风格 | 法式 |
+| 设计 | ⑤号设计 |
+
+---
+
+### 桃花源 · 义乌 · 630㎡
+
+| 项目信息 | |
+|----------|---|
+| 地点 | 义乌，中国 |
+| 风格 | 法式 |
+| 面积 | 630㎡ |
+| 设计 | ⑤号设计 |
+
+---
+
+## 🏙️ 现代风格 · Modern Style
+
+### 香格里拉 · 杭州 · 600㎡
+
+| 项目信息 | |
+|----------|---|
+| 地点 | 杭州，中国 |
+| 风格 | 现代 |
+| 面积 | 600㎡ |
+| 设计 | ⑤号设计 |
+
+---
+
+### 森山半岛 · 义乌 · 1200㎡
+
+| 项目信息 | |
+|----------|---|
+| 地点 | 义乌，中国 |
+| 风格 | 现代 |
+| 面积 | 1200㎡ |
+| 设计 | ⑤号设计 |
+
+---
+
+### 万科松山湖璞舍 · 东莞 · 1100㎡
+
+| 项目信息 | |
+|----------|---|
+| 地点 | 东莞，中国 |
+| 风格 | 现代 |
+| 面积 | 1100㎡ |
+| 硬装造价 | 5500元/㎡ |
+| 软装造价 | 4500元/㎡ |
+| 设计 | 派尚设计 |
+
+---
+
+## 🍂 侘寂风格 · Wabi-Sabi
+
+### 桃花源 · 义乌 · 855㎡
+
+| 项目信息 | |
+|----------|---|
+| 地点 | 义乌，中国 |
+| 风格 | 侘寂 |
+| 面积 | 855㎡ |
+| 设计 | ⑤号设计 |
+
+---
+
+### 绿谷云溪 · 义乌 · 450㎡
+
+| 项目信息 | |
+|----------|---|
+| 地点 | 义乌，中国 |
+| 风格 | 侘寂 |
+| 面积 | 450㎡ |
+| 设计 | ⑤号设计 |
+
+---
+
+## 🇮🇹 意式极简 · Italian Minimalist
+
+### 皇庭水岸·顶有 · 莆田 · 520㎡
+
+| 项目信息 | |
+|----------|---|
+| 地点 | 莆田，中国 |
+| 风格 | 意式极简 |
+| 面积 | 520㎡ |
+| 设计 | ⑤号设计 |
+
+---
+
+### 佳源珑府 · 桐乡 · 430㎡
+
+| 项目信息 | |
+|----------|---|
+| 地点 | 桐乡，中国 |
+| 风格 | 意式极简 |
+| 面积 | 430㎡ |
+| 设计 | ⑤号设计 |
+
+---
+
+> 📌 更多案例持续更新中...
+7. docs/FAQ.md — 常见问题
+markdown
+# 常见问题 · FAQ
+
+## 中文
+
+### Q1: 这个网站是做什么的？
+Nusantara Atelier 是一个 AI 驱动的印尼豪宅设计网站。客户上传户型图或照片，系统自动生成设计方案、物料清单和报价预算。
+
+### Q2: 需要注册才能使用吗？
+不需要。客户直接打开网站即可使用，无需注册。
+
+### Q3: 支持哪些文件格式？
+支持 JPG、PNG、PDF、DXF 格式。
+
+### Q4: 报价准确吗？
+我们的报价基于真实成交的案例数据（单方造价 × 面积），并考虑了风格、地区、档次等系数，具有较高的参考价值。
+
+### Q5: 报价结果可以导出吗？
+可以。支持导出为 PDF 格式，方便客户保存或分享。
+
+### Q6: 你们在印尼有落地项目吗？
+目前我们拥有丰富的中国豪宅案例库。印尼本地项目正在拓展中，欢迎咨询合作。
+
+---
+
+## English
+
+### Q1: What does this website do?
+Nusantara Atelier is an AI-powered luxury villa design website. Clients upload floor plans or photos, and the system automatically generates design proposals, material lists, and budget quotes.
+
+### Q2: Do I need to register?
+No. Clients can use the website directly without registration.
+
+### Q3: What file formats are supported?
+JPG, PNG, PDF, and DXF formats are supported.
+
+### Q4: How accurate is the quote?
+Our quotes are based on real transaction data (cost per sqm × area), adjusted for style, location, and tier, providing highly reliable estimates.
+
+### Q5: Can I export the quote?
+Yes. Supports PDF export for saving or sharing.
+
+### Q6: Do you have projects in Indonesia?
+We currently have a rich case library from China. Indonesian local projects are in development — feel free to inquire about partnerships.
