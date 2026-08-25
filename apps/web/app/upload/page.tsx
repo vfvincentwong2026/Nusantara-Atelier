@@ -1,10 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import { useLanguage } from '@/components/LanguageProvider';
 import { STYLES } from '@/lib/types';
+import { API_BASE } from '@/lib/site';
 import {
   computeQuote,
   isValidArea,
@@ -31,7 +32,7 @@ const inputCls =
 const labelCls = 'mb-1.5 block text-xs tracking-widest text-ivory-mute';
 
 export default function UploadPage() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   const [file, setFile] = useState<File | null>(null);
   const [style, setStyle] = useState<string>('现代');
@@ -62,6 +63,29 @@ export default function UploadPage() {
         : null,
     [areaValid, area, style, tier, region, pool, garden]
   );
+
+  // 估价结果生成后 fire-and-forget 持久化到 API（防抖 1.5s，失败静默不影响用户）
+  useEffect(() => {
+    if (!areaValid) return;
+    const timer = setTimeout(() => {
+      fetch(`${API_BASE}/quote`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          area,
+          style,
+          tier,
+          location: region,
+          rooms: Number(rooms),
+          floors: Number(floors),
+          has_pool: pool,
+          has_garden: garden,
+          locale,
+        }),
+      }).catch(() => {});
+    }, 1500);
+    return () => clearTimeout(timer);
+  }, [areaValid, area, style, tier, region, rooms, floors, pool, garden, locale]);
 
   return (
     <main className="min-h-screen bg-ink pb-24">

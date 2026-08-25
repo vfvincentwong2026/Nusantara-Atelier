@@ -1,0 +1,12 @@
+name = "nusantara-api-worker"
+main = "src/index.js"
+compatibility_date = "2026-08-25"
+
+# D1 数据库绑定（database_id 由 wrangler d1 create 生成后填入）
+[[d1_databases]]
+binding = "DB"
+database_name = "nusantara-db"
+database_id = "2a543be2-11e9-4f07-9f04-2a94ab71257f"
+
+[vars]
+ENVIRONMENT = "production"

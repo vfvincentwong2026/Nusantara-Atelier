@@ -4,7 +4,7 @@ import { useState } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import { useLanguage } from '@/components/LanguageProvider';
 import { STYLES } from '@/lib/types';
-import { WHATSAPP_NUMBER } from '@/lib/site';
+import { WHATSAPP_NUMBER, API_BASE } from '@/lib/site';
 
 const STYLE_OPTIONS = STYLES.filter((s) => s !== '全部' && s !== '更多');
 
@@ -13,7 +13,7 @@ const inputCls =
 const labelCls = 'mb-1.5 block text-xs tracking-widest text-ivory-mute';
 
 export default function BookingPage() {
-  const { t } = useLanguage();
+  const { t, locale } = useLanguage();
 
   const [name, setName] = useState('');
   const [whatsapp, setWhatsapp] = useState('');
@@ -24,13 +24,33 @@ export default function BookingPage() {
   const [message, setMessage] = useState('');
   const [error, setError] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name.trim() || !whatsapp.trim()) {
       setError(true);
       return;
     }
     setError(false);
+
+    // 先把线索写入 API（await，失败静默，不阻塞 WhatsApp 跳转）
+    try {
+      await fetch(`${API_BASE}/booking`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name.trim(),
+          whatsapp: whatsapp.trim(),
+          email: email.trim() || undefined,
+          location: location.trim() || undefined,
+          area: area ? Number(area) : undefined,
+          style,
+          message: message.trim() || undefined,
+          locale,
+        }),
+      });
+    } catch {
+      // API 不可用时静默继续，WhatsApp 仍是主通道
+    }
 
     // 用当前语言的字段标签拼消息
     const lines = [
