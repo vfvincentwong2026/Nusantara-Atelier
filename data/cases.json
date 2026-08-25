@@ -673,7 +673,393 @@
         "庐州府·翠园"
       ],
       "description": "",
-      "source": "待补充"
+      "source": "待补充",
+      "annotations": {
+        "01.jpg": {
+          "room": "living",
+          "desc": {
+            "zh": "挑空会客厅，奶油色系，悬浮楼梯贯穿两层",
+            "en": "Double-height living room in cream tones, with a floating staircase spanning two floors",
+            "id": "Ruang keluarga double-height bernuansa krem, dengan tangga melayang yang menembus dua lantai"
+          }
+        },
+        "02.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "地下层会客厅平面图",
+            "en": "Basement lounge floor plan",
+            "id": "Denah ruang keluarga lantai basement"
+          }
+        },
+        "03.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "地下层会客厅平面图（含家具布置）",
+            "en": "Basement lounge floor plan (with furniture layout)",
+            "id": "Denah ruang keluarga lantai basement (dengan tata letak furnitur)"
+          }
+        },
+        "04.jpg": {
+          "room": "living",
+          "desc": {
+            "zh": "挑空会客厅全景，悬浮楼梯与艺术吊灯",
+            "en": "Panorama of the double-height living room, floating staircase and sculptural chandelier",
+            "id": "Panorama ruang keluarga double-height, tangga melayang, dan chandelier artistik"
+          }
+        },
+        "05.jpg": {
+          "room": "staircase",
+          "desc": {
+            "zh": "悬浮楼梯挑空区，俯瞰娱乐区",
+            "en": "Floating staircase void overlooking the recreation area",
+            "id": "Area void tangga melayang yang menghadap area rekreasi"
+          }
+        },
+        "06.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "会客厅平面图",
+            "en": "Living room floor plan",
+            "id": "Denah ruang keluarga"
+          }
+        },
+        "07.jpg": {
+          "room": "living",
+          "desc": {
+            "zh": "会客厅会客区，围合式沙发与天井采光",
+            "en": "Conversation area with enclosed sofa arrangement and courtyard skylight",
+            "id": "Area duduk dengan sofa melingkar dan cahaya alami dari inner court"
+          }
+        },
+        "08.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "会客厅平面图",
+            "en": "Living room floor plan",
+            "id": "Denah ruang keluarga"
+          }
+        },
+        "09.jpg": {
+          "room": "recreation",
+          "desc": {
+            "zh": "台球娱乐区，深色背景墙与造型吊灯",
+            "en": "Billiards recreation area with dark accent wall and statement pendant",
+            "id": "Area rekreasi biliar dengan dinding aksen gelap dan lampu gantung dekoratif"
+          }
+        },
+        "10.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "落尘区与卫生间平面图",
+            "en": "Entry foyer and bathroom floor plan",
+            "id": "Denah area foyer dan kamar mandi"
+          }
+        },
+        "11.jpg": {
+          "room": "tea_room",
+          "desc": {
+            "zh": "茗茶焚香区，中式屏风与盆景陈设",
+            "en": "Tea and incense area with Chinese screen and bonsai arrangement",
+            "id": "Area teh dan dupa dengan sketsel Tiongkok dan penataan bonsai"
+          }
+        },
+        "12.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "茗茶焚香区平面图",
+            "en": "Tea area floor plan",
+            "id": "Denah area teh"
+          }
+        },
+        "13.jpg": {
+          "room": "bar",
+          "desc": {
+            "zh": "水吧区，整面储物柜与悬挑吧台",
+            "en": "Bar area with full-wall storage and cantilevered counter",
+            "id": "Area bar dengan lemari penyimpanan sepanjang dinding dan meja bar kantilever"
+          }
+        },
+        "14.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "茗茶焚香区平面图",
+            "en": "Tea area floor plan",
+            "id": "Denah area teh"
+          }
+        },
+        "15.jpg": {
+          "room": "study",
+          "desc": {
+            "zh": "学习区，长桌与整墙书架",
+            "en": "Study area with long table and full-wall bookshelves",
+            "id": "Ruang belajar dengan meja panjang dan rak buku sepanjang dinding"
+          }
+        },
+        "16.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "学习区平面图",
+            "en": "Study area floor plan",
+            "id": "Denah ruang belajar"
+          }
+        },
+        "17.jpg": {
+          "room": "study",
+          "desc": {
+            "zh": "学习区与楼梯间，悬浮踏步",
+            "en": "Study area and staircase with floating treads",
+            "id": "Ruang belajar dan tangga dengan anak tangga melayang"
+          }
+        },
+        "18.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "卫生间与学习区平面图",
+            "en": "Bathroom and study area floor plan",
+            "id": "Denah kamar mandi dan ruang belajar"
+          }
+        },
+        "19.jpg": {
+          "room": "living",
+          "desc": {
+            "zh": "客餐厅一体空间，电视墙与钢琴区",
+            "en": "Open-plan living and dining space with TV wall and piano corner",
+            "id": "Ruang keluarga-makan terbuka dengan dinding TV dan sudut piano"
+          }
+        },
+        "20.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "一层餐厅与主卧平面图",
+            "en": "First-floor dining room and master bedroom plan",
+            "id": "Denah ruang makan dan kamar utama lantai satu"
+          }
+        },
+        "21.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "一层平面图",
+            "en": "First-floor plan",
+            "id": "Denah lantai satu"
+          }
+        },
+        "22.jpg": {
+          "room": "bedroom",
+          "desc": {
+            "zh": "主卧连通阳台，落地窗引入庭院景观",
+            "en": "Master bedroom connected to balcony, floor-to-ceiling windows framing courtyard views",
+            "id": "Kamar utama terhubung ke balkon, jendela floor-to-ceiling menghadirkan pemandangan taman"
+          }
+        },
+        "23.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "一层平面图",
+            "en": "First-floor plan",
+            "id": "Denah lantai satu"
+          }
+        },
+        "24.jpg": {
+          "room": "living",
+          "desc": {
+            "zh": "客厅电视墙，深色背景与壁炉造型",
+            "en": "Living room TV wall with dark backdrop and fireplace feature",
+            "id": "Dinding TV ruang keluarga dengan latar gelap dan aksen perapian"
+          }
+        },
+        "25.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "一层平面图",
+            "en": "First-floor plan",
+            "id": "Denah lantai satu"
+          }
+        },
+        "26.jpg": {
+          "room": "bedroom",
+          "desc": {
+            "zh": "主卧起居视角，床尾电视墙与衣帽间入口",
+            "en": "Master bedroom view: TV wall at the foot of the bed and walk-in closet entrance",
+            "id": "Sudut kamar utama: dinding TV di ujung tempat tidur dan pintu walk-in closet"
+          }
+        },
+        "27.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "一层平面图",
+            "en": "First-floor plan",
+            "id": "Denah lantai satu"
+          }
+        },
+        "28.jpg": {
+          "room": "dining",
+          "desc": {
+            "zh": "餐厅，圆桌与艺术吊灯，尽头连通西厨",
+            "en": "Dining room with round table and artistic chandelier, connecting to the western kitchen",
+            "id": "Ruang makan dengan meja bundar dan chandelier artistik, terhubung ke dapur barat"
+          }
+        },
+        "29.jpg": {
+          "room": "bar",
+          "desc": {
+            "zh": "西厨岛台，临窗吧台与橙色吧椅",
+            "en": "Western kitchen island with window-side bar counter and orange stools",
+            "id": "Island dapur barat dengan meja bar di sisi jendela dan kursi bar oranye"
+          }
+        },
+        "30.jpg": {
+          "room": "dining",
+          "desc": {
+            "zh": "餐厅一角，中古边柜与圆桌",
+            "en": "Dining corner with vintage sideboard and round table",
+            "id": "Sudut ruang makan dengan bufet vintage dan meja bundar"
+          }
+        },
+        "31.jpg": {
+          "room": "staircase",
+          "desc": {
+            "zh": "楼梯间，原木踏步与玻璃扶手",
+            "en": "Staircase with solid wood treads and glass railing",
+            "id": "Tangga dengan anak tangga kayu solid dan railing kaca"
+          }
+        },
+        "32.jpg": {
+          "room": "kitchen",
+          "desc": {
+            "zh": "中厨，白色吊柜与原木地柜",
+            "en": "Chinese kitchen with white overhead cabinets and natural wood base cabinets",
+            "id": "Dapur Tiongkok dengan kabinet gantung putih dan kabinet bawah kayu alami"
+          }
+        },
+        "33.jpg": {
+          "room": "bedroom",
+          "desc": {
+            "zh": "主卧，原木地台床与床头吊灯",
+            "en": "Master bedroom with wooden platform bed and bedside pendant lights",
+            "id": "Kamar utama dengan tempat tidur platform kayu dan lampu gantung di sisi ranjang"
+          }
+        },
+        "34.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "主卧平面图",
+            "en": "Master bedroom floor plan",
+            "id": "Denah kamar utama"
+          }
+        },
+        "35.jpg": {
+          "room": "bathroom",
+          "desc": {
+            "zh": "主卫，双台盆与独立浴缸，宝格丽石材",
+            "en": "Master bathroom with double vanity and freestanding tub in Bulgari stone",
+            "id": "Kamar mandi utama dengan wastafel ganda dan bathtub berdiri bebas berlapis batu Bulgari"
+          }
+        },
+        "36.jpg": {
+          "room": "bathroom",
+          "desc": {
+            "zh": "主卫全景，临窗浴缸与落地窗",
+            "en": "Master bathroom panorama with window-side tub and floor-to-ceiling windows",
+            "id": "Panorama kamar mandi utama dengan bathtub di sisi jendela dan jendela floor-to-ceiling"
+          }
+        },
+        "37.jpg": {
+          "room": "bathroom",
+          "desc": {
+            "zh": "主卫洗漱区细节，圆镜与壁灯",
+            "en": "Master bathroom vanity detail with round mirror and wall sconces",
+            "id": "Detail area wastafel kamar mandi utama dengan cermin bundar dan lampu dinding"
+          }
+        },
+        "38.jpg": {
+          "room": "tea_room",
+          "desc": {
+            "zh": "二层茶室临窗区，整墙衣柜与茶台",
+            "en": "Second-floor tea room window area with full-wall wardrobe and tea table",
+            "id": "Area jendela ruang teh lantai dua dengan lemari sepanjang dinding dan meja teh"
+          }
+        },
+        "39.jpg": {
+          "room": "bedroom",
+          "desc": {
+            "zh": "次卧，暖色微水泥与挂画",
+            "en": "Guest bedroom with warm microcement and artwork",
+            "id": "Kamar tidur kedua dengan microcement hangat dan lukisan"
+          }
+        },
+        "40.jpg": {
+          "room": "bedroom",
+          "desc": {
+            "zh": "主卧与开放式衣帽间",
+            "en": "Master bedroom with open walk-in closet",
+            "id": "Kamar utama dengan walk-in closet terbuka"
+          }
+        },
+        "41.jpg": {
+          "room": "bedroom",
+          "desc": {
+            "zh": "次卧，双窗采光与绿色单椅",
+            "en": "Guest bedroom with dual windows and green accent chair",
+            "id": "Kamar tidur kedua dengan dua jendela dan kursi aksen hijau"
+          }
+        },
+        "42.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "儿童房2平面图",
+            "en": "Kids room 2 floor plan",
+            "id": "Denah kamar anak 2"
+          }
+        },
+        "43.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "儿童房2平面图",
+            "en": "Kids room 2 floor plan",
+            "id": "Denah kamar anak 2"
+          }
+        },
+        "44.jpg": {
+          "room": "kids_room",
+          "desc": {
+            "zh": "儿童房2，绿色系与临窗书桌",
+            "en": "Kids room 2 in a green palette with window-side desk",
+            "id": "Kamar anak 2 bernuansa hijau dengan meja belajar di sisi jendela"
+          }
+        },
+        "45.jpg": {
+          "room": "kids_room",
+          "desc": {
+            "zh": "儿童房1，步入式衣帽间",
+            "en": "Kids room 1 with walk-in closet",
+            "id": "Kamar anak 1 dengan walk-in closet"
+          }
+        },
+        "46.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "儿童房1平面图",
+            "en": "Kids room 1 floor plan",
+            "id": "Denah kamar anak 1"
+          }
+        },
+        "47.jpg": {
+          "room": "plan",
+          "desc": {
+            "zh": "儿童房1平面图",
+            "en": "Kids room 1 floor plan",
+            "id": "Denah kamar anak 1"
+          }
+        },
+        "48.jpg": {
+          "room": "kids_room",
+          "desc": {
+            "zh": "儿童房1，绿色挂画与书桌上柜",
+            "en": "Kids room 1 with green artwork and overhead desk cabinets",
+            "id": "Kamar anak 1 dengan lukisan hijau dan kabinet di atas meja belajar"
+          }
+        }
+      }
     },
     {
       "id": "case_025",

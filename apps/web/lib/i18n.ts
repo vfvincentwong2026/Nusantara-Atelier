@@ -1,3 +1,5 @@
+import type { RoomType } from './types';
+
 export type Locale = 'zh' | 'en' | 'id';
 
 export const LOCALES: { code: Locale; label: string }[] = [
@@ -67,6 +69,7 @@ const zh = {
     photoBadge: (n: number) => `${n} 张`,
     comingSoon: '实景照片即将上线',
     moreStyle: '更多风格',
+    spaceTitle: '空间构成',
     stats: (c: number, p: number) => `共 ${c} 个案例 · ${p} 张实景照片`,
   },
   styles: {
@@ -80,6 +83,20 @@ const zh = {
     现代小法: '现代小法',
     更多: '更多',
   } as Record<string, string>,
+  rooms: {
+    living: '客厅',
+    dining: '餐厅',
+    kitchen: '厨房',
+    bedroom: '卧室',
+    kids_room: '儿童房',
+    bathroom: '卫浴',
+    study: '书房',
+    tea_room: '茶室',
+    recreation: '娱乐区',
+    staircase: '楼梯间',
+    bar: '水吧',
+    plan: '平面图',
+  } as Record<RoomType, string>,
   pricing: {
     eyebrow: 'Transparent Pricing',
     title: '报价，基于真实成交数据。',
@@ -110,6 +127,11 @@ const zh = {
     sub: 'Book a Designer',
     body: '我们的设计师将在 24 小时内与您联系。初步估价与方案展示完全免费。',
     cta: '立即预约',
+  },
+  detail: {
+    back: '← 返回案例库',
+    allSpaces: '全部空间',
+    likeTitle: '喜欢这种风格？',
   },
   footer: {
     tagline: '找到更好的方式，建造更美的空间。',
@@ -187,6 +209,7 @@ const en: typeof zh = {
     photoBadge: (n: number) => `${n} Photos`,
     comingSoon: 'Photos coming soon',
     moreStyle: 'More Styles',
+    spaceTitle: 'Spatial Composition',
     stats: (c: number, p: number) => `${c} Projects · ${p} Photos`,
   },
   styles: {
@@ -200,6 +223,20 @@ const en: typeof zh = {
     现代小法: 'Modern French',
     更多: 'More',
   } as Record<string, string>,
+  rooms: {
+    living: 'Living Room',
+    dining: 'Dining Room',
+    kitchen: 'Kitchen',
+    bedroom: 'Bedroom',
+    kids_room: 'Kids Room',
+    bathroom: 'Bathroom',
+    study: 'Study',
+    tea_room: 'Tea Room',
+    recreation: 'Recreation',
+    staircase: 'Staircase',
+    bar: 'Bar',
+    plan: 'Floor Plan',
+  } as Record<RoomType, string>,
   pricing: {
     eyebrow: 'Transparent Pricing',
     title: 'Pricing Backed by Real Transaction Data.',
@@ -230,6 +267,11 @@ const en: typeof zh = {
     sub: '预约设计师',
     body: 'Our designers will reach out within 24 hours. First estimate and proposal are completely free.',
     cta: 'Book Now',
+  },
+  detail: {
+    back: '← Back to Works',
+    allSpaces: 'All Spaces',
+    likeTitle: 'Like This Style?',
   },
   footer: {
     tagline: 'Find a better way. Build a beautiful space.',
@@ -307,6 +349,7 @@ const id: typeof zh = {
     photoBadge: (n: number) => `${n} Foto`,
     comingSoon: 'Foto segera hadir',
     moreStyle: 'Gaya Lainnya',
+    spaceTitle: 'Komposisi Ruang',
     stats: (c: number, p: number) => `${c} Proyek · ${p} Foto`,
   },
   styles: {
@@ -320,6 +363,20 @@ const id: typeof zh = {
     现代小法: 'Modern Prancis',
     更多: 'Lainnya',
   } as Record<string, string>,
+  rooms: {
+    living: 'Ruang Keluarga',
+    dining: 'Ruang Makan',
+    kitchen: 'Dapur',
+    bedroom: 'Kamar Tidur',
+    kids_room: 'Kamar Anak',
+    bathroom: 'Kamar Mandi',
+    study: 'Ruang Kerja',
+    tea_room: 'Ruang Teh',
+    recreation: 'Area Rekreasi',
+    staircase: 'Tangga',
+    bar: 'Bar',
+    plan: 'Denah',
+  } as Record<RoomType, string>,
   pricing: {
     eyebrow: 'Transparent Pricing',
     title: 'Harga Berdasarkan Data Transaksi Nyata.',
@@ -350,6 +407,11 @@ const id: typeof zh = {
     sub: 'Book a Designer',
     body: 'Desainer kami akan menghubungi Anda dalam 24 jam. Estimasi pertama dan presentasi proposal sepenuhnya gratis.',
     cta: 'Jadwalkan Sekarang',
+  },
+  detail: {
+    back: '← Kembali ke Proyek',
+    allSpaces: 'Semua Ruang',
+    likeTitle: 'Suka Gaya Ini?',
   },
   footer: {
     tagline: 'Temukan cara yang lebih baik. Bangun ruang yang indah.',

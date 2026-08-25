@@ -1,3 +1,22 @@
+export type RoomType =
+  | 'living'
+  | 'dining'
+  | 'kitchen'
+  | 'bedroom'
+  | 'kids_room'
+  | 'bathroom'
+  | 'study'
+  | 'tea_room'
+  | 'recreation'
+  | 'staircase'
+  | 'bar'
+  | 'plan';
+
+export interface RoomAnnotation {
+  room: RoomType;
+  desc: { zh: string; en: string; id: string };
+}
+
 export interface ProjectCase {
   id: string;
   project_name: string;
@@ -11,6 +30,8 @@ export interface ProjectCase {
   tags: string[];
   description: string;
   source: string;
+  /** 房间级标注（MMIS 风格），按图片文件名索引；可选，向后兼容 */
+  annotations?: Record<string, RoomAnnotation>;
 }
 
 /** 风格筛选项。「更多」对应数据中 style === '待补充' 的案例 */

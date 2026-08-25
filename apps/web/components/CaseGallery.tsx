@@ -1,7 +1,8 @@
 'use client';
 
+import Link from 'next/link';
 import { useMemo, useState } from 'react';
-import type { ProjectCase, StyleFilter } from '@/lib/types';
+import type { ProjectCase, RoomType, StyleFilter } from '@/lib/types';
 import { STYLES, STYLE_PENDING } from '@/lib/types';
 import { useLanguage } from '@/components/LanguageProvider';
 
@@ -23,8 +24,20 @@ function CaseCard({ item }: { item: ProjectCase }) {
   const initial = item.project_name.charAt(0);
   const hasImage = item.images.length > 0;
 
+  /** 空间构成 chips：按 room 聚合（plan 除外），取数量最多的 4 个 */
+  const roomChips = useMemo<[RoomType, number][]>(() => {
+    if (!item.annotations) return [];
+    const counts = new Map<RoomType, number>();
+    for (const a of Object.values(item.annotations)) {
+      if (a.room === 'plan') continue;
+      counts.set(a.room, (counts.get(a.room) ?? 0) + 1);
+    }
+    return [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4);
+  }, [item.annotations]);
+
   return (
-    <article className="group overflow-hidden rounded-lg border border-ivory/10 bg-ink-800 transition-colors hover:border-gold/50">
+    <Link href={`/cases/${item.id}/`} className="block h-full">
+      <article className="group h-full overflow-hidden rounded-lg border border-ivory/10 bg-ink-800 transition-all hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-lg hover:shadow-ivory/5">
       {/* 封面：有图用实景照，无图用渐变 + 首字占位 */}
       <div
         className={`relative h-52 overflow-hidden bg-gradient-to-br ${gradient}`}
@@ -95,8 +108,25 @@ function CaseCard({ item }: { item: ProjectCase }) {
             {item.description}
           </p>
         )}
+
+        {roomChips.length > 0 && (
+          <div className="flex flex-wrap items-center gap-1.5 pt-1">
+            <span className="mr-1 text-[10px] tracking-widest text-ivory-mute">
+              {t.cases.spaceTitle}
+            </span>
+            {roomChips.map(([room, n]) => (
+              <span
+                key={room}
+                className="rounded-full border border-ivory/15 px-2 py-0.5 text-[10px] text-ivory-dim"
+              >
+                {t.rooms[room]} ×{n}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
-    </article>
+      </article>
+    </Link>
   );
 }
 
