@@ -3,9 +3,9 @@
 import Link from 'next/link';
 import CaseGallery from '@/components/CaseGallery';
 import HeroCarousel from '@/components/HeroCarousel';
+import SiteHeader from '@/components/SiteHeader';
 import { useLanguage } from '@/components/LanguageProvider';
 import { cases, casesWithPricing } from '@/lib/cases';
-import { LOCALES } from '@/lib/i18n';
 
 /** Hero 轮播素材：汀岸晓庐 / 玺园 / 香格里拉 / 广州中建御溪谷 各取两张 */
 const heroImages = [
@@ -19,61 +19,13 @@ const heroImages = [
   '/cases/guangzhou-yuxigu/p34-0.jpg',
 ];
 
-function LanguageSwitcher() {
-  const { locale, setLocale } = useLanguage();
-  return (
-    <div className="flex items-center rounded-full border border-ivory/15 p-0.5 text-[11px] tracking-wider">
-      {LOCALES.map((l) => (
-        <button
-          key={l.code}
-          onClick={() => setLocale(l.code)}
-          className={`rounded-full px-2.5 py-1 transition-colors ${
-            locale === l.code
-              ? 'bg-gold text-white'
-              : 'text-ivory-mute hover:text-gold-dark'
-          }`}
-        >
-          {l.label}
-        </button>
-      ))}
-    </div>
-  );
-}
-
 export default function HomePage() {
   const { t } = useLanguage();
 
   return (
     <main className="min-h-screen">
-      {/* ========== 导航 ========== */}
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-ivory/5 bg-ink/80 backdrop-blur">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link href="/" className="font-serif text-lg tracking-widest">
-            <span className="text-gold">Nusantara</span>{' '}
-            <span className="text-ivory">Atelier</span>
-          </Link>
-          <div className="flex items-center gap-6">
-            <nav className="hidden items-center gap-8 text-sm text-ivory-dim md:flex">
-              <a href="#services" className="hover:text-gold-dark">
-                {t.nav.services}
-              </a>
-              <a href="#cases" className="hover:text-gold-dark">
-                {t.nav.cases}
-              </a>
-              <a href="#pricing" className="hover:text-gold-dark">
-                {t.nav.pricing}
-              </a>
-              <Link
-                href="/booking"
-                className="rounded-full border border-gold px-4 py-1.5 text-gold transition-colors hover:bg-gold hover:text-white"
-              >
-                {t.nav.book}
-              </Link>
-            </nav>
-            <LanguageSwitcher />
-          </div>
-        </div>
-      </header>
+      {/* ========== 导航（共享组件） ========== */}
+      <SiteHeader />
 
       {/* ========== ① Hero ========== */}
       <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
@@ -223,7 +175,7 @@ export default function HomePage() {
       </section>
 
       {/* ========== ⑤ 团队介绍 ========== */}
-      <section className="border-t border-ivory/5 bg-ink-800/60 py-24">
+      <section id="team" className="border-t border-ivory/5 bg-ink-800/60 py-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <p className="section-eyebrow">{t.team.eyebrow}</p>
           <h2 className="mt-4 font-serif text-3xl text-ivory md:text-4xl">

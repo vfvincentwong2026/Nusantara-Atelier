@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLanguage } from '@/components/LanguageProvider';
+import SiteHeader from '@/components/SiteHeader';
 import type { ProjectCase, RoomAnnotation, RoomType } from '@/lib/types';
 
 interface GalleryItem {
@@ -95,8 +96,10 @@ export default function CaseDetail({ item }: { item: ProjectCase }) {
 
   return (
     <main className="min-h-screen bg-ink pb-24">
+      <SiteHeader />
+
       {/* ========== 头部 ========== */}
-      <div className="mx-auto max-w-6xl px-6 pt-10">
+      <div className="mx-auto max-w-6xl px-6 pt-28">
         <Link
           href="/#cases"
           className="text-sm tracking-widest text-ivory-mute transition-colors hover:text-gold-dark"
@@ -225,7 +228,7 @@ export default function CaseDetail({ item }: { item: ProjectCase }) {
       {/* ========== 灯箱 ========== */}
       {lightbox && current && (
         <div
-          className="fixed inset-0 z-50 flex flex-col bg-black/95"
+          className="fixed inset-0 z-[60] flex flex-col bg-black/95"
           onClick={() => setLightbox(false)}
         >
           <div className="flex items-center justify-between px-6 py-4">
