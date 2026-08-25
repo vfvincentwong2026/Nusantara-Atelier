@@ -1,243 +1,142 @@
-<p align="center"> <a href="https://github.com/vfvincentwong2026/Nusantara-Atelier"> <img src="https://via.placeholder.com/800x200/1a1a2e/C9A96E?text=Nusantara+Atelier" alt="Nusantara Atelier Banner" width="800"> </a> </p><p align="center"> <strong>AI 驱动的印尼豪宅设计网站 · 上传户型图，30 分钟获得设计方案 + 报价</strong><br> <strong>AI-Powered Luxury Villa Design Website — Upload Floor Plan, Get Design + Quote in 30 Minutes</strong> </p><p align="center"> <a href="#-在线体验-live-demo">在线体验</a> • <a href="#-功能-features">功能</a> • <a href="#-技术栈-tech-stack">技术栈</a> • <a href="#-快速开始-quick-start">快速开始</a> • <a href="#-项目结构-project-structure">项目结构</a> </p><p align="center"> <img src="https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js" alt="Next.js"> <img src="https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript" alt="TypeScript"> <img src="https://img.shields.io/badge/Cloudflare-Pages-orange?style=flat-square&logo=cloudflare" alt="Cloudflare"> <img src="https://img.shields.io/badge/Three.js-r161-green?style=flat-square&logo=three.js" alt="Three.js"> <img src="https://img.shields.io/badge/License-MIT-yellow?style=flat-square" alt="License"> <img src="https://img.shields.io/badge/PRs-welcome-brightgreen?style=flat-square" alt="PRs Welcome"> </p>
-📖 目录 · Table of Contents
-关于项目 · About
+# Nusantara Atelier
 
-在线体验 · Live Demo
+**印尼高端别墅全案服务商 · 室内设计 → 精密装修 → 整装服务 → 家具软装指导**
 
-功能 · Features
+**Luxury Villa Design & Build Studio for Indonesia — Interior Design · Precision Fit-Out · Turnkey Package · Furniture & Soft Furnishing**
 
-客户旅程 · Client Journey
+[![Live](https://img.shields.io/badge/Live-nusantara--atelier.pages.dev-C9A96E?style=flat-square)](https://nusantara-atelier.pages.dev)
+![Next.js](https://img.shields.io/badge/Next.js-14-black?style=flat-square&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=flat-square&logo=typescript)
+![Cloudflare](https://img.shields.io/badge/Cloudflare-Pages-orange?style=flat-square&logo=cloudflare)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)
 
-技术栈 · Tech Stack
+🌐 **在线体验 · Live Site：<https://nusantara-atelier.pages.dev>**
 
-快速开始 · Quick Start
+三语网站 · Trilingual：**Bahasa Indonesia / English / 中文**
 
-项目结构 · Project Structure
+---
 
-路线图 · Roadmap
+## 🎯 关于项目 · About
 
-贡献 · Contributing
+### 中文
 
-许可证 · License
+Nusantara Atelier 把**中国顶级豪宅的成熟落地经验**带到印尼高端别墅市场，提供一站式服务链条：
 
-🎯 关于项目 · About
-中文
-Nusantara Atelier 是一个面向印尼高端别墅市场的 AI 设计网站。
+- 🏛️ **室内设计** —— 基于真实落地案例的风格体系：法式 / 现代 / 侘寂 / 意式极简 / 现代奶油 / 法式轻奢
+- 🔨 **精密装修** —— 硬装造价透明到每平方米，工艺对标中国一线豪宅
+- 🛋️ **家具软装指导** —— 真实成交软装标准，完整选型清单与采购指导
+- 🗝️ **整装服务** —— 一个团队全程负责，预算锁定、工期锁定，交付即可入住
 
-客户打开网站，上传户型图或实景照片，选择喜欢的风格，系统自动生成：
+网站以 **25 个真实落地案例 / 231 张实景照片** 为核心资产，附真实单方造价数据。AI 是后台引擎而非卖点：客户上传户型图，30 分钟即可获得初步方案与透明报价（传统流程 2–4 周）。
 
-✅ 3D 效果预览
+### English
 
-✅ 详细物料清单
+Nusantara Atelier brings **China's proven top-tier residential expertise** to Indonesia's luxury villa market, as a one-stop design-and-build studio:
 
-✅ 即时预算报价
+- 🏛️ **Interior Design** — Style systems backed by real completed projects
+- 🔨 **Precision Fit-Out** — Transparent per-sqm pricing, first-tier craftsmanship
+- 🛋️ **Furniture & Soft Furnishing** — Full selection lists from real transactions
+- 🗝️ **Turnkey Package** — One team, one contract, one locked budget. Move in on handover day.
 
-我们拥有真实落地案例库（法式、现代、侘寂、意式极简等），AI 的每一个推荐都有真实成交数据作为依据，而非凭空生成。
+The site is built around **25 real completed projects / 231 photos** with actual unit-cost data. AI is the engine, not the headline: upload a floor plan, get a first proposal and transparent estimate in 30 minutes (vs. 2–4 weeks traditionally).
 
-English
-Nusantara Atelier is an AI-powered design website for Indonesia's luxury villa market.
+---
 
-Clients upload floor plans or photos, select their preferred style, and the system automatically generates:
+## ✨ 网站板块 · Site Sections
 
-✅ 3D visual preview
+```
+① Hero            实景轮播 + 定位语 + 双 CTA
+② 服务链条         室内设计 · 精密装修 · 家具软装指导 · 整装服务（四段式）
+③ 案例画廊         25 案例 / 231 张实景，8 种风格筛选
+④ 透明造价带       真实单方造价 + 报价公式
+⑤ 团队介绍         豪宅设计与营造团队 + 自有产业工人
+⑥ 快速估价入口     上传户型图，30 分钟初步方案（支持区）
+⑦ 预约设计师 CTA   唯一转化目标
+⑧ 页脚
+```
 
-✅ Detailed Bill of Materials (BOM)
+---
 
-✅ Instant budget estimate
+## 🧱 技术栈 · Tech Stack
 
-Our real project case library (French, Modern, Wabi-Sabi, Italian Minimalist, etc.) ensures every AI recommendation is backed by actual transaction data — not凭空 generated.
+| 层级 | 技术 | 状态 |
+|------|------|------|
+| 前端 | Next.js 14 (App Router) + TypeScript + Tailwind CSS，静态导出 | ✅ 已上线 |
+| 多语言 | 自研客户端字典 i18n（ID / EN / 中文） | ✅ 已上线 |
+| 托管 | Cloudflare Pages（全球 CDN） | ✅ 已上线 |
+| 后端 | Cloudflare Workers（AI Worker / CAD Worker） | 📋 规划中，见 [ARCHITECTURE](docs/ARCHITECTURE.md) |
+| 数据库 | Cloudflare D1 + R2 | 📋 规划中 |
+| AI 推理 | Cloudflare Workers AI | 📋 规划中 |
 
-解决什么问题 · The Problem We Solve
-痛点 · Problem	传统方式 · Traditional	Nusantara Atelier
-设计周期长 · Long design cycle	设计师排期 2-4 周	30 分钟生成方案
-报价不透明 · Opaque pricing	手工算量、反复询价	即时自动报价
-看不到真实案例 · No real references	只有效果图	真实案例库 + 3D 预览
-🌐 在线体验 · Live Demo
-网站地址 · Website: https://nusantara-atelier.pages.dev (即将上线 · Coming Soon)
+## 🚀 本地开发 · Development
 
-客户使用流程 · Client Flow
-text
-┌─────────────────────────────────────────────────────────────────┐
-│                    www.nusantara-atelier.com                    │
-├─────────────────────────────────────────────────────────────────┤
-│                                                                 │
-│  ① 浏览首页案例 · Browse Case Gallery                          │
-│     ↓                                                          │
-│  ② 上传户型图/照片 · Upload Floor Plan / Photos                │
-│     ↓                                                          │
-│  ③ 选择偏好风格 · Select Preferred Style                       │
-│     ↓                                                          │
-│  ④ AI 生成方案 · AI Generates Design Proposal                  │
-│     ↓                                                          │
-│  ⑤ 3D 漫游预览 · 3D Walkthrough Preview                        │
-│     ↓                                                          │
-│  ⑥ 查看报价清单 · View Instant Quote                           │
-│     ↓                                                          │
-│  ⑦ 预约设计师 · Book a Designer                                │
-│                                                                 │
-└─────────────────────────────────────────────────────────────────┘
-✨ 功能 · Features
-中文
-模块	功能	说明
-首页	案例画廊	展示所有真实落地案例（风格、面积、实景图）
-上传	图纸/照片上传	支持 JPG/PNG/PDF/DXF，AI 自动识别空间结构
-设计	AI 方案生成	基于案例库匹配风格，生成 3D 效果图
-报价	自动预算	物料清单 + 分项报价 + 总价（USD/IDR 双币种）
-预约	设计师对接	客户提交联系方式，销售即时跟进
-English
-Module	Feature	Description
-Home	Case Gallery	Showcase all real projects (style, area, photos)
-Upload	Drawing/Photo Upload	Support JPG/PNG/PDF/DXF, AI auto-recognizes space
-Design	AI Generation	Style matching from case library, 3D render output
-Quote	Auto Budget	BOM + itemized costs + total (USD/IDR dual currency)
-Booking	Designer Connect	Client submits contact, sales team follows up
-👤 客户旅程 · Client Journey
-中文
-客户打开网站后，无需注册，三步完成：
-
-步骤	客户做什么	系统做什么	耗时
-1	浏览首页案例，点击“开始设计”	展示案例库，建立信任	1 分钟
-2	上传户型图 / 选择风格	AI 识别空间，匹配最佳案例	3 分钟
-3	查看 3D 预览 + 报价	生成方案、物料清单、预算	10 分钟
-客户无需专业知识，上传即得结果。
-
-English
-Clients visit the website, no registration required, three steps:
-
-Step	Client Action	System Response	Time
-1	Browse cases, click "Start Design"	Showcase case library, build trust	1 min
-2	Upload floor plan / Select style	AI parses space, matches best case	3 min
-3	View 3D preview + Quote	Generate proposal, BOM, budget	10 min
-No expertise required. Upload and get results.
-
-🧱 技术栈 · Tech Stack
-层级 · Layer	技术 · Technology	用途 · Purpose
-前端 · Frontend	Next.js 14 + TypeScript + Tailwind CSS	网站 UI · Website Interface
-3D 渲染 · 3D Engine	React Three Fiber + Three.js	3D 漫游预览 · 3D Walkthrough
-后端 · Backend	Cloudflare Workers (Python + JavaScript)	API 服务 · API Services
-数据库 · Database	Cloudflare D1 (SQLite)	案例数据 · Case Data
-文件存储 · Storage	Cloudflare R2	图片/图纸存储 · Images/Blueprints
-AI 推理 · AI Inference	Cloudflare Workers AI + AI Gateway	设计生成 · Design Generation
-部署 · Deployment	Cloudflare Pages	网站托管 · Website Hosting
-🚀 快速开始 · Quick Start
-前置条件 · Prerequisites
-Node.js >= 20 LTS
-
-pnpm >= 9.0
-
-Python >= 3.11（CAD Worker）
-
-Cloudflare 账号 · Cloudflare Account
-
-Wrangler CLI
-
-安装与运行 · Install & Run
-bash
-# 1. 克隆仓库 · Clone the repository
+```bash
 git clone https://github.com/vfvincentwong2026/Nusantara-Atelier.git
-cd Nusantara-Atelier
+cd Nusantara-Atelier/apps/web
 
-# 2. 安装依赖 · Install dependencies
-pnpm install
+npm install
+npm run dev        # http://localhost:3000
+```
 
-# 3. 配置 Cloudflare D1 · Set up D1
-wrangler d1 create nusantara-db
-wrangler d1 execute nusantara-db --file=./schema.sql
+构建与部署：
 
-# 4. 配置 R2 存储 · Set up R2
-wrangler r2 bucket create nusantara-assets
+```bash
+npm run build                                          # 静态导出到 out/
+npx wrangler pages deploy out --project-name=nusantara-atelier
+```
 
-# 5. 配置环境变量 · Configure environment
-cp .env.example .env
-# 编辑 .env，填入你的 API Key · Add your API keys
+详细部署说明见 [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md)。
 
-# 6. 启动开发服务器 · Start dev server
-cd apps/web
-pnpm dev
-部署到 Cloudflare · Deploy to Cloudflare
-bash
-# 部署前端网站 · Deploy frontend
-cd apps/web
-npx @cloudflare/next-on-pages@1
-npx wrangler pages deploy
+## 📁 项目结构 · Project Structure
 
-# 部署 Workers · Deploy Workers
-cd workers/ai-worker && wrangler deploy
-cd workers/cad-worker && wrangler deploy
-📁 项目结构 · Project Structure
-text
+```text
 nusantara-atelier/
 ├── apps/
-│   └── web/                         # 前端网站 · Frontend Website
-│       ├── app/
-│       │   ├── api/                 # API 路由 · API Routes
-│       │   │   ├── upload/route.ts  # 文件上传 · File Upload
-│       │   │   ├── design/route.ts  # AI 设计 · AI Design
-│       │   │   └── quote/route.ts   # 报价生成 · Quote Generation
-│       │   ├── page.tsx             # 首页 · Homepage (案例画廊)
-│       │   ├── upload/page.tsx      # 上传页 · Upload Page
-│       │   └── result/page.tsx      # 结果页 · Result Page
-│       ├── components/
-│       │   ├── CaseGallery/         # 案例展示 · Case Gallery
-│       │   ├── Scene3D/             # 3D 渲染 · 3D Render
-│       │   └── QuoteBuilder/        # 报价展示 · Quote Display
-│       └── package.json
-│
-├── workers/                         # Cloudflare Workers
-│   ├── ai-worker/                   # AI 推理 · AI Inference
-│   └── cad-worker/                  # CAD 解析 · CAD Parser (Python + ezdxf)
+│   └── web/                  # 前端网站（Next.js 14，已上线）
+│       ├── app/              # 首页 / booking / upload
+│       ├── components/       # CaseGallery / HeroCarousel / LanguageProvider
+│       ├── lib/              # i18n 字典（三语）/ 案例数据接入
+│       └── public/cases/     # 231 张案例实景照片
 │
 ├── data/
-│   ├── cases.json                   # 案例库 · Case Library (核心资产)
-│   └── materials.json               # 材料价格库 · Material Prices
+│   └── cases.json            # 案例库单一数据源（25 案例）
 │
-├── wrangler.toml                    # Cloudflare 配置
-└── README.md
-🗺️ 路线图 · Roadmap
-阶段 · Phase	时间 · Timeline	目标 · Goal
-Phase 1	2026 Q3	案例库迁移 + 首页展示 + 上传流程打通
-Phase 2	2026 Q4	AI 设计生成 + 3D 预览 + 基础报价
-Phase 3	2027 Q1	印尼本地材料库 + 精确 BOM 报价
-Phase 4	2027 Q2	与 IndoScout 获客系统打通
-🤝 贡献 · Contributing
-中文
-欢迎任何形式的贡献！请查看 CONTRIBUTING.md 了解详细指南。
+└── docs/                     # 完整文档
+    ├── HOMEPAGE.md           # 首页 PRD + 中英双语文案
+    ├── PROJECT_DESCRIPTION.md
+    ├── ARCHITECTURE.md
+    ├── DATA_MODEL.md
+    ├── API.md
+    ├── CASES.md
+    ├── DEPLOYMENT.md
+    └── FAQ.md
+```
 
-Fork 本仓库
+## 🗺️ 路线图 · Roadmap
 
-创建分支 git checkout -b feature/你的功能
+| 阶段 | 时间 | 目标 | 状态 |
+|------|------|------|------|
+| Phase 1 | 2026 Q3 | 案例库 + 首页 + 三语 + 上线 | ✅ 已完成 |
+| Phase 2 | 2026 Q4 | 上传流程 + AI 设计生成 + 基础报价 + 预约表单 | 🚧 进行中 |
+| Phase 3 | 2027 Q1 | 印尼本地材料库 + 精确 BOM 报价 + 3D 预览 | 📋 规划中 |
+| Phase 4 | 2027 Q2 | 与 IndoScout 获客系统打通 | 📋 规划中 |
 
-提交代码 git commit -m 'feat: 添加某个功能'
+## 🤝 贡献 · Contributing
 
-推送分支 git push origin feature/你的功能
+欢迎贡献！请查看 [CONTRIBUTING.md](CONTRIBUTING.md)。
 
-提交 Pull Request
+## 📄 许可证 · License
 
-English
-Contributions are welcome! See CONTRIBUTING.md for detailed guidelines.
-
-Fork the repository
-
-Create a branch git checkout -b feature/YourFeature
-
-Commit changes git commit -m 'feat: add some feature'
-
-Push to branch git push origin feature/YourFeature
-
-Open a Pull Request
-
-📄 许可证 · License
 MIT © 2026 Nusantara Atelier Team
 
-🔗 相关项目 · Related Projects
-项目 · Project	关系 · Relationship
-IndoScout-D-B	获客工具 · Lead Generation Tool
-Nusantara Atelier (本项目)	设计网站 · Design Website
-🙏 致谢 · Acknowledgments
-OpenLintel — 端到端家居设计自动化平台
+## 🔗 相关项目 · Related Projects
 
-React Three Fiber — 3D 渲染引擎
+| 项目 | 关系 |
+|------|------|
+| [IndoScout-D-B](https://github.com/vfvincentwong2026/IndoScout-D-B) | 获客端工具 · Lead Generation |
+| **Nusantara Atelier**（本项目） | 设计与转化端 · Design & Conversion |
 
-Cloudflare — 边缘计算平台
+---
 
-<p align="center"> <strong>找到更好的方式，建造更美的空间。</strong><br> <strong>Find a better way. Build a beautiful space.</strong> </p><p align="center"> <a href="https://github.com/vfvincentwong2026/Nusantara-Atelier"> <img src="https://img.shields.io/github/stars/vfvincentwong2026/Nusantara-Atelier?style=social" alt="GitHub stars"> </a> <a href="https://github.com/vfvincentwong2026/Nusantara-Atelier/network/members"> <img src="https://img.shields.io/github/forks/vfvincentwong2026/Nusantara-Atelier?style=social" alt="GitHub forks"> </a> </p>
+**找到更好的方式，建造更美的空间。**
+**Find a better way. Build a beautiful space.**

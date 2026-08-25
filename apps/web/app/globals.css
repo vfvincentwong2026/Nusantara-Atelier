@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ink text-ivory font-sans antialiased;
+}
+
+::selection {
+  background: #c9a96e;
+  color: #ffffff;
+}
+
+/* 细滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #fafaf8;
+}
+::-webkit-scrollbar-thumb {
+  background: #d8d4c9;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9a96e;
+}
+
+/* Hero 轮播 Ken Burns 缓慢推近 */
+@keyframes hero-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+.animate-hero-zoom {
+  animation: hero-zoom 6s ease-out forwards;
+}
+
+@layer components {
+  .gold-divider {
+    @apply h-px w-16 bg-gold/60;
+  }
+  .section-eyebrow {
+    @apply text-xs tracking-widest2 text-gold uppercase;
+  }
+}

@@ -1,0 +1,381 @@
+export type Locale = 'zh' | 'en' | 'id';
+
+export const LOCALES: { code: Locale; label: string }[] = [
+  { code: 'id', label: 'ID' },
+  { code: 'en', label: 'EN' },
+  { code: 'zh', label: '中文' },
+];
+
+export const STORAGE_KEY = 'na-locale';
+
+const zh = {
+  nav: {
+    services: '服务',
+    cases: '案例',
+    pricing: '造价',
+    book: '预约设计师',
+  },
+  hero: {
+    eyebrow: 'Nusantara Atelier · 豪宅全案服务商',
+    titleA: '从设计到软装，',
+    titleB: '一步到位。',
+    tagline: 'From Design to Furnishing — Done Right, Once.',
+    desc: '中国顶级豪宅落地经验，服务印尼高端别墅市场。',
+    descChain: '室内设计 · 精密装修 · 家具软装指导',
+    ctaPrimary: '预约设计师',
+    ctaSecondary: '浏览案例库',
+    scroll: '向下探索 ↓',
+  },
+  services: {
+    eyebrow: 'Our Services',
+    title: '一条完整的服务链条',
+    items: [
+      {
+        icon: '🏛️',
+        title: '室内设计',
+        subtitle: 'Interior Design',
+        desc: '基于真实落地案例的风格体系：法式、现代、侘寂、意式极简、现代奶油、法式轻奢。',
+        backup: '每一套方案都有真实成交项目作为依据。',
+      },
+      {
+        icon: '🔨',
+        title: '精密装修',
+        subtitle: 'Precision Fit-Out',
+        desc: '硬装造价透明到每一平方米。真实案例单方造价 4,500–5,500 元/㎡ 硬装标准。',
+        backup: '工艺对标中国一线豪宅。',
+      },
+      {
+        icon: '🛋️',
+        title: '家具软装指导',
+        subtitle: 'Furniture & Soft Furnishing',
+        desc: '软装 4,000–4,500 元/㎡ 真实成交标准。从家具选型到饰品陈设，提供完整软装清单与采购指导。',
+        backup: '完整软装清单 · 采购指导。',
+      },
+      {
+        icon: '🗝️',
+        title: '整装服务',
+        subtitle: 'Turnkey Package',
+        desc: '设计、施工、软装一站式交付。一个团队全程负责，预算锁定、工期锁定，交付即可入住。',
+        backup: '预算锁定 · 工期锁定',
+      },
+    ],
+  },
+  cases: {
+    eyebrow: 'Selected Works',
+    title: '真实落地，有据可查。',
+    sub: 'Real Projects. Proven Results.',
+    photoBadge: (n: number) => `${n} 张`,
+    comingSoon: '实景照片即将上线',
+    moreStyle: '更多风格',
+    stats: (c: number, p: number) => `共 ${c} 个案例 · ${p} 张实景照片`,
+  },
+  styles: {
+    全部: '全部',
+    法式: '法式',
+    现代: '现代',
+    侘寂: '侘寂',
+    意式极简: '意式极简',
+    现代奶油: '现代奶油',
+    法式轻奢: '法式轻奢',
+    现代小法: '现代小法',
+    更多: '更多',
+  } as Record<string, string>,
+  pricing: {
+    eyebrow: 'Transparent Pricing',
+    title: '报价，基于真实成交数据。',
+    body: '我们不凭空估价。每一个报价都来自案例库的真实单方造价，按风格、地区、档次系数校准：',
+    formula: '总价 = 面积 × 单方造价 × 风格系数 × 地区系数 × 档次系数',
+    hardCost: '硬装单方造价',
+    softCost: '软装单方造价',
+    note: '数据来源：派尚设计真实成交项目 · 展示层 USD/IDR 换算即将上线',
+  },
+  team: {
+    eyebrow: 'Our Team',
+    title: '专注豪宅的设计与营造团队',
+    body: '我们是一支深耕中国顶级豪宅的设计团队，长期为中国精英人士打造理想居所，沉淀了成熟的设计体系与营造经验。我们同时拥有业内最优秀的施工技术产业工人团队，以毫米级的工艺标准兑现设计承诺。今天，我们把这份经验与匠心带到印尼，致力于为高净值人士营造美好居所。',
+    metrics: [
+      { value: '100+', label: '服务精英家庭' },
+      { value: '25', label: '落地案例（套）' },
+      { value: '自有', label: '产业工人团队' },
+    ],
+  },
+  estimate: {
+    eyebrow: 'Instant Estimate',
+    title: '上传户型图，30 分钟获取初步方案与估价',
+    body: '无需注册。支持 JPG / PNG / PDF / DXF，AI 自动识别空间结构并匹配最佳案例。',
+    cta: '免费快速估价',
+  },
+  booking: {
+    title: '预约设计师',
+    sub: 'Book a Designer',
+    body: '我们的设计师将在 24 小时内与您联系。初步估价与方案展示完全免费。',
+    cta: '立即预约',
+  },
+  footer: {
+    tagline: '找到更好的方式，建造更美的空间。',
+    taglineSub: 'Find a better way. Build a beautiful space.',
+    related: '相关项目：IndoScout-D-B（获客端）',
+  },
+  placeholder: {
+    bookingEyebrow: 'Booking',
+    bookingTitle: '预约设计师',
+    bookingSub: 'Book a Designer',
+    uploadEyebrow: 'Instant Estimate',
+    uploadTitle: '快速估价',
+    uploadSub: '上传户型图 · Upload Your Floor Plan',
+    comingSoon: '即将上线 · Coming Soon',
+    back: '← 返回首页',
+  },
+};
+
+const en: typeof zh = {
+  nav: {
+    services: 'Services',
+    cases: 'Works',
+    pricing: 'Pricing',
+    book: 'Book a Designer',
+  },
+  hero: {
+    eyebrow: 'Nusantara Atelier · Luxury Design-and-Build Studio',
+    titleA: 'From Design to Furnishing —',
+    titleB: 'Done Right, Once.',
+    tagline: '从设计到软装，一步到位。',
+    desc: "China's top-tier residential expertise, now serving Indonesia's luxury villa market.",
+    descChain: 'Interior Design · Precision Fit-Out · Furniture & Soft Furnishing',
+    ctaPrimary: 'Book a Designer',
+    ctaSecondary: 'Explore Our Work',
+    scroll: 'Scroll to explore ↓',
+  },
+  services: {
+    eyebrow: 'Our Services',
+    title: 'One Complete Service Chain',
+    items: [
+      {
+        icon: '🏛️',
+        title: 'Interior Design',
+        subtitle: '室内设计',
+        desc: 'Style systems backed by real completed projects: French, Modern, Wabi-Sabi, Italian Minimalist, Cream Modern, French Luxury.',
+        backup: 'Every proposal is grounded in actual delivered work.',
+      },
+      {
+        icon: '🔨',
+        title: 'Precision Fit-Out',
+        subtitle: '精密装修',
+        desc: 'Transparent hard-fit-out pricing per square meter, benchmarked at RMB 4,500–5,500/㎡ from real projects.',
+        backup: "Matching China's first-tier luxury craftsmanship.",
+      },
+      {
+        icon: '🛋️',
+        title: 'Furniture & Soft Furnishing',
+        subtitle: '家具软装指导',
+        desc: 'Soft furnishing at RMB 4,000–4,500/㎡ based on real transactions, with full furniture selection lists and procurement guidance.',
+        backup: 'Full furnishing list · Procurement guidance.',
+      },
+      {
+        icon: '🗝️',
+        title: 'Turnkey Package',
+        subtitle: '整装服务',
+        desc: 'One team, one contract, one locked budget — design, fit-out, and furnishing delivered turnkey. Move in on handover day.',
+        backup: 'Locked Budget · Locked Timeline',
+      },
+    ],
+  },
+  cases: {
+    eyebrow: 'Selected Works',
+    title: 'Real Projects. Proven Results.',
+    sub: '真实落地，有据可查。',
+    photoBadge: (n: number) => `${n} Photos`,
+    comingSoon: 'Photos coming soon',
+    moreStyle: 'More Styles',
+    stats: (c: number, p: number) => `${c} Projects · ${p} Photos`,
+  },
+  styles: {
+    全部: 'All',
+    法式: 'French',
+    现代: 'Modern',
+    侘寂: 'Wabi-Sabi',
+    意式极简: 'Italian Minimalist',
+    现代奶油: 'Cream Modern',
+    法式轻奢: 'French Luxury',
+    现代小法: 'Modern French',
+    更多: 'More',
+  } as Record<string, string>,
+  pricing: {
+    eyebrow: 'Transparent Pricing',
+    title: 'Pricing Backed by Real Transaction Data.',
+    body: 'We never quote from thin air. Every estimate derives from actual per-sqm costs in our case library, calibrated by style, location, and tier:',
+    formula: 'Total = Area × Unit Cost × Style Factor × Location Factor × Tier Factor',
+    hardCost: 'Hard Fit-Out',
+    softCost: 'Soft Furnishing',
+    note: 'Source: real transactions by Paishang Design · USD/IDR conversion coming soon',
+  },
+  team: {
+    eyebrow: 'Our Team',
+    title: 'A Team Devoted to Luxury Living',
+    body: "We are a design team rooted in China's top-tier luxury residences, long trusted by China's elite to craft their ideal homes — backed by a mature design system and proven delivery experience. Our in-house craftsmen are among the finest in the industry, honoring every design promise with millimeter-level precision. Today, we bring this experience and dedication to Indonesia, committed to creating beautiful homes for high-net-worth families.",
+    metrics: [
+      { value: '100+', label: 'Elite Families Served' },
+      { value: '25', label: 'Completed Projects' },
+      { value: 'In-house', label: 'Craftsmen Team' },
+    ],
+  },
+  estimate: {
+    eyebrow: 'Instant Estimate',
+    title: 'Upload Your Floor Plan. Get a First Proposal in 30 Minutes.',
+    body: 'No registration needed. JPG / PNG / PDF / DXF supported — AI parses your space and matches the best reference case.',
+    cta: 'Free Instant Estimate',
+  },
+  booking: {
+    title: 'Book a Designer',
+    sub: '预约设计师',
+    body: 'Our designers will reach out within 24 hours. First estimate and proposal are completely free.',
+    cta: 'Book Now',
+  },
+  footer: {
+    tagline: 'Find a better way. Build a beautiful space.',
+    taglineSub: '找到更好的方式，建造更美的空间。',
+    related: 'Related: IndoScout-D-B (Lead Generation)',
+  },
+  placeholder: {
+    bookingEyebrow: 'Booking',
+    bookingTitle: 'Book a Designer',
+    bookingSub: '预约设计师',
+    uploadEyebrow: 'Instant Estimate',
+    uploadTitle: 'Instant Estimate',
+    uploadSub: 'Upload Your Floor Plan · 上传户型图',
+    comingSoon: 'Coming Soon · 即将上线',
+    back: '← Back to Home',
+  },
+};
+
+const id: typeof zh = {
+  nav: {
+    services: 'Layanan',
+    cases: 'Proyek',
+    pricing: 'Harga',
+    book: 'Jadwalkan Desainer',
+  },
+  hero: {
+    eyebrow: 'Nusantara Atelier · Studio Desain & Bangun Mewah',
+    titleA: 'Dari Desain hingga Furnishing —',
+    titleB: 'Tuntas Sekaligus.',
+    tagline: 'Dari desain ke perabotan, semua beres sekaligus.',
+    desc: 'Keahlian hunian mewah kelas satu dari Tiongkok, kini melayani pasar vila premium Indonesia.',
+    descChain: 'Desain Interior · Fit-Out Presisi · Furnitur & Dekorasi',
+    ctaPrimary: 'Jadwalkan Desainer',
+    ctaSecondary: 'Jelajahi Karya Kami',
+    scroll: 'Gulir untuk menjelajah ↓',
+  },
+  services: {
+    eyebrow: 'Our Services',
+    title: 'Satu Rangkaian Layanan yang Utuh',
+    items: [
+      {
+        icon: '🏛️',
+        title: 'Desain Interior',
+        subtitle: 'Interior Design',
+        desc: 'Sistem gaya yang didukung proyek nyata: French, Modern, Wabi-Sabi, Italian Minimalist, Cream Modern, French Luxury.',
+        backup: 'Setiap proposal berpijak pada karya yang benar-benar terkirim.',
+      },
+      {
+        icon: '🔨',
+        title: 'Fit-Out Presisi',
+        subtitle: 'Precision Fit-Out',
+        desc: 'Harga fit-out transparan hingga per meter persegi, mengacu pada biaya riil RMB 4.500–5.500/㎡ dari proyek nyata.',
+        backup: 'Setara kualitas hunian mewah lapis pertama Tiongkok.',
+      },
+      {
+        icon: '🛋️',
+        title: 'Furnitur & Dekorasi',
+        subtitle: 'Furniture & Soft Furnishing',
+        desc: 'Furnishing RMB 4.000–4.500/㎡ berdasarkan transaksi nyata, lengkap dengan daftar seleksi furnitur dan panduan pengadaan.',
+        backup: 'Daftar furnishing lengkap · Panduan pengadaan.',
+      },
+      {
+        icon: '🗝️',
+        title: 'Layanan Turnkey',
+        subtitle: 'Turnkey Package',
+        desc: 'Satu tim, satu kontrak, satu anggaran terkunci — desain, fit-out, dan furnishing diserahkan turnkey. Langsung huni saat serah terima.',
+        backup: 'Anggaran & Jadwal Terkunci',
+      },
+    ],
+  },
+  cases: {
+    eyebrow: 'Selected Works',
+    title: 'Proyek Nyata. Hasil Terbukti.',
+    sub: 'Real Projects. Proven Results.',
+    photoBadge: (n: number) => `${n} Foto`,
+    comingSoon: 'Foto segera hadir',
+    moreStyle: 'Gaya Lainnya',
+    stats: (c: number, p: number) => `${c} Proyek · ${p} Foto`,
+  },
+  styles: {
+    全部: 'Semua',
+    法式: 'Prancis',
+    现代: 'Modern',
+    侘寂: 'Wabi-Sabi',
+    意式极简: 'Minimalis Italia',
+    现代奶油: 'Modern Krem',
+    法式轻奢: 'French Luxury',
+    现代小法: 'Modern Prancis',
+    更多: 'Lainnya',
+  } as Record<string, string>,
+  pricing: {
+    eyebrow: 'Transparent Pricing',
+    title: 'Harga Berdasarkan Data Transaksi Nyata.',
+    body: 'Kami tidak pernah menebak-nebak harga. Setiap estimasi berasal dari biaya per m² riil dalam pustaka kasus kami, dikalibrasi menurut gaya, lokasi, dan kelas:',
+    formula: 'Total = Luas × Biaya per m² × Faktor Gaya × Faktor Lokasi × Faktor Kelas',
+    hardCost: 'Fit-Out',
+    softCost: 'Furnishing',
+    note: 'Sumber: transaksi nyata Paishang Design · Konversi USD/IDR segera hadir',
+  },
+  team: {
+    eyebrow: 'Our Team',
+    title: 'Tim yang Berdedikasi untuk Hunian Mewah',
+    body: 'Kami adalah tim desain yang berakar pada hunian mewah kelas atas Tiongkok, lama dipercaya para elite Tiongkok untuk mewujudkan hunian ideal — didukung sistem desain yang matang dan pengalaman terbukti. Tim pengrajin internal kami termasuk yang terbaik di industri, menepati setiap janji desain dengan presisi milimeter. Kini, kami membawa pengalaman dan dedikasi ini ke Indonesia, berkomitmen menciptakan hunian indah bagi keluarga high-net-worth.',
+    metrics: [
+      { value: '100+', label: 'Keluarga Elite Terlayani' },
+      { value: '25', label: 'Proyek Selesai' },
+      { value: 'Internal', label: 'Tim Pengrajin' },
+    ],
+  },
+  estimate: {
+    eyebrow: 'Instant Estimate',
+    title: 'Unggah Denah Anda. Dapatkan Proposal Awal dalam 30 Menit.',
+    body: 'Tanpa registrasi. Mendukung JPG / PNG / PDF / DXF — AI membaca struktur ruang Anda dan mencocokkan kasus referensi terbaik.',
+    cta: 'Estimasi Gratis',
+  },
+  booking: {
+    title: 'Jadwalkan Desainer',
+    sub: 'Book a Designer',
+    body: 'Desainer kami akan menghubungi Anda dalam 24 jam. Estimasi pertama dan presentasi proposal sepenuhnya gratis.',
+    cta: 'Jadwalkan Sekarang',
+  },
+  footer: {
+    tagline: 'Temukan cara yang lebih baik. Bangun ruang yang indah.',
+    taglineSub: 'Find a better way. Build a beautiful space.',
+    related: 'Proyek terkait: IndoScout-D-B (Akuisisi Klien)',
+  },
+  placeholder: {
+    bookingEyebrow: 'Booking',
+    bookingTitle: 'Jadwalkan Desainer',
+    bookingSub: 'Book a Designer',
+    uploadEyebrow: 'Instant Estimate',
+    uploadTitle: 'Estimasi Instan',
+    uploadSub: 'Unggah Denah Anda · Upload Your Floor Plan',
+    comingSoon: 'Segera Hadir · Coming Soon',
+    back: '← Kembali ke Beranda',
+  },
+};
+
+export type Dictionary = typeof zh;
+
+export const dictionaries: Record<Locale, Dictionary> = { zh, en, id };
+
+/** 首次访问语言探测：zh* → 中文，en* → English，其余（含 id*）→ 印尼语（市场优先） */
+export function detectLocale(navLang: string): Locale {
+  const lang = navLang.toLowerCase();
+  if (lang.startsWith('zh')) return 'zh';
+  if (lang.startsWith('en')) return 'en';
+  return 'id';
+}
