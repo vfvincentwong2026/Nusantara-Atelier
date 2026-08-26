@@ -171,6 +171,14 @@ export default function HomePage() {
           <p className="mt-8 text-center text-xs text-ivory-mute">
             {t.pricing.note}
           </p>
+          <p className="mt-4 text-center">
+            <Link
+              href="/materials/"
+              className="text-xs tracking-widest text-gold-dark transition-colors hover:text-gold-light"
+            >
+              {t.pricing.materialsLink}
+            </Link>
+          </p>
         </div>
       </section>
 

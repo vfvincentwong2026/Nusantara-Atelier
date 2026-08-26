@@ -15,6 +15,7 @@ export default function SiteHeader() {
     { href: '/#services', label: t.nav.services },
     { href: '/#cases', label: t.nav.cases },
     { href: '/#pricing', label: t.nav.pricing },
+    { href: '/materials/', label: t.nav.materials },
     { href: '/#team', label: t.nav.team },
   ];
 

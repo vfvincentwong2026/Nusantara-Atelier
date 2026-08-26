@@ -51,3 +51,30 @@ export type StyleFilter = (typeof STYLES)[number];
 
 /** style 数据值：已核定的风格 + 待补充（新案例元数据未确认时使用） */
 export const STYLE_PENDING = '待补充';
+
+/* ---------- Phase 3a：材料 SKU 库 ---------- */
+
+export type MaterialTier = 'standard' | 'luxury' | 'ultra';
+
+export interface Material {
+  sku_id: string;
+  /** 中文大类（石材/瓷砖/…，与 style 同口径），展示经 i18n 映射 */
+  category: string;
+  subcategory: string | null;
+  name_id: string;
+  name_en: string | null;
+  name_zh: string | null;
+  brand: string | null;
+  spec: string | null;
+  unit: string | null;
+  price_idr: number | null;
+  price_usd: number | null;
+  price_rmb: number | null;
+  supplier: string | null;
+  region: string;
+  tier: MaterialTier;
+  labor_rate_idr: number | null;
+  waste_factor: number | null;
+  updated_at: string | null;
+  source: string | null;
+}

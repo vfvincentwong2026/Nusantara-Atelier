@@ -20,17 +20,28 @@ CREATE TABLE IF NOT EXISTS cases (
   created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
 
--- 材料价格表
+-- 材料价格表（v2，Phase 3a：BOM 报价 SKU 库）
 CREATE TABLE IF NOT EXISTS materials (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  category TEXT NOT NULL,
-  name TEXT NOT NULL,
+  sku_id TEXT UNIQUE NOT NULL,           -- 唯一编码，如 STONE-MARBLE-001
+  category TEXT NOT NULL,                -- 大类（中文，与 style 同口径）：石材/瓷砖/…
+  subcategory TEXT,                      -- 子类
+  name_id TEXT NOT NULL,                 -- 印尼语名称（主展示）
+  name_en TEXT,
+  name_zh TEXT,
   brand TEXT,
-  unit TEXT,
-  price_idr INTEGER,
+  spec TEXT,                             -- 规格，如 600×1200mm
+  unit TEXT,                             -- 计价单位：㎡ / m / 件 / 套
+  price_idr INTEGER,                     -- 印尼本地含税单价（主）
   price_usd INTEGER,
+  price_rmb INTEGER,
   supplier TEXT,
-  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP
+  region TEXT DEFAULT 'jakarta',         -- jakarta/bali/surabaya/national
+  tier TEXT,                             -- standard / luxury / ultra
+  labor_rate_idr INTEGER,                -- 安装人工单价（占位，待标定）
+  waste_factor REAL,                     -- 损耗系数（石材 1.12 / 瓷砖 1.08 / 涂料 1.05…）
+  updated_at TEXT,
+  source TEXT                            -- 价格来源（公开零售参考价 + 参考来源名）
 );
 
 -- 报价记录表

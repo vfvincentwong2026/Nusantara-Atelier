@@ -4,8 +4,11 @@
  * 路由：
  *   GET  /health   健康检查（实际执行 SELECT 1）
  *   GET  /cases    案例列表（?style=&limit=&offset=）
+ *   GET  /materials 材料 SKU 库（?category=&tier=&limit=，Phase 3a）
  *   POST /quote    估价引擎（与 apps/web/lib/quote.ts 公式/系数保持一致）+ 落库
  *   POST /booking  预约线索落库
+ *   POST /design   AI 设计建议
+ *   POST /parse-dxf DXF 户型解析
  *
  * 统一响应：{ success, data } / { success:false, error:{ code, message } }
  * CORS：Access-Control-Allow-Origin: *，处理 OPTIONS 预检。
@@ -133,6 +136,46 @@ async function handleCases(url, env) {
     }));
 
     return ok({ total: countRow?.n ?? 0, cases: list });
+  } catch (e) {
+    return fail(500, 'DB_ERROR', String(e));
+  }
+}
+
+/**
+ * GET /materials — 材料 SKU 库（Phase 3a）
+ * 参数：category（中文大类，如 瓷砖）、tier（standard/luxury/ultra）、limit（默认 100）
+ */
+async function handleMaterials(url, env) {
+  const category = url.searchParams.get('category');
+  const tier = url.searchParams.get('tier');
+  const limit = Math.min(Math.max(parseInt(url.searchParams.get('limit') || '100', 10) || 100, 1), 500);
+
+  const conds = [];
+  const binds = [];
+  if (category) {
+    conds.push('category = ?');
+    binds.push(category);
+  }
+  if (tier) {
+    conds.push('tier = ?');
+    binds.push(tier);
+  }
+  const where = conds.length ? `WHERE ${conds.join(' AND ')}` : '';
+
+  try {
+    const countRow = await env.DB.prepare(`SELECT COUNT(*) AS n FROM materials ${where}`)
+      .bind(...binds)
+      .first();
+    const { results } = await env.DB.prepare(
+      `SELECT sku_id, category, subcategory, name_id, name_en, name_zh, brand, spec, unit,
+              price_idr, price_usd, price_rmb, supplier, region, tier,
+              labor_rate_idr, waste_factor, updated_at, source
+       FROM materials ${where} ORDER BY category, tier, id LIMIT ?`
+    )
+      .bind(...binds, limit)
+      .all();
+
+    return ok({ total: countRow?.n ?? 0, materials: results || [] });
   } catch (e) {
     return fail(500, 'DB_ERROR', String(e));
   }
@@ -473,6 +516,7 @@ export default {
     if (method === 'POST' && pathname === '/booking') return handleBooking(request, env);
     if (method === 'POST' && pathname === '/design') return handleDesign(request, env);
     if (method === 'POST' && pathname === '/parse-dxf') return handleParseDxf(request, env);
+    if (method === 'GET' && pathname === '/materials') return handleMaterials(url, env);
 
     return fail(404, 'NOT_FOUND', `${method} ${pathname} not found`);
   },
