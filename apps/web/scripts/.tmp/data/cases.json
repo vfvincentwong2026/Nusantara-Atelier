@@ -28,7 +28,105 @@
                 "杭州"
             ],
             "description": "",
-            "source": "⑤号设计"
+            "source": "⑤号设计",
+            "annotations": {
+                "p01-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅壁炉一隅，法式护墙板配白色圆盘墙饰，绿色丝绒单椅",
+                        "en": "Fireplace corner of the living room: French wall paneling with white disc wall decor and a green velvet armchair",
+                        "id": "Sudut perapian ruang keluarga: panel dinding Prancis dengan hiasan piringan putih dan kursi beludru hijau"
+                    }
+                },
+                "p02-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客餐厅一体全景，奶油色系，法式石膏灯盘与黄铜吊灯",
+                        "en": "Panorama of the combined living-dining space in cream tones, with a French plaster ceiling medallion and a brass pendant",
+                        "id": "Panorama ruang keluarga-makan menyatu bernuansa krem, dengan medallion plafon gipsum Prancis dan lampu gantung kuningan"
+                    }
+                },
+                "p03-0.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "餐厅视角，黑色长餐桌配白色餐椅，与客厅贯通",
+                        "en": "Dining view: a long black table with white chairs, flowing through to the living room",
+                        "id": "Tampak ruang makan: meja panjang hitam dengan kursi putih, menyatu dengan ruang keluarga"
+                    }
+                },
+                "p04-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅会客区，弧形布艺沙发与大理石茶几，石膏灯盘吊顶",
+                        "en": "Seating area with a curved fabric sofa and a marble coffee table beneath a plaster-medallion ceiling",
+                        "id": "Area tamu dengan sofa fabric lengkung dan meja kopi marmer di bawah plafon medallion gipsum"
+                    }
+                },
+                "p04-1.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅壁炉特写，白色大理石壁炉配陶瓷圆盘墙饰",
+                        "en": "Close-up of the living-room fireplace: white marble with ceramic disc wall decor",
+                        "id": "Detail perapian ruang keluarga: marmer putih dengan hiasan dinding piringan keramik"
+                    }
+                },
+                "p05-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧衣帽间与梳妆区，玻璃柜门内嵌灯带，临窗梳妆台",
+                        "en": "Master walk-in closet and vanity area: LED strips inside the glass-fronted cabinets, with a dressing table by the window",
+                        "id": "Walk-in closet dan area rias kamar tidur utama: lampu strip di dalam kabinet kaca, dengan meja rias di sisi jendela"
+                    }
+                },
+                "p06-0.jpg": {
+                    "room": "recreation",
+                    "desc": {
+                        "zh": "电竞娱乐房，深蓝背景墙，手办展示柜与电竞桌椅",
+                        "en": "Gaming room with a deep-blue feature wall, a figure display cabinet and an esports desk and chair",
+                        "id": "Ruang gaming dengan dinding latar biru tua, lemari pajangan figur, serta meja dan kursi esports"
+                    }
+                },
+                "p07-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，弧形软包床头与黑白格地毯，临窗休闲椅",
+                        "en": "Master bedroom with a curved upholstered headboard and a black-and-white checkered rug, a lounge chair by the window",
+                        "id": "Kamar tidur utama dengan kepala tempat tidur lengkung berlapis kain dan karpet kotak hitam-putih, kursi santai di sisi jendela"
+                    }
+                },
+                "p08-0.jpg": {
+                    "room": "staircase",
+                    "desc": {
+                        "zh": "挑空楼梯间，悬浮踏步配铁艺栏杆，嵌入式壁炉",
+                        "en": "Double-height stair hall with floating treads, an iron railing and a recessed fireplace",
+                        "id": "Area tangga double-height dengan pijakan melayang, railing besi tempa, dan perapian tanam"
+                    }
+                },
+                "p08-1.jpg": {
+                    "room": "staircase",
+                    "desc": {
+                        "zh": "挑空楼梯间另一角度，悬浮楼梯与红色丝绒单椅",
+                        "en": "Another angle of the stair hall: the floating staircase and a red velvet armchair",
+                        "id": "Sudut lain area tangga: tangga melayang dan kursi beludru merah"
+                    }
+                },
+                "p09-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空会客厅，整面通顶书墙与弧形沙发组合，艺术吊灯",
+                        "en": "Double-height reception room with a full-height book wall, a curved sofa arrangement and an art pendant",
+                        "id": "Ruang tamu double-height dengan dinding buku setinggi plafon, kombinasi sofa lengkung, dan lampu gantung artistik"
+                    }
+                },
+                "p09-1.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空会客厅全景，书墙拱形壁龛与悬浮楼梯贯穿两层",
+                        "en": "Panorama of the reception room: arched niches in the book wall and a floating staircase spanning two floors",
+                        "id": "Panorama ruang tamu: niche lengkung di dinding buku dan tangga melayang menembus dua lantai"
+                    }
+                }
+            }
         },
         {
             "id": "case_002",
@@ -54,7 +152,73 @@
                 "杭州"
             ],
             "description": "",
-            "source": "⑤号设计"
+            "source": "⑤号设计",
+            "annotations": {
+                "p10-0.jpg": {
+                    "room": "staircase",
+                    "desc": {
+                        "zh": "玄关端景，拱形长虹玻璃隔断配原木玄关台，黑色雕塑落地灯",
+                        "en": "Entryway vignette: an arched fluted-glass screen with a natural-wood console and a black sculptural floor lamp",
+                        "id": "Focal point foyer: partisi kaca fluted lengkung dengan konsol kayu alami dan lampu lantai skulptural hitam"
+                    }
+                },
+                "p11-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅全景，法式护墙板与拱形壁龛书架，落地窗引入庭院景观",
+                        "en": "Living-room panorama with French wall paneling and arched niche bookshelves; floor-to-ceiling windows bring in the courtyard",
+                        "id": "Panorama ruang keluarga dengan panel dinding Prancis dan rak buku niche lengkung; jendela setinggi lantai membingkai taman"
+                    }
+                },
+                "p11-1.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅另一角度，对称拱形壁龛与复古水晶吊灯",
+                        "en": "Another angle of the living room: symmetrical arched niches and a vintage crystal chandelier",
+                        "id": "Sudut lain ruang keluarga: niche lengkung simetris dan chandelier kristal vintage"
+                    }
+                },
+                "p12-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅会客区，红色丝绒单椅与宝格丽大理石茶几，背景连通西厨",
+                        "en": "Seating area with a red velvet armchair and a Bulgari marble coffee table; the western kitchen sits behind",
+                        "id": "Area tamu dengan kursi beludru merah dan meja kopi marmer Bulgari; dapur barat terlihat di latar"
+                    }
+                },
+                "p13-0.jpg": {
+                    "room": "bar",
+                    "desc": {
+                        "zh": "西厨水吧区，宝格丽大理石岛台配深蓝柜体与高脚吧椅",
+                        "en": "Western-kitchen bar area: a Bulgari marble island with deep-blue cabinetry and bar stools",
+                        "id": "Area bar dapur barat: island marmer Bulgari dengan kabinet biru tua dan kursi bar tinggi"
+                    }
+                },
+                "p14-0.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "餐厅，椭圆餐桌配墨绿丝绒餐椅，玻璃展示酒柜",
+                        "en": "Dining room with an oval table, dark-green velvet chairs and a glass display wine cabinet",
+                        "id": "Ruang makan dengan meja oval, kursi beludru hijau tua, dan lemari wine kaca"
+                    }
+                },
+                "p15-0.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "餐厅全景，圆桌配水晶吊灯，法式石膏雕花灯盘",
+                        "en": "Dining-room panorama: a round table under a crystal chandelier and a French carved plaster ceiling medallion",
+                        "id": "Panorama ruang makan: meja bundar di bawah chandelier kristal dengan medallion plafon gipsum ukiran Prancis"
+                    }
+                },
+                "p16-0.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "临庭院阳光餐厅，实木长桌配拱形黑钢门窗",
+                        "en": "Sunlit dining room by the courtyard: a solid-wood long table framed by arched black-steel doors and windows",
+                        "id": "Ruang makan bermatahari di tepi taman: meja panjang kayu solid dengan pintu-jendela baja hitam lengkung"
+                    }
+                }
+            }
         },
         {
             "id": "case_003",
@@ -88,7 +252,129 @@
                 "600㎡"
             ],
             "description": "",
-            "source": "⑤号设计"
+            "source": "⑤号设计",
+            "annotations": {
+                "p17-0.jpg": {
+                    "room": "staircase",
+                    "desc": {
+                        "zh": "旋转楼梯间，深色钢板弧形梯身配悬浮木踏步，地台暗藏灯带",
+                        "en": "Spiral staircase: a curved dark steel-plate body with floating timber treads and a platform with hidden LED strips",
+                        "id": "Tangga putar: badan lengkung pelat baja gelap dengan pijakan kayu melayang dan platform berlampu strip tersembunyi"
+                    }
+                },
+                "p18-0.jpg": {
+                    "room": "staircase",
+                    "desc": {
+                        "zh": "旋转楼梯仰视角度，穿孔金属板护栏与木质踏步",
+                        "en": "Looking up the spiral staircase: perforated metal-panel balustrade and timber treads",
+                        "id": "Melihat tangga putar dari bawah: railing pelat logam berlubang dan pijakan kayu"
+                    }
+                },
+                "p18-1.jpg": {
+                    "room": "staircase",
+                    "desc": {
+                        "zh": "楼梯间休闲角，条纹单人沙发与艺术雕塑陈设",
+                        "en": "A lounge corner in the stair hall with a striped armchair and an art sculpture",
+                        "id": "Sudut santai di area tangga dengan sofa tunggal bergaris dan pajangan patung seni"
+                    }
+                },
+                "p19-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅全景，微水泥墙地一体，弧形沙发与木格栅背景墙",
+                        "en": "Living-room panorama with seamless microcement on walls and floor, a curved sofa and a wood-slatted feature wall",
+                        "id": "Panorama ruang keluarga dengan mikrosemen menyatu di dinding dan lantai, sofa lengkung, dan dinding latar gril kayu"
+                    }
+                },
+                "p20-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅，弧形模块沙发配金属质感艺术墙饰",
+                        "en": "Living room with a curved modular sofa and metallic art wall decor",
+                        "id": "Ruang keluarga dengan sofa modular lengkung dan dekorasi dinding seni bermetalik"
+                    }
+                },
+                "p21-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空客厅，整面通顶书墙与大面积落地窗",
+                        "en": "Double-height living room with a floor-to-ceiling book wall and expansive windows",
+                        "id": "Ruang keluarga double-height dengan dinding buku setinggi plafon dan jendela besar setinggi lantai"
+                    }
+                },
+                "p22-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空客厅另一角度，书墙与异形组合沙发",
+                        "en": "Another angle of the double-height living room: book wall and a sculptural sectional sofa",
+                        "id": "Sudut lain ruang keluarga double-height: dinding buku dan sofa kombinasi berbentuk bebas"
+                    }
+                },
+                "p23-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空客厅，大理石壁炉造型与黑色悬浮楼梯",
+                        "en": "Double-height living room with a sculptural marble fireplace and a black floating staircase",
+                        "id": "Ruang keluarga double-height dengan perapian marmer berskulptur dan tangga melayang hitam"
+                    }
+                },
+                "p24-0.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "餐厨一体空间，圆桌配皮质餐椅，连通开放式厨房",
+                        "en": "Combined kitchen-dining space: a round table with leather chairs flowing into the open kitchen",
+                        "id": "Ruang makan-dapur menyatu: meja bundar dengan kursi kulit yang terhubung ke dapur terbuka"
+                    }
+                },
+                "p25-0.jpg": {
+                    "room": "study",
+                    "desc": {
+                        "zh": "书房茶区，实木长桌长凳配两侧开放格柜，临窗观景",
+                        "en": "Study-cum-tea area: a solid-wood long table and benches flanked by open cubby cabinets, with window views",
+                        "id": "Area kerja merangkap teh: meja dan bangku panjang kayu solid diapit kabinet kompartemen terbuka, menghadap pemandangan jendela"
+                    }
+                },
+                "p26-0.jpg": {
+                    "room": "study",
+                    "desc": {
+                        "zh": "书房，整墙书架与大理石长桌，灯带层板",
+                        "en": "Study with a full-wall bookshelf and a long marble desk with LED-lit shelves",
+                        "id": "Ruang kerja dengan rak buku setinggi dinding dan meja marmer panjang dengan ambalan berlampu strip"
+                    }
+                },
+                "p27-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，法式雕花灯盘与水晶吊灯，临窗地台床",
+                        "en": "Master bedroom with a French carved ceiling medallion, a crystal chandelier and a platform bed by the window",
+                        "id": "Kamar tidur utama dengan medallion plafon ukiran Prancis, chandelier kristal, dan tempat tidur platform di sisi jendela"
+                    }
+                },
+                "p28-0.jpg": {
+                    "room": "kids_room",
+                    "desc": {
+                        "zh": "儿童房，拱形壁龛书架与绿色儿童沙发，动物玩偶陈设",
+                        "en": "Kids' room with an arched niche bookshelf, a green children's sofa and stuffed animal displays",
+                        "id": "Kamar anak dengan rak buku niche lengkung, sofa anak hijau, dan pajangan boneka binatang"
+                    }
+                },
+                "p29-0.jpg": {
+                    "room": "staircase",
+                    "desc": {
+                        "zh": "过厅走廊，奢石端景墙与黑框玻璃移门",
+                        "en": "Gallery corridor with a luxury-stone focal wall and black-framed glass sliding doors",
+                        "id": "Koridor galeri dengan dinding focal batu mewah dan pintu geser kaca berbingkai hitam"
+                    }
+                },
+                "p30-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，深色木饰面床头背景配壁灯，人字拼木地板",
+                        "en": "Master bedroom with a dark wood-veneer headboard wall and sconces over herringbone timber flooring",
+                        "id": "Kamar tidur utama dengan dinding kepala tempat tidur veneer kayu gelap dan lampu dinding di atas lantai kayu herringbone"
+                    }
+                }
+            }
         },
         {
             "id": "case_004",
@@ -113,7 +399,57 @@
                 "1200㎡"
             ],
             "description": "",
-            "source": "⑤号设计"
+            "source": "⑤号设计",
+            "annotations": {
+                "p31-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空客厅，大理石立柱与黑色旋转楼梯，环形吊灯与水刀拼花地面",
+                        "en": "Double-height living room with marble columns and a black spiral staircase, a ring chandelier and waterjet-inlay flooring",
+                        "id": "Ruang keluarga double-height dengan kolom marmer dan tangga putar hitam, chandelier cincin, dan lantai inlay waterjet"
+                    }
+                },
+                "p32-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空客厅，悬挂式壁炉与螺旋楼梯，环幕落地窗",
+                        "en": "Double-height living room with a suspended fireplace and a helical staircase wrapped by panoramic floor-to-ceiling windows",
+                        "id": "Ruang keluarga double-height dengan perapian gantung dan tangga spiral, dikelilingi jendela panorama setinggi lantai"
+                    }
+                },
+                "p33-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅会客区，弧形组合沙发与圆形大理石茶几，深色背景墙",
+                        "en": "Seating area with a curved sectional sofa and a round marble coffee table against a dark feature wall",
+                        "id": "Area tamu dengan sofa sectional lengkung dan meja kopi marmer bundar di depan dinding latar gelap"
+                    }
+                },
+                "p34-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "俯瞰挑空客厅，环形沙发与同心圆地毯",
+                        "en": "Overlooking the double-height living room: a ring-shaped sofa on a concentric-circle rug",
+                        "id": "Ruang keluarga double-height dari atas: sofa melingkar di atas karpet lingkaran konsentris"
+                    }
+                },
+                "p34-1.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空客厅入口视角，大理石柱与旋转楼梯相呼应",
+                        "en": "Entry view of the double-height living room, where marble columns echo the spiral staircase",
+                        "id": "Tampilan dari pintu masuk ruang keluarga double-height, kolom marmer selaras dengan tangga putar"
+                    }
+                },
+                "p35-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，全景落地窗引入自然景，深色背景墙配圆环壁灯，人字拼木地板",
+                        "en": "Master bedroom where panoramic windows draw in nature; a dark feature wall with ring sconces over herringbone timber flooring",
+                        "id": "Kamar tidur utama dengan jendela panorama membingkai alam; dinding latar gelap dengan lampu dinding cincin di atas lantai kayu herringbone"
+                    }
+                }
+            }
         },
         {
             "id": "case_005",
@@ -150,7 +486,161 @@
                 "绍兴"
             ],
             "description": "",
-            "source": "⑤号设计"
+            "source": "⑤号设计",
+            "annotations": {
+                "p36-0.jpg": {
+                    "room": "tea_room",
+                    "desc": {
+                        "zh": "茶室临窗一隅，异形黑色茶桌配茶具，玻璃楼梯作背景",
+                        "en": "A window-side corner of the tea room: a sculptural black tea table with tea ware, the glass staircase behind",
+                        "id": "Sudut ruang teh di sisi jendela: meja teh hitam berbentuk bebas dengan perangkat teh, berlatar tangga kaca"
+                    }
+                },
+                "p37-0.jpg": {
+                    "room": "staircase",
+                    "desc": {
+                        "zh": "玄关过厅端景，法式护墙板与大理石地面，红色异形休闲椅配金属端景台",
+                        "en": "Entry-gallery vignette with French wall paneling and marble flooring; a red sculptural lounge chair beside a metal console",
+                        "id": "Focal point galeri masuk dengan panel dinding Prancis dan lantai marmer; kursi santai merah berbentuk bebas dengan konsol logam"
+                    }
+                },
+                "p38-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空会客厅，巨型花瓣造型立柱与金色挑台，星空顶灯",
+                        "en": "Double-height reception hall with a giant petal-shaped column, a gold mezzanine and a starry-sky ceiling light",
+                        "id": "Ruang tamu double-height dengan kolom raksasa berbentuk kelopak, mezzanine emas, dan lampu plafon langit berbintang"
+                    }
+                },
+                "p38-1.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空会客厅另一角度，花瓣柱与金色旋转楼梯",
+                        "en": "Another angle of the reception hall: the petal column and a gold spiral staircase",
+                        "id": "Sudut lain ruang tamu: kolom kelopak dan tangga putar emas"
+                    }
+                },
+                "p39-0.jpg": {
+                    "room": "bar",
+                    "desc": {
+                        "zh": "水吧区，深色展示柜配大理石长桌与圆形矮凳",
+                        "en": "Bar area with dark display cabinetry, a long marble table and round low stools",
+                        "id": "Area bar dengan kabinet pajangan gelap, meja marmer panjang, dan bangku bundar rendah"
+                    }
+                },
+                "p40-0.jpg": {
+                    "room": "bar",
+                    "desc": {
+                        "zh": "西厨岛台，宝格丽大理石台面与嵌入式厨电，配吧凳",
+                        "en": "Western-kitchen island with a Bulgari marble top and built-in appliances, served by bar stools",
+                        "id": "Island dapur barat dengan permukaan marmer Bulgari dan peralatan tanam, dilengkapi kursi bar"
+                    }
+                },
+                "p41-0.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "餐厅，圆形转盘餐桌配水晶吊灯，黑色弧形酒柜",
+                        "en": "Dining room with a round lazy-Susan table under a crystal chandelier and a curved black wine cabinet",
+                        "id": "Ruang makan dengan meja bundar berputar di bawah chandelier kristal dan lemari wine lengkung hitam"
+                    }
+                },
+                "p42-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅，白色弧形沙发与陀螺单椅，黑白泼墨地毯",
+                        "en": "Living room with a white curved sofa and a spinning-top chair on a black-and-white ink-splash rug",
+                        "id": "Ruang keluarga dengan sofa lengkung putih dan kursi gasing di atas karpet motif cipratan tinta hitam-putih"
+                    }
+                },
+                "p43-0.jpg": {
+                    "room": "staircase",
+                    "desc": {
+                        "zh": "玄关端景，环形吊灯与奢石端景墙，金属玄关台",
+                        "en": "Entryway vignette with a ring chandelier, a luxury-stone focal wall and a metal console",
+                        "id": "Focal point foyer dengan chandelier cincin, dinding batu mewah, dan konsol logam"
+                    }
+                },
+                "p44-0.jpg": {
+                    "room": "study",
+                    "desc": {
+                        "zh": "书房，法式线条墙面配整墙置物架，大理石书桌",
+                        "en": "Study with French-lined walls and full-wall shelving, centred on a marble desk",
+                        "id": "Ruang kerja dengan dinding berlis Prancis dan rak memenuhi dinding, dengan meja marmer"
+                    }
+                },
+                "p45-0.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "餐厅，椭圆餐桌配羽毛吊灯，深色木饰面背景墙",
+                        "en": "Dining room with an oval table under a feather pendant against a dark wood-veneer feature wall",
+                        "id": "Ruang makan dengan meja oval di bawah lampu gantung bulu, berlatar dinding veneer kayu gelap"
+                    }
+                },
+                "p46-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，法式护墙板与石膏灯盘，分子结构吊灯",
+                        "en": "Master bedroom with French wall paneling, a plaster ceiling medallion and a molecular-form chandelier",
+                        "id": "Kamar tidur utama dengan panel dinding Prancis, medallion plafon gipsum, dan chandelier bentuk molekul"
+                    }
+                },
+                "p47-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，弧形吊顶暗藏灯带，床尾贵妃榻",
+                        "en": "Master bedroom with a curved ceiling hiding LED strips and a chaise lounge at the foot of the bed",
+                        "id": "Kamar tidur utama dengan plafon lengkung berlampu strip tersembunyi dan chaise lounge di ujung tempat tidur"
+                    }
+                },
+                "p48-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧起居视角，条纹休闲单椅与黑白格地毯",
+                        "en": "Living view of the master bedroom: a striped lounge chair on a black-and-white checkered rug",
+                        "id": "Tampilan area santai kamar tidur utama: kursi santai bergaris di atas karpet kotak hitam-putih"
+                    }
+                },
+                "p49-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "卧室，墨绿丝绒软包床头背景配法式线条墙面",
+                        "en": "Bedroom with a dark-green velvet upholstered headboard wall against French-lined walls",
+                        "id": "Kamar tidur dengan panel kepala tempat tidur beludru hijau tua dan dinding berlis Prancis"
+                    }
+                },
+                "p50-0.jpg": {
+                    "room": "study",
+                    "desc": {
+                        "zh": "书房，整墙书柜配墨绿背板，弧形落地灯与书桌",
+                        "en": "Study with a full-wall bookcase backed in dark green, an arched floor lamp and a desk",
+                        "id": "Ruang kerja dengan lemari buku setinggi dinding berlatar hijau tua, lampu lantai lengkung, dan meja kerja"
+                    }
+                },
+                "p51-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧衣帽间，两侧玻璃柜门通顶衣柜与中岛台",
+                        "en": "Master walk-in closet with floor-to-ceiling glass-fronted wardrobes on both sides and a central island",
+                        "id": "Walk-in closet kamar tidur utama dengan lemari berpintu kaca setinggi plafon di kedua sisi dan island tengah"
+                    }
+                },
+                "p51-1.jpg": {
+                    "room": "bathroom",
+                    "desc": {
+                        "zh": "主卫，独立浴缸与玻璃淋浴房，大理石墙地面",
+                        "en": "Master bath with a freestanding tub and a glass shower enclosure, marble on walls and floor",
+                        "id": "Kamar mandi utama dengan bathtub berdiri bebas dan shower kaca, marmer di dinding dan lantai"
+                    }
+                },
+                "p52-0.jpg": {
+                    "room": "kids_room",
+                    "desc": {
+                        "zh": "阁楼儿童房衣帽间，斜坡顶天窗下整排拱形玻璃衣柜",
+                        "en": "Attic kids' walk-in closet: a row of arched glass wardrobes beneath skylights in the sloped ceiling",
+                        "id": "Walk-in closet kamar anak di loteng: sederet lemari kaca lengkung di bawah skylight plafon miring"
+                    }
+                }
+            }
         },
         {
             "id": "case_006",
@@ -173,7 +663,41 @@
                 "630㎡"
             ],
             "description": "",
-            "source": "⑤号设计"
+            "source": "⑤号设计",
+            "annotations": {
+                "p57-0.jpg": {
+                    "room": "staircase",
+                    "desc": {
+                        "zh": "玄关，拱形长虹玻璃窗配法式护墙板，复古鸟笼吊灯",
+                        "en": "Foyer with an arched fluted-glass window, French wall paneling and a vintage birdcage pendant",
+                        "id": "Foyer dengan jendela kaca fluted lengkung, panel dinding Prancis, dan lampu gantung sangkar burung vintage"
+                    }
+                },
+                "p58-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅，大理石壁炉与对称拱形壁龛书架，红色天鹅绒单椅",
+                        "en": "Living room with a marble fireplace flanked by symmetrical arched niche bookshelves and a red velvet armchair",
+                        "id": "Ruang keluarga dengan perapian marmer diapit rak buku niche lengkung simetris dan kursi beludru merah"
+                    }
+                },
+                "p59-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，墨绿丝绒软包床头配法式护墙板线条",
+                        "en": "Master bedroom with a dark-green velvet upholstered headboard against French panel lines",
+                        "id": "Kamar tidur utama dengan kepala tempat tidur beludru hijau tua berlapis kain dan lis panel Prancis"
+                    }
+                },
+                "p60-0.jpg": {
+                    "room": "kids_room",
+                    "desc": {
+                        "zh": "儿童房，竖条纹硬包床头背景，火车轨道地毯与条纹懒人沙发",
+                        "en": "Kids' room with a vertical-striped upholstered headboard wall, a train-track rug and a striped lounge sofa",
+                        "id": "Kamar anak dengan panel kepala tempat tidur bergaris vertikal, karpet rel kereta, dan sofa santai bergaris"
+                    }
+                }
+            }
         },
         {
             "id": "case_007",
@@ -198,7 +722,57 @@
                 "855㎡"
             ],
             "description": "",
-            "source": "⑤号设计"
+            "source": "⑤号设计",
+            "annotations": {
+                "p61-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空会客厅，微水泥墙面与悬浮楼梯贯穿两层，弧形沙发围合真火壁炉",
+                        "en": "Double-height reception room where microcement walls and a floating staircase span two floors; a curved sofa wraps the real-flame fireplace",
+                        "id": "Ruang tamu double-height dengan dinding mikrosemen dan tangga melayang menembus dua lantai; sofa lengkung mengelilingi perapian api asli"
+                    }
+                },
+                "p62-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空客厅全景，弧形布艺沙发与异形茶几，冲孔板背景映衬悬浮楼梯",
+                        "en": "Panorama of the double-height living room: a curved fabric sofa and a sculptural coffee table, the floating staircase set against a perforated-panel backdrop",
+                        "id": "Panorama ruang keluarga double-height: sofa fabric lengkung dan meja kopi berbentuk bebas, tangga melayang berlatar panel berlubang"
+                    }
+                },
+                "p63-0.jpg": {
+                    "room": "recreation",
+                    "desc": {
+                        "zh": "台球健身区，天窗引入自然光，大理石柱与线性灯带",
+                        "en": "Billiards-and-gym area lit by skylights, with marble columns and linear LED strips",
+                        "id": "Area biliar dan gym dengan cahaya alami dari skylight, kolom marmer, dan lampu strip linear"
+                    }
+                },
+                "p64-0.jpg": {
+                    "room": "recreation",
+                    "desc": {
+                        "zh": "台球区正面，整面玻璃酒柜与长条吊灯，一侧设茶台",
+                        "en": "Front view of the billiards area: a full glass wine-cabinet wall and a linear pendant, with a tea table to one side",
+                        "id": "Tampak depan area biliar: dinding lemari wine kaca dan lampu gantung linear, dengan meja teh di satu sisi"
+                    }
+                },
+                "p65-0.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "餐厅，大理石圆桌与环形吊灯，藤编餐椅与大理石圆柱",
+                        "en": "Dining room with a round marble table and a ring chandelier, rattan chairs and a marble column",
+                        "id": "Ruang makan dengan meja marmer bundar dan chandelier cincin, kursi rotan, dan kolom marmer"
+                    }
+                },
+                "p66-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "一层客厅，模块化沙发与微水泥电视背景，大理石圆柱连通水吧",
+                        "en": "Ground-floor living room with a modular sofa and a microcement TV backdrop; a marble column links to the water bar",
+                        "id": "Ruang keluarga lantai satu dengan sofa modular dan latar TV mikrosemen; kolom marmer terhubung ke bar"
+                    }
+                }
+            }
         },
         {
             "id": "case_008",
@@ -224,7 +798,65 @@
                 "500㎡"
             ],
             "description": "",
-            "source": "⑤号设计"
+            "source": "⑤号设计",
+            "annotations": {
+                "p67-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "入户玄关，深色双开门与弧形微水泥墙面，线性灯带勾勒天花",
+                        "en": "Entrance foyer with dark double doors and a curved microcement wall; linear LED strips trace the ceiling",
+                        "id": "Foyer masuk dengan pintu ganda gelap dan dinding mikrosemen lengkung; lampu strip linear membingkai plafon"
+                    }
+                },
+                "p68-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "临窗会客厅，弧形顶与微水泥墙面，整墙书架与模块沙发",
+                        "en": "Window-side reception room with a curved ceiling and microcement walls, a full-wall bookshelf and a modular sofa",
+                        "id": "Ruang tamu di sisi jendela dengan plafon lengkung dan dinding mikrosemen, rak buku setinggi dinding, dan sofa modular"
+                    }
+                },
+                "p69-0.jpg": {
+                    "room": "tea_room",
+                    "desc": {
+                        "zh": "挑空茶室，拱形镜面与真火壁炉，两侧大理石展示龛",
+                        "en": "Double-height tea room with an arched mirror and a real-flame fireplace, flanked by marble display niches",
+                        "id": "Ruang teh double-height dengan cermin lengkung dan perapian api asli, diapit niche pajangan marmer"
+                    }
+                },
+                "p69-1.jpg": {
+                    "room": "tea_room",
+                    "desc": {
+                        "zh": "茶室墙面细节，微水泥肌理与嵌入式黑色层板柜，拱形灯带",
+                        "en": "Tea-room wall detail: microcement texture with a recessed black shelf cabinet and an arched LED strip",
+                        "id": "Detail dinding ruang teh: tekstur mikrosemen dengan kabinet ambalan hitam tanam dan lampu strip lengkung"
+                    }
+                },
+                "p70-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅电视墙，微水泥造型与真火壁炉，大理石圆茶几",
+                        "en": "TV wall with sculpted microcement and a real-flame fireplace, plus a round marble coffee table",
+                        "id": "Dinding TV dengan mikrosemen berskulptur dan perapian api asli, serta meja kopi marmer bundar"
+                    }
+                },
+                "p71-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅全景，围合式沙发与大理石圆柱，展示层架连通餐厅",
+                        "en": "Living-room panorama: an enveloping sofa around a marble column, with display shelving flowing into the dining room",
+                        "id": "Panorama ruang keluarga: sofa melingkar mengelilingi kolom marmer, rak pajangan terhubung ke ruang makan"
+                    }
+                },
+                "p72-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，弧形原木床头背景嵌灯带，落地窗纱帘柔化采光",
+                        "en": "Master bedroom with a curved natural-wood headboard wall inset with LED strips; sheer curtains soften the window light",
+                        "id": "Kamar tidur utama dengan dinding kepala tempat tidur kayu alami lengkung berlampu strip; tirai sheer melembutkan cahaya"
+                    }
+                }
+            }
         },
         {
             "id": "case_009",
@@ -247,7 +879,41 @@
                 "200㎡"
             ],
             "description": "",
-            "source": "⑤号设计"
+            "source": "⑤号设计",
+            "annotations": {
+                "p73-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧一角，奶茶色艺术涂料与法式石膏线，锥形吊灯与懒人沙发",
+                        "en": "A corner of the master bedroom with milk-tea art paint and French plaster mouldings, a cone pendant and a relaxed lounge sofa",
+                        "id": "Sudut kamar tidur utama dengan cat seni warna milk-tea dan lis gipsum Prancis, lampu gantung kerucut, dan sofa santai"
+                    }
+                },
+                "p74-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅，法式雕花灯盘与气球吊灯，焦糖色皮沙发配人字拼木地板",
+                        "en": "Living room with a French carved ceiling medallion and a balloon pendant; a caramel leather sofa over herringbone timber flooring",
+                        "id": "Ruang keluarga dengan medallion plafon ukiran Prancis dan lampu gantung balon; sofa kulit karamel di atas lantai kayu herringbone"
+                    }
+                },
+                "p75-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅全景，法式石膏线勾勒弧形吊顶，玻璃砖隔断与焦糖皮沙发",
+                        "en": "Living-room panorama: French plaster lines trace the curved ceiling, with a glass-block partition and a caramel leather sofa",
+                        "id": "Panorama ruang keluarga: lis gipsum Prancis membingkai plafon lengkung, dengan partisi glass block dan sofa kulit karamel"
+                    }
+                },
+                "p76-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客餐厅一体，奶油色电视墙与玻璃砖屏风，连通开放式餐厨",
+                        "en": "Combined living-dining space with a cream TV wall and a glass-block screen, flowing into the open kitchen-dining",
+                        "id": "Ruang keluarga-makan menyatu dengan dinding TV krem dan sketsel glass block, terhubung ke dapur-ruang makan terbuka"
+                    }
+                }
+            }
         },
         {
             "id": "case_010",
@@ -276,7 +942,89 @@
                 "450㎡"
             ],
             "description": "",
-            "source": "⑤号设计"
+            "source": "⑤号设计",
+            "annotations": {
+                "p77-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "入户门厅，微水泥墙面与磁吸轨道灯，艺术挂画与落地灯端景",
+                        "en": "Entrance hall with microcement walls and magnetic track lighting, an art print and a floor lamp forming the focal vignette",
+                        "id": "Area masuk dengan dinding mikrosemen dan track magnetik; lukisan seni dan lampu lantai menjadi focal point"
+                    }
+                },
+                "p78-0.jpg": {
+                    "room": "recreation",
+                    "desc": {
+                        "zh": "多功能休闲区，悬浮黑色层板架与原木饰面，临窗设健身区",
+                        "en": "Multi-purpose lounge with floating black shelves against natural wood veneer; a workout corner sits by the window",
+                        "id": "Area santai multifungsi dengan ambalan melayang hitam dan veneer kayu alami; sudut gym di sisi jendela"
+                    }
+                },
+                "p78-1.jpg": {
+                    "room": "tea_room",
+                    "desc": {
+                        "zh": "开放式茶书区全景，岛台与长桌并列，悬挂层板架配红色线性吊灯",
+                        "en": "Open tea-and-reading area: an island and a long table side by side, hanging shelves and a red linear pendant",
+                        "id": "Area teh dan baca terbuka: island dan meja panjang berdampingan, rak ambalan gantung dengan lampu linear merah"
+                    }
+                },
+                "p78-2.jpg": {
+                    "room": "tea_room",
+                    "desc": {
+                        "zh": "茶台细节，原木台面与茶具陈设，背景悬浮书架与雕塑",
+                        "en": "Tea-table detail: a natural-wood top with tea ware, backed by floating bookshelves and a sculpture",
+                        "id": "Detail meja teh: permukaan kayu alami dengan perangkat teh, berlatar rak buku melayang dan patung"
+                    }
+                },
+                "p79-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅俯瞰，L形模块沙发与编织地毯，微水泥电视墙",
+                        "en": "Overlooking the living room: an L-shaped modular sofa on a woven rug, with a microcement TV wall",
+                        "id": "Ruang keluarga dari atas: sofa modular bentuk L di atas karpet anyam, dengan dinding TV mikrosemen"
+                    }
+                },
+                "p79-1.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅电视墙细节，微水泥与黑色大理石地台，格栅茶几与木雕陈设",
+                        "en": "TV-wall detail: microcement over a black marble plinth, a slatted coffee table and a wood-carving display",
+                        "id": "Detail dinding TV: mikrosemen di atas platform marmer hitam, meja kopi bergril, dan pajangan ukiran kayu"
+                    }
+                },
+                "p80-0.jpg": {
+                    "room": "study",
+                    "desc": {
+                        "zh": "书房，弧形实木书桌与整墙原木书柜，藤编椅与艺术吊灯",
+                        "en": "Study with a curved solid-wood desk and a full-wall timber bookcase, a rattan chair and an art pendant",
+                        "id": "Ruang kerja dengan meja kayu solid lengkung dan lemari buku kayu setinggi dinding, kursi rotan, dan lampu gantung artistik"
+                    }
+                },
+                "p80-1.jpg": {
+                    "room": "study",
+                    "desc": {
+                        "zh": "书房书柜细节，原木层板嵌灯带，藤编椅与仙人掌盆栽",
+                        "en": "Bookcase detail: timber shelves inset with LED strips, a rattan chair and a potted cactus",
+                        "id": "Detail rak buku: ambalan kayu berlampu strip LED, kursi rotan, dan kaktus dalam pot"
+                    }
+                },
+                "p81-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，坡顶与原木饰面墙，床尾凳与藤编休闲椅临窗而设",
+                        "en": "Master bedroom with a pitched ceiling and natural-wood veneer wall; a bed-end bench and a rattan lounge chair by the window",
+                        "id": "Kamar tidur utama dengan plafon miring dan dinding veneer kayu alami; bangku ujung tempat tidur dan kursi santai rotan di sisi jendela"
+                    }
+                },
+                "p81-1.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧床头细节，层叠吊灯与石膏像，悬浮床头柜",
+                        "en": "Headboard detail: layered pendants and a plaster bust above a floating nightstand",
+                        "id": "Detail kepala tempat tidur: lampu gantung bertingkat dan patung gipsum di atas nakas melayang"
+                    }
+                }
+            }
         },
         {
             "id": "case_011",
@@ -301,7 +1049,57 @@
                 "780㎡"
             ],
             "description": "",
-            "source": "⑤号设计"
+            "source": "⑤号设计",
+            "annotations": {
+                "p82-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空客厅，黑色几何背景墙嵌灯带，红色金属牛雕塑点睛",
+                        "en": "Double-height living room with a black geometric feature wall inset with LED strips, punctuated by a red metal bull sculpture",
+                        "id": "Ruang keluarga double-height dengan dinding latar geometris hitam berlampu strip, ditonjolkan patung banteng logam merah"
+                    }
+                },
+                "p83-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空客厅全景，大理石背景墙与皮带造型吊灯，临窗设茶歇区",
+                        "en": "Panorama of the double-height living room: a marble feature wall and a belt-shaped chandelier, with a tea-break corner by the window",
+                        "id": "Panorama ruang keluarga double-height: dinding latar marmer dan chandelier berbentuk sabuk, dengan sudut minum teh di sisi jendela"
+                    }
+                },
+                "p84-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，奶油色格栅硬包床头，两侧连通步入式衣帽间",
+                        "en": "Master bedroom with a cream slatted upholstered headboard wall, walk-in closets on both sides",
+                        "id": "Kamar tidur utama dengan panel kepala tempat tidur bergril krem, walk-in closet di kedua sisi"
+                    }
+                },
+                "p85-0.jpg": {
+                    "room": "study",
+                    "desc": {
+                        "zh": "书房细节，大理石书桌与皮质书椅，背景黑色展示书架",
+                        "en": "Study detail: a marble desk and a leather chair against a black display bookshelf",
+                        "id": "Detail ruang kerja: meja marmer dan kursi kulit berlatar rak buku pajangan hitam"
+                    }
+                },
+                "p85-1.jpg": {
+                    "room": "study",
+                    "desc": {
+                        "zh": "书房全景，圆角吊顶嵌灯带，两侧展示书柜与弧形金属书桌",
+                        "en": "Study panorama: a rounded ceiling inset with LED strips, display bookcases on both sides and a curved metal desk",
+                        "id": "Panorama ruang kerja: plafon membulat berlampu strip, rak buku pajangan di kedua sisi, dan meja logam lengkung"
+                    }
+                },
+                "p86-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "家庭厅，弧形吊顶与扇形吊灯，宝蓝色沙发配悬挂式真火壁炉",
+                        "en": "Family room with a curved ceiling and a fan-shaped pendant; a royal-blue sofa beside a suspended real-flame fireplace",
+                        "id": "Ruang keluarga dengan plafon lengkung dan lampu gantung kipas; sofa biru royal di samping perapian api asli gantung"
+                    }
+                }
+            }
         },
         {
             "id": "case_012",
@@ -324,7 +1122,41 @@
                 "520㎡"
             ],
             "description": "",
-            "source": "⑤号设计"
+            "source": "⑤号设计",
+            "annotations": {
+                "p87-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅一角，深色木格栅立柱隔断，皮质贵妃榻与原石茶几",
+                        "en": "A living-room corner screened by a dark wood-slatted column partition, with a leather chaise lounge and a raw-stone coffee table",
+                        "id": "Sudut ruang keluarga dengan partisi kolom gril kayu gelap, chaise lounge kulit, dan meja kopi batu alam"
+                    }
+                },
+                "p88-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "大平层客厅全景，绿色大理石背景墙与深色木饰面，弧形落地窗俯瞰城市",
+                        "en": "Panorama of the flat's living room: a green marble feature wall with dark wood veneer and curved floor-to-ceiling windows overlooking the city",
+                        "id": "Panorama ruang keluarga apartemen: dinding latar marmer hijau dengan veneer kayu gelap dan jendela lengkung setinggi lantai menghadap kota"
+                    }
+                },
+                "p89-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅电视墙与过廊，鱼肚白大理石悬浮电视墙，灰色大理石地面",
+                        "en": "TV wall and gallery corridor: a floating Arabescato marble TV wall over grey marble flooring",
+                        "id": "Dinding TV dan koridor galeri: dinding TV melayang marmer Arabescato di atas lantai marmer abu-abu"
+                    }
+                },
+                "p90-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "家庭厅兼琴房，深色木饰面墙嵌入钢琴，大理石圆茶几",
+                        "en": "Family room doubling as a piano room, the piano set into a dark wood-veneer wall, with a round marble coffee table",
+                        "id": "Ruang keluarga merangkap ruang piano; piano tertanam di dinding veneer kayu gelap, dengan meja kopi marmer bundar"
+                    }
+                }
+            }
         },
         {
             "id": "case_013",
@@ -348,7 +1180,49 @@
                 "430㎡"
             ],
             "description": "",
-            "source": "⑤号设计"
+            "source": "⑤号设计",
+            "annotations": {
+                "p91-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅细节，巴塞罗那椅与玻璃茶几，纱帘柔化临窗光线",
+                        "en": "Living-room detail: a Barcelona chair and glass coffee table, with sheer curtains softening the window light",
+                        "id": "Detail ruang keluarga: kursi Barcelona dan meja kopi kaca, dengan tirai sheer yang melembutkan cahaya jendela"
+                    }
+                },
+                "p92-0.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "餐厅，圆形灯槽吊顶与圆环吊灯，深色圆桌远处悬浮楼梯透出灯带",
+                        "en": "Dining room with a circular cove ceiling and a ring chandelier; beyond the dark round table, LED strips glow from the floating staircase",
+                        "id": "Ruang makan dengan plafon cove bundar dan chandelier cincin; di balik meja bundar gelap, lampu strip menyala dari tangga melayang"
+                    }
+                },
+                "p92-1.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅，米白模块沙发与无主灯磁吸轨道，绿色大理石点缀背景墙",
+                        "en": "Living room with an off-white modular sofa and mainless magnetic track lighting, the feature wall accented with green marble",
+                        "id": "Ruang keluarga dengan sofa modular putih gading dan track magnetik tanpa lampu utama, dinding latar beraksen marmer hijau"
+                    }
+                },
+                "p93-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，整墙白色衣柜与深棕皮躺椅，大理石床头柜",
+                        "en": "Master bedroom with a full wall of white wardrobes, a dark-brown leather lounge chair and a marble nightstand",
+                        "id": "Kamar tidur utama dengan lemari pakaian putih memenuhi dinding, kursi malas kulit cokelat tua, dan nakas marmer"
+                    }
+                },
+                "p93-1.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧临窗休闲角，皮质躺椅与绿植，窗外绿意入画",
+                        "en": "Window-side lounge corner of the master bedroom: a leather lounge chair and plants, with greenery framing the view",
+                        "id": "Sudut santai di sisi jendela kamar tidur utama: kursi malas kulit dan tanaman, dengan hijau pepohonan membingkai pemandangan"
+                    }
+                }
+            }
         },
         {
             "id": "case_014",
@@ -372,7 +1246,33 @@
                 "软装4500"
             ],
             "description": "",
-            "source": "派尚设计"
+            "source": "派尚设计",
+            "annotations": {
+                "p01-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "现代客厅连通室内天井，金属镂空挂饰墙与树池石景",
+                        "en": "Modern living room opening onto an indoor courtyard void, with a perforated-metal hanging-decor wall and a tree-and-stone feature",
+                        "id": "Ruang keluarga modern terhubung ke void taman dalam, dengan dinding hiasan logam berlubang serta pohon dan batu"
+                    }
+                },
+                "p02-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "现代客厅，全景落地窗引入庭院景观，连通水吧台",
+                        "en": "Modern living room where panoramic windows frame the courtyard, connected to a water bar counter",
+                        "id": "Ruang keluarga modern dengan jendela panorama membingkai taman, terhubung ke meja bar"
+                    }
+                },
+                "p03-0.jpg": {
+                    "room": "bathroom",
+                    "desc": {
+                        "zh": "主卫，双台上盆与独立浴缸，木格栅吊顶",
+                        "en": "Master bath with twin vessel basins, a freestanding tub and a wood-slatted ceiling",
+                        "id": "Kamar mandi utama dengan dua wastafel vessel, bathtub berdiri bebas, dan plafon gril kayu"
+                    }
+                }
+            }
         },
         {
             "id": "case_015",
@@ -396,7 +1296,33 @@
                 "软装4000"
             ],
             "description": "",
-            "source": "派尚设计"
+            "source": "派尚设计",
+            "annotations": {
+                "p12-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "新中式客厅，大理石山水背景墙与博古架陈列",
+                        "en": "Neo-Chinese living room with a marble landscape-painting feature wall and curio-shelf displays",
+                        "id": "Ruang keluarga neo-Tiongkok dengan dinding latar marmer bermotif lukisan gunung-air dan pajangan rak curio"
+                    }
+                },
+                "p13-0.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "新中式餐厅，长条餐桌与写意大理石背景墙",
+                        "en": "Neo-Chinese dining room with a long table against a freehand-style marble feature wall",
+                        "id": "Ruang makan neo-Tiongkok dengan meja panjang berlatar dinding marmer bergaya lukisan bebas"
+                    }
+                },
+                "p14-0.jpg": {
+                    "room": "tea_room",
+                    "desc": {
+                        "zh": "榻榻米茶室，障子格栅门与矮几条案",
+                        "en": "Tatami tea room with shoji slatted doors and low tea tables",
+                        "id": "Ruang teh tatami dengan pintu gril shoji dan meja teh rendah"
+                    }
+                }
+            }
         },
         {
             "id": "case_016",
@@ -424,7 +1350,57 @@
                 "艾特奖TOP10"
             ],
             "description": "2024年第十三届艾特奖全国杰出设计大奖 TOP10",
-            "source": "派尚设计"
+            "source": "派尚设计",
+            "annotations": {
+                "p24-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "现代客厅，米白竖纹硬包墙面与雕塑感落地灯",
+                        "en": "Modern living room with off-white vertically-striped upholstered wall panels and a sculptural floor lamp",
+                        "id": "Ruang keluarga modern dengan panel dinding berlapis kain bergaris vertikal putih gading dan lampu lantai skulptural"
+                    }
+                },
+                "p25-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "空中庭院会客区，L形户外沙发与火炉茶几，绿植环绕",
+                        "en": "Sky-courtyard seating area with an L-shaped outdoor sofa and a fire-pit coffee table, surrounded by greenery",
+                        "id": "Area tamu sky courtyard dengan sofa luar ruang bentuk L dan meja kopi fire pit, dikelilingi tanaman hijau"
+                    }
+                },
+                "p26-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "现代客厅，深灰肌理背景墙与贵妃榻",
+                        "en": "Modern living room with a dark-grey textured feature wall and a chaise lounge",
+                        "id": "Ruang keluarga modern dengan dinding latar bertekstur abu-abu tua dan chaise lounge"
+                    }
+                },
+                "p27-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "现代客厅，悬挂式壁炉与L形布艺沙发",
+                        "en": "Modern living room with a suspended fireplace and an L-shaped fabric sofa",
+                        "id": "Ruang keluarga modern dengan perapian gantung dan sofa fabric bentuk L"
+                    }
+                },
+                "p28-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，深灰硬包床头背景与玻璃门衣柜",
+                        "en": "Master bedroom with a dark-grey upholstered headboard wall and glass-fronted wardrobes",
+                        "id": "Kamar tidur utama dengan panel kepala tempat tidur abu-abu tua dan lemari berpintu kaca"
+                    }
+                },
+                "p29-0.jpg": {
+                    "room": "kids_room",
+                    "desc": {
+                        "zh": "儿童房，太空主题小屋床与星球墙饰",
+                        "en": "Kids' room with a space-themed cabin bed and planet wall decor",
+                        "id": "Kamar anak dengan tempat tidur kabin bertema luar angkasa dan hiasan dinding planet"
+                    }
+                }
+            }
         },
         {
             "id": "case_017",
@@ -449,7 +1425,49 @@
                 "华润最美样板房"
             ],
             "description": "华润内部评选最美样板房",
-            "source": "派尚设计"
+            "source": "派尚设计",
+            "annotations": {
+                "p15-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "现代轻奢客厅，大理石电视墙与金属艺术挂饰",
+                        "en": "Modern light-luxury living room with a marble TV wall and metal art hangings",
+                        "id": "Ruang keluarga modern light-luxury dengan dinding TV marmer dan hiasan dinding seni logam"
+                    }
+                },
+                "p16-0.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "轻奢餐厅，圆形餐桌与水晶吊灯，整面展示柜",
+                        "en": "Light-luxury dining room with a round table, a crystal chandelier and a full display cabinet wall",
+                        "id": "Ruang makan light-luxury dengan meja bundar, chandelier kristal, dan lemari pajangan memenuhi dinding"
+                    }
+                },
+                "p16-1.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "入户玄关，黑白石材拼花地面与挂画端景",
+                        "en": "Entrance foyer with black-and-white stone inlay flooring and an artwork focal point",
+                        "id": "Foyer masuk dengan lantai inlay batu hitam-putih dan focal point lukisan"
+                    }
+                },
+                "p16-2.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "大横厅会客区，黑色大理石背景墙与弧形吊顶",
+                        "en": "Seating area of the great room with a black marble feature wall and a curved ceiling",
+                        "id": "Area tamu great room dengan dinding latar marmer hitam dan plafon lengkung"
+                    }
+                },
+                "p16-3.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "轻奢餐厅全景，圆桌与艺术水晶灯",
+                        "en": "Full view of the light-luxury dining room: round table and an artistic crystal pendant",
+                        "id": "Panorama ruang makan light-luxury: meja bundar dan lampu kristal artistik"
+                    }
+                }
+            }
         },
         {
             "id": "case_018",
@@ -484,7 +1502,137 @@
                 "420㎡"
             ],
             "description": "",
-            "source": "派尚设计"
+            "source": "派尚设计",
+            "annotations": {
+                "p30-0.jpg": {
+                    "room": "recreation",
+                    "desc": {
+                        "zh": "下沉式庭院露台，户外沙发与吧台区，格栅围墙与绿植环绕",
+                        "en": "Sunken courtyard terrace with outdoor sofas and a bar counter, ringed by slatted walls and greenery",
+                        "id": "Teras halaman sunken dengan sofa luar ruang dan area bar, dikelilingi dinding gril dan tanaman hijau"
+                    }
+                },
+                "p31-0.jpg": {
+                    "room": "recreation",
+                    "desc": {
+                        "zh": "地下天井健身区，采光井与绿植墙，动感单车临大理石地台",
+                        "en": "Basement gym around a light well with a green wall; a spin bike sits beside a marble platform",
+                        "id": "Area gym basement di sekitar void cahaya dengan dinding hijau; spinning bike di sisi platform marmer"
+                    }
+                },
+                "p31-1.jpg": {
+                    "room": "recreation",
+                    "desc": {
+                        "zh": "地下休闲区，大理石台阶与室内乔木，微水泥墙面嵌绿植槽",
+                        "en": "Basement lounge with marble steps and an indoor tree; planting troughs are set into the microcement wall",
+                        "id": "Area santai basement dengan tangga marmer dan pohon dalam ruang; alur tanaman tertanam di dinding mikrosemen"
+                    }
+                },
+                "p32-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅，米白皮质沙发与钓鱼落地灯，大理石茶几配硬包背景墙",
+                        "en": "Living room with an off-white leather sofa and an arc floor lamp; marble coffee table against an upholstered feature wall",
+                        "id": "Ruang keluarga dengan sofa kulit putih gading dan lampu lantai arc; meja kopi marmer dengan latar dinding berlapis kain"
+                    }
+                },
+                "p32-1.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "餐厅细节，大理石餐桌与皮质餐椅，肌理艺术涂料背景墙",
+                        "en": "Dining detail: marble table and leather chairs against a textured art-paint feature wall",
+                        "id": "Detail ruang makan: meja marmer dan kursi kulit dengan latar dinding cat seni bertekstur"
+                    }
+                },
+                "p33-0.jpg": {
+                    "room": "bathroom",
+                    "desc": {
+                        "zh": "主卫，独立浴缸与爵士白大理石墙面，壁龛与金色五金",
+                        "en": "Master bath with a freestanding tub, Jazz White marble walls, a niche and gold fittings",
+                        "id": "Kamar mandi utama dengan bathtub berdiri bebas, dinding marmer Jazz White, niche, dan fitting emas"
+                    }
+                },
+                "p33-1.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，灰色硬包床头背景，皮质床尾凳与玻璃吊灯",
+                        "en": "Master bedroom with a grey upholstered headboard wall, a leather bench at the foot of the bed and a glass pendant",
+                        "id": "Kamar tidur utama dengan panel kepala tempat tidur abu-abu berlapis kain, bangku kulit di ujung tempat tidur, dan lampu gantung kaca"
+                    }
+                },
+                "p33-2.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧连通阳台，休闲椅与临栏吧台，远眺山景",
+                        "en": "Master bedroom opening onto a balcony with lounge chairs and a railing-side bar counter overlooking the mountains",
+                        "id": "Kamar tidur utama terhubung ke balkon dengan kursi santai dan bar di tepi pagar, menghadap pemandangan gunung"
+                    }
+                },
+                "p34-0.jpg": {
+                    "room": "recreation",
+                    "desc": {
+                        "zh": "庭院俯瞰，户外茶桌与沙发区，砾石与乔木造景",
+                        "en": "Overlooking the courtyard: an outdoor tea table and sofa area landscaped with gravel and trees",
+                        "id": "Pemandangan taman dari atas: meja teh luar ruang dan area sofa dengan lanskap kerikil dan pepohonan"
+                    }
+                },
+                "p35-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "新中式客厅，米色硬包背景与组合圆几，深色大理石壁炉墙",
+                        "en": "Neo-Chinese living room with a beige upholstered feature wall, clustered round coffee tables and a dark marble fireplace wall",
+                        "id": "Ruang keluarga neo-Tiongkok dengan dinding latar berlapis kain krem, kumpulan meja bundar, dan dinding perapian marmer gelap"
+                    }
+                },
+                "p36-0.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "餐厅，圆餐桌与枝形吊灯，落地窗连通庭院景观",
+                        "en": "Dining room with a round table and a branching chandelier; floor-to-ceiling windows open to the courtyard",
+                        "id": "Ruang makan dengan meja bundar dan chandelier bercabang; jendela setinggi lantai terhubung ke pemandangan taman"
+                    }
+                },
+                "p36-1.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "餐厅细节，枝形金属吊灯与圆桌花艺陈设",
+                        "en": "Dining detail: a branching metal chandelier above a round table dressed with floral arrangements",
+                        "id": "Detail ruang makan: chandelier logam bercabang di atas meja bundar dengan rangkaian bunga"
+                    }
+                },
+                "p37-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧套房，水墨意境床头背景，屏风隔出休闲区与床尾凳",
+                        "en": "Master suite with an ink-wash headboard backdrop; a screen partitions off a lounge area and a bed-end bench",
+                        "id": "Master suite dengan latar kepala tempat tidur bernuansa tinta; sketsel memisahkan area santai dan bangku ujung tempat tidur"
+                    }
+                },
+                "p38-0.jpg": {
+                    "room": "tea_room",
+                    "desc": {
+                        "zh": "茶室，长茶台与整墙原木博古架，吊挂铁壶与大型花艺",
+                        "en": "Tea room with a long tea table and a full-wall solid-wood curio shelf, a hanging iron kettle and a large floral installation",
+                        "id": "Ruang teh dengan meja teh panjang dan rak curio kayu solid setinggi dinding, ketel besi tergantung, dan instalasi bunga besar"
+                    }
+                },
+                "p39-0.jpg": {
+                    "room": "staircase",
+                    "desc": {
+                        "zh": "楼梯间，原木踏步嵌灯带与玻璃扶手，琉璃叶片吊饰贯穿挑空",
+                        "en": "Staircase with solid-wood treads inset with LED strips and a glass balustrade; a glazed-leaf pendant runs through the void",
+                        "id": "Tangga dengan pijakan kayu solid berlampu strip LED dan railing kaca; hiasan gantung daun kaca menembus void"
+                    }
+                },
+                "p39-1.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "玄关端景，深色大理石背景墙与抽象挂画，金属雕塑陈设",
+                        "en": "Entryway vignette with a dark marble feature wall, abstract artwork and a metal sculpture",
+                        "id": "Focal point foyer dengan dinding latar marmer gelap, lukisan abstrak, dan pajangan patung logam"
+                    }
+                }
+            }
         },
         {
             "id": "case_019",
@@ -514,7 +1662,113 @@
                 "大平层·徽作"
             ],
             "description": "",
-            "source": "待补充"
+            "source": "待补充",
+            "annotations": {
+                "p17-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客餐厅一体横厅，轻奢吊灯与全景落地窗",
+                        "en": "Combined living-dining great room with a light-luxury chandelier and panoramic floor-to-ceiling windows",
+                        "id": "Ruang keluarga-makan menyatu (great room) dengan chandelier light-luxury dan jendela panorama setinggi lantai"
+                    }
+                },
+                "p17-1.jpg": {
+                    "room": "study",
+                    "desc": {
+                        "zh": "书房，临窗书桌与整墙展示书柜",
+                        "en": "Study with a desk by the window and a full-wall display bookcase",
+                        "id": "Ruang kerja dengan meja di sisi jendela dan rak buku pajangan memenuhi dinding"
+                    }
+                },
+                "p18-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，弧形吊顶灯带与软包背景墙",
+                        "en": "Master bedroom with a curved cove-lit ceiling and an upholstered feature wall",
+                        "id": "Kamar tidur utama dengan plafon lengkung berlampu strip dan dinding latar berlapis kain"
+                    }
+                },
+                "p18-1.jpg": {
+                    "room": "study",
+                    "desc": {
+                        "zh": "书房，竖格栅背景墙与红色背板书架",
+                        "en": "Study with a vertical slatted feature wall and a red-backed bookshelf",
+                        "id": "Ruang kerja dengan dinding latar bergril vertikal dan rak buku berlatar merah"
+                    }
+                },
+                "p19-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "现代客厅，深色电视背景墙与开放式展示架",
+                        "en": "Modern living room with a dark TV feature wall and open display shelving",
+                        "id": "Ruang keluarga modern dengan dinding TV gelap dan rak pajangan terbuka"
+                    }
+                },
+                "p20-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑高玄关端景，镂空球体艺术装置与飞鸟壁饰",
+                        "en": "Double-height entry vignette with a hollowed sphere art installation and flying-bird wall ornaments",
+                        "id": "Foyer double-height dengan instalasi seni bola berongga dan ornamen dinding burung terbang"
+                    }
+                },
+                "p20-1.jpg": {
+                    "room": "bathroom",
+                    "desc": {
+                        "zh": "公共盥洗区，墨绿大理石长条洗手台与镂空格栅光影墙",
+                        "en": "Shared wash area with a long dark-green marble vanity and a perforated slatted wall playing with light and shadow",
+                        "id": "Area wastafel bersama dengan meja marmer hijau tua memanjang dan dinding gril berlubang yang memainkan bayangan cahaya"
+                    }
+                },
+                "p21-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空客厅，拱形落地窗与整墙书格",
+                        "en": "Double-height living room with arched floor-to-ceiling windows and a full wall of book cubbies",
+                        "id": "Ruang keluarga double-height dengan jendela lengkung setinggi lantai dan rak buku memenuhi dinding"
+                    }
+                },
+                "p21-1.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅休闲角，法式长窗引入庭院绿意",
+                        "en": "Living-room lounge corner where tall French windows draw in courtyard greenery",
+                        "id": "Sudut santai ruang keluarga dengan jendela Prancis tinggi yang membingkai hijau taman"
+                    }
+                },
+                "p22-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "会客区，双拱形长窗与米色沙发",
+                        "en": "Seating area with twin arched tall windows and a beige sofa",
+                        "id": "Area menerima tamu dengan dua jendela lengkung tinggi dan sofa krem"
+                    }
+                },
+                "p22-1.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "现代客厅，大理石背景墙与金属层板书架",
+                        "en": "Modern living room with a marble feature wall and a metal-shelf bookcase",
+                        "id": "Ruang keluarga modern dengan dinding latar marmer dan rak buku ambalan logam"
+                    }
+                },
+                "p23-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "现代客厅，弧形吊顶与木饰面背景墙",
+                        "en": "Modern living room with a curved ceiling and a wood-veneer feature wall",
+                        "id": "Ruang keluarga modern dengan plafon lengkung dan dinding latar veneer kayu"
+                    }
+                },
+                "p23-1.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅一角，弧形落地灯与单人沙发",
+                        "en": "A corner of the living room with an arched floor lamp and an armchair",
+                        "id": "Sudut ruang keluarga dengan lampu lantai lengkung dan sofa tunggal"
+                    }
+                }
+            }
         },
         {
             "id": "case_020",
@@ -537,7 +1791,57 @@
                 "南京·观天下"
             ],
             "description": "",
-            "source": "待补充"
+            "source": "待补充",
+            "annotations": {
+                "p04-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客餐厅一体空间，长餐桌与暖灰沙发区",
+                        "en": "Combined living-dining space with a long dining table and a warm-grey sofa area",
+                        "id": "Ruang keluarga-makan menyatu dengan meja makan panjang dan area sofa abu-abu hangat"
+                    }
+                },
+                "p05-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑高客厅，整墙展示格与落地玻璃移门连通露台",
+                        "en": "Double-height living room with a full wall of display cubbies; sliding glass doors open to the terrace",
+                        "id": "Ruang keluarga double-height dengan kompartemen pajangan memenuhi dinding; pintu geser kaca terhubung ke teras"
+                    }
+                },
+                "p05-1.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅一角，米色沙发与艺术墙饰",
+                        "en": "A corner of the living room with a beige sofa and art wall decor",
+                        "id": "Sudut ruang keluarga dengan sofa krem dan dekorasi dinding seni"
+                    }
+                },
+                "p06-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，木饰面电视墙与观景阳台",
+                        "en": "Master bedroom with a wood-veneer TV wall and a viewing balcony",
+                        "id": "Kamar tidur utama dengan dinding TV veneer kayu dan balkon pemandangan"
+                    }
+                },
+                "p07-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "次卧，艺术挂画与玻璃门展示柜",
+                        "en": "Guest bedroom with an art print and a glass-fronted display cabinet",
+                        "id": "Kamar tidur kedua dengan lukisan seni dan lemari pajangan berpintu kaca"
+                    }
+                },
+                "p07-1.jpg": {
+                    "room": "tea_room",
+                    "desc": {
+                        "zh": "茶区，悬吊铁壶与博古架茶具陈设",
+                        "en": "Tea corner with a hanging iron kettle and tea ware arranged on a curio shelf",
+                        "id": "Sudut teh dengan ketel besi tergantung dan perangkat teh tertata di rak curio"
+                    }
+                }
+            }
         },
         {
             "id": "case_021",
@@ -559,7 +1863,49 @@
                 "新湖香格里拉"
             ],
             "description": "",
-            "source": "待补充"
+            "source": "待补充",
+            "annotations": {
+                "p53-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅休闲区，酒红单人沙发与大理石壁炉墙",
+                        "en": "Living-room lounge with a wine-red armchair and a marble fireplace wall",
+                        "id": "Area santai ruang keluarga dengan sofa tunggal merah anggur dan dinding perapian marmer"
+                    }
+                },
+                "p54-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空会客厅，圆形穹顶吊顶与艺术吊灯组",
+                        "en": "Double-height reception room with a circular domed ceiling and a cluster of art pendants",
+                        "id": "Ruang tamu double-height dengan plafon kubah bundar dan kelompok lampu gantung artistik"
+                    }
+                },
+                "p54-1.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空客厅全景，围合式沙发与圆形灯池",
+                        "en": "Panorama of the double-height living room: an enveloping sofa beneath a circular light cove",
+                        "id": "Panorama ruang keluarga double-height: sofa melingkar di bawah cove cahaya bundar"
+                    }
+                },
+                "p55-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "开放式客餐厅，圆柱与艺术吊灯，连通西厨吧台",
+                        "en": "Open living-dining space with a column and art pendants, flowing into the western-kitchen bar",
+                        "id": "Ruang keluarga-makan terbuka dengan kolom dan lampu gantung artistik, terhubung ke bar dapur barat"
+                    }
+                },
+                "p56-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，深色背景墙与地台床，酒红休闲椅",
+                        "en": "Master bedroom with a dark feature wall and a platform bed, plus a wine-red lounge chair",
+                        "id": "Kamar tidur utama dengan dinding latar gelap dan tempat tidur platform, serta kursi santai merah anggur"
+                    }
+                }
+            }
         },
         {
             "id": "case_022",
@@ -580,7 +1926,41 @@
                 "松山·Living 璞舍"
             ],
             "description": "",
-            "source": "待补充"
+            "source": "待补充",
+            "annotations": {
+                "p08-0.jpg": {
+                    "room": "tea_room",
+                    "desc": {
+                        "zh": "茶室，琥珀色透光博古架与长茶台",
+                        "en": "Tea room with an amber translucent curio shelf and a long tea table",
+                        "id": "Ruang teh dengan rak curio tembus cahaya warna amber dan meja teh panjang"
+                    }
+                },
+                "p09-0.jpg": {
+                    "room": "bar",
+                    "desc": {
+                        "zh": "酒吧区，整墙恒温酒柜与长吧台",
+                        "en": "Bar area with a full-wall climate-controlled wine cabinet and a long bar counter",
+                        "id": "Area bar dengan lemari wine berpendingin setinggi dinding dan meja bar panjang"
+                    }
+                },
+                "p10-0.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "轻奢客厅，水晶吊灯与米色布艺沙发",
+                        "en": "Light-luxury living room with a crystal chandelier and a beige fabric sofa",
+                        "id": "Ruang keluarga light-luxury dengan chandelier kristal dan sofa fabric krem"
+                    }
+                },
+                "p11-0.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，软包床头与夜景落地窗",
+                        "en": "Master bedroom with an upholstered headboard and night-view floor-to-ceiling windows",
+                        "id": "Kamar tidur utama dengan kepala tempat tidur berlapis kain dan jendela setinggi lantai berpemandangan malam"
+                    }
+                }
+            }
         },
         {
             "id": "case_023",
@@ -608,7 +1988,97 @@
                 "世贸国风"
             ],
             "description": "",
-            "source": "待补充"
+            "source": "待补充",
+            "annotations": {
+                "01.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "开放式餐厨，长餐桌与深色西厨背景",
+                        "en": "Open kitchen-dining with a long table against a dark western-kitchen backdrop",
+                        "id": "Dapur-ruang makan terbuka dengan meja panjang berlatar dapur barat gelap"
+                    }
+                },
+                "02.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "现代客厅，深色电视墙与大理石地台",
+                        "en": "Modern living room with a dark TV wall and a marble platform",
+                        "id": "Ruang keluarga modern dengan dinding TV gelap dan platform marmer"
+                    }
+                },
+                "03.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，落地窗与原木地台床",
+                        "en": "Master bedroom with floor-to-ceiling windows and a natural-wood platform bed",
+                        "id": "Kamar tidur utama dengan jendela setinggi lantai dan tempat tidur platform kayu alami"
+                    }
+                },
+                "04.jpg": {
+                    "room": "tea_room",
+                    "desc": {
+                        "zh": "新中式茶室，长茶台与整墙博古架，书法挂画",
+                        "en": "Neo-Chinese tea room with a long tea table, a full-wall curio shelf and calligraphy art",
+                        "id": "Ruang teh neo-Tiongkok dengan meja teh panjang, rak curio setinggi dinding, dan lukisan kaligrafi"
+                    }
+                },
+                "05.jpg": {
+                    "room": "study",
+                    "desc": {
+                        "zh": "书房兼琴房，钢琴与临窗书桌",
+                        "en": "Study doubling as a piano room, with the piano and a desk by the window",
+                        "id": "Ruang kerja merangkap ruang piano, dengan piano dan meja di sisi jendela"
+                    }
+                },
+                "06.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，木饰面背景墙与按摩椅",
+                        "en": "Master bedroom with a wood-veneer feature wall and a massage chair",
+                        "id": "Kamar tidur utama dengan dinding latar veneer kayu dan kursi pijat"
+                    }
+                },
+                "07.jpg": {
+                    "room": "recreation",
+                    "desc": {
+                        "zh": "影音室，投影幕布与大理石背景墙",
+                        "en": "Home theatre with a projection screen against a marble feature wall",
+                        "id": "Ruang home theater dengan layar proyektor berlatar dinding marmer"
+                    }
+                },
+                "08.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "步入式衣帽间走廊，玻璃门衣柜与灯带",
+                        "en": "Walk-in closet corridor with glass-fronted wardrobes and LED strips",
+                        "id": "Koridor walk-in closet dengan lemari berpintu kaca dan lampu strip LED"
+                    }
+                },
+                "09.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "卧室，奶油色系与贝壳形单人椅",
+                        "en": "Bedroom in cream tones with a shell-shaped accent chair",
+                        "id": "Kamar tidur bernuansa krem dengan kursi tunggal berbentuk kerang"
+                    }
+                },
+                "10.jpg": {
+                    "room": "kids_room",
+                    "desc": {
+                        "zh": "儿童房学习区，衣柜书桌一体与粉色单椅",
+                        "en": "Kids' study corner with a wardrobe-desk combo and a pink chair",
+                        "id": "Sudut belajar kamar anak dengan lemari-meja menyatu dan kursi pink"
+                    }
+                },
+                "11.jpg": {
+                    "room": "bathroom",
+                    "desc": {
+                        "zh": "主卫，黑色大理石墙面与独立浴缸",
+                        "en": "Master bath with black marble walls and a freestanding tub",
+                        "id": "Kamar mandi utama dengan dinding marmer hitam dan bathtub berdiri bebas"
+                    }
+                }
+            }
         },
         {
             "id": "case_024",
@@ -1081,7 +2551,49 @@
                 "新华御湖庄园·知湖"
             ],
             "description": "",
-            "source": "待补充"
+            "source": "待补充",
+            "annotations": {
+                "01.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "法式衣帽间，中岛收纳柜与玻璃门展示柜",
+                        "en": "French-style walk-in closet with a central island storage unit and glass-fronted display cabinets",
+                        "id": "Walk-in closet gaya Prancis dengan island penyimpanan tengah dan lemari pajangan berpintu kaca"
+                    }
+                },
+                "02.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "法式主卧，雕花软包床与石膏灯盘吊顶",
+                        "en": "French master bedroom with a carved upholstered bed and a plaster-medallion ceiling",
+                        "id": "Kamar tidur utama Prancis dengan tempat tidur berlapis kain berukir dan plafon medallion gipsum"
+                    }
+                },
+                "03.jpg": {
+                    "room": "bathroom",
+                    "desc": {
+                        "zh": "法式主卫，独立贵妃浴缸与护墙板",
+                        "en": "French master bath with a freestanding clawfoot-style tub and wall paneling",
+                        "id": "Kamar mandi utama Prancis dengan bathtub berdiri bebas gaya klasik dan panel dinding"
+                    }
+                },
+                "04.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "法式卧室，帷幔窗饰与鱼骨拼木地板",
+                        "en": "French bedroom with draped window treatments and fishbone-parquet timber flooring",
+                        "id": "Kamar tidur Prancis dengan gorden berdraperi dan lantai kayu parket fishbone"
+                    }
+                },
+                "05.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "法式化妆间，中岛首饰柜与临窗梳妆台",
+                        "en": "French dressing room with a central jewellery island and a vanity by the window",
+                        "id": "Ruang rias Prancis dengan island perhiasan tengah dan meja rias di sisi jendela"
+                    }
+                }
+            }
         }
     ]
 }

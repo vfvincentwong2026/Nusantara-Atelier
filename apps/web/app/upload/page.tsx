@@ -12,6 +12,8 @@ import {
   type RegionKey,
   type TierKey,
 } from '@/lib/quote';
+import { computeBom } from '@/lib/bom';
+import BomView from '@/components/BomView';
 
 const STYLE_OPTIONS = STYLES.filter((s) => s !== '全部' && s !== '更多');
 const REGION_KEYS: RegionKey[] = ['jakarta', 'bali', 'surabaya', 'other'];
@@ -104,6 +106,27 @@ export default function UploadPage() {
         ? computeQuote({ area, style, tier, region, pool, garden })
         : null,
     [areaValid, area, style, tier, region, pool, garden]
+  );
+
+  // Phase 3b/3c：BOM 精报（本地纯函数即时计算；有 DXF 解析结果则用真实房间算量）
+  const [resultTab, setResultTab] = useState<'estimate' | 'bom'>('estimate');
+  const bom = useMemo(
+    () =>
+      areaValid
+        ? computeBom({
+            area,
+            style,
+            tier,
+            rooms_count: Number(rooms) || 3,
+            floors: Number(floors) || 1,
+            has_pool: pool,
+            has_garden: garden,
+            parsed_rooms: dxfRooms
+              ? dxfRooms.map((r) => ({ name: r.name, area: r.area }))
+              : undefined,
+          })
+        : null,
+    [areaValid, area, style, tier, rooms, floors, pool, garden, dxfRooms]
   );
 
   // AI 设计建议：输入稳定 2s 后调 POST /design（失败静默，不显示板块）
@@ -350,6 +373,29 @@ export default function UploadPage() {
               <p className="section-eyebrow">{t.quote.resultTitle}</p>
               {quote ? (
                 <>
+                  {/* 标签切换：初步估算 / BOM 精报 */}
+                  <div className="mt-4 flex rounded-full border border-ivory/15 p-0.5 text-[11px] tracking-wider">
+                    {(
+                      [
+                        ['estimate', t.bom.tabEstimate],
+                        ['bom', t.bom.tabBom],
+                      ] as const
+                    ).map(([key, label]) => (
+                      <button
+                        key={key}
+                        onClick={() => setResultTab(key)}
+                        className={`flex-1 rounded-full px-3 py-1.5 transition-colors ${
+                          resultTab === key
+                            ? 'bg-gold text-white'
+                            : 'text-ivory-mute hover:text-gold-dark'
+                        }`}
+                      >
+                        {label}
+                      </button>
+                    ))}
+                  </div>
+                  {resultTab === 'estimate' ? (
+                  <>
                   <p className="mt-4 font-serif text-3xl text-gold-dark md:text-4xl">
                     {formatIdr(quote.totalIdr)}
                   </p>
@@ -423,6 +469,10 @@ export default function UploadPage() {
                   >
                     {t.quote.ctaBook}
                   </Link>
+                  </>
+                  ) : (
+                    bom && <BomView bom={bom} />
+                  )}
                 </>
               ) : (
                 <p className="mt-6 text-sm text-ivory-mute">

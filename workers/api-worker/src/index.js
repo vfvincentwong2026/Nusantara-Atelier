@@ -5,7 +5,7 @@
  *   GET  /health   健康检查（实际执行 SELECT 1）
  *   GET  /cases    案例列表（?style=&limit=&offset=）
  *   GET  /materials 材料 SKU 库（?category=&tier=&limit=，Phase 3a）
- *   POST /quote    估价引擎（与 apps/web/lib/quote.ts 公式/系数保持一致）+ 落库
+ *   POST /quote    估价引擎（与 apps/web/lib/quote.ts 公式/系数保持一致）+ 落库；body.mode="bom" 走 BOM 引擎（Phase 3b）
  *   POST /booking  预约线索落库
  *   POST /design   AI 设计建议
  *   POST /parse-dxf DXF 户型解析
@@ -58,6 +58,183 @@ const LOCALE_LANG = {
   en: 'English',
   id: 'Bahasa Indonesia',
 };
+
+/* ================= BOM 引擎（Phase 3b，镜像 apps/web/lib/bom.ts，SKU 取自 D1 materials） =================
+ * 口径：LABOR_WEIGHT 与 CONSTRUCTION_WEIGHT 同源同值（1.4）；
+ * 无 DXF 按降级房间模型估算；墙面 = Σ(4×√面积 × 2.8m) × 0.85；
+ * 附加项与 quote 一致：(材料+人工) × (泳池 8% / 花园 5%)。
+ * 改常量时两侧同步。
+ */
+const LABOR_WEIGHT = CONSTRUCTION_WEIGHT;
+const BOM_CEILING_H = 2.8;
+const BOM_OPENING_FACTOR = 0.85;
+const BOM_LIGHT_DENSITY = 4;
+const BOM_CABINET_M = 3.6;
+const BOM_KITCHEN_M = 4;
+const BOM_FEATURE_WALL_RATIO = 0.3;
+const BOM_TYPICAL = { master: 25, bedroom: 20, bathroom: 6, living: 50, dining: 25, kitchen: 12, study: 15 };
+
+const BOM_STYLE_PREF = {
+  法式: { floor_public: '大理石', feature_wall: true },
+  法式轻奢: { floor_public: '大理石', wall: '艺术涂料' },
+  现代小法: { floor_public: '大理石', wall: '艺术涂料' },
+  侘寂: { floor_public: '复合地板', wall: '微水泥' },
+  现代: { floor_public: '大板瓷砖', wall: '微水泥' },
+  意式极简: { floor_public: '大理石' },
+  现代奶油: { floor_public: '复合地板', wall: '艺术涂料' },
+};
+
+function bomClassifyRoom(name) {
+  const n = String(name || '').toLowerCase();
+  if (/主卧|master/.test(n)) return 'master';
+  if (/卫|浴|wc|toilet|bath/.test(n)) return 'bathroom';
+  if (/厨|kitchen|dapur/.test(n)) return 'kitchen';
+  if (/餐|dining/.test(n)) return 'dining';
+  if (/客厅|living/.test(n)) return 'living';
+  if (/书房|茶|study|tea/.test(n)) return 'study';
+  if (/卧|bed|kamar tidur/.test(n)) return 'bedroom';
+  return 'public';
+}
+
+function bomBuildRooms(area, roomsCount, parsedRooms) {
+  if (Array.isArray(parsedRooms) && parsedRooms.length > 0) {
+    return parsedRooms
+      .filter((r) => Number.isFinite(Number(r.area)) && Number(r.area) > 0)
+      .map((r) => ({ kind: bomClassifyRoom(r.name), name: String(r.name), area: Number(r.area) }));
+  }
+  const bedrooms = Math.min(Math.max(Math.round(roomsCount) || 3, 1), 10);
+  const nBath = bedrooms >= 3 ? 2 : 1;
+  const rooms = [{ kind: 'master', name: '主卧', area: BOM_TYPICAL.master }];
+  for (let i = 0; i < bedrooms - 1; i++) rooms.push({ kind: 'bedroom', name: `次卧${i + 1}`, area: BOM_TYPICAL.bedroom });
+  for (let i = 0; i < nBath; i++) rooms.push({ kind: 'bathroom', name: `卫浴${i + 1}`, area: BOM_TYPICAL.bathroom });
+  rooms.push(
+    { kind: 'kitchen', name: '厨房', area: BOM_TYPICAL.kitchen },
+    { kind: 'dining', name: '餐厅', area: BOM_TYPICAL.dining },
+    { kind: 'study', name: '书房/茶室', area: BOM_TYPICAL.study }
+  );
+  const used = rooms.reduce((s, r) => s + r.area, 0);
+  rooms.unshift({ kind: 'living', name: '客厅/公共区', area: Math.max(area - used, BOM_TYPICAL.living) });
+  return rooms;
+}
+
+/** 选型：档内按 prefSubs 顺序试 →（材质类）档内首个 /（功能类 subFirst）跨档最近档偏好子类 → 兜底 */
+const BOM_TIER_IDX = { standard: 0, luxury: 1, ultra: 2 };
+function bomPickSku(list, category, tier, prefSubs = [], subFirst = false) {
+  const inCat = list.filter((m) => m.category === category);
+  const inTier = inCat.filter((m) => m.tier === tier);
+  for (const sub of prefSubs) {
+    const hit = inTier.find((m) => m.subcategory === sub);
+    if (hit) return hit;
+  }
+  const crossTier = inCat
+    .filter((m) => prefSubs.includes(m.subcategory ?? ''))
+    .sort(
+      (a, b) =>
+        Math.abs(BOM_TIER_IDX[a.tier] - BOM_TIER_IDX[tier]) -
+          Math.abs(BOM_TIER_IDX[b.tier] - BOM_TIER_IDX[tier]) ||
+        BOM_TIER_IDX[a.tier] - BOM_TIER_IDX[b.tier]
+    )[0];
+  if (subFirst) return crossTier ?? inTier[0] ?? inCat[0] ?? null;
+  return inTier[0] ?? crossTier ?? inCat[0] ?? null;
+}
+
+function bomRound1(n) {
+  return Math.round(n * 10) / 10;
+}
+
+function bomSkuLine(sku, category, quantity, scope, fallbackName) {
+  const qty = bomRound1(quantity);
+  const price = sku?.price_idr ?? 0;
+  return {
+    category,
+    name: sku
+      ? { id: sku.name_id, en: sku.name_en ?? sku.name_id, zh: sku.name_zh ?? sku.name_id }
+      : { id: fallbackName, en: fallbackName, zh: fallbackName },
+    brand: sku?.brand ?? null,
+    spec: sku?.spec ?? null,
+    quantity: qty,
+    unit: sku?.unit ?? '㎡',
+    unit_price_idr: price,
+    subtotal_idr: Math.round(qty * price),
+    labor_idr: Math.round(qty * (sku?.labor_rate_idr ?? 0)),
+    supplier: sku?.supplier ?? null,
+    sku_id: sku?.sku_id ?? null,
+    room_scope: scope,
+  };
+}
+
+/** BOM 主计算（list 为 D1 materials 行）。anchor = 系数法「装修」(fitout) 分项 {rmb, idr}（同口径对照）。 */
+function bomCompute(input, list, anchor) {
+  const pref = BOM_STYLE_PREF[input.style] ?? {};
+  const rooms = bomBuildRooms(input.area, input.rooms_count, input.parsed_rooms);
+  const fromDxf = Array.isArray(input.parsed_rooms) && input.parsed_rooms.length > 0;
+
+  const areaOf = (...kinds) => rooms.filter((r) => kinds.includes(r.kind)).reduce((s, r) => s + r.area, 0);
+  const bedroomArea = areaOf('master', 'bedroom');
+  const publicArea = areaOf('living', 'dining', 'kitchen', 'study', 'public');
+  const bathrooms = rooms.filter((r) => r.kind === 'bathroom');
+  const nBath = Math.max(bathrooms.length, 1);
+  const bathScope = fromDxf ? bathrooms.map((r) => r.name).join('、') : '卫浴（估算）';
+  const nBedrooms = Math.max(rooms.filter((r) => r.kind === 'master' || r.kind === 'bedroom').length, 1);
+  const nDoors = rooms.filter((r) => ['master', 'bedroom', 'bathroom', 'kitchen', 'study'].includes(r.kind)).length;
+  const wallArea = rooms.reduce((s, r) => s + 4 * Math.sqrt(r.area) * BOM_CEILING_H * BOM_OPENING_FACTOR, 0);
+  const totalArea = rooms.reduce((s, r) => s + r.area, 0);
+  const livingArea = Math.max(areaOf('living', 'public'), BOM_TYPICAL.living);
+
+  const bom = [];
+  const floorPublicStone = pref.floor_public === '大理石' ? bomPickSku(list, '石材', input.tier, ['大理石']) : null;
+  const floorPublic = floorPublicStone ?? bomPickSku(list, '瓷砖', input.tier, pref.floor_public ? [pref.floor_public] : []);
+  bom.push(bomSkuLine(floorPublic, floorPublicStone ? '石材' : '瓷砖', publicArea * (floorPublic?.waste_factor ?? 1.08), '全屋地面', 'Public flooring'));
+  const floorBed = bomPickSku(list, '木地板与木饰面', input.tier, [pref.floor_bedroom ?? '复合地板']);
+  bom.push(bomSkuLine(floorBed, '木地板与木饰面', bedroomArea * (floorBed?.waste_factor ?? 1.05), '卧室地面', 'Bedroom flooring'));
+  const wall = bomPickSku(list, '涂料与微水泥', input.tier, [pref.wall ?? '内墙漆']);
+  bom.push(bomSkuLine(wall, '涂料与微水泥', wallArea * (wall?.waste_factor ?? 1.05), '全屋墙面', 'Wall paint'));
+  if (pref.feature_wall) {
+    const panel = bomPickSku(list, '木地板与木饰面', input.tier, ['木饰面墙板'], true);
+    const featureArea = 4 * Math.sqrt(livingArea) * BOM_CEILING_H * BOM_FEATURE_WALL_RATIO;
+    bom.push(bomSkuLine(panel, '木地板与木饰面', featureArea * (panel?.waste_factor ?? 1.08), '客厅背景墙', 'Wood panel feature wall'));
+  }
+  const closet = bomPickSku(list, '卫浴', input.tier, ['马桶', '智能马桶']);
+  bom.push(bomSkuLine(closet, '卫浴', nBath, bathScope, 'Toilet'));
+  const shower = bomPickSku(list, '卫浴', input.tier, ['花洒', '龙头', '浴缸'], true);
+  bom.push(bomSkuLine(shower, '卫浴', nBath, bathScope, 'Shower set'));
+  const door = bomPickSku(list, '门窗五金', input.tier, ['室内门'], true);
+  bom.push(bomSkuLine(door, '门窗五金', nDoors, '各房间门', 'Interior door'));
+  const light = bomPickSku(list, '灯具电气', input.tier, ['筒灯'], true);
+  bom.push(bomSkuLine(light, '灯具电气', Math.ceil(totalArea / BOM_LIGHT_DENSITY), '全屋照明', 'Downlight'));
+  const wardrobe = bomPickSku(list, '定制柜软装', input.tier, ['衣柜']);
+  bom.push(bomSkuLine(wardrobe, '定制柜软装', nBedrooms * BOM_CABINET_M, '卧室衣柜', 'Wardrobe'));
+  const kitchen = bomPickSku(list, '定制柜软装', input.tier, ['厨柜']);
+  bom.push(bomSkuLine(kitchen, '定制柜软装', BOM_KITCHEN_M, '厨房厨柜', 'Kitchen cabinet'));
+
+  const materialSub = bom.reduce((s, l) => s + l.subtotal_idr, 0);
+  const laborTotal = Math.round(bom.reduce((s, l) => s + l.labor_idr, 0) * LABOR_WEIGHT);
+  const extraBase = materialSub + laborTotal;
+  if (input.has_pool) {
+    bom.push({ category: 'extras', name: { id: 'Kolam Renang (tambahan)', en: 'Swimming Pool (extra)', zh: '泳池附加' }, brand: null, spec: null, quantity: 1, unit: '项', unit_price_idr: Math.round(extraBase * POOL_BONUS), subtotal_idr: Math.round(extraBase * POOL_BONUS), labor_idr: 0, supplier: null, sku_id: null, room_scope: '户外' });
+  }
+  if (input.has_garden) {
+    bom.push({ category: 'extras', name: { id: 'Taman (tambahan)', en: 'Garden (extra)', zh: '花园附加' }, brand: null, spec: null, quantity: 1, unit: '项', unit_price_idr: Math.round(extraBase * GARDEN_BONUS), subtotal_idr: Math.round(extraBase * GARDEN_BONUS), labor_idr: 0, supplier: null, sku_id: null, room_scope: '户外' });
+  }
+
+  const materialsTotal = bom.reduce((s, l) => s + l.subtotal_idr, 0);
+  const totalIdr = materialsTotal + laborTotal;
+  return {
+    mode: 'bom',
+    total_idr: totalIdr,
+    total_usd: Math.round(totalIdr / IDR_USD),
+    materials_idr: materialsTotal,
+    bom,
+    labor: { total_idr: laborTotal, weight: LABOR_WEIGHT },
+    estimate_anchor: {
+      scope: 'finishing',
+      total_rmb: Math.round(anchor.rmb),
+      total_idr: Math.round(anchor.idr),
+      diff_pct: anchor.idr > 0 ? bomRound1(((totalIdr - anchor.idr) / anchor.idr) * 100) : 0,
+    },
+    room_source: fromDxf ? 'dxf' : 'estimated',
+  };
+}
 
 /* ================= 工具函数 ================= */
 
@@ -239,6 +416,71 @@ async function handleQuote(request, env) {
   } catch (e) {
     // 参考案例查询失败不阻塞报价
     console.error('reference case query failed', e);
+  }
+
+  // Phase 3b：mode=bom → BOM 精确报价（SKU 取自 D1 materials；估算值作 anchor 对照）
+  if (body.mode === 'bom') {
+    let matRows = [];
+    try {
+      const { results } = await env.DB.prepare(
+        `SELECT sku_id, category, subcategory, name_id, name_en, name_zh, brand, spec, unit,
+                price_idr, labor_rate_idr, waste_factor, supplier, tier
+         FROM materials`
+      ).all();
+      matRows = results || [];
+    } catch (e) {
+      return fail(500, 'DB_ERROR', String(e));
+    }
+    const bomResult = bomCompute(
+      {
+        area,
+        style,
+        tier,
+        rooms_count: Number(body.rooms) || 3,
+        has_pool: hasPool,
+        has_garden: hasGarden,
+        parsed_rooms: Array.isArray(body.parsed_rooms) ? body.parsed_rooms : undefined,
+      },
+      matRows,
+      // 对照口径：系数法「装修」(fitout) 分项 = 硬装 × HARD_SPLIT.fitout
+      {
+        rmb: hardRmb * HARD_SPLIT.fitout,
+        idr: (hardRmb * HARD_SPLIT.fitout) / USD_CNY * IDR_USD,
+      }
+    );
+    const bomQuoteId = `quote_${crypto.randomUUID()}`;
+    try {
+      await env.DB.prepare(
+        `INSERT INTO quotes (quote_id, area, style, tier, location, locale,
+                             total_usd, total_idr, total_rmb, breakdown, reference_case_id, payload)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+      )
+        .bind(
+          bomQuoteId, area, style, tier, region, body.locale ?? null,
+          bomResult.total_usd, bomResult.total_idr, null,
+          JSON.stringify({
+            materials_idr: bomResult.materials_idr,
+            labor_idr: bomResult.labor.total_idr,
+            anchor_idr: bomResult.estimate_anchor.total_idr,
+          }),
+          referenceCase?.case_id ?? null,
+          JSON.stringify({
+            ...body,
+            bom_summary: { lines: bomResult.bom.length, total_idr: bomResult.total_idr },
+          })
+        )
+        .run();
+    } catch (e) {
+      return fail(500, 'DB_ERROR', String(e));
+    }
+    return ok({
+      quote_id: bomQuoteId,
+      ...bomResult,
+      reference_case: referenceCase
+        ? { id: referenceCase.case_id, project_name: referenceCase.project_name, style: referenceCase.style }
+        : null,
+      generated_at: new Date().toISOString(),
+    });
   }
 
   const quoteId = `quote_${crypto.randomUUID()}`;

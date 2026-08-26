@@ -80,7 +80,8 @@ exports.AREA_MAX = 5000;
  *   附加项 = (硬装 + 软装) × (泳池 8% + 花园 5%)
  */
 function computeQuote(input) {
-    const styleFactor = exports.STYLE_FACTOR[input.style] ?? 1.0;
+    var _a;
+    const styleFactor = (_a = exports.STYLE_FACTOR[input.style]) !== null && _a !== void 0 ? _a : 1.0;
     const regionFactor = exports.REGION_FACTOR[input.region];
     const tierFactor = exports.TIER_FACTOR[input.tier];
     const hardRmb = input.area * exports.BASE_HARD_RMB * styleFactor * regionFactor * tierFactor * exports.CONSTRUCTION_WEIGHT;
@@ -118,8 +119,9 @@ function computeQuote(input) {
 }
 /** 参考案例：同风格且有真实造价数据的优先，否则同风格第一个 */
 function findReferenceCase(style) {
+    var _a, _b;
     const sameStyle = cases_1.cases.filter((c) => c.style === style);
-    return (sameStyle.find((c) => c.hard_cost_per_sqm !== null) ?? sameStyle[0] ?? null);
+    return ((_b = (_a = sameStyle.find((c) => c.hard_cost_per_sqm !== null)) !== null && _a !== void 0 ? _a : sameStyle[0]) !== null && _b !== void 0 ? _b : null);
 }
 function isValidArea(area) {
     return Number.isFinite(area) && area >= exports.AREA_MIN && area <= exports.AREA_MAX;
