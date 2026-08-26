@@ -1,0 +1,1087 @@
+{
+    "cases": [
+        {
+            "id": "case_001",
+            "project_name": "汀岸晓庐",
+            "location": "杭州",
+            "country": "中国",
+            "style": "法式",
+            "area": null,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/tingan-xiaolu/p01-0.jpg",
+                "/cases/tingan-xiaolu/p02-0.jpg",
+                "/cases/tingan-xiaolu/p03-0.jpg",
+                "/cases/tingan-xiaolu/p04-0.jpg",
+                "/cases/tingan-xiaolu/p04-1.jpg",
+                "/cases/tingan-xiaolu/p05-0.jpg",
+                "/cases/tingan-xiaolu/p06-0.jpg",
+                "/cases/tingan-xiaolu/p07-0.jpg",
+                "/cases/tingan-xiaolu/p08-0.jpg",
+                "/cases/tingan-xiaolu/p08-1.jpg",
+                "/cases/tingan-xiaolu/p09-0.jpg",
+                "/cases/tingan-xiaolu/p09-1.jpg"
+            ],
+            "tags": [
+                "法式",
+                "杭州"
+            ],
+            "description": "",
+            "source": "⑤号设计"
+        },
+        {
+            "id": "case_002",
+            "project_name": "曼陀花园",
+            "location": "杭州",
+            "country": "中国",
+            "style": "法式",
+            "area": null,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/mantuo-huayuan/p10-0.jpg",
+                "/cases/mantuo-huayuan/p11-0.jpg",
+                "/cases/mantuo-huayuan/p11-1.jpg",
+                "/cases/mantuo-huayuan/p12-0.jpg",
+                "/cases/mantuo-huayuan/p13-0.jpg",
+                "/cases/mantuo-huayuan/p14-0.jpg",
+                "/cases/mantuo-huayuan/p15-0.jpg",
+                "/cases/mantuo-huayuan/p16-0.jpg"
+            ],
+            "tags": [
+                "法式",
+                "杭州"
+            ],
+            "description": "",
+            "source": "⑤号设计"
+        },
+        {
+            "id": "case_003",
+            "project_name": "香格里拉",
+            "location": "杭州",
+            "country": "中国",
+            "style": "现代",
+            "area": 600,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/hz-xianggelila/p17-0.jpg",
+                "/cases/hz-xianggelila/p18-0.jpg",
+                "/cases/hz-xianggelila/p18-1.jpg",
+                "/cases/hz-xianggelila/p19-0.jpg",
+                "/cases/hz-xianggelila/p20-0.jpg",
+                "/cases/hz-xianggelila/p21-0.jpg",
+                "/cases/hz-xianggelila/p22-0.jpg",
+                "/cases/hz-xianggelila/p23-0.jpg",
+                "/cases/hz-xianggelila/p24-0.jpg",
+                "/cases/hz-xianggelila/p25-0.jpg",
+                "/cases/hz-xianggelila/p26-0.jpg",
+                "/cases/hz-xianggelila/p27-0.jpg",
+                "/cases/hz-xianggelila/p28-0.jpg",
+                "/cases/hz-xianggelila/p29-0.jpg",
+                "/cases/hz-xianggelila/p30-0.jpg"
+            ],
+            "tags": [
+                "现代",
+                "杭州",
+                "600㎡"
+            ],
+            "description": "",
+            "source": "⑤号设计"
+        },
+        {
+            "id": "case_004",
+            "project_name": "森山半岛",
+            "location": "义乌",
+            "country": "中国",
+            "style": "现代",
+            "area": 1200,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/senshan-bandao/p31-0.jpg",
+                "/cases/senshan-bandao/p32-0.jpg",
+                "/cases/senshan-bandao/p33-0.jpg",
+                "/cases/senshan-bandao/p34-0.jpg",
+                "/cases/senshan-bandao/p34-1.jpg",
+                "/cases/senshan-bandao/p35-0.jpg"
+            ],
+            "tags": [
+                "现代",
+                "义乌",
+                "1200㎡"
+            ],
+            "description": "",
+            "source": "⑤号设计"
+        },
+        {
+            "id": "case_005",
+            "project_name": "玺园",
+            "location": "绍兴",
+            "country": "中国",
+            "style": "法式轻奢",
+            "area": null,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/shaoxing-xiyuan/p36-0.jpg",
+                "/cases/shaoxing-xiyuan/p37-0.jpg",
+                "/cases/shaoxing-xiyuan/p38-0.jpg",
+                "/cases/shaoxing-xiyuan/p38-1.jpg",
+                "/cases/shaoxing-xiyuan/p39-0.jpg",
+                "/cases/shaoxing-xiyuan/p40-0.jpg",
+                "/cases/shaoxing-xiyuan/p41-0.jpg",
+                "/cases/shaoxing-xiyuan/p42-0.jpg",
+                "/cases/shaoxing-xiyuan/p43-0.jpg",
+                "/cases/shaoxing-xiyuan/p44-0.jpg",
+                "/cases/shaoxing-xiyuan/p45-0.jpg",
+                "/cases/shaoxing-xiyuan/p46-0.jpg",
+                "/cases/shaoxing-xiyuan/p47-0.jpg",
+                "/cases/shaoxing-xiyuan/p48-0.jpg",
+                "/cases/shaoxing-xiyuan/p49-0.jpg",
+                "/cases/shaoxing-xiyuan/p50-0.jpg",
+                "/cases/shaoxing-xiyuan/p51-0.jpg",
+                "/cases/shaoxing-xiyuan/p51-1.jpg",
+                "/cases/shaoxing-xiyuan/p52-0.jpg"
+            ],
+            "tags": [
+                "法式轻奢",
+                "绍兴"
+            ],
+            "description": "",
+            "source": "⑤号设计"
+        },
+        {
+            "id": "case_006",
+            "project_name": "桃花源",
+            "location": "义乌",
+            "country": "中国",
+            "style": "法式",
+            "area": 630,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/taohuayuan-fa/p57-0.jpg",
+                "/cases/taohuayuan-fa/p58-0.jpg",
+                "/cases/taohuayuan-fa/p59-0.jpg",
+                "/cases/taohuayuan-fa/p60-0.jpg"
+            ],
+            "tags": [
+                "法式",
+                "义乌",
+                "630㎡"
+            ],
+            "description": "",
+            "source": "⑤号设计"
+        },
+        {
+            "id": "case_007",
+            "project_name": "桃花源·佗寂",
+            "location": "义乌",
+            "country": "中国",
+            "style": "侘寂",
+            "area": 855,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/taohuayuan-jiji-855/p61-0.jpg",
+                "/cases/taohuayuan-jiji-855/p62-0.jpg",
+                "/cases/taohuayuan-jiji-855/p63-0.jpg",
+                "/cases/taohuayuan-jiji-855/p64-0.jpg",
+                "/cases/taohuayuan-jiji-855/p65-0.jpg",
+                "/cases/taohuayuan-jiji-855/p66-0.jpg"
+            ],
+            "tags": [
+                "侘寂",
+                "义乌",
+                "855㎡"
+            ],
+            "description": "",
+            "source": "⑤号设计"
+        },
+        {
+            "id": "case_008",
+            "project_name": "桃花源·佰寂",
+            "location": "义乌",
+            "country": "中国",
+            "style": "侘寂",
+            "area": 500,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/taohuayuan-jiji-500/p67-0.jpg",
+                "/cases/taohuayuan-jiji-500/p68-0.jpg",
+                "/cases/taohuayuan-jiji-500/p69-0.jpg",
+                "/cases/taohuayuan-jiji-500/p69-1.jpg",
+                "/cases/taohuayuan-jiji-500/p70-0.jpg",
+                "/cases/taohuayuan-jiji-500/p71-0.jpg",
+                "/cases/taohuayuan-jiji-500/p72-0.jpg"
+            ],
+            "tags": [
+                "侘寂",
+                "义乌",
+                "500㎡"
+            ],
+            "description": "",
+            "source": "⑤号设计"
+        },
+        {
+            "id": "case_009",
+            "project_name": "科尔世纪外滩",
+            "location": "杭州",
+            "country": "中国",
+            "style": "现代小法",
+            "area": 200,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/keer-shiji-waitan/p73-0.jpg",
+                "/cases/keer-shiji-waitan/p74-0.jpg",
+                "/cases/keer-shiji-waitan/p75-0.jpg",
+                "/cases/keer-shiji-waitan/p76-0.jpg"
+            ],
+            "tags": [
+                "现代小法",
+                "杭州",
+                "200㎡"
+            ],
+            "description": "",
+            "source": "⑤号设计"
+        },
+        {
+            "id": "case_010",
+            "project_name": "绿谷云溪",
+            "location": "义乌",
+            "country": "中国",
+            "style": "侘寂",
+            "area": 450,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/lvgu-yunxi/p77-0.jpg",
+                "/cases/lvgu-yunxi/p78-0.jpg",
+                "/cases/lvgu-yunxi/p78-1.jpg",
+                "/cases/lvgu-yunxi/p78-2.jpg",
+                "/cases/lvgu-yunxi/p79-0.jpg",
+                "/cases/lvgu-yunxi/p79-1.jpg",
+                "/cases/lvgu-yunxi/p80-0.jpg",
+                "/cases/lvgu-yunxi/p80-1.jpg",
+                "/cases/lvgu-yunxi/p81-0.jpg",
+                "/cases/lvgu-yunxi/p81-1.jpg"
+            ],
+            "tags": [
+                "侘寂",
+                "义乌",
+                "450㎡"
+            ],
+            "description": "",
+            "source": "⑤号设计"
+        },
+        {
+            "id": "case_011",
+            "project_name": "御香园",
+            "location": "绍兴",
+            "country": "中国",
+            "style": "现代奶油",
+            "area": 780,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/yuxiangyuan/p82-0.jpg",
+                "/cases/yuxiangyuan/p83-0.jpg",
+                "/cases/yuxiangyuan/p84-0.jpg",
+                "/cases/yuxiangyuan/p85-0.jpg",
+                "/cases/yuxiangyuan/p85-1.jpg",
+                "/cases/yuxiangyuan/p86-0.jpg"
+            ],
+            "tags": [
+                "现代奶油",
+                "绍兴",
+                "780㎡"
+            ],
+            "description": "",
+            "source": "⑤号设计"
+        },
+        {
+            "id": "case_012",
+            "project_name": "皇庭水岸·顶有",
+            "location": "莆田",
+            "country": "中国",
+            "style": "意式极简",
+            "area": 520,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/huangting-shuian/p87-0.jpg",
+                "/cases/huangting-shuian/p88-0.jpg",
+                "/cases/huangting-shuian/p89-0.jpg",
+                "/cases/huangting-shuian/p90-0.jpg"
+            ],
+            "tags": [
+                "意式极简",
+                "莆田",
+                "520㎡"
+            ],
+            "description": "",
+            "source": "⑤号设计"
+        },
+        {
+            "id": "case_013",
+            "project_name": "佳源珑府",
+            "location": "桐乡",
+            "country": "中国",
+            "style": "意式极简",
+            "area": 430,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/jiayuan-longfu/p91-0.jpg",
+                "/cases/jiayuan-longfu/p92-0.jpg",
+                "/cases/jiayuan-longfu/p92-1.jpg",
+                "/cases/jiayuan-longfu/p93-0.jpg",
+                "/cases/jiayuan-longfu/p93-1.jpg"
+            ],
+            "tags": [
+                "意式极简",
+                "桐乡",
+                "430㎡"
+            ],
+            "description": "",
+            "source": "⑤号设计"
+        },
+        {
+            "id": "case_014",
+            "project_name": "万科松山湖璞舍",
+            "location": "东莞",
+            "country": "中国",
+            "style": "现代",
+            "area": 1100,
+            "hard_cost_per_sqm": 5500,
+            "soft_cost_per_sqm": 4500,
+            "images": [
+                "/cases/vanke-songshan-pushe/p01-0.jpg",
+                "/cases/vanke-songshan-pushe/p02-0.jpg",
+                "/cases/vanke-songshan-pushe/p03-0.jpg"
+            ],
+            "tags": [
+                "现代",
+                "东莞",
+                "1100㎡",
+                "硬装5500",
+                "软装4500"
+            ],
+            "description": "",
+            "source": "派尚设计"
+        },
+        {
+            "id": "case_015",
+            "project_name": "正弘悦云棠",
+            "location": "郑州",
+            "country": "中国",
+            "style": "现代",
+            "area": 207,
+            "hard_cost_per_sqm": 4500,
+            "soft_cost_per_sqm": 4000,
+            "images": [
+                "/cases/zhenghong-yuetang/p12-0.jpg",
+                "/cases/zhenghong-yuetang/p13-0.jpg",
+                "/cases/zhenghong-yuetang/p14-0.jpg"
+            ],
+            "tags": [
+                "现代",
+                "郑州",
+                "207㎡",
+                "硬装4500",
+                "软装4000"
+            ],
+            "description": "",
+            "source": "派尚设计"
+        },
+        {
+            "id": "case_016",
+            "project_name": "长沙叠墅",
+            "location": "长沙",
+            "country": "中国",
+            "style": "现代",
+            "area": 280,
+            "hard_cost_per_sqm": 4500,
+            "soft_cost_per_sqm": 4000,
+            "images": [
+                "/cases/zhonghuan-dieshu/p24-0.jpg",
+                "/cases/zhonghuan-dieshu/p25-0.jpg",
+                "/cases/zhonghuan-dieshu/p26-0.jpg",
+                "/cases/zhonghuan-dieshu/p27-0.jpg",
+                "/cases/zhonghuan-dieshu/p28-0.jpg",
+                "/cases/zhonghuan-dieshu/p29-0.jpg"
+            ],
+            "tags": [
+                "现代",
+                "长沙",
+                "280㎡",
+                "硬装4500",
+                "软装4000",
+                "艾特奖TOP10"
+            ],
+            "description": "2024年第十三届艾特奖全国杰出设计大奖 TOP10",
+            "source": "派尚设计"
+        },
+        {
+            "id": "case_017",
+            "project_name": "华润鹭栖湖",
+            "location": "嘉兴",
+            "country": "中国",
+            "style": "现代",
+            "area": 230,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/huarun-luqi/p15-0.jpg",
+                "/cases/huarun-luqi/p16-0.jpg",
+                "/cases/huarun-luqi/p16-1.jpg",
+                "/cases/huarun-luqi/p16-2.jpg",
+                "/cases/huarun-luqi/p16-3.jpg"
+            ],
+            "tags": [
+                "现代",
+                "嘉兴",
+                "230㎡",
+                "华润最美样板房"
+            ],
+            "description": "华润内部评选最美样板房",
+            "source": "派尚设计"
+        },
+        {
+            "id": "case_018",
+            "project_name": "广州中建御溪谷",
+            "location": "广州",
+            "country": "中国",
+            "style": "现代",
+            "area": 420,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/guangzhou-yuxigu/p30-0.jpg",
+                "/cases/guangzhou-yuxigu/p31-0.jpg",
+                "/cases/guangzhou-yuxigu/p31-1.jpg",
+                "/cases/guangzhou-yuxigu/p32-0.jpg",
+                "/cases/guangzhou-yuxigu/p32-1.jpg",
+                "/cases/guangzhou-yuxigu/p33-0.jpg",
+                "/cases/guangzhou-yuxigu/p33-1.jpg",
+                "/cases/guangzhou-yuxigu/p33-2.jpg",
+                "/cases/guangzhou-yuxigu/p34-0.jpg",
+                "/cases/guangzhou-yuxigu/p35-0.jpg",
+                "/cases/guangzhou-yuxigu/p36-0.jpg",
+                "/cases/guangzhou-yuxigu/p36-1.jpg",
+                "/cases/guangzhou-yuxigu/p37-0.jpg",
+                "/cases/guangzhou-yuxigu/p38-0.jpg",
+                "/cases/guangzhou-yuxigu/p39-0.jpg",
+                "/cases/guangzhou-yuxigu/p39-1.jpg"
+            ],
+            "tags": [
+                "现代",
+                "广州",
+                "420㎡"
+            ],
+            "description": "",
+            "source": "派尚设计"
+        },
+        {
+            "id": "case_019",
+            "project_name": "大平层·徽作",
+            "location": null,
+            "country": "中国",
+            "style": "待补充",
+            "area": null,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/dapingceng-huizuo/p17-0.jpg",
+                "/cases/dapingceng-huizuo/p17-1.jpg",
+                "/cases/dapingceng-huizuo/p18-0.jpg",
+                "/cases/dapingceng-huizuo/p18-1.jpg",
+                "/cases/dapingceng-huizuo/p19-0.jpg",
+                "/cases/dapingceng-huizuo/p20-0.jpg",
+                "/cases/dapingceng-huizuo/p20-1.jpg",
+                "/cases/dapingceng-huizuo/p21-0.jpg",
+                "/cases/dapingceng-huizuo/p21-1.jpg",
+                "/cases/dapingceng-huizuo/p22-0.jpg",
+                "/cases/dapingceng-huizuo/p22-1.jpg",
+                "/cases/dapingceng-huizuo/p23-0.jpg",
+                "/cases/dapingceng-huizuo/p23-1.jpg"
+            ],
+            "tags": [
+                "大平层·徽作"
+            ],
+            "description": "",
+            "source": "待补充"
+        },
+        {
+            "id": "case_020",
+            "project_name": "南京·观天下",
+            "location": "南京",
+            "country": "中国",
+            "style": "待补充",
+            "area": null,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/nanjing-guantianxia/p04-0.jpg",
+                "/cases/nanjing-guantianxia/p05-0.jpg",
+                "/cases/nanjing-guantianxia/p05-1.jpg",
+                "/cases/nanjing-guantianxia/p06-0.jpg",
+                "/cases/nanjing-guantianxia/p07-0.jpg",
+                "/cases/nanjing-guantianxia/p07-1.jpg"
+            ],
+            "tags": [
+                "南京·观天下"
+            ],
+            "description": "",
+            "source": "待补充"
+        },
+        {
+            "id": "case_021",
+            "project_name": "新湖香格里拉",
+            "location": "杭州",
+            "country": "中国",
+            "style": "待补充",
+            "area": null,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/xinhu-xianggelila/p53-0.jpg",
+                "/cases/xinhu-xianggelila/p54-0.jpg",
+                "/cases/xinhu-xianggelila/p54-1.jpg",
+                "/cases/xinhu-xianggelila/p55-0.jpg",
+                "/cases/xinhu-xianggelila/p56-0.jpg"
+            ],
+            "tags": [
+                "新湖香格里拉"
+            ],
+            "description": "",
+            "source": "待补充"
+        },
+        {
+            "id": "case_022",
+            "project_name": "松山·Living 璞舍",
+            "location": null,
+            "country": "中国",
+            "style": "待补充",
+            "area": null,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/songshan-living-pushe/p08-0.jpg",
+                "/cases/songshan-living-pushe/p09-0.jpg",
+                "/cases/songshan-living-pushe/p10-0.jpg",
+                "/cases/songshan-living-pushe/p11-0.jpg"
+            ],
+            "tags": [
+                "松山·Living 璞舍"
+            ],
+            "description": "",
+            "source": "待补充"
+        },
+        {
+            "id": "case_023",
+            "project_name": "世贸国风",
+            "location": null,
+            "country": "中国",
+            "style": "现代",
+            "area": null,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/shimao-guofeng/01.jpg",
+                "/cases/shimao-guofeng/02.jpg",
+                "/cases/shimao-guofeng/03.jpg",
+                "/cases/shimao-guofeng/04.jpg",
+                "/cases/shimao-guofeng/05.jpg",
+                "/cases/shimao-guofeng/06.jpg",
+                "/cases/shimao-guofeng/07.jpg",
+                "/cases/shimao-guofeng/08.jpg",
+                "/cases/shimao-guofeng/09.jpg",
+                "/cases/shimao-guofeng/10.jpg",
+                "/cases/shimao-guofeng/11.jpg"
+            ],
+            "tags": [
+                "世贸国风"
+            ],
+            "description": "",
+            "source": "待补充"
+        },
+        {
+            "id": "case_024",
+            "project_name": "庐州府·翠园",
+            "location": null,
+            "country": "中国",
+            "style": "现代奶油",
+            "area": null,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/luzhoufu-cuiyuan/01.jpg",
+                "/cases/luzhoufu-cuiyuan/02.jpg",
+                "/cases/luzhoufu-cuiyuan/03.jpg",
+                "/cases/luzhoufu-cuiyuan/04.jpg",
+                "/cases/luzhoufu-cuiyuan/05.jpg",
+                "/cases/luzhoufu-cuiyuan/06.jpg",
+                "/cases/luzhoufu-cuiyuan/07.jpg",
+                "/cases/luzhoufu-cuiyuan/08.jpg",
+                "/cases/luzhoufu-cuiyuan/09.jpg",
+                "/cases/luzhoufu-cuiyuan/10.jpg",
+                "/cases/luzhoufu-cuiyuan/11.jpg",
+                "/cases/luzhoufu-cuiyuan/12.jpg",
+                "/cases/luzhoufu-cuiyuan/13.jpg",
+                "/cases/luzhoufu-cuiyuan/14.jpg",
+                "/cases/luzhoufu-cuiyuan/15.jpg",
+                "/cases/luzhoufu-cuiyuan/16.jpg",
+                "/cases/luzhoufu-cuiyuan/17.jpg",
+                "/cases/luzhoufu-cuiyuan/18.jpg",
+                "/cases/luzhoufu-cuiyuan/19.jpg",
+                "/cases/luzhoufu-cuiyuan/20.jpg",
+                "/cases/luzhoufu-cuiyuan/21.jpg",
+                "/cases/luzhoufu-cuiyuan/22.jpg",
+                "/cases/luzhoufu-cuiyuan/23.jpg",
+                "/cases/luzhoufu-cuiyuan/24.jpg",
+                "/cases/luzhoufu-cuiyuan/25.jpg",
+                "/cases/luzhoufu-cuiyuan/26.jpg",
+                "/cases/luzhoufu-cuiyuan/27.jpg",
+                "/cases/luzhoufu-cuiyuan/28.jpg",
+                "/cases/luzhoufu-cuiyuan/29.jpg",
+                "/cases/luzhoufu-cuiyuan/30.jpg",
+                "/cases/luzhoufu-cuiyuan/31.jpg",
+                "/cases/luzhoufu-cuiyuan/32.jpg",
+                "/cases/luzhoufu-cuiyuan/33.jpg",
+                "/cases/luzhoufu-cuiyuan/34.jpg",
+                "/cases/luzhoufu-cuiyuan/35.jpg",
+                "/cases/luzhoufu-cuiyuan/36.jpg",
+                "/cases/luzhoufu-cuiyuan/37.jpg",
+                "/cases/luzhoufu-cuiyuan/38.jpg",
+                "/cases/luzhoufu-cuiyuan/39.jpg",
+                "/cases/luzhoufu-cuiyuan/40.jpg",
+                "/cases/luzhoufu-cuiyuan/41.jpg",
+                "/cases/luzhoufu-cuiyuan/42.jpg",
+                "/cases/luzhoufu-cuiyuan/43.jpg",
+                "/cases/luzhoufu-cuiyuan/44.jpg",
+                "/cases/luzhoufu-cuiyuan/45.jpg",
+                "/cases/luzhoufu-cuiyuan/46.jpg",
+                "/cases/luzhoufu-cuiyuan/47.jpg",
+                "/cases/luzhoufu-cuiyuan/48.jpg"
+            ],
+            "tags": [
+                "庐州府·翠园"
+            ],
+            "description": "",
+            "source": "待补充",
+            "annotations": {
+                "01.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空会客厅，奶油色系，悬浮楼梯贯穿两层",
+                        "en": "Double-height living room in cream tones, with a floating staircase spanning two floors",
+                        "id": "Ruang keluarga double-height bernuansa krem, dengan tangga melayang yang menembus dua lantai"
+                    }
+                },
+                "02.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "地下层会客厅平面图",
+                        "en": "Basement lounge floor plan",
+                        "id": "Denah ruang keluarga lantai basement"
+                    }
+                },
+                "03.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "地下层会客厅平面图（含家具布置）",
+                        "en": "Basement lounge floor plan (with furniture layout)",
+                        "id": "Denah ruang keluarga lantai basement (dengan tata letak furnitur)"
+                    }
+                },
+                "04.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "挑空会客厅全景，悬浮楼梯与艺术吊灯",
+                        "en": "Panorama of the double-height living room, floating staircase and sculptural chandelier",
+                        "id": "Panorama ruang keluarga double-height, tangga melayang, dan chandelier artistik"
+                    }
+                },
+                "05.jpg": {
+                    "room": "staircase",
+                    "desc": {
+                        "zh": "悬浮楼梯挑空区，俯瞰娱乐区",
+                        "en": "Floating staircase void overlooking the recreation area",
+                        "id": "Area void tangga melayang yang menghadap area rekreasi"
+                    }
+                },
+                "06.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "会客厅平面图",
+                        "en": "Living room floor plan",
+                        "id": "Denah ruang keluarga"
+                    }
+                },
+                "07.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "会客厅会客区，围合式沙发与天井采光",
+                        "en": "Conversation area with enclosed sofa arrangement and courtyard skylight",
+                        "id": "Area duduk dengan sofa melingkar dan cahaya alami dari inner court"
+                    }
+                },
+                "08.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "会客厅平面图",
+                        "en": "Living room floor plan",
+                        "id": "Denah ruang keluarga"
+                    }
+                },
+                "09.jpg": {
+                    "room": "recreation",
+                    "desc": {
+                        "zh": "台球娱乐区，深色背景墙与造型吊灯",
+                        "en": "Billiards recreation area with dark accent wall and statement pendant",
+                        "id": "Area rekreasi biliar dengan dinding aksen gelap dan lampu gantung dekoratif"
+                    }
+                },
+                "10.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "落尘区与卫生间平面图",
+                        "en": "Entry foyer and bathroom floor plan",
+                        "id": "Denah area foyer dan kamar mandi"
+                    }
+                },
+                "11.jpg": {
+                    "room": "tea_room",
+                    "desc": {
+                        "zh": "茗茶焚香区，中式屏风与盆景陈设",
+                        "en": "Tea and incense area with Chinese screen and bonsai arrangement",
+                        "id": "Area teh dan dupa dengan sketsel Tiongkok dan penataan bonsai"
+                    }
+                },
+                "12.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "茗茶焚香区平面图",
+                        "en": "Tea area floor plan",
+                        "id": "Denah area teh"
+                    }
+                },
+                "13.jpg": {
+                    "room": "bar",
+                    "desc": {
+                        "zh": "水吧区，整面储物柜与悬挑吧台",
+                        "en": "Bar area with full-wall storage and cantilevered counter",
+                        "id": "Area bar dengan lemari penyimpanan sepanjang dinding dan meja bar kantilever"
+                    }
+                },
+                "14.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "茗茶焚香区平面图",
+                        "en": "Tea area floor plan",
+                        "id": "Denah area teh"
+                    }
+                },
+                "15.jpg": {
+                    "room": "study",
+                    "desc": {
+                        "zh": "学习区，长桌与整墙书架",
+                        "en": "Study area with long table and full-wall bookshelves",
+                        "id": "Ruang belajar dengan meja panjang dan rak buku sepanjang dinding"
+                    }
+                },
+                "16.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "学习区平面图",
+                        "en": "Study area floor plan",
+                        "id": "Denah ruang belajar"
+                    }
+                },
+                "17.jpg": {
+                    "room": "study",
+                    "desc": {
+                        "zh": "学习区与楼梯间，悬浮踏步",
+                        "en": "Study area and staircase with floating treads",
+                        "id": "Ruang belajar dan tangga dengan anak tangga melayang"
+                    }
+                },
+                "18.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "卫生间与学习区平面图",
+                        "en": "Bathroom and study area floor plan",
+                        "id": "Denah kamar mandi dan ruang belajar"
+                    }
+                },
+                "19.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客餐厅一体空间，电视墙与钢琴区",
+                        "en": "Open-plan living and dining space with TV wall and piano corner",
+                        "id": "Ruang keluarga-makan terbuka dengan dinding TV dan sudut piano"
+                    }
+                },
+                "20.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "一层餐厅与主卧平面图",
+                        "en": "First-floor dining room and master bedroom plan",
+                        "id": "Denah ruang makan dan kamar utama lantai satu"
+                    }
+                },
+                "21.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "一层平面图",
+                        "en": "First-floor plan",
+                        "id": "Denah lantai satu"
+                    }
+                },
+                "22.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧连通阳台，落地窗引入庭院景观",
+                        "en": "Master bedroom connected to balcony, floor-to-ceiling windows framing courtyard views",
+                        "id": "Kamar utama terhubung ke balkon, jendela floor-to-ceiling menghadirkan pemandangan taman"
+                    }
+                },
+                "23.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "一层平面图",
+                        "en": "First-floor plan",
+                        "id": "Denah lantai satu"
+                    }
+                },
+                "24.jpg": {
+                    "room": "living",
+                    "desc": {
+                        "zh": "客厅电视墙，深色背景与壁炉造型",
+                        "en": "Living room TV wall with dark backdrop and fireplace feature",
+                        "id": "Dinding TV ruang keluarga dengan latar gelap dan aksen perapian"
+                    }
+                },
+                "25.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "一层平面图",
+                        "en": "First-floor plan",
+                        "id": "Denah lantai satu"
+                    }
+                },
+                "26.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧起居视角，床尾电视墙与衣帽间入口",
+                        "en": "Master bedroom view: TV wall at the foot of the bed and walk-in closet entrance",
+                        "id": "Sudut kamar utama: dinding TV di ujung tempat tidur dan pintu walk-in closet"
+                    }
+                },
+                "27.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "一层平面图",
+                        "en": "First-floor plan",
+                        "id": "Denah lantai satu"
+                    }
+                },
+                "28.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "餐厅，圆桌与艺术吊灯，尽头连通西厨",
+                        "en": "Dining room with round table and artistic chandelier, connecting to the western kitchen",
+                        "id": "Ruang makan dengan meja bundar dan chandelier artistik, terhubung ke dapur barat"
+                    }
+                },
+                "29.jpg": {
+                    "room": "bar",
+                    "desc": {
+                        "zh": "西厨岛台，临窗吧台与橙色吧椅",
+                        "en": "Western kitchen island with window-side bar counter and orange stools",
+                        "id": "Island dapur barat dengan meja bar di sisi jendela dan kursi bar oranye"
+                    }
+                },
+                "30.jpg": {
+                    "room": "dining",
+                    "desc": {
+                        "zh": "餐厅一角，中古边柜与圆桌",
+                        "en": "Dining corner with vintage sideboard and round table",
+                        "id": "Sudut ruang makan dengan bufet vintage dan meja bundar"
+                    }
+                },
+                "31.jpg": {
+                    "room": "staircase",
+                    "desc": {
+                        "zh": "楼梯间，原木踏步与玻璃扶手",
+                        "en": "Staircase with solid wood treads and glass railing",
+                        "id": "Tangga dengan anak tangga kayu solid dan railing kaca"
+                    }
+                },
+                "32.jpg": {
+                    "room": "kitchen",
+                    "desc": {
+                        "zh": "中厨，白色吊柜与原木地柜",
+                        "en": "Chinese kitchen with white overhead cabinets and natural wood base cabinets",
+                        "id": "Dapur Tiongkok dengan kabinet gantung putih dan kabinet bawah kayu alami"
+                    }
+                },
+                "33.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧，原木地台床与床头吊灯",
+                        "en": "Master bedroom with wooden platform bed and bedside pendant lights",
+                        "id": "Kamar utama dengan tempat tidur platform kayu dan lampu gantung di sisi ranjang"
+                    }
+                },
+                "34.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "主卧平面图",
+                        "en": "Master bedroom floor plan",
+                        "id": "Denah kamar utama"
+                    }
+                },
+                "35.jpg": {
+                    "room": "bathroom",
+                    "desc": {
+                        "zh": "主卫，双台盆与独立浴缸，宝格丽石材",
+                        "en": "Master bathroom with double vanity and freestanding tub in Bulgari stone",
+                        "id": "Kamar mandi utama dengan wastafel ganda dan bathtub berdiri bebas berlapis batu Bulgari"
+                    }
+                },
+                "36.jpg": {
+                    "room": "bathroom",
+                    "desc": {
+                        "zh": "主卫全景，临窗浴缸与落地窗",
+                        "en": "Master bathroom panorama with window-side tub and floor-to-ceiling windows",
+                        "id": "Panorama kamar mandi utama dengan bathtub di sisi jendela dan jendela floor-to-ceiling"
+                    }
+                },
+                "37.jpg": {
+                    "room": "bathroom",
+                    "desc": {
+                        "zh": "主卫洗漱区细节，圆镜与壁灯",
+                        "en": "Master bathroom vanity detail with round mirror and wall sconces",
+                        "id": "Detail area wastafel kamar mandi utama dengan cermin bundar dan lampu dinding"
+                    }
+                },
+                "38.jpg": {
+                    "room": "tea_room",
+                    "desc": {
+                        "zh": "二层茶室临窗区，整墙衣柜与茶台",
+                        "en": "Second-floor tea room window area with full-wall wardrobe and tea table",
+                        "id": "Area jendela ruang teh lantai dua dengan lemari sepanjang dinding dan meja teh"
+                    }
+                },
+                "39.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "次卧，暖色微水泥与挂画",
+                        "en": "Guest bedroom with warm microcement and artwork",
+                        "id": "Kamar tidur kedua dengan microcement hangat dan lukisan"
+                    }
+                },
+                "40.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "主卧与开放式衣帽间",
+                        "en": "Master bedroom with open walk-in closet",
+                        "id": "Kamar utama dengan walk-in closet terbuka"
+                    }
+                },
+                "41.jpg": {
+                    "room": "bedroom",
+                    "desc": {
+                        "zh": "次卧，双窗采光与绿色单椅",
+                        "en": "Guest bedroom with dual windows and green accent chair",
+                        "id": "Kamar tidur kedua dengan dua jendela dan kursi aksen hijau"
+                    }
+                },
+                "42.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "儿童房2平面图",
+                        "en": "Kids room 2 floor plan",
+                        "id": "Denah kamar anak 2"
+                    }
+                },
+                "43.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "儿童房2平面图",
+                        "en": "Kids room 2 floor plan",
+                        "id": "Denah kamar anak 2"
+                    }
+                },
+                "44.jpg": {
+                    "room": "kids_room",
+                    "desc": {
+                        "zh": "儿童房2，绿色系与临窗书桌",
+                        "en": "Kids room 2 in a green palette with window-side desk",
+                        "id": "Kamar anak 2 bernuansa hijau dengan meja belajar di sisi jendela"
+                    }
+                },
+                "45.jpg": {
+                    "room": "kids_room",
+                    "desc": {
+                        "zh": "儿童房1，步入式衣帽间",
+                        "en": "Kids room 1 with walk-in closet",
+                        "id": "Kamar anak 1 dengan walk-in closet"
+                    }
+                },
+                "46.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "儿童房1平面图",
+                        "en": "Kids room 1 floor plan",
+                        "id": "Denah kamar anak 1"
+                    }
+                },
+                "47.jpg": {
+                    "room": "plan",
+                    "desc": {
+                        "zh": "儿童房1平面图",
+                        "en": "Kids room 1 floor plan",
+                        "id": "Denah kamar anak 1"
+                    }
+                },
+                "48.jpg": {
+                    "room": "kids_room",
+                    "desc": {
+                        "zh": "儿童房1，绿色挂画与书桌上柜",
+                        "en": "Kids room 1 with green artwork and overhead desk cabinets",
+                        "id": "Kamar anak 1 dengan lukisan hijau dan kabinet di atas meja belajar"
+                    }
+                }
+            }
+        },
+        {
+            "id": "case_025",
+            "project_name": "新华御湖庄园·知湖",
+            "location": null,
+            "country": "中国",
+            "style": "法式",
+            "area": null,
+            "hard_cost_per_sqm": null,
+            "soft_cost_per_sqm": null,
+            "images": [
+                "/cases/xinhua-yuhu-zhihu/01.jpg",
+                "/cases/xinhua-yuhu-zhihu/02.jpg",
+                "/cases/xinhua-yuhu-zhihu/03.jpg",
+                "/cases/xinhua-yuhu-zhihu/04.jpg",
+                "/cases/xinhua-yuhu-zhihu/05.jpg"
+            ],
+            "tags": [
+                "新华御湖庄园·知湖"
+            ],
+            "description": "",
+            "source": "待补充"
+        }
+    ]
+}

@@ -11,10 +11,17 @@
  * CORS：Access-Control-Allow-Origin: *，处理 OPTIONS 预检。
  */
 
-/* ================= 估价引擎常量（与前端 lib/quote.ts 保持一致） ================= */
+/* ================= 估价引擎常量（与前端 lib/quote.ts 保持一致） =================
+ * 口径（业主确认）：设计费按档次单价 × 印尼服务系数 1.2 独立计算；
+ * 硬装（施工）加权 1.4（印尼人效比约 5x + 工签成本）；软装不加权；
+ * 泳池 8% / 花园 5% 作用于（硬装+软装）。
+ */
 
 const BASE_HARD_RMB = 5000;
 const BASE_SOFT_RMB = 4250;
+const CONSTRUCTION_WEIGHT = 1.4;
+const DESIGN_RATE = { standard: 1500, luxury: 2500, ultra: 3500 };
+const ID_SERVICE_FACTOR = 1.2;
 const USD_CNY = 7.2;
 const IDR_USD = 15000;
 
@@ -26,14 +33,8 @@ const REGION_FACTOR = { jakarta: 1.0, bali: 1.05, surabaya: 0.9, other: 1.0 };
 const TIER_FACTOR = { standard: 1.0, luxury: 1.3, ultra: 1.6 };
 const POOL_BONUS = 0.08;
 const GARDEN_BONUS = 0.05;
-const BREAKDOWN = [
-  { key: 'structure', ratio: 0.25 },
-  { key: 'fitout', ratio: 0.38 },
-  { key: 'mep', ratio: 0.12 },
-  { key: 'landscape', ratio: 0.08 },
-  { key: 'furniture', ratio: 0.12 },
-  { key: 'design', ratio: 0.05 },
-];
+// 硬装内部拆分：结构 45% / 机电 22% / 景观 15%，余 18% 施工人工综合并入「装修」
+const HARD_SPLIT = { structure: 0.45, mep: 0.22, landscape: 0.15, fitout: 0.18 };
 const AREA_MIN = 50;
 const AREA_MAX = 5000;
 
@@ -158,17 +159,26 @@ async function handleQuote(request, env) {
   const hasPool = !!body.has_pool;
   const hasGarden = !!body.has_garden;
 
-  // 与前端 computeQuote 同一公式
+  // 与前端 computeQuote 同一公式：总价 = 硬装 + 软装 + 设计费 + 附加项
   const styleFactor = STYLE_FACTOR[style] ?? 1.0;
-  const totalRmb =
-    area * (BASE_HARD_RMB + BASE_SOFT_RMB) * styleFactor *
-    REGION_FACTOR[region] * TIER_FACTOR[tier] *
-    (1 + (hasPool ? POOL_BONUS : 0) + (hasGarden ? GARDEN_BONUS : 0));
+  const hardRmb =
+    area * BASE_HARD_RMB * styleFactor * REGION_FACTOR[region] * TIER_FACTOR[tier] * CONSTRUCTION_WEIGHT;
+  const softRmb = area * BASE_SOFT_RMB * styleFactor * TIER_FACTOR[tier];
+  const designFeeRmb = area * DESIGN_RATE[tier] * ID_SERVICE_FACTOR;
+  const extrasRmb =
+    (hardRmb + softRmb) * ((hasPool ? POOL_BONUS : 0) + (hasGarden ? GARDEN_BONUS : 0));
 
+  const totalRmb = hardRmb + softRmb + designFeeRmb + extrasRmb;
   const totalUsd = totalRmb / USD_CNY;
   const totalIdr = totalUsd * IDR_USD;
-  const breakdown = {};
-  for (const b of BREAKDOWN) breakdown[b.key] = Math.round(totalRmb * b.ratio);
+  const breakdown = {
+    structure: Math.round(hardRmb * HARD_SPLIT.structure),
+    fitout: Math.round(hardRmb * HARD_SPLIT.fitout),
+    mep: Math.round(hardRmb * HARD_SPLIT.mep),
+    landscape: Math.round(hardRmb * HARD_SPLIT.landscape),
+    furniture: Math.round(softRmb),
+    design: Math.round(designFeeRmb),
+  };
 
   // 参考案例：同风格且有造价数据的优先，否则同风格第一个
   let referenceCase = null;
@@ -211,6 +221,10 @@ async function handleQuote(request, env) {
     total_usd: Math.round(totalUsd),
     total_idr: Math.round(totalIdr),
     total_rmb: Math.round(totalRmb),
+    hard_rmb: Math.round(hardRmb),
+    soft_rmb: Math.round(softRmb),
+    design_fee_rmb: Math.round(designFeeRmb),
+    extras_rmb: Math.round(extrasRmb),
     breakdown,
     reference_case: referenceCase
       ? {

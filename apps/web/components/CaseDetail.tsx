@@ -106,7 +106,7 @@ export default function CaseDetail({ item }: { item: ProjectCase }) {
         >
           {t.detail.back}
         </Link>
-        <h1 className="mt-6 font-serif text-3xl text-ivory md:text-5xl">
+        <h1 className="mt-6 font-serif text-3xl text-balance text-ivory md:text-5xl">
           {item.project_name}
         </h1>
         <p className="mt-3 text-sm tracking-wider text-ivory-mute">{meta}</p>

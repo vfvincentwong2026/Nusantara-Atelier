@@ -78,7 +78,7 @@ export default function BookingPage() {
 
       <div className="mx-auto max-w-2xl px-6 pt-28">
         <p className="section-eyebrow">{t.bookingForm.eyebrow}</p>
-        <h1 className="mt-4 font-serif text-3xl text-ivory md:text-4xl">
+        <h1 className="mt-4 font-serif text-3xl text-balance text-ivory md:text-4xl">
           {t.bookingForm.title}
         </h1>
         <p className="mt-3 text-sm leading-relaxed text-ivory-dim">

@@ -8,3 +8,6 @@ export const WHATSAPP_NUMBER = '6280000000000';
 
 /** API Worker 地址（workers/api-worker，已部署） */
 export const API_BASE = 'https://nusantara-api-worker.vfvincentwong-881.workers.dev';
+
+/** 单文件上传大小上限（MB，纯前端校验） */
+export const MAX_UPLOAD_MB = 10;

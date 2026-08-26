@@ -32,14 +32,14 @@ export default function HomePage() {
         <HeroCarousel images={heroImages} />
         <div className="relative z-10 mx-auto max-w-4xl px-6 pt-24 text-center">
           <p className="section-eyebrow mb-6">{t.hero.eyebrow}</p>
-          <h1 className="font-serif text-4xl leading-tight text-ivory sm:text-5xl md:text-6xl">
+          <h1 className="font-serif text-4xl leading-tight text-balance text-ivory sm:text-5xl md:text-6xl">
             {t.hero.titleA}
             <span className="text-gold">{t.hero.titleB}</span>
           </h1>
           <p className="mt-3 text-sm tracking-widest text-ivory-mute">
             {t.hero.tagline}
           </p>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-ivory-dim">
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-pretty text-ivory-dim">
             {t.hero.desc}
             <br />
             {t.hero.descChain}
@@ -69,7 +69,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-14 text-center">
             <p className="section-eyebrow">{t.services.eyebrow}</p>
-            <h2 className="mt-4 font-serif text-3xl text-ivory md:text-4xl">
+            <h2 className="mt-4 font-serif text-3xl text-balance text-ivory md:text-4xl">
               {t.services.title}
             </h2>
             <div className="gold-divider mx-auto mt-6" />
@@ -85,7 +85,7 @@ export default function HomePage() {
                 <p className="mt-1 text-xs tracking-widest text-gold-dark">
                   {s.subtitle}
                 </p>
-                <p className="mt-4 text-sm leading-relaxed text-ivory-dim">
+                <p className="mt-4 text-sm leading-relaxed text-pretty text-ivory-dim">
                   {s.desc}
                 </p>
                 <p className="mt-3 text-xs leading-relaxed text-gold-dark">
@@ -102,7 +102,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-12 text-center">
             <p className="section-eyebrow">{t.cases.eyebrow}</p>
-            <h2 className="mt-4 font-serif text-3xl text-ivory md:text-4xl">
+            <h2 className="mt-4 font-serif text-3xl text-balance text-ivory md:text-4xl">
               {t.cases.title}
             </h2>
             <p className="mt-2 text-sm tracking-widest text-ivory-mute">
@@ -119,10 +119,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-6xl px-6">
           <div className="mb-12 text-center">
             <p className="section-eyebrow">{t.pricing.eyebrow}</p>
-            <h2 className="mt-4 font-serif text-3xl text-ivory md:text-4xl">
+            <h2 className="mt-4 font-serif text-3xl text-balance text-ivory md:text-4xl">
               {t.pricing.title}
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-ivory-dim">
+            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-pretty text-ivory-dim">
               {t.pricing.body}
             </p>
             <p className="mt-4 inline-block rounded border border-gold/40 bg-ink-800 px-5 py-2 font-mono text-xs text-gold-dark md:text-sm">
@@ -178,11 +178,11 @@ export default function HomePage() {
       <section id="team" className="border-t border-ivory/5 bg-ink-800/60 py-24">
         <div className="mx-auto max-w-4xl px-6 text-center">
           <p className="section-eyebrow">{t.team.eyebrow}</p>
-          <h2 className="mt-4 font-serif text-3xl text-ivory md:text-4xl">
+          <h2 className="mt-4 font-serif text-3xl text-balance text-ivory md:text-4xl">
             {t.team.title}
           </h2>
           <div className="gold-divider mx-auto mt-6" />
-          <p className="mx-auto mt-8 max-w-3xl text-sm leading-loose text-ivory-dim md:text-base">
+          <p className="mx-auto mt-8 max-w-3xl text-pretty text-sm leading-loose text-ivory-dim md:text-base">
             {t.team.body}
           </p>
           <div className="mx-auto mt-12 grid max-w-2xl grid-cols-3 gap-6">
@@ -205,10 +205,10 @@ export default function HomePage() {
         <div className="mx-auto max-w-3xl px-6">
           <div className="rounded-xl border border-gold/25 bg-gradient-to-br from-ink-800 to-ink-700 p-10 text-center">
             <p className="section-eyebrow">{t.estimate.eyebrow}</p>
-            <h2 className="mt-4 font-serif text-2xl text-ivory md:text-3xl">
+            <h2 className="mt-4 font-serif text-2xl text-balance text-ivory md:text-3xl">
               {t.estimate.title}
             </h2>
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-ivory-dim">
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-pretty text-ivory-dim">
               {t.estimate.body}
             </p>
             <Link
@@ -224,13 +224,13 @@ export default function HomePage() {
       {/* ========== ⑦ 预约 CTA ========== */}
       <section className="border-t border-ivory/5 py-24">
         <div className="mx-auto max-w-3xl px-6 text-center">
-          <h2 className="font-serif text-3xl text-ivory md:text-4xl">
+          <h2 className="font-serif text-3xl text-balance text-ivory md:text-4xl">
             {t.booking.title}
           </h2>
           <p className="mt-2 text-sm tracking-widest text-ivory-mute">
             {t.booking.sub}
           </p>
-          <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-ivory-dim">
+          <p className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-pretty text-ivory-dim">
             {t.booking.body}
           </p>
           <Link

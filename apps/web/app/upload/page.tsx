@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import { useLanguage } from '@/components/LanguageProvider';
 import { STYLES } from '@/lib/types';
-import { API_BASE } from '@/lib/site';
+import { API_BASE, MAX_UPLOAD_MB } from '@/lib/site';
 import {
   computeQuote,
   isValidArea,
@@ -49,6 +49,7 @@ export default function UploadPage() {
     { name: string; width: number; depth: number; area: number }[] | null
   >(null);
   const [dxfError, setDxfError] = useState(false);
+  const [fileTooBig, setFileTooBig] = useState(false);
 
   // AI 设计建议
   const [designStatus, setDesignStatus] = useState<
@@ -56,11 +57,17 @@ export default function UploadPage() {
   >('idle');
   const [designText, setDesignText] = useState('');
 
-  /** 文件选择：dxf 走解析接口并自动填面积，其余本地预览 */
+  /** 文件选择：>10MB 直接拒绝；dxf 走解析接口并自动填面积；其余本地预览 */
   const handleFile = async (f: File | null) => {
-    setFile(f);
     setDxfRooms(null);
     setDxfError(false);
+    setFileTooBig(false);
+    if (f && f.size > MAX_UPLOAD_MB * 1024 * 1024) {
+      setFile(null);
+      setFileTooBig(true);
+      return;
+    }
+    setFile(f);
     if (!f || !f.name.toLowerCase().endsWith('.dxf')) return;
     try {
       const text = await f.text();
@@ -158,10 +165,10 @@ export default function UploadPage() {
 
       <div className="mx-auto max-w-6xl px-6 pt-28">
         <p className="section-eyebrow">{t.quote.eyebrow}</p>
-        <h1 className="mt-4 font-serif text-3xl text-ivory md:text-4xl">
+        <h1 className="mt-4 font-serif text-3xl text-balance text-ivory md:text-4xl">
           {t.quote.title}
         </h1>
-        <p className="mt-3 text-sm text-ivory-dim">{t.quote.pageSub}</p>
+        <p className="mt-3 text-pretty text-sm text-ivory-dim">{t.quote.pageSub}</p>
         <div className="gold-divider mt-6" />
 
         <div className="mt-10 grid gap-8 lg:grid-cols-5">
@@ -194,6 +201,11 @@ export default function UploadPage() {
               <p className="mt-2 text-xs text-ivory-mute">
                 🔒 {t.quote.uploadHint}
               </p>
+              {fileTooBig && (
+                <p className="mt-2 text-xs text-red-700">
+                  {t.quote.fileTooBig}
+                </p>
+              )}
               {dxfError && (
                 <p className="mt-2 text-xs text-red-700">{t.dxf.failed}</p>
               )}
@@ -352,14 +364,25 @@ export default function UploadPage() {
                     <div className="space-y-3">
                       {quote.breakdown.map((b) => (
                         <div key={b.key}>
-                          <div className="flex justify-between text-xs text-ivory-dim">
-                            <span>{t.quote.breakdown[b.key]}</span>
-                            <span>{formatRmb(b.amountRmb)}</span>
+                          <div className="flex items-baseline justify-between text-xs">
+                            <span className="text-ivory-dim">
+                              {t.quote.breakdown[b.key]}
+                            </span>
+                            <span className="text-right">
+                              <span className="text-ivory">
+                                {formatIdr(b.amountIdr)}
+                              </span>
+                              <span className="ml-2 text-[10px] text-ivory-mute">
+                                {formatRmb(b.amountRmb)}
+                              </span>
+                            </span>
                           </div>
                           <div className="mt-1 h-1.5 rounded-full bg-ivory/10">
                             <div
                               className="h-full rounded-full bg-gold"
-                              style={{ width: `${b.ratio * 100}%` }}
+                              style={{
+                                width: `${(b.amountRmb / quote.totalRmb) * 100}%`,
+                              }}
                             />
                           </div>
                         </div>
@@ -391,7 +414,7 @@ export default function UploadPage() {
                     </Link>
                   )}
 
-                  <p className="mt-6 text-xs leading-relaxed text-ivory-mute">
+                  <p className="mt-6 text-pretty text-xs leading-relaxed text-ivory-mute">
                     {t.quote.disclaimer}
                   </p>
                   <Link
