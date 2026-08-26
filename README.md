@@ -141,7 +141,7 @@ nusantara-atelier/
 |------|------|------|------|
 | Phase 1 | 2026 Q3 | 案例库 + 首页 + 三语 + 上线 | ✅ 已完成 |
 | Phase 2 | 2026 Q4 | 上传流程 + 报价 + 预约 + 后端 API | 🚧 进行中（估价/预约/后端 v1 ✅，AI 设计生成 + CAD 解析待做） |
-| Phase 3 | 2027 Q1 | 印尼本地材料库 + 精确 BOM 报价 + 3D 预览 | 📋 规划中 |
+| Phase 3 | 2027 Q1 | 印尼本地材料库 + 精确 BOM 报价 + 3D 预览 | 🚧 已规划，见 [PHASE3_PRD](docs/PHASE3_PRD.md) |
 | Phase 4 | 2027 Q2 | 与 IndoScout 获客系统打通 | 📋 规划中 |
 
 ## 🤝 贡献 · Contributing
