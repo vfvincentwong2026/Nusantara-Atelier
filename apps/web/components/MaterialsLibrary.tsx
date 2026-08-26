@@ -8,10 +8,11 @@ import type { Locale } from '@/lib/i18n';
 
 const TIER_ORDER: MaterialTier[] = ['standard', 'luxury', 'ultra'];
 
+/** 档次徽标（规范 §5 chips 变体：直角描边不填充，仅 ultra 用 accent） */
 const TIER_BADGE: Record<MaterialTier, string> = {
-  standard: 'border-ivory/25 text-ivory-dim',
-  luxury: 'border-gold/50 text-gold-dark',
-  ultra: 'border-gold bg-gold text-white',
+  standard: 'border-line text-ink-3',
+  luxury: 'border-ink/40 text-ink-2',
+  ultra: 'border-accent text-accent',
 };
 
 function pickName(m: Material, locale: Locale): string {
@@ -28,40 +29,40 @@ function MaterialCard({ m }: { m: Material }) {
   const { t, locale } = useLanguage();
   const mp = t.materialsPage;
   return (
-    <article className="flex h-full flex-col rounded-lg border border-ivory/10 bg-ink-800 p-5 transition-colors hover:border-gold/40">
+    <article className="flex h-full flex-col border border-line bg-paper p-5 transition-colors hover:border-ink/30">
       <div className="flex items-start justify-between gap-2">
-        <h3 className="text-sm font-medium leading-snug text-ivory">
+        <h3 className="text-sm font-medium leading-snug text-ink">
           {pickName(m, locale)}
         </h3>
         <span
-          className={`shrink-0 rounded-full border px-2.5 py-0.5 text-[10px] tracking-widest ${TIER_BADGE[m.tier]}`}
+          className={`shrink-0 border px-2.5 py-0.5 text-[10px] tracking-widest ${TIER_BADGE[m.tier]}`}
         >
           {mp.tiers[m.tier]}
         </span>
       </div>
-      <p className="mt-1 text-xs text-ivory-mute">
+      <p className="mt-1 text-xs text-ink-3">
         {[m.brand, m.spec].filter(Boolean).join(' · ')}
       </p>
-      <div className="mt-4 border-t border-ivory/10 pt-3">
-        <p className="text-base font-medium text-gold-dark">
+      <div className="mt-4 border-t border-line pt-3">
+        <p className="text-base font-medium tabular-nums text-ink">
           {m.price_idr !== null ? fmtIdr(m.price_idr) : '—'}
-          <span className="ml-1 text-xs text-ivory-mute">/ {m.unit ?? ''}</span>
+          <span className="ml-1 text-xs text-ink-3">/ {m.unit ?? ''}</span>
         </p>
-        <p className="mt-0.5 text-[11px] text-ivory-mute">
+        <p className="mt-0.5 text-[11px] tabular-nums text-ink-3">
           {m.price_usd !== null && `≈ US$${m.price_usd.toLocaleString()}`}
           {m.price_rmb !== null && ` · ¥${m.price_rmb.toLocaleString()}`}
         </p>
-        <p className="mt-1 text-[11px] text-ivory-dim">
+        <p className="mt-1 text-[11px] tabular-nums text-ink-2">
           {m.labor_rate_idr
             ? `${mp.laborLabel} ${fmtIdr(m.labor_rate_idr)}/${m.unit ?? ''}`
             : mp.includedLabel}
         </p>
       </div>
       <div className="mt-auto pt-3">
-        <p className="text-[11px] text-ivory-mute">
+        <p className="text-[11px] text-ink-3">
           {mp.supplierLabel}：{m.supplier ?? '—'}
         </p>
-        <p className="mt-0.5 font-mono text-[10px] tracking-wider text-ivory-mute/70">
+        <p className="mt-0.5 font-mono text-[10px] tracking-wider text-ink-3/70">
           {m.sku_id}
         </p>
       </div>
@@ -93,10 +94,10 @@ export default function MaterialsLibrary() {
   const total = groups.reduce((n, g) => n + g.items.length, 0);
 
   const chipCls = (active: boolean) =>
-    `rounded-full border px-4 py-1.5 text-sm tracking-wider transition-colors ${
+    `border px-4 py-1.5 text-sm tracking-wider transition-colors ${
       active
-        ? 'border-gold bg-gold text-white'
-        : 'border-ivory/20 text-ivory-dim hover:border-gold/60 hover:text-gold-dark'
+        ? 'border-accent text-accent'
+        : 'border-line text-ink-2 hover:border-accent hover:text-accent'
     }`;
 
   return (
@@ -137,9 +138,9 @@ export default function MaterialsLibrary() {
 
       {groups.map((g) => (
         <section key={g.cat} className="mb-12">
-          <h2 className="mb-5 flex items-baseline gap-3 font-serif text-xl text-ivory">
+          <h2 className="mb-5 flex items-baseline gap-3 text-xl font-semibold text-ink">
             {mp.categories[g.cat] ?? g.cat}
-            <span className="text-xs tracking-widest text-ivory-mute">
+            <span className="text-xs tracking-widest text-ink-3">
               {g.items.length} SKU
             </span>
           </h2>
@@ -151,7 +152,7 @@ export default function MaterialsLibrary() {
         </section>
       ))}
 
-      <p className="mt-4 text-center text-xs text-ivory-mute">
+      <p className="mt-4 text-center text-xs text-ink-3">
         {mp.stats(total, groups.length)}
       </p>
     </div>

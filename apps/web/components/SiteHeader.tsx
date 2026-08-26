@@ -5,7 +5,8 @@ import { useLanguage } from '@/components/LanguageProvider';
 import { LOCALES } from '@/lib/i18n';
 
 /**
- * 全站共享导航栏：品牌 + 首页锚点导航 + 语言切换器（ID / EN / 中文）。
+ * 全站共享导航栏（规范 §5）：白底 + 底部 1px line，品牌无衬线 600，
+ * 语言切换器为文字按钮，激活态 2px accent 下划线。
  * 锚点统一用绝对路径 /#xxx，非首页点击时回首页定位。
  */
 export default function SiteHeader() {
@@ -20,39 +21,41 @@ export default function SiteHeader() {
   ];
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-ivory/5 bg-ink/80 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <Link href="/" className="font-serif text-lg tracking-widest">
-          <span className="text-gold-dark">Nusantara</span>{' '}
-          <span className="text-ivory">Atelier</span>
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-line bg-paper">
+      <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
+        <Link
+          href="/"
+          className="text-base font-semibold tracking-wide text-ink"
+        >
+          Nusantara Atelier
         </Link>
         <div className="flex items-center gap-6">
-          <nav className="hidden items-center gap-8 text-sm text-ivory-dim md:flex">
+          <nav className="hidden items-center gap-8 text-sm text-ink-2 md:flex">
             {anchors.map((a) => (
               <Link
                 key={a.href}
                 href={a.href}
-                className="transition-colors hover:text-gold-dark"
+                className="transition-colors hover:text-ink"
               >
                 {a.label}
               </Link>
             ))}
             <Link
               href="/booking"
-              className="rounded-full border border-gold px-4 py-1.5 text-gold-dark transition-colors hover:bg-gold hover:text-white"
+              className="bg-accent px-4 py-1.5 text-sm font-medium text-white transition-colors hover:bg-accent-dark"
             >
               {t.nav.book}
             </Link>
           </nav>
-          <div className="flex items-center rounded-full border border-ivory/15 p-0.5 text-[11px] tracking-wider">
+          <div className="flex items-center gap-4 text-[11px] tracking-wider">
             {LOCALES.map((l) => (
               <button
                 key={l.code}
                 onClick={() => setLocale(l.code)}
-                className={`rounded-full px-2.5 py-1 transition-colors ${
+                className={`-mb-px border-b-2 pb-1 transition-colors ${
                   locale === l.code
-                    ? 'bg-gold text-white'
-                    : 'text-ivory-mute hover:text-gold-dark'
+                    ? 'border-accent text-ink'
+                    : 'border-transparent text-ink-3 hover:text-ink'
                 }`}
               >
                 {l.label}

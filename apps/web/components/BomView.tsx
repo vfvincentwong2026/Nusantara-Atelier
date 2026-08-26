@@ -43,38 +43,38 @@ export default function BomView({ bom }: { bom: BomResult }) {
           <details
             key={g.cat}
             open
-            className="mb-3 rounded-lg border border-ivory/10 bg-white/60"
+            className="mb-3 border border-line bg-white"
           >
-            <summary className="flex cursor-pointer items-baseline justify-between px-4 py-2.5 text-xs tracking-widest text-ivory-dim hover:text-gold-dark">
+            <summary className="flex cursor-pointer items-baseline justify-between px-4 py-2.5 text-xs tracking-widest text-ink-2 hover:text-ink">
               <span>
                 {catLabel(g.cat)}
-                <span className="ml-2 text-[10px] text-ivory-mute">
+                <span className="ml-2 text-[10px] text-ink-3">
                   {tb.itemCount(g.items.length)}
                 </span>
               </span>
-              <span className="text-gold-dark">{fmtIdr(groupSub)}</span>
+              <span className="tabular-nums text-ink">{fmtIdr(groupSub)}</span>
             </summary>
-            <div className="divide-y divide-ivory/5 border-t border-ivory/10">
+            <div className="divide-y divide-line border-t border-line">
               {g.items.map((l, i) => (
                 <div
                   key={i}
                   className="flex items-baseline justify-between gap-3 px-4 py-2.5"
                 >
                   <div className="min-w-0">
-                    <p className="text-xs font-medium text-ivory">
+                    <p className="text-xs font-medium text-ink">
                       {pickName(l, locale)}
                     </p>
-                    <p className="mt-0.5 text-[10px] text-ivory-mute">
+                    <p className="mt-0.5 text-[10px] text-ink-3">
                       {[l.brand, l.spec].filter(Boolean).join(' · ')}
                       {' · '}
                       {tb.scopes[l.room_scope] ?? l.room_scope}
                     </p>
                   </div>
-                  <div className="shrink-0 text-right">
-                    <p className="text-[10px] text-ivory-mute">
+                  <div className="shrink-0 text-right tabular-nums">
+                    <p className="text-[10px] text-ink-3">
                       {fmtQty(l.quantity)} {l.unit} × {fmtIdr(l.unit_price_idr)}
                     </p>
-                    <p className="text-xs font-medium text-ivory">
+                    <p className="text-xs font-medium text-ink">
                       {fmtIdr(l.subtotal_idr)}
                     </p>
                   </div>
@@ -86,26 +86,26 @@ export default function BomView({ bom }: { bom: BomResult }) {
       })}
 
       {/* 人工 + 合计 + 估算对照 */}
-      <div className="mt-4 space-y-2 border-t border-ivory/10 pt-4 text-xs">
+      <div className="mt-4 space-y-2 border-t border-line pt-4 text-xs">
         <div className="flex items-baseline justify-between">
-          <span className="text-ivory-dim">{tb.labor}</span>
-          <span className="text-ivory">{fmtIdr(bom.labor.total_idr)}</span>
+          <span className="text-ink-2">{tb.labor}</span>
+          <span className="tabular-nums text-ink">{fmtIdr(bom.labor.total_idr)}</span>
         </div>
-        <div className="flex items-baseline justify-between border-t border-ivory/10 pt-3">
-          <span className="tracking-widest text-ivory-dim">{tb.total}</span>
-          <span className="font-serif text-xl text-gold-dark">
+        <div className="flex items-baseline justify-between border-t border-line pt-3">
+          <span className="tracking-widest text-ink-2">{tb.total}</span>
+          <span className="text-xl font-semibold tabular-nums text-ink">
             {fmtIdr(bom.total_idr)}
           </span>
         </div>
         {diffText && (
-          <p className="text-[11px] text-ivory-mute">
+          <p className="text-[11px] text-ink-3">
             {diffText}
             {Math.abs(diff) > 25 && (
-              <span className="mt-1 block text-gold-dark">{tb.surveyHint}</span>
+              <span className="mt-1 block text-accent">{tb.surveyHint}</span>
             )}
           </p>
         )}
-        <p className="pt-2 text-pretty text-[11px] leading-relaxed text-ivory-mute">
+        <p className="pt-2 text-pretty text-[11px] leading-relaxed text-ink-3">
           {tb.disclaimer}
         </p>
       </div>

@@ -1,10 +1,11 @@
 import type { Config } from 'tailwindcss';
 
 /**
- * 浅色主题色板。
- * ink  → 浅色表面（白 / 暖白阶层）
- * ivory → 深色文字（近黑炭灰阶层）
- * gold → 点缀金，收敛用于关键数字 / CTA / 激活态 / 分隔线
+ * 设计规范 v1.0 色板（参照 ArchDaily 简约现代语言，见 docs/DESIGN_SYSTEM.md）。
+ * paper     → 页面基底（白 / 次级软白）
+ * ink       → 近黑正文 / 灰阶次要文字
+ * line      → 1px 细分割线 / 卡片描边
+ * accent    → 单点缀红：关键链接 / 激活态 / 主 CTA / 重点数字（面积克制）
  */
 const config: Config = {
   content: [
@@ -14,30 +15,31 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ink: {
+        paper: {
           DEFAULT: '#FFFFFF',
-          900: '#FFFFFF',
-          800: '#FAFAF8',
-          700: '#F4F2ED',
-          600: '#E9E6DE',
+          soft: '#FAFAFA',
         },
-        gold: {
-          DEFAULT: '#C9A96E',
-          light: '#D9C08A',
-          dark: '#A5854C',
+        ink: {
+          DEFAULT: '#141414',
+          2: '#6B6B6B',
+          3: '#9A9A9A',
         },
-        ivory: {
-          DEFAULT: '#1A1A1A',
-          dim: '#55534C',
-          mute: '#8B887E',
+        line: '#E5E5E5',
+        accent: {
+          DEFAULT: '#E4022B',
+          dark: '#B80223',
         },
       },
       fontFamily: {
-        serif: ['Georgia', '"Noto Serif SC"', '"Songti SC"', 'STSong', 'SimSun', 'serif'],
-        sans: ['"Noto Sans SC"', '"PingFang SC"', '"Microsoft YaHei"', 'system-ui', 'sans-serif'],
-      },
-      letterSpacing: {
-        widest2: '0.35em',
+        sans: [
+          '"Helvetica Neue"',
+          'Helvetica',
+          'Inter',
+          'Arial',
+          '"PingFang SC"',
+          '"Microsoft YaHei"',
+          'sans-serif',
+        ],
       },
     },
   },

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 /**
  * Hero 实景照片轮播：纯 client JS 交叉淡入淡出 + 缓慢 Ken Burns 推近，无第三方依赖。
- * 白色渐变蒙版叠加，保证深色标题文案可读。
+ * 白色蒙版叠加（规范 §6：白蒙版保留），保证墨色标题文案可读。
  */
 export default function HeroCarousel({ images }: { images: string[] }) {
   const [index, setIndex] = useState(0);
@@ -19,7 +19,7 @@ export default function HeroCarousel({ images }: { images: string[] }) {
   }, [images.length]);
 
   return (
-    <div className="absolute inset-0 overflow-hidden bg-ink-800">
+    <div className="absolute inset-0 overflow-hidden bg-paper-soft">
       {images.map((src, i) => (
         <img
           key={src}
@@ -31,9 +31,9 @@ export default function HeroCarousel({ images }: { images: string[] }) {
           } ${i === index ? 'animate-hero-zoom' : ''}`}
         />
       ))}
-      {/* 浅色蒙版：全幅实景 + 白色渐变压亮，保证深色文案可读 */}
+      {/* 浅色蒙版：全幅实景 + 白色渐变压亮，底部融入页面基底 */}
       <div className="absolute inset-0 bg-white/55" />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/25 to-ink-800" />
+      <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/25 to-paper" />
     </div>
   );
 }

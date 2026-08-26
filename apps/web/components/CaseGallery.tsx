@@ -2,43 +2,54 @@
 
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
-import type { ProjectCase, RoomType, StyleFilter } from '@/lib/types';
+import type { ProjectCase, StyleFilter } from '@/lib/types';
 import { STYLES, STYLE_PENDING } from '@/lib/types';
 import { useLanguage } from '@/components/LanguageProvider';
 
-/** 每种风格对应的占位渐变（暖白 / 米色体系），用于无图兜底与图片加载背景 */
+/** 每种风格对应的占位渐变（中性灰体系，规范 §7），用于无图兜底与图片加载背景 */
 const STYLE_GRADIENTS: Record<string, string> = {
-  法式: 'from-[#F4F1EA] via-[#E8DFCE] to-[#FAFAF8]',
-  现代: 'from-[#F5F5F4] via-[#E9E9E7] to-[#FAFAF8]',
-  侘寂: 'from-[#F5F3EE] via-[#E6E1D5] to-[#FAFAF8]',
-  意式极简: 'from-[#F4F4F5] via-[#E7E7E9] to-[#FAFAF8]',
-  现代奶油: 'from-[#F7F3EB] via-[#EDE4D3] to-[#FAFAF8]',
-  法式轻奢: 'from-[#F4F2F0] via-[#E5DEE4] to-[#FAFAF8]',
-  现代小法: 'from-[#F5F4F1] via-[#E8E3D8] to-[#FAFAF8]',
+  法式: 'from-[#F7F7F7] via-[#EDEDED] to-[#FAFAFA]',
+  现代: 'from-[#F5F5F5] via-[#E9E9E9] to-[#FAFAFA]',
+  侘寂: 'from-[#F6F6F5] via-[#ECECEA] to-[#FAFAFA]',
+  意式极简: 'from-[#F4F4F5] via-[#E7E7E9] to-[#FAFAFA]',
+  现代奶油: 'from-[#F7F7F5] via-[#EEEDE9] to-[#FAFAFA]',
+  法式轻奢: 'from-[#F5F5F6] via-[#EBEBED] to-[#FAFAFA]',
+  现代小法: 'from-[#F6F6F5] via-[#ECEBEA] to-[#FAFAFA]',
 };
-const DEFAULT_GRADIENT = 'from-[#F5F5F4] via-[#E9E9E7] to-[#FAFAF8]';
+const DEFAULT_GRADIENT = 'from-[#F5F5F5] via-[#E9E9E9] to-[#FAFAFA]';
 
+/** 案例卡片版式（规范 §5）：大图 → 项目名 → 地点·风格·面积 meta 行 → 造价行 */
 function CaseCard({ item }: { item: ProjectCase }) {
   const { t } = useLanguage();
   const gradient = STYLE_GRADIENTS[item.style] ?? DEFAULT_GRADIENT;
   const initial = item.project_name.charAt(0);
   const hasImage = item.images.length > 0;
 
-  /** 空间构成 chips：按 room 聚合（plan 除外），取数量最多的 4 个 */
-  const roomChips = useMemo<[RoomType, number][]>(() => {
-    if (!item.annotations) return [];
-    const counts = new Map<RoomType, number>();
-    for (const a of Object.values(item.annotations)) {
-      if (a.room === 'plan') continue;
-      counts.set(a.room, (counts.get(a.room) ?? 0) + 1);
-    }
-    return [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6);
-  }, [item.annotations]);
+  const meta = [
+    item.location,
+    item.style === STYLE_PENDING
+      ? t.cases.moreStyle
+      : t.styles[item.style] ?? item.style,
+    item.area !== null ? `${item.area} ㎡` : null,
+  ]
+    .filter(Boolean)
+    .join(' · ');
+
+  const cost = [
+    item.hard_cost_per_sqm !== null
+      ? `${t.pricing.hardCost} ¥${item.hard_cost_per_sqm.toLocaleString()}/㎡`
+      : null,
+    item.soft_cost_per_sqm !== null
+      ? `${t.pricing.softCost} ¥${item.soft_cost_per_sqm.toLocaleString()}/㎡`
+      : null,
+  ]
+    .filter(Boolean)
+    .join(' · ');
 
   return (
     <Link href={`/cases/${item.id}/`} className="block h-full">
-      <article className="group h-full overflow-hidden rounded-lg border border-ivory/10 bg-ink-800 transition-all hover:-translate-y-0.5 hover:border-gold/50 hover:shadow-lg hover:shadow-ivory/5">
-      {/* 封面：有图用实景照，无图用渐变 + 首字占位 */}
+      <article className="group h-full border border-line bg-paper transition-colors hover:border-ink/30">
+      {/* 封面：有图用实景照，无图用渐变 + 首字占位；hover 仅图片轻微缩放 1.03 */}
       <div
         className={`relative h-52 overflow-hidden bg-gradient-to-br ${gradient}`}
       >
@@ -47,82 +58,36 @@ function CaseCard({ item }: { item: ProjectCase }) {
             src={item.images[0]}
             alt={`${item.project_name} 实景照片`}
             loading="lazy"
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />
         ) : (
           <div className="flex h-full items-center justify-center">
-            <span className="select-none font-serif text-6xl text-gold/25">
+            <span className="select-none text-6xl font-semibold text-ink/10">
               {initial}
             </span>
           </div>
         )}
 
-        {/* 底部轻微压暗，保证角标在照片上可读 */}
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/45 to-transparent" />
-
-        <span className="absolute left-3 top-3 rounded-full border border-gold/50 bg-white/75 px-3 py-1 text-[11px] tracking-widest text-gold-dark backdrop-blur-sm">
-          {item.style === STYLE_PENDING
-            ? t.cases.moreStyle
-            : t.styles[item.style] ?? item.style}
-        </span>
-
         {hasImage ? (
-          <span className="absolute bottom-3 right-3 rounded-full bg-white/80 px-2.5 py-0.5 text-[10px] tracking-widest text-ivory-dim backdrop-blur-sm">
+          <span className="absolute bottom-3 right-3 bg-white/85 px-2.5 py-0.5 text-[10px] tracking-widest text-ink-2">
             {t.cases.photoBadge(item.images.length)}
           </span>
         ) : (
-          <span className="absolute bottom-3 right-3 rounded-full bg-white/70 px-2 py-0.5 text-[10px] tracking-widest text-ivory-mute">
+          <span className="absolute bottom-3 right-3 bg-white/75 px-2 py-0.5 text-[10px] tracking-widest text-ink-3">
             {t.cases.comingSoon}
           </span>
         )}
       </div>
 
-      <div className="space-y-2 p-5">
-        <div className="flex items-baseline justify-between gap-2">
-          <h3 className="font-serif text-lg text-ivory group-hover:text-gold-dark">
-            {item.project_name}
-          </h3>
-          {item.location && (
-            <span className="shrink-0 text-xs text-ivory-mute">
-              {item.location}
-            </span>
-          )}
-        </div>
-
-        <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-ivory-dim">
-          {item.area !== null && <span>{item.area} ㎡</span>}
-          {item.hard_cost_per_sqm !== null && (
-            <span>
-              {t.pricing.hardCost} ¥{item.hard_cost_per_sqm.toLocaleString()}/㎡
-            </span>
-          )}
-          {item.soft_cost_per_sqm !== null && (
-            <span>
-              {t.pricing.softCost} ¥{item.soft_cost_per_sqm.toLocaleString()}/㎡
-            </span>
-          )}
-        </div>
-
-        {item.description && (
-          <p className="text-xs leading-relaxed text-gold-dark">
-            {item.description}
+      <div className="p-5">
+        <h3 className="text-base font-semibold text-ink transition-colors group-hover:text-accent">
+          {item.project_name}
+        </h3>
+        <p className="mt-1 text-[13px] text-ink-2">{meta}</p>
+        {cost && (
+          <p className="mt-3 border-t border-line pt-3 text-[13px] tabular-nums text-ink">
+            {cost}
           </p>
-        )}
-
-        {roomChips.length > 0 && (
-          <div className="flex flex-wrap items-center gap-1.5 pt-1">
-            <span className="mr-1 text-[10px] tracking-widest text-ivory-mute">
-              {t.cases.spaceTitle}
-            </span>
-            {roomChips.map(([room, n]) => (
-              <span
-                key={room}
-                className="rounded-full border border-ivory/15 px-2 py-0.5 text-[10px] text-ivory-dim"
-              >
-                {t.rooms[room]} ×{n}
-              </span>
-            ))}
-          </div>
         )}
       </div>
       </article>
@@ -144,16 +109,16 @@ export default function CaseGallery({ cases }: { cases: ProjectCase[] }) {
 
   return (
     <div>
-      {/* 风格筛选器 */}
+      {/* 风格筛选器（规范 §5 chips：1px line 直角小标签，激活 = accent 文字 + accent 描边，不填充） */}
       <div className="mb-10 flex flex-wrap justify-center gap-2">
         {STYLES.map((s) => (
           <button
             key={s}
             onClick={() => setFilter(s)}
-            className={`rounded-full border px-4 py-1.5 text-sm tracking-wider transition-colors ${
+            className={`border px-4 py-1.5 text-sm tracking-wider transition-colors ${
               filter === s
-                ? 'border-gold bg-gold text-white'
-                : 'border-ivory/20 text-ivory-dim hover:border-gold/60 hover:text-gold-dark'
+                ? 'border-accent text-accent'
+                : 'border-line text-ink-2 hover:border-accent hover:text-accent'
             }`}
           >
             {t.styles[s] ?? s}
@@ -161,13 +126,14 @@ export default function CaseGallery({ cases }: { cases: ProjectCase[] }) {
         ))}
       </div>
 
+      {/* 网格间距 24px（规范 §6） */}
       <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.map((c) => (
           <CaseCard key={c.id} item={c} />
         ))}
       </div>
 
-      <p className="mt-8 text-center text-xs text-ivory-mute">
+      <p className="mt-8 text-center text-xs text-ink-3">
         {t.cases.stats(filtered.length, photoCount)}
       </p>
     </div>

@@ -11,27 +11,26 @@ html {
 }
 
 body {
-  @apply bg-ink text-ivory font-sans antialiased;
+  @apply bg-paper text-ink font-sans antialiased;
 }
 
 ::selection {
-  background: #c9a96e;
+  background: #e4022b;
   color: #ffffff;
 }
 
-/* 细滚动条 */
+/* 细滚动条（中性灰） */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #fafaf8;
+  background: #fafafa;
 }
 ::-webkit-scrollbar-thumb {
-  background: #d8d4c9;
-  border-radius: 4px;
+  background: #d4d4d4;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #c9a96e;
+  background: #9a9a9a;
 }
 
 /* Hero 轮播 Ken Burns 缓慢推近 */
@@ -48,10 +47,9 @@ body {
 }
 
 @layer components {
-  .gold-divider {
-    @apply h-px w-16 bg-gold/60;
-  }
+  /* eyebrow 小标签：12px / 全大写 / 字距 0.12em / accent */
   .section-eyebrow {
-    @apply text-xs tracking-widest2 text-gold uppercase;
+    @apply text-xs font-medium uppercase text-accent;
+    letter-spacing: 0.12em;
   }
 }

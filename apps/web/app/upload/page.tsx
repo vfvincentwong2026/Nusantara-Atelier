@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect, useMemo, useState } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import { useLanguage } from '@/components/LanguageProvider';
+import { IconFile, IconLock, IconUpload } from '@/components/icons';
 import { STYLES } from '@/lib/types';
 import { API_BASE, MAX_UPLOAD_MB } from '@/lib/site';
 import {
@@ -30,8 +31,8 @@ function formatRmb(n: number) {
 }
 
 const inputCls =
-  'w-full rounded-md border border-ivory/15 bg-white px-4 py-2.5 text-sm text-ivory outline-none transition-colors focus:border-gold';
-const labelCls = 'mb-1.5 block text-xs tracking-widest text-ivory-mute';
+  'w-full border border-line bg-white px-4 py-2.5 text-sm text-ink outline-none transition-colors focus:border-accent';
+const labelCls = 'mb-1.5 block text-xs tracking-widest text-ink-3';
 
 export default function UploadPage() {
   const { t, locale } = useLanguage();
@@ -183,16 +184,15 @@ export default function UploadPage() {
   }, [areaValid, area, style, tier, region, rooms, floors, pool, garden, locale]);
 
   return (
-    <main className="min-h-screen bg-ink pb-24">
+    <main className="min-h-screen bg-paper pb-24">
       <SiteHeader />
 
-      <div className="mx-auto max-w-6xl px-6 pt-28">
+      <div className="mx-auto max-w-[1200px] px-6 pt-28">
         <p className="section-eyebrow">{t.quote.eyebrow}</p>
-        <h1 className="mt-4 font-serif text-3xl text-balance text-ivory md:text-4xl">
+        <h1 className="mt-4 text-3xl font-semibold tracking-[-0.02em] text-balance text-ink md:text-4xl">
           {t.quote.title}
         </h1>
-        <p className="mt-3 text-pretty text-sm text-ivory-dim">{t.quote.pageSub}</p>
-        <div className="gold-divider mt-6" />
+        <p className="mt-3 text-pretty text-sm text-ink-2">{t.quote.pageSub}</p>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-5">
           {/* ========== 表单 ========== */}
@@ -200,19 +200,25 @@ export default function UploadPage() {
             {/* 文件上传（纯本地预览） */}
             <div>
               <label className={labelCls}>{t.quote.uploadLabel}</label>
-              <label className="flex cursor-pointer flex-col items-center justify-center rounded-lg border border-dashed border-ivory/20 bg-ink-800 px-6 py-8 text-center transition-colors hover:border-gold/60">
+              <label className="flex cursor-pointer flex-col items-center justify-center border border-dashed border-line bg-paper-soft px-6 py-8 text-center transition-colors hover:border-accent">
                 {previewUrl ? (
                   <img
                     src={previewUrl}
                     alt="preview"
-                    className="max-h-48 rounded object-contain"
+                    className="max-h-48 object-contain"
                   />
                 ) : file ? (
-                  <p className="text-sm text-ivory-dim">📄 {file.name}</p>
-                ) : (
-                  <p className="text-sm text-ivory-mute">
-                    {t.quote.uploadButton}
+                  <p className="flex items-center gap-2 text-sm text-ink-2">
+                    <IconFile className="h-4 w-4" />
+                    {file.name}
                   </p>
+                ) : (
+                  <>
+                    <IconUpload className="h-6 w-6 text-ink-3" />
+                    <p className="mt-3 text-sm text-ink-3">
+                      {t.quote.uploadButton}
+                    </p>
+                  </>
                 )}
                 <input
                   type="file"
@@ -221,26 +227,27 @@ export default function UploadPage() {
                   onChange={(e) => handleFile(e.target.files?.[0] ?? null)}
                 />
               </label>
-              <p className="mt-2 text-xs text-ivory-mute">
-                🔒 {t.quote.uploadHint}
+              <p className="mt-2 flex items-center gap-1.5 text-xs text-ink-3">
+                <IconLock className="h-3.5 w-3.5" />
+                {t.quote.uploadHint}
               </p>
               {fileTooBig && (
-                <p className="mt-2 text-xs text-red-700">
+                <p className="mt-2 text-xs text-accent">
                   {t.quote.fileTooBig}
                 </p>
               )}
               {dxfError && (
-                <p className="mt-2 text-xs text-red-700">{t.dxf.failed}</p>
+                <p className="mt-2 text-xs text-accent">{t.dxf.failed}</p>
               )}
               {dxfRooms && (
-                <div className="mt-3 rounded-md border border-gold/30 bg-white p-4">
-                  <p className="text-xs text-gold-dark">
+                <div className="mt-3 border border-line bg-paper-soft p-4">
+                  <p className="text-xs text-ink-2">
                     {t.dxf.parsed(
                       dxfRooms.length,
                       dxfRooms.reduce((s, r) => s + r.area, 0)
                     )}
                   </p>
-                  <ul className="mt-2 space-y-1 text-xs text-ivory-dim">
+                  <ul className="mt-2 space-y-1 text-xs tabular-nums text-ink-2">
                     {dxfRooms.map((r, i) => (
                       <li key={i}>
                         {r.name} — {r.width} × {r.depth} m · {r.area} ㎡
@@ -278,7 +285,7 @@ export default function UploadPage() {
                   className={inputCls}
                 />
                 {areaInvalid && (
-                  <p className="mt-1.5 text-xs text-red-700">
+                  <p className="mt-1.5 text-xs text-accent">
                     {t.quote.areaError}
                   </p>
                 )}
@@ -354,10 +361,10 @@ export default function UploadPage() {
                     key={text}
                     type="button"
                     onClick={() => setter(!checked)}
-                    className={`rounded-full border px-4 py-1.5 text-sm tracking-wider transition-colors ${
+                    className={`border px-4 py-1.5 text-sm tracking-wider transition-colors ${
                       checked
-                        ? 'border-gold bg-gold text-white'
-                        : 'border-ivory/20 text-ivory-dim hover:border-gold/60 hover:text-gold-dark'
+                        ? 'border-accent text-accent'
+                        : 'border-line text-ink-2 hover:border-accent hover:text-accent'
                     }`}
                   >
                     {text}
@@ -369,12 +376,12 @@ export default function UploadPage() {
 
           {/* ========== 结果区 ========== */}
           <div className="lg:col-span-2">
-            <div className="rounded-xl border border-gold/25 bg-gradient-to-br from-ink-800 to-ink-700 p-8 lg:sticky lg:top-24">
+            <div className="border border-line bg-paper p-8 lg:sticky lg:top-24">
               <p className="section-eyebrow">{t.quote.resultTitle}</p>
               {quote ? (
                 <>
-                  {/* 标签切换：初步估算 / BOM 精报 */}
-                  <div className="mt-4 flex rounded-full border border-ivory/15 p-0.5 text-[11px] tracking-wider">
+                  {/* 标签切换：初步估算 / BOM 精报（文字按钮 + accent 下划线） */}
+                  <div className="mt-4 flex gap-6 border-b border-line text-sm tracking-wider">
                     {(
                       [
                         ['estimate', t.bom.tabEstimate],
@@ -384,10 +391,10 @@ export default function UploadPage() {
                       <button
                         key={key}
                         onClick={() => setResultTab(key)}
-                        className={`flex-1 rounded-full px-3 py-1.5 transition-colors ${
+                        className={`-mb-px border-b-2 pb-2 transition-colors ${
                           resultTab === key
-                            ? 'bg-gold text-white'
-                            : 'text-ivory-mute hover:text-gold-dark'
+                            ? 'border-accent text-ink'
+                            : 'border-transparent text-ink-3 hover:text-ink'
                         }`}
                       >
                         {label}
@@ -396,36 +403,36 @@ export default function UploadPage() {
                   </div>
                   {resultTab === 'estimate' ? (
                   <>
-                  <p className="mt-4 font-serif text-3xl text-gold-dark md:text-4xl">
+                  <p className="mt-6 text-3xl font-semibold tabular-nums text-ink md:text-4xl">
                     {formatIdr(quote.totalIdr)}
                   </p>
-                  <p className="mt-2 text-sm text-ivory-dim">
+                  <p className="mt-2 text-sm tabular-nums text-ink-2">
                     ≈ {formatUsd(quote.totalUsd)} · {formatRmb(quote.totalRmb)}
                   </p>
 
-                  <div className="mt-6 border-t border-ivory/10 pt-6">
-                    <p className="mb-3 text-xs tracking-widest text-ivory-mute">
+                  <div className="mt-6 border-t border-line pt-6">
+                    <p className="mb-3 text-xs tracking-widest text-ink-3">
                       {t.quote.breakdownTitle}
                     </p>
                     <div className="space-y-3">
                       {quote.breakdown.map((b) => (
                         <div key={b.key}>
                           <div className="flex items-baseline justify-between text-xs">
-                            <span className="text-ivory-dim">
+                            <span className="text-ink-2">
                               {t.quote.breakdown[b.key]}
                             </span>
-                            <span className="text-right">
-                              <span className="text-ivory">
+                            <span className="text-right tabular-nums">
+                              <span className="text-ink">
                                 {formatIdr(b.amountIdr)}
                               </span>
-                              <span className="ml-2 text-[10px] text-ivory-mute">
+                              <span className="ml-2 text-[10px] text-ink-3">
                                 {formatRmb(b.amountRmb)}
                               </span>
                             </span>
                           </div>
-                          <div className="mt-1 h-1.5 rounded-full bg-ivory/10">
+                          <div className="mt-1 h-1 bg-line">
                             <div
-                              className="h-full rounded-full bg-gold"
+                              className="h-full bg-accent"
                               style={{
                                 width: `${(b.amountRmb / quote.totalRmb) * 100}%`,
                               }}
@@ -439,33 +446,33 @@ export default function UploadPage() {
                   {quote.referenceCase && (
                     <Link
                       href={`/cases/${quote.referenceCase.id}/`}
-                      className="mt-6 flex items-center gap-4 rounded-lg border border-ivory/10 bg-white p-3 transition-colors hover:border-gold/50"
+                      className="mt-6 flex items-center gap-4 border border-line bg-white p-3 transition-colors hover:border-ink/30"
                     >
                       {quote.referenceCase.images[0] && (
                         <img
                           src={quote.referenceCase.images[0]}
                           alt={quote.referenceCase.project_name}
                           loading="lazy"
-                          className="h-14 w-20 rounded object-cover"
+                          className="h-14 w-20 object-cover"
                         />
                       )}
                       <div>
-                        <p className="text-xs text-ivory-mute">
+                        <p className="text-xs text-ink-3">
                           {t.quote.refCase(quote.referenceCase.project_name)}
                         </p>
-                        <p className="mt-1 text-xs text-gold-dark">
+                        <p className="mt-1 text-xs text-accent">
                           {t.quote.viewCase}
                         </p>
                       </div>
                     </Link>
                   )}
 
-                  <p className="mt-6 text-pretty text-xs leading-relaxed text-ivory-mute">
+                  <p className="mt-6 text-pretty text-xs leading-relaxed text-ink-3">
                     {t.quote.disclaimer}
                   </p>
                   <Link
                     href="/booking"
-                    className="mt-6 block rounded-full bg-gold px-8 py-3 text-center text-sm font-medium tracking-widest text-white transition-colors hover:bg-gold-light"
+                    className="mt-6 block bg-accent px-8 py-3 text-center text-sm font-medium tracking-widest text-white transition-colors hover:bg-accent-dark"
                   >
                     {t.quote.ctaBook}
                   </Link>
@@ -475,7 +482,7 @@ export default function UploadPage() {
                   )}
                 </>
               ) : (
-                <p className="mt-6 text-sm text-ivory-mute">
+                <p className="mt-6 text-sm text-ink-3">
                   {t.quote.resultHint}
                 </p>
               )}
@@ -483,24 +490,24 @@ export default function UploadPage() {
 
             {/* ========== AI 设计建议 ========== */}
             {designStatus === 'loading' && (
-              <div className="mt-6 rounded-xl border border-ivory/10 bg-ink-800 p-8">
+              <div className="mt-6 border border-line bg-paper-soft p-8">
                 <p className="section-eyebrow">{t.design.title}</p>
-                <p className="mt-4 flex items-center gap-3 text-sm text-ivory-mute">
-                  <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-gold border-t-transparent" />
+                <p className="mt-4 flex items-center gap-3 text-sm text-ink-3">
+                  <span className="inline-block h-4 w-4 animate-spin border-2 border-line border-t-accent" />
                   {t.design.loading}
                 </p>
               </div>
             )}
             {designStatus === 'ok' && (
-              <div className="mt-6 rounded-xl border border-ivory/10 bg-ink-800 p-8">
+              <div className="mt-6 border border-line bg-paper-soft p-8">
                 <p className="section-eyebrow">{t.design.title}</p>
-                <div className="mt-4 whitespace-pre-line text-sm leading-relaxed text-ivory-dim">
+                <div className="mt-4 whitespace-pre-line text-sm leading-[1.7] text-ink-2">
                   {designText}
                 </div>
               </div>
             )}
             {designStatus === 'error' && (
-              <p className="mt-6 text-xs text-ivory-mute">{t.design.failed}</p>
+              <p className="mt-6 text-xs text-ink-3">{t.design.failed}</p>
             )}
           </div>
         </div>

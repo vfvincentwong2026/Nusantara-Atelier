@@ -58,8 +58,12 @@ The site is built around **25 real completed projects / 231 photos** with actual
 **已上线功能 · Live Features**
 
 - 📄 **案例详情页** `/cases/[id]` —— 25 个项目全部 SSG 预渲染，全屏灯箱（键盘 ←/→/Esc）、图片计数
-- 🏷️ **房间级标注**（试点：庐州府·翠园 48 张）—— 12 类空间体系 + 三语描述，详情页内可按空间筛选（MMIS 数据集方法论）
+- 🏷️ **房间级标注**（全部 25 案例 / 231 张）—— 12 类空间体系 + 三语描述，详情页内可按空间筛选（MMIS 数据集方法论）
 - 🧮 **即时估价工具** `/upload` —— 纯客户端估价引擎（风格/地区/档次系数），IDR/USD/RMB 三币种 + 分项条形图 + 参考案例匹配，户型图仅本地预览不上传
+- 📋 **BOM 精报** —— 按空间驱动的物料算量引擎（`lib/bom.ts`），风格选型 + 损耗系数 + 人工加权，与估算同口径对照
+- 🧱 **材料库** `/materials` —— 51 个印尼本地 SKU（8 大类 × 3 档），IDR 定价 + 供应商 + 损耗系数
+- 🤖 **AI 设计建议** —— Workers AI（Llama 3.3 70B）按客户语言生成设计方案，参考案例自动匹配
+- 📐 **DXF 户型解析** —— 上传图纸自动识别房间与面积（自研 JS 解析器）
 - 💬 **WhatsApp 预约** `/booking` —— 表单自动按客户语言拼消息，拉起 WhatsApp；线索同步落库防丢失
 
 ---
@@ -69,12 +73,14 @@ The site is built around **25 real completed projects / 231 photos** with actual
 | 层级 | 技术 | 状态 |
 |------|------|------|
 | 前端 | Next.js 14 (App Router) + TypeScript + Tailwind CSS，静态导出 | ✅ 已上线 |
+| 设计规范 | 自研 Design System（参照 ArchDaily，见 [DESIGN_SYSTEM](docs/DESIGN_SYSTEM.md)） | ✅ 已上线 |
 | 多语言 | 自研客户端字典 i18n（ID / EN / 中文，印尼语优先） | ✅ 已上线 |
 | 托管 | Cloudflare Pages（全球 CDN） | ✅ 已上线 |
-| 后端 API | Cloudflare Workers（`nusantara-api-worker`：/health /cases /quote /booking） | ✅ 已上线 |
-| 数据库 | Cloudflare D1（25 案例 + 报价 + 线索已入库） | ✅ 已上线 |
+| 后端 API | Cloudflare Workers（8 路由：/health /cases /quote /booking /design /parse-dxf /materials 等） | ✅ 已上线 |
+| 数据库 | Cloudflare D1（25 案例 + 51 SKU + 报价 + 线索 + 设计记录） | ✅ 已上线 |
+| AI 推理 | Workers AI（Llama 3.3 70B，三语设计生成） | ✅ 已上线 |
+| CAD 解析 | 自研 JS DXF 解析器（LWPOLYLINE + 鞋带公式） | ✅ 已上线 |
 | 文件存储 | Cloudflare R2 | ⏸️ 待账号开通 |
-| AI 推理 / CAD 解析 | Workers AI / Python Worker (ezdxf) | 🚧 下一阶段，见 [ARCHITECTURE](docs/ARCHITECTURE.md) |
 
 **API 端点**：`https://nusantara-api-worker.vfvincentwong-881.workers.dev`（MVP 阶段免鉴权，详见 [docs/API.md](docs/API.md)）
 
@@ -108,24 +114,27 @@ npx wrangler d1 execute nusantara-db --remote --file=../../schema.sql
 nusantara-atelier/
 ├── apps/
 │   └── web/                  # 前端网站（Next.js 14，已上线）
-│       ├── app/              # 首页 / cases/[id] 详情页 / booking / upload
-│       ├── components/       # SiteHeader / CaseGallery / CaseDetail / HeroCarousel / LanguageProvider
-│       ├── lib/              # i18n 字典（三语）/ quote.ts 估价引擎 / site.ts 站点配置
+│       ├── app/              # 首页 / cases/[id] 详情页 / booking / upload / materials
+│       ├── components/       # SiteHeader / CaseGallery / CaseDetail / BomView / MaterialsLibrary / icons.tsx（线性图标库）
+│       ├── lib/              # i18n 字典（三语）/ quote.ts 估价引擎 / bom.ts BOM 算量引擎 / site.ts 站点配置
 │       └── public/cases/     # 231 张案例实景照片
 │
 ├── workers/
-│   └── api-worker/           # 后端 API（Cloudflare Workers + D1，已上线）
-│       ├── src/index.js      # /health /cases /quote /booking
-│       └── scripts/seed.mjs  # 案例灌库脚本
+│   └── api-worker/           # 后端 API（Cloudflare Workers + D1 + Workers AI，已上线）
+│       ├── src/index.js      # /health /cases /quote /booking /design /parse-dxf /materials
+│       └── scripts/          # 灌库与迁移脚本（cases / materials）
 │
 ├── data/
 │   ├── cases.json            # 案例库单一数据源（25 案例，含房间级标注）
+│   ├── materials.json        # 印尼材料 SKU 库（51 条，8 大类 × 3 档）
 │   └── annotations/          # 房间标注源文件（MMIS 方法论）
 │
-├── schema.sql                # D1 数据库表结构（cases/materials/quotes/bookings）
+├── schema.sql                # D1 数据库表结构（cases/materials/quotes/bookings/designs）
 │
 └── docs/                     # 完整文档
     ├── HOMEPAGE.md           # 首页 PRD + 中英双语文案
+    ├── DESIGN_SYSTEM.md      # 设计规范（参照 ArchDaily）
+    ├── PHASE3_PRD.md         # Phase 3：SKU 库 + BOM 精报 PRD
     ├── PROJECT_DESCRIPTION.md
     ├── ARCHITECTURE.md
     ├── DATA_MODEL.md
@@ -140,8 +149,8 @@ nusantara-atelier/
 | 阶段 | 时间 | 目标 | 状态 |
 |------|------|------|------|
 | Phase 1 | 2026 Q3 | 案例库 + 首页 + 三语 + 上线 | ✅ 已完成 |
-| Phase 2 | 2026 Q4 | 上传流程 + 报价 + 预约 + 后端 API | 🚧 进行中（估价/预约/后端 v1 ✅，AI 设计生成 + CAD 解析待做） |
-| Phase 3 | 2027 Q1 | 印尼本地材料库 + 精确 BOM 报价 + 3D 预览 | 🚧 已规划，见 [PHASE3_PRD](docs/PHASE3_PRD.md) |
+| Phase 2 | 2026 Q4 | 上传流程 + 报价 + 预约 + 后端 API + AI 生成 + DXF 解析 | ✅ 已完成 |
+| Phase 3 | 2027 Q1 | 印尼本地材料库 + 精确 BOM 报价 + 3D 预览 | 🚧 进行中（3a SKU 库 ✅ / 3b BOM 引擎 ✅ / 3c BOM 展示 ✅；3d 供应商更新流待做），见 [PHASE3_PRD](docs/PHASE3_PRD.md) |
 | Phase 4 | 2027 Q2 | 与 IndoScout 获客系统打通 | 📋 规划中 |
 
 ## 🤝 贡献 · Contributing

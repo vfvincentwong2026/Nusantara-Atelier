@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { useLanguage } from '@/components/LanguageProvider';
 import SiteHeader from '@/components/SiteHeader';
+import { IconChevronLeft, IconChevronRight, IconClose } from '@/components/icons';
 import type { ProjectCase, RoomAnnotation, RoomType } from '@/lib/types';
 
 interface GalleryItem {
@@ -80,65 +81,77 @@ export default function CaseDetail({ item }: { item: ProjectCase }) {
     setIndex(0);
   };
 
-  const meta = [
-    item.location,
-    t.styles[item.style] ?? item.style,
-    item.area !== null ? `${item.area} ㎡` : null,
-    item.hard_cost_per_sqm !== null
-      ? `${t.pricing.hardCost} ¥${item.hard_cost_per_sqm.toLocaleString()}/㎡`
-      : null,
-    item.soft_cost_per_sqm !== null
-      ? `${t.pricing.softCost} ¥${item.soft_cost_per_sqm.toLocaleString()}/㎡`
-      : null,
-  ]
-    .filter(Boolean)
-    .join(' · ');
+  /** 详情页 meta（规范 §5）：ArchDaily 式定义行 —— 标签 ink-3 + 值 ink，行间 1px 线 */
+  const metaRows: [string, string][] = (
+    [
+      item.location ? [t.bookingForm.location, item.location] : null,
+      [t.bookingForm.style, t.styles[item.style] ?? item.style],
+      item.area !== null ? [t.bookingForm.area, `${item.area} ㎡`] : null,
+      item.hard_cost_per_sqm !== null
+        ? [
+            t.pricing.hardCost,
+            `¥${item.hard_cost_per_sqm.toLocaleString()}/㎡`,
+          ]
+        : null,
+      item.soft_cost_per_sqm !== null
+        ? [
+            t.pricing.softCost,
+            `¥${item.soft_cost_per_sqm.toLocaleString()}/㎡`,
+          ]
+        : null,
+    ] as ([string, string] | null)[]
+  ).filter((r): r is [string, string] => r !== null);
+
+  const chipCls = (active: boolean) =>
+    `shrink-0 border px-4 py-1.5 text-sm tracking-wider transition-colors ${
+      active
+        ? 'border-accent text-accent'
+        : 'border-line text-ink-2 hover:border-accent hover:text-accent'
+    }`;
 
   return (
-    <main className="min-h-screen bg-ink pb-24">
+    <main className="min-h-screen bg-paper pb-24">
       <SiteHeader />
 
       {/* ========== 头部 ========== */}
-      <div className="mx-auto max-w-6xl px-6 pt-28">
+      <div className="mx-auto max-w-[1200px] px-6 pt-28">
         <Link
           href="/#cases"
-          className="text-sm tracking-widest text-ivory-mute transition-colors hover:text-gold-dark"
+          className="text-sm tracking-widest text-ink-3 transition-colors hover:text-accent"
         >
           {t.detail.back}
         </Link>
-        <h1 className="mt-6 font-serif text-3xl text-balance text-ivory md:text-5xl">
+        <h1 className="mt-6 text-3xl font-semibold tracking-[-0.02em] text-balance text-ink md:text-[40px]">
           {item.project_name}
         </h1>
-        <p className="mt-3 text-sm tracking-wider text-ivory-mute">{meta}</p>
+        <dl className="mt-8 max-w-2xl border-t border-line">
+          {metaRows.map(([k, v]) => (
+            <div
+              key={k}
+              className="flex gap-6 border-b border-line py-2.5 text-sm"
+            >
+              <dt className="w-20 shrink-0 text-ink-3">{k}</dt>
+              <dd className="tabular-nums text-ink">{v}</dd>
+            </div>
+          ))}
+        </dl>
         {item.description && (
-          <p className="mt-3 text-sm text-gold-dark">{item.description}</p>
+          <p className="mt-4 text-sm text-ink-2">{item.description}</p>
         )}
-        <div className="gold-divider mt-6" />
       </div>
 
       {/* ========== 空间筛选 ========== */}
       {spaceChips.length > 0 && (
-        <div className="mx-auto mt-8 max-w-6xl px-6">
+        <div className="mx-auto mt-10 max-w-[1200px] px-6">
           <div className="flex gap-2 overflow-x-auto pb-2">
-            <button
-              onClick={() => applyFilter('all')}
-              className={`shrink-0 rounded-full border px-4 py-1.5 text-sm tracking-wider transition-colors ${
-                spaceFilter === 'all'
-                  ? 'border-gold bg-gold text-white'
-                  : 'border-ivory/20 text-ivory-dim hover:border-gold/60 hover:text-gold-dark'
-              }`}
-            >
+            <button onClick={() => applyFilter('all')} className={chipCls(spaceFilter === 'all')}>
               {t.detail.allSpaces} · {allItems.length}
             </button>
             {spaceChips.map(([room, n]) => (
               <button
                 key={room}
                 onClick={() => applyFilter(room)}
-                className={`shrink-0 rounded-full border px-4 py-1.5 text-sm tracking-wider transition-colors ${
-                  spaceFilter === room
-                    ? 'border-gold bg-gold text-white'
-                    : 'border-ivory/20 text-ivory-dim hover:border-gold/60 hover:text-gold-dark'
-                }`}
+                className={chipCls(spaceFilter === room)}
               >
                 {t.rooms[room]} · {n}
               </button>
@@ -149,10 +162,10 @@ export default function CaseDetail({ item }: { item: ProjectCase }) {
 
       {/* ========== 主图 + 标注 ========== */}
       {current && (
-        <div className="mx-auto mt-8 max-w-6xl px-6">
+        <div className="mx-auto mt-8 max-w-[1200px] px-6">
           <button
             onClick={() => setLightbox(true)}
-            className="group relative block w-full overflow-hidden rounded-lg border border-ivory/10 bg-ink-700"
+            className="group relative block w-full overflow-hidden border border-line bg-paper-soft"
             aria-label="open lightbox"
           >
             <img
@@ -166,16 +179,16 @@ export default function CaseDetail({ item }: { item: ProjectCase }) {
             <div className="min-h-[3rem]">
               {current.annotation && (
                 <>
-                  <span className="rounded-full border border-gold/50 bg-white px-3 py-1 text-[11px] tracking-widest text-gold-dark">
+                  <span className="border border-line bg-paper px-3 py-1 text-[11px] tracking-widest text-ink-2">
                     {t.rooms[current.annotation.room]}
                   </span>
-                  <p className="mt-2 text-sm leading-relaxed text-ivory-dim">
+                  <p className="mt-2 text-sm leading-relaxed text-ink-2">
                     {current.annotation.desc[locale]}
                   </p>
                 </>
               )}
             </div>
-            <span className="shrink-0 font-mono text-xs tracking-widest text-ivory-mute">
+            <span className="shrink-0 font-mono text-xs tracking-widest tabular-nums text-ink-3">
               {safeIndex + 1} / {filtered.length}
             </span>
           </div>
@@ -186,10 +199,10 @@ export default function CaseDetail({ item }: { item: ProjectCase }) {
               <button
                 key={it.src}
                 onClick={() => setIndex(i)}
-                className={`h-16 w-24 shrink-0 overflow-hidden rounded border transition-all ${
+                className={`h-16 w-24 shrink-0 overflow-hidden border transition-all ${
                   i === safeIndex
-                    ? 'border-gold ring-1 ring-gold'
-                    : 'border-ivory/10 opacity-60 hover:opacity-100'
+                    ? 'border-accent'
+                    : 'border-line opacity-60 hover:opacity-100'
                 }`}
               >
                 <img
@@ -205,42 +218,42 @@ export default function CaseDetail({ item }: { item: ProjectCase }) {
       )}
 
       {/* ========== 底部 CTA ========== */}
-      <div className="mx-auto mt-16 max-w-3xl px-6 text-center">
-        <h2 className="font-serif text-2xl text-ivory md:text-3xl">
+      <div className="mx-auto mt-24 max-w-3xl px-6 text-center">
+        <h2 className="text-2xl font-semibold text-ink md:text-3xl">
           {t.detail.likeTitle}
         </h2>
         <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
           <Link
             href="/booking"
-            className="w-full rounded-full bg-gold px-8 py-3 text-sm font-medium tracking-widest text-white transition-colors hover:bg-gold-light sm:w-auto"
+            className="w-full bg-accent px-8 py-3 text-sm font-medium tracking-widest text-white transition-colors hover:bg-accent-dark sm:w-auto"
           >
             {t.booking.title}
           </Link>
           <Link
             href="/upload"
-            className="w-full rounded-full border border-ivory/30 px-8 py-3 text-sm tracking-widest text-ivory transition-colors hover:border-gold hover:text-gold-dark sm:w-auto"
+            className="w-full border border-ink px-8 py-3 text-sm tracking-widest text-ink transition-colors hover:border-accent hover:text-accent sm:w-auto"
           >
             {t.estimate.cta}
           </Link>
         </div>
       </div>
 
-      {/* ========== 灯箱 ========== */}
+      {/* ========== 灯箱（媒体 overlay，保留深色底） ========== */}
       {lightbox && current && (
         <div
           className="fixed inset-0 z-[60] flex flex-col bg-black/95"
           onClick={() => setLightbox(false)}
         >
           <div className="flex items-center justify-between px-6 py-4">
-            <span className="font-mono text-xs tracking-widest text-white/60">
+            <span className="font-mono text-xs tracking-widest tabular-nums text-white/60">
               {safeIndex + 1} / {filtered.length}
             </span>
             <button
               onClick={() => setLightbox(false)}
-              className="rounded-full border border-white/20 px-4 py-1.5 text-sm text-white/80 transition-colors hover:border-gold hover:text-gold"
+              className="border border-white/25 p-2 text-white/80 transition-colors hover:border-accent hover:text-accent"
               aria-label="close"
             >
-              ✕
+              <IconClose className="h-4 w-4" />
             </button>
           </div>
 
@@ -250,10 +263,10 @@ export default function CaseDetail({ item }: { item: ProjectCase }) {
           >
             <button
               onClick={() => go(-1)}
-              className="absolute left-3 rounded-full border border-white/20 px-3 py-2 text-white/80 transition-colors hover:border-gold hover:text-gold md:left-6"
+              className="absolute left-3 border border-white/25 p-2 text-white/80 transition-colors hover:border-accent hover:text-accent md:left-6"
               aria-label="previous"
             >
-              ←
+              <IconChevronLeft className="h-5 w-5" />
             </button>
             <img
               src={current.src}
@@ -262,10 +275,10 @@ export default function CaseDetail({ item }: { item: ProjectCase }) {
             />
             <button
               onClick={() => go(1)}
-              className="absolute right-3 rounded-full border border-white/20 px-3 py-2 text-white/80 transition-colors hover:border-gold hover:text-gold md:right-6"
+              className="absolute right-3 border border-white/25 p-2 text-white/80 transition-colors hover:border-accent hover:text-accent md:right-6"
               aria-label="next"
             >
-              →
+              <IconChevronRight className="h-5 w-5" />
             </button>
           </div>
 
@@ -274,7 +287,7 @@ export default function CaseDetail({ item }: { item: ProjectCase }) {
               className="px-6 pb-8 pt-2 text-center"
               onClick={(e) => e.stopPropagation()}
             >
-              <span className="rounded-full border border-gold/60 px-3 py-1 text-[11px] tracking-widest text-gold">
+              <span className="border border-accent/70 px-3 py-1 text-[11px] tracking-widest text-accent">
                 {t.rooms[current.annotation.room]}
               </span>
               <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-white/75">

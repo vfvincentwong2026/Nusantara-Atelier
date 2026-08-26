@@ -3,14 +3,15 @@
 import { useState } from 'react';
 import SiteHeader from '@/components/SiteHeader';
 import { useLanguage } from '@/components/LanguageProvider';
+import { IconChat } from '@/components/icons';
 import { STYLES } from '@/lib/types';
 import { WHATSAPP_NUMBER, API_BASE } from '@/lib/site';
 
 const STYLE_OPTIONS = STYLES.filter((s) => s !== '全部' && s !== '更多');
 
 const inputCls =
-  'w-full rounded-md border border-ivory/15 bg-white px-4 py-2.5 text-sm text-ivory outline-none transition-colors focus:border-gold';
-const labelCls = 'mb-1.5 block text-xs tracking-widest text-ivory-mute';
+  'w-full border border-line bg-white px-4 py-2.5 text-sm text-ink outline-none transition-colors focus:border-accent';
+const labelCls = 'mb-1.5 block text-xs tracking-widest text-ink-3';
 
 export default function BookingPage() {
   const { t, locale } = useLanguage();
@@ -73,18 +74,17 @@ export default function BookingPage() {
   };
 
   return (
-    <main className="min-h-screen bg-ink pb-24">
+    <main className="min-h-screen bg-paper pb-24">
       <SiteHeader />
 
       <div className="mx-auto max-w-2xl px-6 pt-28">
         <p className="section-eyebrow">{t.bookingForm.eyebrow}</p>
-        <h1 className="mt-4 font-serif text-3xl text-balance text-ivory md:text-4xl">
+        <h1 className="mt-4 text-3xl font-semibold tracking-[-0.02em] text-balance text-ink md:text-4xl">
           {t.bookingForm.title}
         </h1>
-        <p className="mt-3 text-sm leading-relaxed text-ivory-dim">
+        <p className="mt-3 text-sm leading-[1.7] text-ink-2">
           {t.booking.body}
         </p>
-        <div className="gold-divider mt-6" />
 
         <form onSubmit={handleSubmit} className="mt-10 space-y-6">
           <div className="grid gap-6 sm:grid-cols-2">
@@ -162,18 +162,19 @@ export default function BookingPage() {
           </div>
 
           {error && (
-            <p className="text-sm text-red-700">{t.bookingForm.required}</p>
+            <p className="text-sm text-accent">{t.bookingForm.required}</p>
           )}
 
           <button
             type="submit"
-            className="w-full rounded-full bg-gold px-8 py-3 text-sm font-medium tracking-widest text-white transition-colors hover:bg-gold-light"
+            className="w-full bg-accent px-8 py-3 text-sm font-medium tracking-widest text-white transition-colors hover:bg-accent-dark"
           >
             {t.bookingForm.submit}
           </button>
 
-          <p className="text-center text-xs leading-relaxed text-ivory-mute">
-            💬 {t.bookingForm.waHint}
+          <p className="flex items-center justify-center gap-1.5 text-center text-xs leading-relaxed text-ink-3">
+            <IconChat className="h-3.5 w-3.5" />
+            {t.bookingForm.waHint}
           </p>
         </form>
       </div>

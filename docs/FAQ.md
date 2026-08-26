@@ -109,26 +109,4 @@ Yes. We continuously collect and organize new completed projects to enrich the c
 
 - [项目介绍](PROJECT_DESCRIPTION.md)
 - [案例展示](CASES.md)
-✅ 下一步操作
-删除错误的目录：
 
-bash
-git rm -rf '`docs'
-创建正确的 docs 目录（如果不存在）：
-
-bash
-mkdir -p docs
-将所有文档添加到 docs/，然后提交：
-
-bash
-git add docs/
-git add .github/
-git commit -m "docs: add complete documentation
-- PROJECT_DESCRIPTION.md: project overview with case library
-- ARCHITECTURE.md: technical architecture
-- DATA_MODEL.md: data models and 18 cases
-- API.md: API documentation
-- CASES.md: case gallery
-- FAQ.md: bilingual FAQ
-- add issue templates and PR template"
-git push
