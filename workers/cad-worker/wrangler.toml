@@ -1,0 +1,4 @@
+name = "nusantara-cad-worker"
+main = "src/entry.py"
+compatibility_date = "2026-08-25"
+compatibility_flags = ["python_workers"]

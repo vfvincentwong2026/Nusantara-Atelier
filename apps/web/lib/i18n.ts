@@ -165,6 +165,16 @@ const zh = {
     disclaimer: '初步估算仅供参考，最终以设计师上门量房为准。',
     ctaBook: '预约设计师深化方案 →',
   },
+  design: {
+    title: 'AI 设计建议',
+    loading: 'AI 正在生成设计建议…',
+    failed: '设计建议暂时不可用',
+  },
+  dxf: {
+    parsed: (n: number, area: number) =>
+      `识别到 ${n} 个房间，总面积 ${area} ㎡ 已自动填入（可编辑）`,
+    failed: '无法解析该 DXF 文件',
+  },
   detail: {
     back: '← 返回案例库',
     allSpaces: '全部空间',
@@ -347,6 +357,16 @@ const en: typeof zh = {
     disclaimer: 'For reference only — the final quote follows an on-site survey by our designer.',
     ctaBook: 'Book a Designer to Refine →',
   },
+  design: {
+    title: 'AI Design Suggestion',
+    loading: 'AI is generating design suggestions…',
+    failed: 'Design suggestions unavailable',
+  },
+  dxf: {
+    parsed: (n: number, area: number) =>
+      `${n} rooms detected — total area ${area} ㎡ filled in (editable)`,
+    failed: 'Could not parse this DXF file',
+  },
   detail: {
     back: '← Back to Works',
     allSpaces: 'All Spaces',
@@ -528,6 +548,16 @@ const id: typeof zh = {
     viewCase: 'Lihat Proyek →',
     disclaimer: 'Estimasi awal hanya sebagai referensi — hasil akhir mengikuti pengukuran langsung oleh desainer kami.',
     ctaBook: 'Jadwalkan Desainer untuk Detail →',
+  },
+  design: {
+    title: 'Saran Desain AI',
+    loading: 'AI sedang membuat saran desain…',
+    failed: 'Saran desain tidak tersedia',
+  },
+  dxf: {
+    parsed: (n: number, area: number) =>
+      `${n} ruangan terdeteksi — total luas ${area} ㎡ terisi otomatis (dapat diubah)`,
+    failed: 'File DXF tidak dapat diproses',
   },
   detail: {
     back: '← Kembali ke Proyek',

@@ -44,6 +44,41 @@ export default function UploadPage() {
   const [pool, setPool] = useState(false);
   const [garden, setGarden] = useState(false);
 
+  // DXF 解析结果
+  const [dxfRooms, setDxfRooms] = useState<
+    { name: string; width: number; depth: number; area: number }[] | null
+  >(null);
+  const [dxfError, setDxfError] = useState(false);
+
+  // AI 设计建议
+  const [designStatus, setDesignStatus] = useState<
+    'idle' | 'loading' | 'ok' | 'error'
+  >('idle');
+  const [designText, setDesignText] = useState('');
+
+  /** 文件选择：dxf 走解析接口并自动填面积，其余本地预览 */
+  const handleFile = async (f: File | null) => {
+    setFile(f);
+    setDxfRooms(null);
+    setDxfError(false);
+    if (!f || !f.name.toLowerCase().endsWith('.dxf')) return;
+    try {
+      const text = await f.text();
+      const res = await fetch(`${API_BASE}/parse-dxf`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain' },
+        body: text,
+      });
+      const json = await res.json();
+      if (!json.success || !json.data.rooms.length) throw new Error('parse failed');
+      setDxfRooms(json.data.rooms);
+      setAreaText(String(Math.round(json.data.total_area)));
+      setRooms(String(Math.min(Math.max(json.data.rooms.length, 1), 10)));
+    } catch {
+      setDxfError(true);
+    }
+  };
+
   const area = Number(areaText);
   const areaValid = areaText !== '' && isValidArea(area);
   const areaInvalid = areaText !== '' && !isValidArea(area);
@@ -64,7 +99,37 @@ export default function UploadPage() {
     [areaValid, area, style, tier, region, pool, garden]
   );
 
-  // 估价结果生成后 fire-and-forget 持久化到 API（防抖 1.5s，失败静默不影响用户）
+  // AI 设计建议：输入稳定 2s 后调 POST /design（失败静默，不显示板块）
+  useEffect(() => {
+    if (!areaValid) {
+      setDesignStatus('idle');
+      return;
+    }
+    setDesignStatus('loading');
+    const timer = setTimeout(async () => {
+      try {
+        const res = await fetch(`${API_BASE}/design`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            style,
+            area,
+            rooms: Number(rooms),
+            floors: Number(floors),
+            tier,
+            locale,
+          }),
+        });
+        const json = await res.json();
+        if (!json.success) throw new Error('design failed');
+        setDesignText(json.data.design_description);
+        setDesignStatus('ok');
+      } catch {
+        setDesignStatus('error');
+      }
+    }, 2000);
+    return () => clearTimeout(timer);
+  }, [areaValid, area, style, rooms, floors, tier, locale]);
   useEffect(() => {
     if (!areaValid) return;
     const timer = setTimeout(() => {
@@ -121,14 +186,34 @@ export default function UploadPage() {
                 )}
                 <input
                   type="file"
-                  accept=".jpg,.jpeg,.png,.pdf"
+                  accept=".jpg,.jpeg,.png,.pdf,.dxf"
                   className="hidden"
-                  onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+                  onChange={(e) => handleFile(e.target.files?.[0] ?? null)}
                 />
               </label>
               <p className="mt-2 text-xs text-ivory-mute">
                 🔒 {t.quote.uploadHint}
               </p>
+              {dxfError && (
+                <p className="mt-2 text-xs text-red-700">{t.dxf.failed}</p>
+              )}
+              {dxfRooms && (
+                <div className="mt-3 rounded-md border border-gold/30 bg-white p-4">
+                  <p className="text-xs text-gold-dark">
+                    {t.dxf.parsed(
+                      dxfRooms.length,
+                      dxfRooms.reduce((s, r) => s + r.area, 0)
+                    )}
+                  </p>
+                  <ul className="mt-2 space-y-1 text-xs text-ivory-dim">
+                    {dxfRooms.map((r, i) => (
+                      <li key={i}>
+                        {r.name} — {r.width} × {r.depth} m · {r.area} ㎡
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
 
             <div className="grid gap-6 sm:grid-cols-2">
@@ -322,6 +407,28 @@ export default function UploadPage() {
                 </p>
               )}
             </div>
+
+            {/* ========== AI 设计建议 ========== */}
+            {designStatus === 'loading' && (
+              <div className="mt-6 rounded-xl border border-ivory/10 bg-ink-800 p-8">
+                <p className="section-eyebrow">{t.design.title}</p>
+                <p className="mt-4 flex items-center gap-3 text-sm text-ivory-mute">
+                  <span className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-gold border-t-transparent" />
+                  {t.design.loading}
+                </p>
+              </div>
+            )}
+            {designStatus === 'ok' && (
+              <div className="mt-6 rounded-xl border border-ivory/10 bg-ink-800 p-8">
+                <p className="section-eyebrow">{t.design.title}</p>
+                <div className="mt-4 whitespace-pre-line text-sm leading-relaxed text-ivory-dim">
+                  {designText}
+                </div>
+              </div>
+            )}
+            {designStatus === 'error' && (
+              <p className="mt-6 text-xs text-ivory-mute">{t.design.failed}</p>
+            )}
           </div>
         </div>
       </div>

@@ -37,6 +37,24 @@ const BREAKDOWN = [
 const AREA_MIN = 50;
 const AREA_MAX = 5000;
 
+/** 风格 → 核心材质建议（docs/DATA_MODEL.md 风格映射表） */
+const STYLE_MATERIALS = {
+  法式: ['大理石拼花地面', '护墙板 + 墙布', '石膏线条吊顶', '实木家具', '水晶吊灯'],
+  现代: ['大板瓷砖 / 微水泥', '艺术涂料 / 木饰面', '无主灯平顶', '玻璃', '金属线条'],
+  侘寂: ['微水泥 / 木地板', '艺术涂料 / 藤编', '原木梁', '天然石材', '棉麻织物'],
+  意式极简: ['大理石 / 木地板', '木饰面 / 金属', '无主灯极简吊顶', '皮革', '玻璃'],
+  现代奶油: ['木地板 / 柔光砖', '艺术涂料', '弧形吊顶', '布艺', '哑光漆面'],
+  法式轻奢: ['大理石 / 拼花地面', '护墙板 / 金属', '石膏线 + 灯带', '丝绒', '黄铜件'],
+  现代小法: ['大理石地面', '护墙板', '石膏线条', '实木', '金属点缀'],
+};
+
+/** locale → AI 输出语言 */
+const LOCALE_LANG = {
+  zh: 'Simplified Chinese (中文)',
+  en: 'English',
+  id: 'Bahasa Indonesia',
+};
+
 /* ================= 工具函数 ================= */
 
 const CORS_HEADERS = {
@@ -242,6 +260,185 @@ async function handleBooking(request, env) {
   });
 }
 
+/* ================= /design：AI 设计生成 ================= */
+
+async function handleDesign(request, env) {
+  const body = await readJson(request);
+  if (!body) return fail(400, 'BAD_JSON', 'Request body must be valid JSON');
+
+  const style = typeof body.style === 'string' && body.style ? body.style : '现代';
+  const area = Number.isFinite(Number(body.area)) ? Number(body.area) : null;
+  const rooms = Number.isFinite(Number(body.rooms)) ? Number(body.rooms) : null;
+  const floors = Number.isFinite(Number(body.floors)) ? Number(body.floors) : null;
+  const tier = TIER_FACTOR[body.tier] ? body.tier : 'standard';
+  const locale = LOCALE_LANG[body.locale] ? body.locale : 'en';
+
+  // 参考案例：同风格且有造价数据的优先，否则同风格第一个
+  let matchedCase = null;
+  try {
+    matchedCase =
+      (await env.DB.prepare(
+        `SELECT case_id, project_name, location, style, area, hard_cost_per_sqm, soft_cost_per_sqm
+         FROM cases WHERE style = ? AND hard_cost_per_sqm IS NOT NULL ORDER BY id LIMIT 1`
+      ).bind(style).first()) ||
+      (await env.DB.prepare(
+        `SELECT case_id, project_name, location, style, area, hard_cost_per_sqm, soft_cost_per_sqm
+         FROM cases WHERE style = ? ORDER BY id LIMIT 1`
+      ).bind(style).first());
+  } catch (e) {
+    console.error('matched case query failed', e);
+  }
+
+  const materials = STYLE_MATERIALS[style] ?? STYLE_MATERIALS['现代'];
+  const lang = LOCALE_LANG[locale];
+
+  const caseInfo = matchedCase
+    ? `Reference project: "${matchedCase.project_name}" (${matchedCase.location ?? ''}, ${matchedCase.area ?? '?'} sqm` +
+      (matchedCase.hard_cost_per_sqm
+        ? `, hard fit-out RMB ${matchedCase.hard_cost_per_sqm}/sqm, soft furnishing RMB ${matchedCase.soft_cost_per_sqm}/sqm`
+        : '') + ')'
+    : 'No reference project available';
+
+  const messages = [
+    {
+      role: 'system',
+      content:
+        `You are a senior luxury villa design consultant at Nusantara Atelier, serving high-net-worth clients in Indonesia. ` +
+        `Respond ENTIRELY in ${lang}. Plain text only, no markdown headers. Structure your answer in exactly these parts: ` +
+        `1) Design concept (2-3 sentences). 2) Space planning suggestions as bullet points starting with "- " (respect the room/floor counts). ` +
+        `3) Material suggestions (3-5 items, bullet points starting with "- "). 4) One sentence connecting the proposal to the reference project.`,
+    },
+    {
+      role: 'user',
+      content:
+        `Client brief — style: ${style}, area: ${area ?? 'unknown'} sqm, rooms: ${rooms ?? 'unknown'}, floors: ${floors ?? 'unknown'}, tier: ${tier}. ` +
+        `${caseInfo}. Suggested material palette: ${materials.join(', ')}.`,
+    },
+  ];
+
+  let description;
+  try {
+    const result = await env.AI.run('@cf/meta/llama-3.3-70b-instruct-fp8-fast', { messages });
+    description = result?.response?.trim();
+    if (!description) throw new Error('empty AI response');
+  } catch (e) {
+    return fail(500, 'AI_ERROR', `AI generation failed: ${String(e)}`);
+  }
+
+  const designId = `design_${crypto.randomUUID()}`;
+  try {
+    await env.DB.prepare(
+      `INSERT INTO designs (design_id, style, area, rooms, floors, tier, locale, matched_case_id, design_description, materials, payload)
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+    )
+      .bind(
+        designId, style, area, rooms, floors, tier, locale,
+        matchedCase?.case_id ?? null, description,
+        JSON.stringify(materials), JSON.stringify(body)
+      )
+      .run();
+  } catch (e) {
+    // 落库失败不阻塞返回
+    console.error('design insert failed', e);
+  }
+
+  return ok({
+    design_id: designId,
+    matched_case: matchedCase
+      ? {
+          id: matchedCase.case_id,
+          project_name: matchedCase.project_name,
+          style: matchedCase.style,
+          area: matchedCase.area,
+          hard_cost_per_sqm: matchedCase.hard_cost_per_sqm,
+          soft_cost_per_sqm: matchedCase.soft_cost_per_sqm,
+        }
+      : null,
+    design_description: description,
+    materials_suggestion: materials,
+    generated_at: new Date().toISOString(),
+  });
+}
+
+/* ================= /parse-dxf：最小 DXF 解析（纯 JS，LWPOLYLINE → 房间面积） ================= */
+
+function parseDxf(text) {
+  const lines = text.split(/\r?\n/).map((l) => l.trim());
+  // group code 配对
+  const pairs = [];
+  for (let i = 0; i + 1 < lines.length; i += 2) {
+    pairs.push([lines[i], lines[i + 1]]);
+  }
+
+  // 定位 ENTITIES 段
+  let inEntities = false;
+  const rooms = [];
+  let cur = null; // 当前 LWPOLYLINE { layer, xs, ys, closed }
+
+  const flush = () => {
+    if (cur && cur.xs.length >= 3) {
+      let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+      let area = 0;
+      const n = cur.xs.length;
+      for (let i = 0; i < n; i++) {
+        const x = cur.xs[i], y = cur.ys[i];
+        const x2 = cur.xs[(i + 1) % n], y2 = cur.ys[(i + 1) % n];
+        area += x * y2 - x2 * y;
+        if (x < minX) minX = x; if (x > maxX) maxX = x;
+        if (y < minY) minY = y; if (y > maxY) maxY = y;
+      }
+      rooms.push({
+        name: cur.layer || 'room',
+        width: +(maxX - minX).toFixed(2),
+        depth: +(maxY - minY).toFixed(2),
+        area: +(Math.abs(area) / 2).toFixed(2),
+      });
+    }
+    cur = null;
+  };
+
+  for (const [code, value] of pairs) {
+    if (code === '0' && value === 'SECTION') { cur = null; continue; }
+    if (code === '2' && value === 'ENTITIES') { inEntities = true; continue; }
+    if (code === '0' && value === 'ENDSEC') { if (inEntities) flush(); inEntities = false; continue; }
+    if (!inEntities) continue;
+
+    if (code === '0') {
+      // 新实体开始
+      flush();
+      if (value === 'LWPOLYLINE') cur = { layer: 'room', xs: [], ys: [], closed: false };
+      continue;
+    }
+    if (!cur) continue;
+    if (code === '8') cur.layer = value;
+    else if (code === '70') cur.closed = (parseInt(value, 10) & 1) === 1;
+    else if (code === '10') cur.xs.push(parseFloat(value));
+    else if (code === '20') cur.ys.push(parseFloat(value));
+  }
+  flush();
+
+  const total = rooms.reduce((s, r) => s + r.area, 0);
+  return { rooms, total_area: +total.toFixed(2) };
+}
+
+async function handleParseDxf(request, env) {
+  const text = await request.text();
+  if (!text || text.length < 20) {
+    return fail(400, 'EMPTY_BODY', 'DXF text body required');
+  }
+  let parsed;
+  try {
+    parsed = parseDxf(text);
+  } catch (e) {
+    return fail(400, 'PARSE_ERROR', String(e));
+  }
+  if (parsed.rooms.length === 0) {
+    return fail(400, 'NO_POLYLINE', 'No closed LWPOLYLINE entities found in ENTITIES section');
+  }
+  // 注意：面积单位按 DXF 原样（假设为米），未做 INSUNITS 换算
+  return ok(parsed);
+}
+
 /* ================= 入口 ================= */
 
 export default {
@@ -259,6 +456,8 @@ export default {
     if (method === 'GET' && pathname === '/cases') return handleCases(url, env);
     if (method === 'POST' && pathname === '/quote') return handleQuote(request, env);
     if (method === 'POST' && pathname === '/booking') return handleBooking(request, env);
+    if (method === 'POST' && pathname === '/design') return handleDesign(request, env);
+    if (method === 'POST' && pathname === '/parse-dxf') return handleParseDxf(request, env);
 
     return fail(404, 'NOT_FOUND', `${method} ${pathname} not found`);
   },
