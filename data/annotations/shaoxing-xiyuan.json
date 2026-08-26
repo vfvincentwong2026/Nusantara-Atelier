@@ -1,0 +1,21 @@
+{
+  "p36-0.jpg": {"room": "tea_room", "desc_zh": "茶室临窗一隅，异形黑色茶桌配茶具，玻璃楼梯作背景"},
+  "p37-0.jpg": {"room": "staircase", "desc_zh": "玄关过厅端景，法式护墙板与大理石地面，红色异形休闲椅配金属端景台"},
+  "p38-0.jpg": {"room": "living", "desc_zh": "挑空会客厅，巨型花瓣造型立柱与金色挑台，星空顶灯"},
+  "p38-1.jpg": {"room": "living", "desc_zh": "挑空会客厅另一角度，花瓣柱与金色旋转楼梯"},
+  "p39-0.jpg": {"room": "bar", "desc_zh": "水吧区，深色展示柜配大理石长桌与圆形矮凳"},
+  "p40-0.jpg": {"room": "bar", "desc_zh": "西厨岛台，宝格丽大理石台面与嵌入式厨电，配吧凳"},
+  "p41-0.jpg": {"room": "dining", "desc_zh": "餐厅，圆形转盘餐桌配水晶吊灯，黑色弧形酒柜"},
+  "p42-0.jpg": {"room": "living", "desc_zh": "客厅，白色弧形沙发与陀螺单椅，黑白泼墨地毯"},
+  "p43-0.jpg": {"room": "staircase", "desc_zh": "玄关端景，环形吊灯与奢石端景墙，金属玄关台"},
+  "p44-0.jpg": {"room": "study", "desc_zh": "书房，法式线条墙面配整墙置物架，大理石书桌"},
+  "p45-0.jpg": {"room": "dining", "desc_zh": "餐厅，椭圆餐桌配羽毛吊灯，深色木饰面背景墙"},
+  "p46-0.jpg": {"room": "bedroom", "desc_zh": "主卧，法式护墙板与石膏灯盘，分子结构吊灯"},
+  "p47-0.jpg": {"room": "bedroom", "desc_zh": "主卧，弧形吊顶暗藏灯带，床尾贵妃榻"},
+  "p48-0.jpg": {"room": "bedroom", "desc_zh": "主卧起居视角，条纹休闲单椅与黑白格地毯"},
+  "p49-0.jpg": {"room": "bedroom", "desc_zh": "卧室，墨绿丝绒软包床头背景配法式线条墙面"},
+  "p50-0.jpg": {"room": "study", "desc_zh": "书房，整墙书柜配墨绿背板，弧形落地灯与书桌"},
+  "p51-0.jpg": {"room": "bedroom", "desc_zh": "主卧衣帽间，两侧玻璃柜门通顶衣柜与中岛台"},
+  "p51-1.jpg": {"room": "bathroom", "desc_zh": "主卫，独立浴缸与玻璃淋浴房，大理石墙地面"},
+  "p52-0.jpg": {"room": "kids_room", "desc_zh": "阁楼儿童房衣帽间，斜坡顶天窗下整排拱形玻璃衣柜"}
+}

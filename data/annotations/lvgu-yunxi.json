@@ -1,0 +1,16 @@
+{
+  "_schema": {
+    "room": "空间类型枚举: living/dining/kitchen/bedroom/kids_room/bathroom/study/tea_room/recreation/staircase/bar/plan",
+    "desc_zh": "中文描述（英文/印尼语由开发侧翻译补齐）"
+  },
+  "p77-0.jpg": {"room": "living", "desc_zh": "入户门厅，微水泥墙面与磁吸轨道灯，艺术挂画与落地灯端景"},
+  "p78-0.jpg": {"room": "recreation", "desc_zh": "多功能休闲区，悬浮黑色层板架与原木饰面，临窗设健身区"},
+  "p78-1.jpg": {"room": "tea_room", "desc_zh": "开放式茶书区全景，岛台与长桌并列，悬挂层板架配红色线性吊灯"},
+  "p78-2.jpg": {"room": "tea_room", "desc_zh": "茶台细节，原木台面与茶具陈设，背景悬浮书架与雕塑"},
+  "p79-0.jpg": {"room": "living", "desc_zh": "客厅俯瞰，L形模块沙发与编织地毯，微水泥电视墙"},
+  "p79-1.jpg": {"room": "living", "desc_zh": "客厅电视墙细节，微水泥与黑色大理石地台，格栅茶几与木雕陈设"},
+  "p80-0.jpg": {"room": "study", "desc_zh": "书房，弧形实木书桌与整墙原木书柜，藤编椅与艺术吊灯"},
+  "p80-1.jpg": {"room": "study", "desc_zh": "书房书柜细节，原木层板嵌灯带，藤编椅与仙人掌盆栽"},
+  "p81-0.jpg": {"room": "bedroom", "desc_zh": "主卧，坡顶与原木饰面墙，床尾凳与藤编休闲椅临窗而设"},
+  "p81-1.jpg": {"room": "bedroom", "desc_zh": "主卧床头细节，层叠吊灯与石膏像，悬浮床头柜"}
+}

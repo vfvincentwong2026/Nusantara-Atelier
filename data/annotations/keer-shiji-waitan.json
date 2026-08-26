@@ -1,0 +1,10 @@
+{
+  "_schema": {
+    "room": "空间类型枚举: living/dining/kitchen/bedroom/kids_room/bathroom/study/tea_room/recreation/staircase/bar/plan",
+    "desc_zh": "中文描述（英文/印尼语由开发侧翻译补齐）"
+  },
+  "p73-0.jpg": {"room": "bedroom", "desc_zh": "主卧一角，奶茶色艺术涂料与法式石膏线，锥形吊灯与懒人沙发"},
+  "p74-0.jpg": {"room": "living", "desc_zh": "客厅，法式雕花灯盘与气球吊灯，焦糖色皮沙发配人字拼木地板"},
+  "p75-0.jpg": {"room": "living", "desc_zh": "客厅全景，法式石膏线勾勒弧形吊顶，玻璃砖隔断与焦糖皮沙发"},
+  "p76-0.jpg": {"room": "living", "desc_zh": "客餐厅一体，奶油色电视墙与玻璃砖屏风，连通开放式餐厨"}
+}

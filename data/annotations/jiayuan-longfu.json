@@ -1,0 +1,11 @@
+{
+  "_schema": {
+    "room": "空间类型枚举: living/dining/kitchen/bedroom/kids_room/bathroom/study/tea_room/recreation/staircase/bar/plan",
+    "desc_zh": "中文描述（英文/印尼语由开发侧翻译补齐）"
+  },
+  "p91-0.jpg": {"room": "living", "desc_zh": "客厅细节，巴塞罗那椅与玻璃茶几，纱帘柔化临窗光线"},
+  "p92-0.jpg": {"room": "dining", "desc_zh": "餐厅，圆形灯槽吊顶与圆环吊灯，深色圆桌远处悬浮楼梯透出灯带"},
+  "p92-1.jpg": {"room": "living", "desc_zh": "客厅，米白模块沙发与无主灯磁吸轨道，绿色大理石点缀背景墙"},
+  "p93-0.jpg": {"room": "bedroom", "desc_zh": "主卧，整墙白色衣柜与深棕皮躺椅，大理石床头柜"},
+  "p93-1.jpg": {"room": "bedroom", "desc_zh": "主卧临窗休闲角，皮质躺椅与绿植，窗外绿意入画"}
+}

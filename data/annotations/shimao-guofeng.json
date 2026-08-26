@@ -1,0 +1,13 @@
+{
+  "01.jpg": {"room": "dining", "desc_zh": "开放式餐厨，长餐桌与深色西厨背景"},
+  "02.jpg": {"room": "living", "desc_zh": "现代客厅，深色电视墙与大理石地台"},
+  "03.jpg": {"room": "bedroom", "desc_zh": "主卧，落地窗与原木地台床"},
+  "04.jpg": {"room": "tea_room", "desc_zh": "新中式茶室，长茶台与整墙博古架，书法挂画"},
+  "05.jpg": {"room": "study", "desc_zh": "书房兼琴房，钢琴与临窗书桌"},
+  "06.jpg": {"room": "bedroom", "desc_zh": "主卧，木饰面背景墙与按摩椅"},
+  "07.jpg": {"room": "recreation", "desc_zh": "影音室，投影幕布与大理石背景墙"},
+  "08.jpg": {"room": "bedroom", "desc_zh": "步入式衣帽间走廊，玻璃门衣柜与灯带"},
+  "09.jpg": {"room": "bedroom", "desc_zh": "卧室，奶油色系与贝壳形单人椅"},
+  "10.jpg": {"room": "kids_room", "desc_zh": "儿童房学习区，衣柜书桌一体与粉色单椅"},
+  "11.jpg": {"room": "bathroom", "desc_zh": "主卫，黑色大理石墙面与独立浴缸"}
+}

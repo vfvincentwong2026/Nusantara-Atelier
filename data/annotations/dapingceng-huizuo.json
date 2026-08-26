@@ -1,0 +1,15 @@
+{
+  "p17-0.jpg": {"room": "living", "desc_zh": "客餐厅一体横厅，轻奢吊灯与全景落地窗"},
+  "p17-1.jpg": {"room": "study", "desc_zh": "书房，临窗书桌与整墙展示书柜"},
+  "p18-0.jpg": {"room": "bedroom", "desc_zh": "主卧，弧形吊顶灯带与软包背景墙"},
+  "p18-1.jpg": {"room": "study", "desc_zh": "书房，竖格栅背景墙与红色背板书架"},
+  "p19-0.jpg": {"room": "living", "desc_zh": "现代客厅，深色电视背景墙与开放式展示架"},
+  "p20-0.jpg": {"room": "living", "desc_zh": "挑高玄关端景，镂空球体艺术装置与飞鸟壁饰"},
+  "p20-1.jpg": {"room": "bathroom", "desc_zh": "公共盥洗区，墨绿大理石长条洗手台与镂空格栅光影墙"},
+  "p21-0.jpg": {"room": "living", "desc_zh": "挑空客厅，拱形落地窗与整墙书格"},
+  "p21-1.jpg": {"room": "living", "desc_zh": "客厅休闲角，法式长窗引入庭院绿意"},
+  "p22-0.jpg": {"room": "living", "desc_zh": "会客区，双拱形长窗与米色沙发"},
+  "p22-1.jpg": {"room": "living", "desc_zh": "现代客厅，大理石背景墙与金属层板书架"},
+  "p23-0.jpg": {"room": "living", "desc_zh": "现代客厅，弧形吊顶与木饰面背景墙"},
+  "p23-1.jpg": {"room": "living", "desc_zh": "客厅一角，弧形落地灯与单人沙发"}
+}

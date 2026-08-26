@@ -1,0 +1,10 @@
+{
+  "_schema": {
+    "room": "空间类型枚举: living/dining/kitchen/bedroom/kids_room/bathroom/study/tea_room/recreation/staircase/bar/plan",
+    "desc_zh": "中文描述（英文/印尼语由开发侧翻译补齐）"
+  },
+  "p87-0.jpg": {"room": "living", "desc_zh": "客厅一角，深色木格栅立柱隔断，皮质贵妃榻与原石茶几"},
+  "p88-0.jpg": {"room": "living", "desc_zh": "大平层客厅全景，绿色大理石背景墙与深色木饰面，弧形落地窗俯瞰城市"},
+  "p89-0.jpg": {"room": "living", "desc_zh": "客厅电视墙与过廊，鱼肚白大理石悬浮电视墙，灰色大理石地面"},
+  "p90-0.jpg": {"room": "living", "desc_zh": "家庭厅兼琴房，深色木饰面墙嵌入钢琴，大理石圆茶几"}
+}

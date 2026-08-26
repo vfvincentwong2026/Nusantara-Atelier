@@ -119,7 +119,7 @@ async function handleCases(url, env) {
       .first();
     const { results } = await env.DB.prepare(
       `SELECT case_id, project_name, location, country, style, area,
-              hard_cost_per_sqm, soft_cost_per_sqm, images, tags, description, source
+              hard_cost_per_sqm, soft_cost_per_sqm, images, tags, description, source, annotations
        FROM cases ${where} ORDER BY id LIMIT ? OFFSET ?`
     )
       .bind(...binds, limit, offset)
@@ -129,6 +129,7 @@ async function handleCases(url, env) {
       ...r,
       images: safeParse(r.images, []),
       tags: safeParse(r.tags, []),
+      annotations: safeParse(r.annotations, null),
     }));
 
     return ok({ total: countRow?.n ?? 0, cases: list });

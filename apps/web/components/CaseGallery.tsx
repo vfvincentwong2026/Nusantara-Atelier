@@ -32,7 +32,7 @@ function CaseCard({ item }: { item: ProjectCase }) {
       if (a.room === 'plan') continue;
       counts.set(a.room, (counts.get(a.room) ?? 0) + 1);
     }
-    return [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 4);
+    return [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6);
   }, [item.annotations]);
 
   return (

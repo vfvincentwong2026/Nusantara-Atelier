@@ -1,0 +1,17 @@
+{
+  "p17-0.jpg": {"room": "staircase", "desc_zh": "旋转楼梯间，深色钢板弧形梯身配悬浮木踏步，地台暗藏灯带"},
+  "p18-0.jpg": {"room": "staircase", "desc_zh": "旋转楼梯仰视角度，穿孔金属板护栏与木质踏步"},
+  "p18-1.jpg": {"room": "staircase", "desc_zh": "楼梯间休闲角，条纹单人沙发与艺术雕塑陈设"},
+  "p19-0.jpg": {"room": "living", "desc_zh": "客厅全景，微水泥墙地一体，弧形沙发与木格栅背景墙"},
+  "p20-0.jpg": {"room": "living", "desc_zh": "客厅，弧形模块沙发配金属质感艺术墙饰"},
+  "p21-0.jpg": {"room": "living", "desc_zh": "挑空客厅，整面通顶书墙与大面积落地窗"},
+  "p22-0.jpg": {"room": "living", "desc_zh": "挑空客厅另一角度，书墙与异形组合沙发"},
+  "p23-0.jpg": {"room": "living", "desc_zh": "挑空客厅，大理石壁炉造型与黑色悬浮楼梯"},
+  "p24-0.jpg": {"room": "dining", "desc_zh": "餐厨一体空间，圆桌配皮质餐椅，连通开放式厨房"},
+  "p25-0.jpg": {"room": "study", "desc_zh": "书房茶区，实木长桌长凳配两侧开放格柜，临窗观景"},
+  "p26-0.jpg": {"room": "study", "desc_zh": "书房，整墙书架与大理石长桌，灯带层板"},
+  "p27-0.jpg": {"room": "bedroom", "desc_zh": "主卧，法式雕花灯盘与水晶吊灯，临窗地台床"},
+  "p28-0.jpg": {"room": "kids_room", "desc_zh": "儿童房，拱形壁龛书架与绿色儿童沙发，动物玩偶陈设"},
+  "p29-0.jpg": {"room": "staircase", "desc_zh": "过厅走廊，奢石端景墙与黑框玻璃移门"},
+  "p30-0.jpg": {"room": "bedroom", "desc_zh": "主卧，深色木饰面床头背景配壁灯，人字拼木地板"}
+}

@@ -1,0 +1,12 @@
+{
+  "_schema": {
+    "room": "空间类型枚举: living/dining/kitchen/bedroom/kids_room/bathroom/study/tea_room/recreation/staircase/bar/plan",
+    "desc_zh": "中文描述（英文/印尼语由开发侧翻译补齐）"
+  },
+  "p82-0.jpg": {"room": "living", "desc_zh": "挑空客厅，黑色几何背景墙嵌灯带，红色金属牛雕塑点睛"},
+  "p83-0.jpg": {"room": "living", "desc_zh": "挑空客厅全景，大理石背景墙与皮带造型吊灯，临窗设茶歇区"},
+  "p84-0.jpg": {"room": "bedroom", "desc_zh": "主卧，奶油色格栅硬包床头，两侧连通步入式衣帽间"},
+  "p85-0.jpg": {"room": "study", "desc_zh": "书房细节，大理石书桌与皮质书椅，背景黑色展示书架"},
+  "p85-1.jpg": {"room": "study", "desc_zh": "书房全景，圆角吊顶嵌灯带，两侧展示书柜与弧形金属书桌"},
+  "p86-0.jpg": {"room": "living", "desc_zh": "家庭厅，弧形吊顶与扇形吊灯，宝蓝色沙发配悬挂式真火壁炉"}
+}

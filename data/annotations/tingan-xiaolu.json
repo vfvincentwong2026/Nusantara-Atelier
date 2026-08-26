@@ -1,0 +1,14 @@
+{
+  "p01-0.jpg": {"room": "living", "desc_zh": "客厅壁炉一隅，法式护墙板配白色圆盘墙饰，绿色丝绒单椅"},
+  "p02-0.jpg": {"room": "living", "desc_zh": "客餐厅一体全景，奶油色系，法式石膏灯盘与黄铜吊灯"},
+  "p03-0.jpg": {"room": "dining", "desc_zh": "餐厅视角，黑色长餐桌配白色餐椅，与客厅贯通"},
+  "p04-0.jpg": {"room": "living", "desc_zh": "客厅会客区，弧形布艺沙发与大理石茶几，石膏灯盘吊顶"},
+  "p04-1.jpg": {"room": "living", "desc_zh": "客厅壁炉特写，白色大理石壁炉配陶瓷圆盘墙饰"},
+  "p05-0.jpg": {"room": "bedroom", "desc_zh": "主卧衣帽间与梳妆区，玻璃柜门内嵌灯带，临窗梳妆台"},
+  "p06-0.jpg": {"room": "recreation", "desc_zh": "电竞娱乐房，深蓝背景墙，手办展示柜与电竞桌椅"},
+  "p07-0.jpg": {"room": "bedroom", "desc_zh": "主卧，弧形软包床头与黑白格地毯，临窗休闲椅"},
+  "p08-0.jpg": {"room": "staircase", "desc_zh": "挑空楼梯间，悬浮踏步配铁艺栏杆，嵌入式壁炉"},
+  "p08-1.jpg": {"room": "staircase", "desc_zh": "挑空楼梯间另一角度，悬浮楼梯与红色丝绒单椅"},
+  "p09-0.jpg": {"room": "living", "desc_zh": "挑空会客厅，整面通顶书墙与弧形沙发组合，艺术吊灯"},
+  "p09-1.jpg": {"room": "living", "desc_zh": "挑空会客厅全景，书墙拱形壁龛与悬浮楼梯贯穿两层"}
+}

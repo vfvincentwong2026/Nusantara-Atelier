@@ -1,0 +1,22 @@
+{
+  "_schema": {
+    "room": "空间类型枚举: living/dining/kitchen/bedroom/kids_room/bathroom/study/tea_room/recreation/staircase/bar/plan",
+    "desc_zh": "中文描述（英文/印尼语由开发侧翻译补齐）"
+  },
+  "p30-0.jpg": {"room": "recreation", "desc_zh": "下沉式庭院露台，户外沙发与吧台区，格栅围墙与绿植环绕"},
+  "p31-0.jpg": {"room": "recreation", "desc_zh": "地下天井健身区，采光井与绿植墙，动感单车临大理石地台"},
+  "p31-1.jpg": {"room": "recreation", "desc_zh": "地下休闲区，大理石台阶与室内乔木，微水泥墙面嵌绿植槽"},
+  "p32-0.jpg": {"room": "living", "desc_zh": "客厅，米白皮质沙发与钓鱼落地灯，大理石茶几配硬包背景墙"},
+  "p32-1.jpg": {"room": "dining", "desc_zh": "餐厅细节，大理石餐桌与皮质餐椅，肌理艺术涂料背景墙"},
+  "p33-0.jpg": {"room": "bathroom", "desc_zh": "主卫，独立浴缸与爵士白大理石墙面，壁龛与金色五金"},
+  "p33-1.jpg": {"room": "bedroom", "desc_zh": "主卧，灰色硬包床头背景，皮质床尾凳与玻璃吊灯"},
+  "p33-2.jpg": {"room": "bedroom", "desc_zh": "主卧连通阳台，休闲椅与临栏吧台，远眺山景"},
+  "p34-0.jpg": {"room": "recreation", "desc_zh": "庭院俯瞰，户外茶桌与沙发区，砾石与乔木造景"},
+  "p35-0.jpg": {"room": "living", "desc_zh": "新中式客厅，米色硬包背景与组合圆几，深色大理石壁炉墙"},
+  "p36-0.jpg": {"room": "dining", "desc_zh": "餐厅，圆餐桌与枝形吊灯，落地窗连通庭院景观"},
+  "p36-1.jpg": {"room": "dining", "desc_zh": "餐厅细节，枝形金属吊灯与圆桌花艺陈设"},
+  "p37-0.jpg": {"room": "bedroom", "desc_zh": "主卧套房，水墨意境床头背景，屏风隔出休闲区与床尾凳"},
+  "p38-0.jpg": {"room": "tea_room", "desc_zh": "茶室，长茶台与整墙原木博古架，吊挂铁壶与大型花艺"},
+  "p39-0.jpg": {"room": "staircase", "desc_zh": "楼梯间，原木踏步嵌灯带与玻璃扶手，琉璃叶片吊饰贯穿挑空"},
+  "p39-1.jpg": {"room": "living", "desc_zh": "玄关端景，深色大理石背景墙与抽象挂画，金属雕塑陈设"}
+}

@@ -1,0 +1,12 @@
+{
+  "_schema": {
+    "room": "空间类型枚举: living/dining/kitchen/bedroom/kids_room/bathroom/study/tea_room/recreation/staircase/bar/plan",
+    "desc_zh": "中文描述（英文/印尼语由开发侧翻译补齐）"
+  },
+  "p61-0.jpg": {"room": "living", "desc_zh": "挑空会客厅，微水泥墙面与悬浮楼梯贯穿两层，弧形沙发围合真火壁炉"},
+  "p62-0.jpg": {"room": "living", "desc_zh": "挑空客厅全景，弧形布艺沙发与异形茶几，冲孔板背景映衬悬浮楼梯"},
+  "p63-0.jpg": {"room": "recreation", "desc_zh": "台球健身区，天窗引入自然光，大理石柱与线性灯带"},
+  "p64-0.jpg": {"room": "recreation", "desc_zh": "台球区正面，整面玻璃酒柜与长条吊灯，一侧设茶台"},
+  "p65-0.jpg": {"room": "dining", "desc_zh": "餐厅，大理石圆桌与环形吊灯，藤编餐椅与大理石圆柱"},
+  "p66-0.jpg": {"room": "living", "desc_zh": "一层客厅，模块化沙发与微水泥电视背景，大理石圆柱连通水吧"}
+}

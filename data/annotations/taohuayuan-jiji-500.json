@@ -1,0 +1,13 @@
+{
+  "_schema": {
+    "room": "空间类型枚举: living/dining/kitchen/bedroom/kids_room/bathroom/study/tea_room/recreation/staircase/bar/plan",
+    "desc_zh": "中文描述（英文/印尼语由开发侧翻译补齐）"
+  },
+  "p67-0.jpg": {"room": "living", "desc_zh": "入户玄关，深色双开门与弧形微水泥墙面，线性灯带勾勒天花"},
+  "p68-0.jpg": {"room": "living", "desc_zh": "临窗会客厅，弧形顶与微水泥墙面，整墙书架与模块沙发"},
+  "p69-0.jpg": {"room": "tea_room", "desc_zh": "挑空茶室，拱形镜面与真火壁炉，两侧大理石展示龛"},
+  "p69-1.jpg": {"room": "tea_room", "desc_zh": "茶室墙面细节，微水泥肌理与嵌入式黑色层板柜，拱形灯带"},
+  "p70-0.jpg": {"room": "living", "desc_zh": "客厅电视墙，微水泥造型与真火壁炉，大理石圆茶几"},
+  "p71-0.jpg": {"room": "living", "desc_zh": "客厅全景，围合式沙发与大理石圆柱，展示层架连通餐厅"},
+  "p72-0.jpg": {"room": "bedroom", "desc_zh": "主卧，弧形原木床头背景嵌灯带，落地窗纱帘柔化采光"}
+}
