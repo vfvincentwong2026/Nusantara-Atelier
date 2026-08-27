@@ -1,0 +1,260 @@
+{
+  "version": "0.1-draft",
+  "updated_at": "2026-08-27",
+  "note": "P1 quick_estimate 默认配置模板。material 为 KG 节点 id；sku 为 Atelier materials.json 的 sku_id；process/labor 为 KG 节点 id。data_gaps 列出该风格缺失的数据节点（需补录或在估价时走替代逻辑）。",
+  "styles": {
+    "french": {
+      "label": "法式（含法式轻奢、现代小法）",
+      "aliases": [
+        "法式",
+        "法式轻奢",
+        "现代小法",
+        "法式奶油"
+      ],
+      "case_count": 7,
+      "elements": {
+        "floor": {
+          "material": "marble-tiles",
+          "sku": "TILE-GRANITE-101",
+          "process": "wet-method-tiling",
+          "labor": "indonesian-skilled-labor",
+          "note": "客餐厅柔光大板砖；木地板线走 wood-flooring（WOOD-* SKU 已映射）"
+        },
+        "feature_wall": {
+          "material": null,
+          "sku": null,
+          "process": null,
+          "labor": null,
+          "note": "法式护墙板/石膏线条为标志性元素——KG 无节点，走 data_gaps"
+        },
+        "wall": {
+          "material": "art-paint",
+          "sku": "PAINT-TEXTURE-101",
+          "process": "premium-wall-paint-art-finish",
+          "labor": "indonesian-skilled-labor",
+          "note": "奶油白/暖色系；重点洗墙面升 china-skilled-labor"
+        },
+        "ceiling": {
+          "material": null,
+          "sku": null,
+          "process": "floating-suspended-ceiling",
+          "labor": "indonesian-skilled-labor",
+          "note": "标准边吊+石膏线；石膏线节点缺失（data_gaps）"
+        },
+        "bathroom": {
+          "material": "marble-tiles",
+          "sku": "TILE-GRANITE-102",
+          "process": "wet-method-tiling",
+          "labor": "indonesian-skilled-labor",
+          "note": "前置 bathroom-waterproofing-cistern-system 强制"
+        }
+      },
+      "data_gaps": [
+        "护墙板/石膏线条 材料+工艺节点",
+        "石膏线工艺与工时"
+      ]
+    },
+    "modern": {
+      "label": "现代",
+      "aliases": [
+        "现代",
+        "现代简约"
+      ],
+      "case_count": 8,
+      "elements": {
+        "floor": {
+          "material": "marble-tiles",
+          "sku": "TILE-GRANITE-201",
+          "process": "wet-method-tiling",
+          "labor": "indonesian-skilled-labor",
+          "note": "90×180 通铺；≥900×1800 按大板工艺管理（labor 升 china）"
+        },
+        "feature_wall": {
+          "material": "sintered-stone",
+          "sku": "TILE-SLAB-202",
+          "process": "large-format-slab-installation",
+          "labor": "china-skilled-labor",
+          "note": "客厅岩板背景墙，1200×2400 整板"
+        },
+        "wall": {
+          "material": "art-paint",
+          "sku": "PAINT-TEXTURE-101",
+          "process": "premium-wall-paint-art-finish",
+          "labor": "indonesian-skilled-labor",
+          "note": "大面积乳胶漆/艺术漆"
+        },
+        "ceiling": {
+          "material": null,
+          "sku": null,
+          "process": "floating-suspended-ceiling",
+          "labor": "china-skilled-labor",
+          "note": "悬浮吊顶+阴影缝；无主灯场景前置 recessed-lighting-pre-embedding"
+        },
+        "bathroom": {
+          "material": "marble-tiles",
+          "sku": "TILE-GRANITE-102",
+          "process": "wet-method-tiling",
+          "labor": "indonesian-skilled-labor",
+          "note": "前置防水强制"
+        }
+      },
+      "data_gaps": [
+        "吊顶材料 SKU（轻钢龙骨+石膏板体系）"
+      ]
+    },
+    "wabi-sabi": {
+      "label": "侘寂",
+      "aliases": [
+        "侘寂",
+        "侘寂风",
+        "wabi-sabi"
+      ],
+      "case_count": 3,
+      "elements": {
+        "floor": {
+          "material": "microcement",
+          "sku": "PAINT-MICROCEMENT-201",
+          "process": "microcement-wall-finishing",
+          "labor": "china-skilled-labor",
+          "note": "墙地一体微水泥；前置冲筋找平 ≤2mm/2m 强制"
+        },
+        "feature_wall": {
+          "material": "microcement",
+          "sku": "PAINT-MICROCEMENT-201",
+          "process": "microcement-wall-finishing",
+          "labor": "china-skilled-labor",
+          "note": "与墙面一体，无独立背景墙"
+        },
+        "wall": {
+          "material": "microcement",
+          "sku": "PAINT-MICROCEMENT-201",
+          "process": "microcement-wall-finishing",
+          "labor": "china-skilled-labor",
+          "note": "手工批刮纹理为核心效果"
+        },
+        "ceiling": {
+          "material": "microcement",
+          "sku": "PAINT-MICROCEMENT-201",
+          "process": "microcement-wall-finishing",
+          "labor": "china-skilled-labor",
+          "note": "平顶+微水泥包覆；弧形过渡常见（难度上浮 50%）"
+        },
+        "bathroom": {
+          "material": "microcement",
+          "sku": "PAINT-MICROCEMENT-201",
+          "process": "microcement-wall-finishing",
+          "labor": "china-skilled-labor",
+          "note": "湿区需防滑罩面；前置防水强制"
+        }
+      },
+      "data_gaps": [
+        "原木/藤编/亚麻软装材料节点",
+        "微水泥国产替代品的质量红线数据"
+      ]
+    },
+    "italian-minimal": {
+      "label": "意式极简",
+      "aliases": [
+        "意式极简",
+        "极简",
+        "italian-minimal"
+      ],
+      "case_count": 2,
+      "elements": {
+        "floor": {
+          "material": "sintered-stone",
+          "sku": "TILE-SLAB-202",
+          "process": "large-format-slab-installation",
+          "labor": "china-skilled-labor",
+          "note": "大板通铺密缝，隐缝美缝（epoxy-grout 同色系）"
+        },
+        "feature_wall": {
+          "material": "sintered-stone",
+          "sku": "TILE-SLAB-202",
+          "process": "stone-slab-wall-cladding",
+          "labor": "china-skilled-labor",
+          "note": "整板上墙/干挂"
+        },
+        "wall": {
+          "material": "art-paint",
+          "sku": "PAINT-VENETIAN-201",
+          "process": "premium-wall-paint-art-finish",
+          "labor": "china-skilled-labor",
+          "note": "威尼斯灰泥/微水泥质感；极简收口走 minimalist-trimless-edge（中国技工）"
+        },
+        "ceiling": {
+          "material": null,
+          "sku": null,
+          "process": "floating-suspended-ceiling",
+          "labor": "china-skilled-labor",
+          "note": "大平顶+无主灯；前置 recessed-lighting-pre-embedding"
+        },
+        "bathroom": {
+          "material": "sintered-stone",
+          "sku": "TILE-SLAB-202",
+          "process": "large-format-slab-installation",
+          "labor": "china-skilled-labor",
+          "note": "墙地大板一体；前置防水强制"
+        }
+      },
+      "data_gaps": [
+        "金属线条 SKU"
+      ]
+    },
+    "modern-cream": {
+      "label": "现代奶油",
+      "aliases": [
+        "现代奶油",
+        "奶油风",
+        "奶油"
+      ],
+      "case_count": 2,
+      "elements": {
+        "floor": {
+          "material": "marble-tiles",
+          "sku": "TILE-GRANITE-101",
+          "process": "wet-method-tiling",
+          "labor": "indonesian-skilled-labor",
+          "note": "柔光暖砖；SPC/木地板替代走 spc-flooring / wood-flooring（SKU 已映射）"
+        },
+        "feature_wall": {
+          "material": "art-paint",
+          "sku": "PAINT-TEXTURE-101",
+          "process": "premium-wall-paint-art-finish",
+          "labor": "indonesian-skilled-labor",
+          "note": "弧形造型元素常见（弧形难度上浮 50%）"
+        },
+        "wall": {
+          "material": "art-paint",
+          "sku": "PAINT-TEXTURE-101",
+          "process": "premium-wall-paint-art-finish",
+          "labor": "indonesian-skilled-labor",
+          "note": "奶油色系大面积涂装"
+        },
+        "ceiling": {
+          "material": null,
+          "sku": null,
+          "process": "floating-suspended-ceiling",
+          "labor": "indonesian-skilled-labor",
+          "note": "圆弧边吊；弧形上浮 50%"
+        },
+        "bathroom": {
+          "material": "marble-tiles",
+          "sku": "TILE-GRANITE-102",
+          "process": "wet-method-tiling",
+          "labor": "indonesian-skilled-labor",
+          "note": "前置防水强制"
+        }
+      },
+      "data_gaps": [
+        "弧形墙面工艺节点",
+        "绒面/肌理漆细分 SKU"
+      ]
+    }
+  },
+  "unmapped_cases": {
+    "style_value": "待补充",
+    "case_count": 4,
+    "action": "待 Owner 补标风格归属后并入对应 aliases"
+  }
+}

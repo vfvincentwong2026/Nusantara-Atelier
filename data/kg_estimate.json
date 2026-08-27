@@ -1,0 +1,1689 @@
+{
+  "generated_at": "2026-08-27T19:22:05",
+  "source": "obsidian-vault（05_Processes / 06_Labor / 07_WorkHours），由 scripts/export_estimate_data.py 生成",
+  "processes": [
+    {
+      "id": "bathroom-waterproofing-cistern-system",
+      "name": {
+        "en": "Bathroom Waterproofing & Sunken Cistern Backfill System",
+        "zh": "卫生间防水与下沉式沉箱回填系统"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "mandatory_prerequisite_for",
+          "target": "wet-method-tiling"
+        },
+        {
+          "type": "mandatory_prerequisite_for",
+          "target": "stone-flooring-installation"
+        },
+        {
+          "type": "requires_pretreatment",
+          "target": "ribbed-screed-gauging-strips"
+        },
+        {
+          "type": "stricter_than",
+          "target": "standard-waterproofing"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "cementitious-waterproofing"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "expanded-clay-leca"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "galvanized-wire-mesh"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "waterproof-tape"
+        },
+        {
+          "type": "related_to",
+          "target": "secondary-drain-pipe"
+        },
+        {
+          "type": "related_to",
+          "target": "ponding-test"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "construction-debris-backfill"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bathroom-wet-area"
+        }
+      ],
+      "difficulty": null,
+      "steps": 0
+    },
+    {
+      "id": "curtain-blinds-shading-installation",
+      "name": {
+        "en": "Curtain / Blinds / Shading System Installation",
+        "zh": "窗帘/百叶/遮阳系统安装"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "requires_pretreatment",
+          "target": "wall-paint"
+        },
+        {
+          "type": "requires_pretreatment",
+          "target": "premium-wall-paint-art-finish"
+        },
+        {
+          "type": "requires_pretreatment",
+          "target": "electrical-wiring-first-fix"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "stainless-steel-brackets"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "motorized-curtain-track"
+        },
+        {
+          "type": "requires_tool",
+          "target": "laser-level"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bedroom"
+        }
+      ],
+      "difficulty": null,
+      "steps": 6
+    },
+    {
+      "id": "custom-built-in-wardrobe-millwork",
+      "name": {
+        "en": "Custom Built-in Wardrobe / Millwork Installation",
+        "zh": "定制集成柜体/木作安装（衣柜/收纳柜）"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "mandatory_material",
+          "target": "plywood-mr-grade"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "termite-resistant-treatment"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "stainless-steel-hinges"
+        },
+        {
+          "type": "requires_tool",
+          "target": "laser-level"
+        },
+        {
+          "type": "requires_tool",
+          "target": "dowel-drilling-jig"
+        },
+        {
+          "type": "related_to",
+          "target": "wall-flatness-check"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "high-humidity"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "termite-infestation"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bedroom"
+        },
+        {
+          "type": "recommended_for",
+          "target": "kitchen"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bathroom-vanity"
+        }
+      ],
+      "difficulty": null,
+      "steps": 0
+    },
+    {
+      "id": "custom-wood-millwork-curved",
+      "name": {
+        "en": "Custom Wood Millwork / Curved Wall System",
+        "zh": "木作造型/弧形墙面系统"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "requires_pretreatment",
+          "target": "ribbed-screed-gauging-strips"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "engineered-timber-panels"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "concealed-clips"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "flexible-adhesive"
+        },
+        {
+          "type": "requires_tool",
+          "target": "laser-level"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bedroom"
+        }
+      ],
+      "difficulty": null,
+      "steps": 6
+    },
+    {
+      "id": "electrical-switch-socket-installation",
+      "name": {
+        "en": "Electrical Switch, Socket & Low-Voltage Panel Installation",
+        "zh": "开关插座 / 弱电面板安装工艺"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "requires_pretreatment",
+          "target": "wall-paint"
+        },
+        {
+          "type": "requires_pretreatment",
+          "target": "premium-wall-paint-art-finish"
+        },
+        {
+          "type": "requires_pretreatment",
+          "target": "wallpaper-installation"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "rcd-protection-device"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "color-matched-panels"
+        },
+        {
+          "type": "requires_tool",
+          "target": "laser-level"
+        },
+        {
+          "type": "requires_tool",
+          "target": "voltage-tester"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "loose-wiring"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "high-humidity-corrosion"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bedroom"
+        },
+        {
+          "type": "recommended_for",
+          "target": "kitchen"
+        }
+      ],
+      "difficulty": null,
+      "steps": 0
+    },
+    {
+      "id": "finished-works-protection-system",
+      "name": {
+        "en": "Finished Works Protection System",
+        "zh": "精装修成品保护系统"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "follows",
+          "target": "stone-seamless-crystallization"
+        },
+        {
+          "type": "follows",
+          "target": "upholstered-wall-panel-system"
+        },
+        {
+          "type": "follows",
+          "target": "sanitary-ware-installation"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "plywood-protection-boards"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "corner-guards"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "protective-film"
+        },
+        {
+          "type": "required_for",
+          "target": "quality-handover"
+        }
+      ],
+      "difficulty": null,
+      "steps": 7
+    },
+    {
+      "id": "floating-suspended-ceiling",
+      "name": {
+        "en": "Floating / Seismic-Resistant Suspended Ceiling",
+        "zh": "轻钢龙骨抗震悬浮吊顶"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "mandatory_material",
+          "target": "galvanized-steel-keel"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "moisture-resistant-gypsum-board"
+        },
+        {
+          "type": "requires_tool",
+          "target": "laser-level"
+        },
+        {
+          "type": "requires_tool",
+          "target": "drywall-screw-gun"
+        },
+        {
+          "type": "stricter_than",
+          "target": "traditional-wooden-ceiling"
+        },
+        {
+          "type": "precedes",
+          "target": "ceiling-paint"
+        },
+        {
+          "type": "related_to",
+          "target": "seismic-expansion-joint"
+        },
+        {
+          "type": "related_to",
+          "target": "anti-rust-treatment"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        },
+        {
+          "type": "recommended_for",
+          "target": "commercial-lobby"
+        }
+      ],
+      "difficulty": null,
+      "steps": 0
+    },
+    {
+      "id": "glass-partition-shower-installation",
+      "name": {
+        "en": "Glass Partition / Shower Enclosure Installation",
+        "zh": "玻璃隔断/淋浴房安装工艺"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "requires_pretreatment",
+          "target": "bathroom-waterproofing-cistern-system"
+        },
+        {
+          "type": "requires_pretreatment",
+          "target": "wet-method-tiling"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "tempered-glass"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "stainless-steel-clamps"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "silicone-sealant"
+        },
+        {
+          "type": "requires_tool",
+          "target": "laser-level"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "glass-shatter-seismic"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bathroom-wet-area"
+        }
+      ],
+      "difficulty": null,
+      "steps": 0
+    },
+    {
+      "id": "large-format-slab-installation",
+      "name": {
+        "en": "Large-Format Slab / Sintered Stone Installation",
+        "zh": "大规格板/岩板铺贴工艺"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "stricter_than",
+          "target": "wet-method-tiling"
+        },
+        {
+          "type": "requires_tool",
+          "target": "vacuum-suction-cup"
+        },
+        {
+          "type": "requires_tool",
+          "target": "vibration-compactor"
+        },
+        {
+          "type": "requires_tool",
+          "target": "heavy-duty-leveling-system"
+        },
+        {
+          "type": "mandatory_labor",
+          "target": "china-skilled-labor"
+        },
+        {
+          "type": "alternative_to",
+          "target": "wet-method-tiling"
+        },
+        {
+          "type": "related_material",
+          "target": "sintered-stone"
+        },
+        {
+          "type": "related_material",
+          "target": "porcelain-slab"
+        },
+        {
+          "type": "related_to",
+          "target": "epoxy-adhesive"
+        },
+        {
+          "type": "related_to",
+          "target": "flexible-grout"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        },
+        {
+          "type": "recommended_for",
+          "target": "commercial-lobby"
+        }
+      ],
+      "difficulty": null,
+      "steps": 0
+    },
+    {
+      "id": "light-gauge-steel-partition",
+      "name": {
+        "en": "Light-Gauge Steel Partition System",
+        "zh": "轻钢龙骨隔墙系统"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "mandatory_material",
+          "target": "galvanized-steel-studs"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "mineral-wool-insulation"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "acoustic-sealant"
+        },
+        {
+          "type": "requires_tool",
+          "target": "laser-level"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bedroom"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        },
+        {
+          "type": "recommended_for",
+          "target": "home-theater"
+        }
+      ],
+      "difficulty": null,
+      "steps": 8
+    },
+    {
+      "id": "metal-baseboard-installation",
+      "name": {
+        "en": "Metal Baseboard Installation",
+        "zh": "金属踢脚线安装工艺"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "alternative_to",
+          "target": "wood-baseboard"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bathroom-wet-area"
+        },
+        {
+          "type": "recommended_for",
+          "target": "kitchen"
+        },
+        {
+          "type": "requires_pretreatment",
+          "target": "wet-method-tiling"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "stainless-steel-fixings"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "silicone-sealant"
+        },
+        {
+          "type": "requires_tool",
+          "target": "laser-level"
+        }
+      ],
+      "difficulty": null,
+      "steps": 0
+    },
+    {
+      "id": "microcement-wall-finishing",
+      "name": {
+        "en": "Microcement Wall Finishing",
+        "zh": "微水泥墙面施工工艺"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "requires_pretreatment",
+          "target": "substrate-levelling"
+        },
+        {
+          "type": "requires_material",
+          "target": "crack-bridging-mesh"
+        },
+        {
+          "type": "requires_material",
+          "target": "microcement-base"
+        },
+        {
+          "type": "requires_material",
+          "target": "microcement-top"
+        },
+        {
+          "type": "requires_material",
+          "target": "polyurethane-sealant"
+        },
+        {
+          "type": "stricter_than",
+          "target": "traditional-plaster"
+        },
+        {
+          "type": "alternative_to",
+          "target": "wall-tiles"
+        },
+        {
+          "type": "alternative_to",
+          "target": "wallpaper"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "substrate-cracks"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bathroom"
+        },
+        {
+          "type": "recommended_for",
+          "target": "commercial-exhibition"
+        }
+      ],
+      "difficulty": null,
+      "steps": 0
+    },
+    {
+      "id": "minimalist-trimless-edge",
+      "name": {
+        "en": "Minimalist Trimless Edge / Shadow-Gap Baseboard",
+        "zh": "极简收口（无踢脚线/阴影缝/窄边框）"
+      },
+      "status": "draft",
+      "relations": [
+        {
+          "type": "requires_pretreatment",
+          "target": "ribbed-screed-gauging-strips"
+        },
+        {
+          "type": "alternative_of",
+          "target": "metal-baseboard-installation"
+        },
+        {
+          "type": "related_to",
+          "target": "premium-wall-paint-art-finish"
+        },
+        {
+          "type": "related_to",
+          "target": "microcement-wall-finishing"
+        },
+        {
+          "type": "related_to",
+          "target": "wet-method-tiling"
+        },
+        {
+          "type": "related_to",
+          "target": "large-format-slab-installation"
+        },
+        {
+          "type": "recommends_labor",
+          "target": "china-skilled-labor"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "shadow-gap-crack"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "uneven-gap-width"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bedroom"
+        }
+      ],
+      "difficulty": null,
+      "steps": 7
+    },
+    {
+      "id": "natural-stone-flooring-installation",
+      "name": {
+        "en": "Natural Stone Flooring Installation (Marble / Travertine / Andesite)",
+        "zh": "天然石材地面安装（大理石/石灰华/安山岩）"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "stricter_than",
+          "target": "wet-method-tiling"
+        },
+        {
+          "type": "stricter_than",
+          "target": "large-format-slab-installation"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "anti-efflorescence-back-coating"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "flexible-epoxy-adhesive"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "impregnating-sealer"
+        },
+        {
+          "type": "requires_tool",
+          "target": "marble-polisher-grinder"
+        },
+        {
+          "type": "related_to",
+          "target": "ribbed-screed-gauging-strips"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "substrate-moisture"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        },
+        {
+          "type": "recommended_for",
+          "target": "commercial-lobby"
+        }
+      ],
+      "difficulty": null,
+      "steps": 0
+    },
+    {
+      "id": "premium-wall-paint-art-finish",
+      "name": {
+        "en": "Premium Wall Paint / Art Paint Finish System",
+        "zh": "高端墙面涂料 / 艺术漆涂装系统"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "requires_pretreatment",
+          "target": "ribbed-screed-gauging-strips"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "alkali-resistant-primer"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "anti-mold-additive"
+        },
+        {
+          "type": "requires_tool",
+          "target": "paint-sprayer"
+        },
+        {
+          "type": "requires_tool",
+          "target": "moisture-meter"
+        },
+        {
+          "type": "stricter_than",
+          "target": "standard-emulsion-paint"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "substrate-moisture"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "high-humidity"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bedroom"
+        },
+        {
+          "type": "alternative_to",
+          "target": "wallpaper-installation"
+        },
+        {
+          "type": "alternative_to",
+          "target": "wood-veneer-wall"
+        }
+      ],
+      "difficulty": null,
+      "steps": 0
+    },
+    {
+      "id": "recessed-lighting-pre-embedding",
+      "name": {
+        "en": "Recessed Track & Downlight Pre-Embedding (Mainless Lighting)",
+        "zh": "无主灯预埋（磁吸轨道/防眩射灯预埋）"
+      },
+      "status": "draft",
+      "relations": [
+        {
+          "type": "mandatory_prerequisite_for",
+          "target": "floating-suspended-ceiling"
+        },
+        {
+          "type": "requires_pretreatment",
+          "target": "electrical-switch-socket-installation"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "magnetic-track-rail"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "trimless-downlight-frame"
+        },
+        {
+          "type": "related_to",
+          "target": "smart-home-system-installation"
+        },
+        {
+          "type": "related_to",
+          "target": "premium-wall-paint-art-finish"
+        },
+        {
+          "type": "recommends_labor",
+          "target": "china-skilled-labor"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "ceiling-crack-at-profile-edge"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "track-misalignment"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bedroom"
+        }
+      ],
+      "difficulty": null,
+      "steps": 8
+    },
+    {
+      "id": "ribbed-screed-gauging-strips",
+      "name": {
+        "en": "High-Precision Wall/Floor Ribbed Screed (Gauging Strips)",
+        "zh": "墙面/地面高精度冲筋找平"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "mandatory_prerequisite_for",
+          "target": "large-format-slab-installation"
+        },
+        {
+          "type": "mandatory_prerequisite_for",
+          "target": "microcement-wall-finishing"
+        },
+        {
+          "type": "mandatory_prerequisite_for",
+          "target": "high-end-wall-paint"
+        },
+        {
+          "type": "requires_material",
+          "target": "cement-sand-mortar-1-3"
+        },
+        {
+          "type": "alternative_material",
+          "target": "gypsum-based-leveling-compound"
+        },
+        {
+          "type": "requires_tool",
+          "target": "laser-level"
+        },
+        {
+          "type": "requires_tool",
+          "target": "2m-straightedge"
+        },
+        {
+          "type": "stricter_than",
+          "target": "traditional-mud-screed"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "rapid-setting-high-temp"
+        }
+      ],
+      "difficulty": null,
+      "steps": 0
+    },
+    {
+      "id": "sanitary-ware-installation",
+      "name": {
+        "en": "Sanitary Ware Installation (Toilet / Basin / Shower / Faucet)",
+        "zh": "卫浴洁具安装工艺（马桶/洗手盆/花洒/龙头）"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "requires_pretreatment",
+          "target": "bathroom-waterproofing-cistern-system"
+        },
+        {
+          "type": "requires_pretreatment",
+          "target": "wet-method-tiling"
+        },
+        {
+          "type": "requires_pretreatment",
+          "target": "stone-flooring-installation"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "stainless-steel-fixings"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "thread-sealant-tape"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "anti-mold-silicone"
+        },
+        {
+          "type": "requires_tool",
+          "target": "laser-level"
+        },
+        {
+          "type": "requires_tool",
+          "target": "torque-wrench"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "waterproofing-penetration-failure"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bathroom-wet-area"
+        }
+      ],
+      "difficulty": null,
+      "steps": 0
+    },
+    {
+      "id": "smart-home-system-installation",
+      "name": {
+        "en": "Smart Home System Installation",
+        "zh": "全屋智能家居系统安装"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "requires_pretreatment",
+          "target": "electrical-wiring-first-fix"
+        },
+        {
+          "type": "requires_pretreatment",
+          "target": "electrical-switch-socket-installation"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "smart-gateway"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "shielded-cable"
+        },
+        {
+          "type": "requires_tool",
+          "target": "network-analyzer"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bedroom"
+        }
+      ],
+      "difficulty": null,
+      "steps": 5
+    },
+    {
+      "id": "stone-seamless-crystallization",
+      "name": {
+        "en": "Stone / Slab Seamless Joint & Crystallization",
+        "zh": "石材/岩板无缝拼接与结晶处理"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "requires_pretreatment",
+          "target": "stone-flooring-installation"
+        },
+        {
+          "type": "requires_pretreatment",
+          "target": "stone-slab-wall-cladding"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "diamond-polishing-pads"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "crystallization-compound"
+        },
+        {
+          "type": "requires_tool",
+          "target": "floor-polisher"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        },
+        {
+          "type": "recommended_for",
+          "target": "commercial-lobby"
+        }
+      ],
+      "difficulty": null,
+      "steps": 5
+    },
+    {
+      "id": "stone-slab-wall-cladding",
+      "name": {
+        "en": "Stone / Slab Wall Cladding Dry-Hang System",
+        "zh": "石材/岩板墙面干挂系统"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "requires_pretreatment",
+          "target": "ribbed-screed-gauging-strips"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "stainless-steel-subframe"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "mechanical-anchors"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "epoxy-adhesive"
+        },
+        {
+          "type": "requires_tool",
+          "target": "laser-level"
+        },
+        {
+          "type": "requires_tool",
+          "target": "anchor-setting-tool"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        },
+        {
+          "type": "recommended_for",
+          "target": "commercial-lobby"
+        }
+      ],
+      "difficulty": null,
+      "steps": 0
+    },
+    {
+      "id": "upholstered-wall-panel-system",
+      "name": {
+        "en": "Upholstered Wall Panel System (Soft / Hard Panels)",
+        "zh": "软包/硬包墙面系统"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "requires_pretreatment",
+          "target": "ribbed-screed-gauging-strips"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "fire-retardant-foam"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "anti-mold-backing"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "upholstery-fabric"
+        },
+        {
+          "type": "requires_tool",
+          "target": "staple-gun"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bedroom"
+        },
+        {
+          "type": "recommended_for",
+          "target": "home-theater"
+        }
+      ],
+      "difficulty": null,
+      "steps": 4
+    },
+    {
+      "id": "wallpaper-installation",
+      "name": {
+        "en": "Wallpaper / Fabric Wallcovering Installation",
+        "zh": "壁纸/墙布铺贴工艺"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "mandatory_prerequisite_for",
+          "target": "wall-paper-installation"
+        },
+        {
+          "type": "requires_pretreatment",
+          "target": "ribbed-screed-gauging-strips"
+        },
+        {
+          "type": "requires_material",
+          "target": "anti-mold-wallpaper-adhesive"
+        },
+        {
+          "type": "requires_material",
+          "target": "seam-roller"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "substrate-moisture"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "mold-growth"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bedroom"
+        },
+        {
+          "type": "not_recommended_for",
+          "target": "bathroom-wet-area"
+        }
+      ],
+      "difficulty": null,
+      "steps": 0
+    },
+    {
+      "id": "wet-method-tiling",
+      "name": {
+        "en": "Wet Method Tiling",
+        "zh": "湿铺法地砖铺贴"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "related_to",
+          "target": "thin-set-method"
+        },
+        {
+          "type": "related_to",
+          "target": "large-format-slab"
+        },
+        {
+          "type": "related_to",
+          "target": "marble-tiles"
+        },
+        {
+          "type": "related_to",
+          "target": "antique-tiles"
+        },
+        {
+          "type": "related_to",
+          "target": "substrate-preparation"
+        },
+        {
+          "type": "related_to",
+          "target": "leveling-system"
+        },
+        {
+          "type": "related_to",
+          "target": "efflorescence-prevention"
+        },
+        {
+          "type": "related_to",
+          "target": "china-skilled-labor"
+        },
+        {
+          "type": "related_to",
+          "target": "local-indonesian-labor"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        },
+        {
+          "type": "recommended_for",
+          "target": "kitchen"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bathroom"
+        }
+      ],
+      "difficulty": null,
+      "steps": 7
+    },
+    {
+      "id": "wood-spc-flooring-installation",
+      "name": {
+        "en": "Wood & SPC Flooring Installation",
+        "zh": "木地板/SPC 铺设工艺"
+      },
+      "status": "draft",
+      "relations": [
+        {
+          "type": "related_to",
+          "target": "wood-flooring"
+        },
+        {
+          "type": "related_to",
+          "target": "spc-flooring"
+        },
+        {
+          "type": "related_to",
+          "target": "ribbed-screed-gauging-strips"
+        },
+        {
+          "type": "related_to",
+          "target": "metal-baseboard-installation"
+        },
+        {
+          "type": "related_to",
+          "target": "minimalist-trimless-edge"
+        },
+        {
+          "type": "recommends_labor",
+          "target": "indonesian-skilled-labor"
+        },
+        {
+          "type": "recommends_labor",
+          "target": "china-skilled-labor"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "floor-buckling"
+        },
+        {
+          "type": "vulnerable_to",
+          "target": "floor-squeaking"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bedroom"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        }
+      ],
+      "difficulty": null,
+      "steps": 8
+    },
+    {
+      "id": "wood-veneer-wall",
+      "name": {
+        "en": "Wood Veneer Panel Wall Installation",
+        "zh": "木饰面挂板安装工艺"
+      },
+      "status": "published",
+      "relations": [
+        {
+          "type": "requires_pretreatment",
+          "target": "ribbed-screed-gauging-strips"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "kiln-dried-veneer"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "stainless-steel-fixings"
+        },
+        {
+          "type": "mandatory_material",
+          "target": "moisture-barrier-foil"
+        },
+        {
+          "type": "requires_tool",
+          "target": "laser-level"
+        },
+        {
+          "type": "requires_tool",
+          "target": "panel-saw"
+        },
+        {
+          "type": "related_to",
+          "target": "expansion-joint"
+        },
+        {
+          "type": "related_to",
+          "target": "termite-prevention"
+        },
+        {
+          "type": "recommended_for",
+          "target": "living-room"
+        },
+        {
+          "type": "recommended_for",
+          "target": "bedroom"
+        },
+        {
+          "type": "recommended_for",
+          "target": "commercial-lobby"
+        }
+      ],
+      "difficulty": null,
+      "steps": 0
+    }
+  ],
+  "labors": [
+    {
+      "id": "china-skilled-labor",
+      "name": {
+        "en": "China Skilled Labor",
+        "zh": "中国技工"
+      },
+      "status": "draft",
+      "daily_rate": {
+        "low": 450000,
+        "high": 650000,
+        "mid": 550000
+      }
+    },
+    {
+      "id": "indonesian-skilled-labor",
+      "name": {
+        "en": "Indonesian Skilled Labor",
+        "zh": "印尼本地技工"
+      },
+      "status": "draft",
+      "daily_rate": {
+        "low": 200000,
+        "high": 300000,
+        "mid": 250000
+      }
+    },
+    {
+      "id": "local-indonesian-labor",
+      "name": {
+        "en": "Local Indonesian Labor",
+        "zh": "印尼本地普工"
+      },
+      "status": "draft",
+      "daily_rate": {
+        "low": 120000,
+        "high": 180000,
+        "mid": 150000
+      }
+    }
+  ],
+  "workhours": [
+    {
+      "id": "workhour-waterproofing-china-skilled",
+      "process": "bathroom-waterproofing-cistern-system",
+      "labor": "china-skilled-labor",
+      "value": 3.5,
+      "unit": "m²",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 450000,
+        "high": 650000,
+        "mid": 550000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-waterproofing-indonesian-skilled",
+      "process": "bathroom-waterproofing-cistern-system",
+      "labor": "indonesian-skilled-labor",
+      "value": 4.0,
+      "unit": "m²",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 200000,
+        "high": 300000,
+        "mid": 250000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-waterproofing-local-general",
+      "process": "bathroom-waterproofing-cistern-system",
+      "labor": "local-indonesian-labor",
+      "value": null,
+      "unit": null,
+      "na": true,
+      "daily_rate_ref": {
+        "low": 120000,
+        "high": 180000,
+        "mid": 150000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-floating-ceiling-china-skilled",
+      "process": "floating-suspended-ceiling",
+      "labor": "china-skilled-labor",
+      "value": 1.0,
+      "unit": "m²",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 450000,
+        "high": 650000,
+        "mid": 550000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-floating-ceiling-indonesian-skilled",
+      "process": "floating-suspended-ceiling",
+      "labor": "indonesian-skilled-labor",
+      "value": 1.5,
+      "unit": "m²",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 200000,
+        "high": 300000,
+        "mid": 250000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-floating-ceiling-local-general",
+      "process": "floating-suspended-ceiling",
+      "labor": "local-indonesian-labor",
+      "value": null,
+      "unit": null,
+      "na": true,
+      "daily_rate_ref": {
+        "low": 120000,
+        "high": 180000,
+        "mid": 150000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-large-slab-china-skilled",
+      "process": "large-format-slab-installation",
+      "labor": "china-skilled-labor",
+      "value": 1.2,
+      "unit": "m²",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 450000,
+        "high": 650000,
+        "mid": 550000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-large-slab-indonesian-skilled",
+      "process": "large-format-slab-installation",
+      "labor": "indonesian-skilled-labor",
+      "value": 2.0,
+      "unit": "m²",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 200000,
+        "high": 300000,
+        "mid": 250000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-large-slab-local-general",
+      "process": "large-format-slab-installation",
+      "labor": "local-indonesian-labor",
+      "value": null,
+      "unit": null,
+      "na": true,
+      "daily_rate_ref": {
+        "low": 120000,
+        "high": 180000,
+        "mid": 150000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-recessed-lighting-china-skilled",
+      "process": "recessed-lighting-pre-embedding",
+      "labor": "china-skilled-labor",
+      "value": 1.5,
+      "unit": "延米轨道",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 450000,
+        "high": 650000,
+        "mid": 550000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-recessed-lighting-indonesian-skilled",
+      "process": "recessed-lighting-pre-embedding",
+      "labor": "indonesian-skilled-labor",
+      "value": 2.2,
+      "unit": "延米轨道",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 200000,
+        "high": 300000,
+        "mid": 250000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-recessed-lighting-local-general",
+      "process": "recessed-lighting-pre-embedding",
+      "labor": "local-indonesian-labor",
+      "value": null,
+      "unit": null,
+      "na": true,
+      "daily_rate_ref": {
+        "low": 120000,
+        "high": 180000,
+        "mid": 150000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-screed-leveling-china-skilled",
+      "process": "ribbed-screed-gauging-strips",
+      "labor": "china-skilled-labor",
+      "value": 0.8,
+      "unit": "m²",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 450000,
+        "high": 650000,
+        "mid": 550000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-screed-leveling-indonesian-skilled",
+      "process": "ribbed-screed-gauging-strips",
+      "labor": "indonesian-skilled-labor",
+      "value": 1.2,
+      "unit": "m²",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 200000,
+        "high": 300000,
+        "mid": 250000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-screed-leveling-local-general",
+      "process": "ribbed-screed-gauging-strips",
+      "labor": "local-indonesian-labor",
+      "value": null,
+      "unit": null,
+      "na": true,
+      "daily_rate_ref": {
+        "low": 120000,
+        "high": 180000,
+        "mid": 150000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-trimless-edge-china-skilled",
+      "process": "minimalist-trimless-edge",
+      "labor": "china-skilled-labor",
+      "value": 0.6,
+      "unit": "延米",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 450000,
+        "high": 650000,
+        "mid": 550000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-trimless-edge-indonesian-skilled",
+      "process": "minimalist-trimless-edge",
+      "labor": "indonesian-skilled-labor",
+      "value": 0.9,
+      "unit": "延米",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 200000,
+        "high": 300000,
+        "mid": 250000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-trimless-edge-local-general",
+      "process": "minimalist-trimless-edge",
+      "labor": "local-indonesian-labor",
+      "value": null,
+      "unit": null,
+      "na": true,
+      "daily_rate_ref": {
+        "low": 120000,
+        "high": 180000,
+        "mid": 150000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-wet-tiling-china-skilled",
+      "process": "wet-method-tiling",
+      "labor": "china-skilled-labor",
+      "value": 1.2,
+      "unit": "m²",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 450000,
+        "high": 650000,
+        "mid": 550000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-wet-tiling-indonesian-skilled",
+      "process": "wet-method-tiling",
+      "labor": "indonesian-skilled-labor",
+      "value": 0.8,
+      "unit": "m²",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 200000,
+        "high": 300000,
+        "mid": 250000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-wet-tiling-local-general",
+      "process": "wet-method-tiling",
+      "labor": "local-indonesian-labor",
+      "value": null,
+      "unit": null,
+      "na": true,
+      "daily_rate_ref": {
+        "low": 120000,
+        "high": 180000,
+        "mid": 150000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-wood-spc-china-skilled",
+      "process": "wood-spc-flooring-installation",
+      "labor": "china-skilled-labor",
+      "value": 0.5,
+      "unit": "m²",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 450000,
+        "high": 650000,
+        "mid": 550000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-wood-spc-indonesian-skilled",
+      "process": "wood-spc-flooring-installation",
+      "labor": "indonesian-skilled-labor",
+      "value": 0.4,
+      "unit": "m²",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 200000,
+        "high": 300000,
+        "mid": 250000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-wood-spc-local-general",
+      "process": "wood-spc-flooring-installation",
+      "labor": "local-indonesian-labor",
+      "value": null,
+      "unit": null,
+      "na": true,
+      "daily_rate_ref": {
+        "low": 120000,
+        "high": 180000,
+        "mid": 150000
+      },
+      "status": "draft"
+    }
+  ]
+}
