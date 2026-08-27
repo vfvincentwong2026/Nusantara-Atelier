@@ -61,7 +61,8 @@ The site is built around **25 real completed projects / 231 photos** with actual
 - 🏷️ **房间级标注**（全部 25 案例 / 231 张）—— 12 类空间体系 + 三语描述，详情页内可按空间筛选（MMIS 数据集方法论）
 - 🧮 **即时估价工具** `/upload` —— 纯客户端估价引擎（风格/地区/档次系数），IDR/USD/RMB 三币种 + 分项条形图 + 参考案例匹配，户型图仅本地预览不上传
 - 📋 **BOM 精报** —— 按空间驱动的物料算量引擎（`lib/bom.ts`），风格选型 + 损耗系数 + 人工加权，与估算同口径对照
-- 🧱 **材料库** `/materials` —— 51 个印尼本地 SKU（8 大类 × 3 档），IDR 定价 + 供应商 + 损耗系数
+- 🧱 **材料库** `/materials` —— 53 个印尼本地 SKU（9 大类 × 3 档，含吊顶体系），IDR 定价 + 供应商 + 损耗系数
+- 🧮 **quick_estimate 估价引擎** `/estimate` —— **内部演示版（数据校对中，已 noindex，不对外）**：P1 工序级快速估价模块（`lib/estimate/` 纯函数：风格配置 → 工序展开含强制前置 → KG 工时 × 人工费率 + Atelier SKU 材料价），`npm run test:estimate` 跑 7 个单元测试；A 级对账 vs BOM 平均偏差 34.1%（未达 25% 验收线，详见 KG 仓库 M4 对账报告）
 - 🤖 **AI 设计建议** —— Workers AI（Llama 3.3 70B）按客户语言生成设计方案，参考案例自动匹配
 - 📐 **DXF 户型解析** —— 上传图纸自动识别房间与面积（自研 JS 解析器）
 - 💬 **WhatsApp 预约** `/booking` —— 表单自动按客户语言拼消息，拉起 WhatsApp；线索同步落库防丢失
@@ -77,7 +78,7 @@ The site is built around **25 real completed projects / 231 photos** with actual
 | 多语言 | 自研客户端字典 i18n（ID / EN / 中文，印尼语优先） | ✅ 已上线 |
 | 托管 | Cloudflare Pages（全球 CDN） | ✅ 已上线 |
 | 后端 API | Cloudflare Workers（8 路由：/health /cases /quote /booking /design /parse-dxf /materials 等） | ✅ 已上线 |
-| 数据库 | Cloudflare D1（25 案例 + 51 SKU + 报价 + 线索 + 设计记录） | ✅ 已上线 |
+| 数据库 | Cloudflare D1（25 案例 + 53 SKU + 报价 + 线索 + 设计记录） | ✅ 已上线 |
 | AI 推理 | Workers AI（Llama 3.3 70B，三语设计生成） | ✅ 已上线 |
 | CAD 解析 | 自研 JS DXF 解析器（LWPOLYLINE + 鞋带公式） | ✅ 已上线 |
 | 文件存储 | Cloudflare R2 | ⏸️ 待账号开通 |
@@ -97,7 +98,8 @@ npm run dev        # http://localhost:3000
 构建与部署：
 
 ```bash
-npm run build                                          # 静态导出到 out/（31 页）
+npm run build                                          # 静态导出到 out/（35 页）
+npm run test:estimate                                  # P1 估价模块单元测试（tsc 编译 + node --test，7 个用例）
 npx wrangler pages deploy out --project-name=nusantara-atelier
 
 # 后端 Worker
@@ -114,9 +116,9 @@ npx wrangler d1 execute nusantara-db --remote --file=../../schema.sql
 nusantara-atelier/
 ├── apps/
 │   └── web/                  # 前端网站（Next.js 14，已上线）
-│       ├── app/              # 首页 / cases/[id] 详情页 / booking / upload / materials
+│       ├── app/              # 首页 / cases/[id] 详情页 / booking / upload / materials / estimate（内部演示）
 │       ├── components/       # SiteHeader / CaseGallery / CaseDetail / BomView / MaterialsLibrary / icons.tsx（线性图标库）
-│       ├── lib/              # i18n 字典（三语）/ quote.ts 估价引擎 / bom.ts BOM 算量引擎 / site.ts 站点配置
+│       ├── lib/              # i18n 字典（三语）/ quote.ts 系数法估价 / bom.ts BOM 算量引擎 / estimate/ P1 工序级估价模块 / site.ts 站点配置
 │       └── public/cases/     # 231 张案例实景照片
 │
 ├── workers/
@@ -126,7 +128,9 @@ nusantara-atelier/
 │
 ├── data/
 │   ├── cases.json            # 案例库单一数据源（25 案例，含房间级标注）
-│   ├── materials.json        # 印尼材料 SKU 库（51 条，8 大类 × 3 档）
+│   ├── materials.json        # 印尼材料 SKU 库（53 条，9 大类 × 3 档）
+│   ├── kg_estimate.json      # ⚠️ KG 快照（工时/人工/工艺），手动同步自 Nusantara-KG-MCP-Server，勿直接改
+│   ├── style_default_config.json  # ⚠️ KG 快照（风格默认配置），同上，事实源在 KG 仓库
 │   └── annotations/          # 房间标注源文件（MMIS 方法论）
 │
 ├── schema.sql                # D1 数据库表结构（cases/materials/quotes/bookings/designs）
@@ -144,6 +148,8 @@ nusantara-atelier/
     └── FAQ.md
 ```
 
+**数据源边界（防双头维护）**：材料价 `price_idr` 与损耗系数 `waste_factor` 以本仓库 Atelier SKU（`data/materials.json`）为**唯一事实源**；工时定额与人工选择规则以 KG 仓库（[Nusantara-KG-MCP-Server](https://github.com/vfvincentwong2026/Nusantara-KG-MCP-Server) obsidian-vault → 快照 json）为**唯一事实源**。同一工序的材料费以 Atelier SKU 为准，工时以 KG 为准，两边互不覆盖。
+
 ## 🗺️ 路线图 · Roadmap
 
 | 阶段 | 时间 | 目标 | 状态 |
@@ -151,6 +157,7 @@ nusantara-atelier/
 | Phase 1 | 2026 Q3 | 案例库 + 首页 + 三语 + 上线 | ✅ 已完成 |
 | Phase 2 | 2026 Q4 | 上传流程 + 报价 + 预约 + 后端 API + AI 生成 + DXF 解析 | ✅ 已完成 |
 | Phase 3 | 2027 Q1 | 印尼本地材料库 + 精确 BOM 报价 + 3D 预览 | 🚧 进行中（3a SKU 库 ✅ / 3b BOM 引擎 ✅ / 3c BOM 展示 ✅；3d 供应商更新流待做），见 [PHASE3_PRD](docs/PHASE3_PRD.md) |
+| P1 估价引擎 | 2026 Q3 | quick_estimate 工序级快速估价（KG 工时 × Atelier SKU） | 🚧 骨架已完成（`lib/estimate/` ✅ / 7 单元测试 ✅ / `/estimate` 内部演示页 ✅）；A 级对账 vs BOM 平均偏差 34.1% 未达 25% 线。待办：类目覆盖扩展（柜体/门/卫浴/灯具纳入工序展开）、KG ⚠️ 数据校对、护墙板/石膏线等法式主线节点（待 Owner 拍板）、B 级真实项目回测 |
 | Phase 4 | 2027 Q2 | 与 IndoScout 获客系统打通 | 📋 规划中 |
 
 ## 🤝 贡献 · Contributing
