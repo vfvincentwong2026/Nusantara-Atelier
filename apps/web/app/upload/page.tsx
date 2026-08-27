@@ -204,7 +204,7 @@ export default function UploadPage() {
                 {previewUrl ? (
                   <img
                     src={previewUrl}
-                    alt="preview"
+                    alt={file?.name ?? 'preview'}
                     className="max-h-48 object-contain"
                   />
                 ) : file ? (

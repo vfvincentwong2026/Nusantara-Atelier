@@ -6,6 +6,9 @@
  */
 export const WHATSAPP_NUMBER = '6280000000000';
 
+/** 站点生产域名（SEO canonical / OG / sitemap 统一用它拼绝对 URL） */
+export const SITE_URL = 'https://nusantara-atelier.pages.dev';
+
 /** API Worker 地址（workers/api-worker，已部署） */
 export const API_BASE = 'https://nusantara-api-worker.vfvincentwong-881.workers.dev';
 

@@ -170,7 +170,11 @@ export default function CaseDetail({ item }: { item: ProjectCase }) {
           >
             <img
               src={current.src}
-              alt={item.project_name}
+              alt={
+                current.annotation
+                  ? `${item.project_name} — ${t.rooms[current.annotation.room]}`
+                  : item.project_name
+              }
               className="max-h-[70vh] w-full object-cover transition-transform duration-500 group-hover:scale-[1.01]"
             />
           </button>
@@ -207,7 +211,11 @@ export default function CaseDetail({ item }: { item: ProjectCase }) {
               >
                 <img
                   src={it.src}
-                  alt=""
+                  alt={
+                    it.annotation
+                      ? `${item.project_name} — ${t.rooms[it.annotation.room]}`
+                      : `${item.project_name} — ${i + 1}`
+                  }
                   loading="lazy"
                   className="h-full w-full object-cover"
                 />
@@ -270,7 +278,11 @@ export default function CaseDetail({ item }: { item: ProjectCase }) {
             </button>
             <img
               src={current.src}
-              alt={item.project_name}
+              alt={
+                current.annotation
+                  ? `${item.project_name} — ${t.rooms[current.annotation.room]}`
+                  : item.project_name
+              }
               className="max-h-[70vh] max-w-full object-contain"
             />
             <button

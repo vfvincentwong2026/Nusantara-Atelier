@@ -56,7 +56,7 @@ function CaseCard({ item }: { item: ProjectCase }) {
         {hasImage ? (
           <img
             src={item.images[0]}
-            alt={`${item.project_name} 实景照片`}
+            alt={`${item.project_name} — ${item.style === STYLE_PENDING ? t.cases.moreStyle : t.styles[item.style] ?? item.style}`}
             loading="lazy"
             className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
           />

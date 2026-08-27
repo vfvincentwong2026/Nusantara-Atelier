@@ -12,6 +12,10 @@ import {
 } from '@/components/icons';
 import { useLanguage } from '@/components/LanguageProvider';
 import { cases, casesWithPricing } from '@/lib/cases';
+import { SITE_URL } from '@/lib/site';
+
+/** 首页 OG 分享卡（与 layout metadata 同图） */
+const OG_IMAGE = `${SITE_URL}/cases/shaoxing-xiyuan/p36-0.jpg`;
 
 /** Hero 轮播素材：汀岸晓庐 / 玺园 / 香格里拉 / 广州中建御溪谷 各取两张 */
 const heroImages = [
@@ -28,11 +32,34 @@ const heroImages = [
 /** 服务四卡的线性图标（规范 §4）：设计=铅笔+尺、装修=砖墙、软装=沙发、整装=钥匙 */
 const serviceIcons = [IconPencilRuler, IconBrickWall, IconSofa, IconKey];
 
+/** 首页 JSON-LD：Organization + WebSite（静态注入，爬虫无需执行 JS 即可见） */
+const homeJsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Nusantara Atelier',
+    url: SITE_URL,
+    logo: OG_IMAGE,
+    sameAs: ['https://github.com/vfvincentwong2026/nusantara-atelier'],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Nusantara Atelier',
+    url: SITE_URL,
+    inLanguage: ['id', 'en', 'zh-CN'],
+  },
+];
+
 export default function HomePage() {
   const { t } = useLanguage();
 
   return (
     <main className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeJsonLd) }}
+      />
       {/* ========== 导航（共享组件） ========== */}
       <SiteHeader />
 
