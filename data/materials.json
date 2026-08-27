@@ -1070,6 +1070,48 @@
       "waste_factor": 1.05,
       "updated_at": "2026-08-26",
       "source": "公开零售参考价 · 电商高端窗帘价格带；价格为包工包料口径（含安装）"
+    },
+    {
+      "sku_id": "CEILING-GYPSUM-101",
+      "category": "吊顶",
+      "subcategory": "轻钢龙骨石膏板",
+      "name_id": "Plafon Gypsum Rangka Baja Ringan (Standar)",
+      "name_en": "Standard Gypsum Board + Light-Steel Keel Ceiling System",
+      "name_zh": "普通纸面石膏板+轻钢龙骨吊顶体系",
+      "brand": "本地通用（Jaya Board / APLUS 同档）",
+      "spec": "9.5mm 纸面石膏板 + 轻钢龙骨 + 配件（综合 /㎡）",
+      "unit": "㎡",
+      "price_idr": 115000,
+      "price_usd": 8,
+      "price_rmb": 58,
+      "supplier": "本地建材市场",
+      "region": "jakarta",
+      "tier": "standard",
+      "labor_rate_idr": 90000,
+      "waste_factor": 1.1,
+      "updated_at": "2026-08-27",
+      "source": "公开零售参考价占位 · 待施工报价标定：雅加达建材市场 2025 轻钢龙骨+纸面石膏板体系材料价带 Rp85–150k/㎡ 取中位；安装人工为行情占位"
+    },
+    {
+      "sku_id": "CEILING-GYPSUM-201",
+      "category": "吊顶",
+      "subcategory": "耐水石膏板",
+      "name_id": "Plafon Gypsum Tahan Air (Premium)",
+      "name_en": "Moisture-Resistant / Double-Layer Gypsum Ceiling System",
+      "name_zh": "耐水防潮石膏板（双层板）吊顶体系",
+      "brand": "Jaya Board 耐水板同档",
+      "spec": "12mm 耐水石膏板（卫浴/高端可双层）+ 轻钢龙骨 + 配件（综合 /㎡）",
+      "unit": "㎡",
+      "price_idr": 180000,
+      "price_usd": 12,
+      "price_rmb": 86,
+      "supplier": "本地建材市场",
+      "region": "jakarta",
+      "tier": "luxury",
+      "labor_rate_idr": 110000,
+      "waste_factor": 1.1,
+      "updated_at": "2026-08-27",
+      "source": "公开零售参考价占位 · 待施工报价标定：耐水/双层板体系较标准档上浮约 55%；安装人工为行情占位"
     }
   ]
 }

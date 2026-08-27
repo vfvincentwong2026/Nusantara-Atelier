@@ -1,5 +1,5 @@
 {
-  "version": "0.1-draft",
+  "version": "0.2-draft",
   "updated_at": "2026-08-27",
   "note": "P1 quick_estimate 默认配置模板。material 为 KG 节点 id；sku 为 Atelier materials.json 的 sku_id；process/labor 为 KG 节点 id。data_gaps 列出该风格缺失的数据节点（需补录或在估价时走替代逻辑）。",
   "styles": {
@@ -36,10 +36,10 @@
         },
         "ceiling": {
           "material": null,
-          "sku": null,
+          "sku": "CEILING-GYPSUM-101",
           "process": "floating-suspended-ceiling",
           "labor": "indonesian-skilled-labor",
-          "note": "标准边吊+石膏线；石膏线节点缺失（data_gaps）"
+          "note": "标准边吊+石膏线；吊顶体系 SKU 已映射（CEILING-GYPSUM-101）；石膏线节点缺失（data_gaps）"
         },
         "bathroom": {
           "material": "marble-tiles",
@@ -85,10 +85,10 @@
         },
         "ceiling": {
           "material": null,
-          "sku": null,
+          "sku": "CEILING-GYPSUM-101",
           "process": "floating-suspended-ceiling",
           "labor": "china-skilled-labor",
-          "note": "悬浮吊顶+阴影缝；无主灯场景前置 recessed-lighting-pre-embedding"
+          "note": "悬浮吊顶+阴影缝；吊顶体系 SKU 已映射（CEILING-GYPSUM-101）；无主灯场景前置 recessed-lighting-pre-embedding"
         },
         "bathroom": {
           "material": "marble-tiles",
@@ -98,9 +98,7 @@
           "note": "前置防水强制"
         }
       },
-      "data_gaps": [
-        "吊顶材料 SKU（轻钢龙骨+石膏板体系）"
-      ]
+      "data_gaps": []
     },
     "wabi-sabi": {
       "label": "侘寂",
@@ -184,10 +182,10 @@
         },
         "ceiling": {
           "material": null,
-          "sku": null,
+          "sku": "CEILING-GYPSUM-201",
           "process": "floating-suspended-ceiling",
           "labor": "china-skilled-labor",
-          "note": "大平顶+无主灯；前置 recessed-lighting-pre-embedding"
+          "note": "大平顶+无主灯；吊顶体系 SKU 已映射（CEILING-GYPSUM-201 耐水/双层板）；前置 recessed-lighting-pre-embedding"
         },
         "bathroom": {
           "material": "sintered-stone",
@@ -233,10 +231,10 @@
         },
         "ceiling": {
           "material": null,
-          "sku": null,
+          "sku": "CEILING-GYPSUM-101",
           "process": "floating-suspended-ceiling",
           "labor": "indonesian-skilled-labor",
-          "note": "圆弧边吊；弧形上浮 50%"
+          "note": "圆弧边吊；吊顶体系 SKU 已映射（CEILING-GYPSUM-101）；弧形上浮 50%"
         },
         "bathroom": {
           "material": "marble-tiles",

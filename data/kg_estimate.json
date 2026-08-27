@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-27T19:22:05",
+  "generated_at": "2026-08-27T22:08:21",
   "source": "obsidian-vault（05_Processes / 06_Labor / 07_WorkHours），由 scripts/export_estimate_data.py 生成",
   "processes": [
     {
@@ -1476,6 +1476,48 @@
       "status": "draft"
     },
     {
+      "id": "workhour-microcement-china-skilled",
+      "process": "microcement-wall-finishing",
+      "labor": "china-skilled-labor",
+      "value": 0.7,
+      "unit": "m²",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 450000,
+        "high": 650000,
+        "mid": 550000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-microcement-indonesian-skilled",
+      "process": "microcement-wall-finishing",
+      "labor": "indonesian-skilled-labor",
+      "value": 1.2,
+      "unit": "m²",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 200000,
+        "high": 300000,
+        "mid": 250000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-microcement-local-general",
+      "process": "microcement-wall-finishing",
+      "labor": "local-indonesian-labor",
+      "value": null,
+      "unit": null,
+      "na": true,
+      "daily_rate_ref": {
+        "low": 120000,
+        "high": 180000,
+        "mid": 150000
+      },
+      "status": "draft"
+    },
+    {
       "id": "workhour-recessed-lighting-china-skilled",
       "process": "recessed-lighting-pre-embedding",
       "labor": "china-skilled-labor",
@@ -1590,6 +1632,48 @@
     {
       "id": "workhour-trimless-edge-local-general",
       "process": "minimalist-trimless-edge",
+      "labor": "local-indonesian-labor",
+      "value": null,
+      "unit": null,
+      "na": true,
+      "daily_rate_ref": {
+        "low": 120000,
+        "high": 180000,
+        "mid": 150000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-wall-paint-china-skilled",
+      "process": "premium-wall-paint-art-finish",
+      "labor": "china-skilled-labor",
+      "value": 0.15,
+      "unit": "m²",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 450000,
+        "high": 650000,
+        "mid": 550000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-wall-paint-indonesian-skilled",
+      "process": "premium-wall-paint-art-finish",
+      "labor": "indonesian-skilled-labor",
+      "value": 0.28,
+      "unit": "m²",
+      "na": false,
+      "daily_rate_ref": {
+        "low": 200000,
+        "high": 300000,
+        "mid": 250000
+      },
+      "status": "draft"
+    },
+    {
+      "id": "workhour-wall-paint-local-general",
+      "process": "premium-wall-paint-art-finish",
       "labor": "local-indonesian-labor",
       "value": null,
       "unit": null,

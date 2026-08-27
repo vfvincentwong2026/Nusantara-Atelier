@@ -1,9 +1,11 @@
 /* M4 · A 级对账验证（node:test 承载，随 npm run test:estimate 一起跑）
  * 跑 5 风格 × 3 面积 × jakarta 共 15 组输入，三条估价线对比并打印对比表。
- * 断言口径：
+ * 断言口径（2026-08-27 数据补全后更新）：
  *   - 三条线所有组总价 > 0（引擎基本可用）；
- *   - quick vs BOM 偏差方向一致（全部同号）——方向一致说明偏差是口径性缺数，可解释；
- *   - 平均偏差与 <25% 组数只打印不硬卡（P1 骨架阶段如实记录，验收线见对账报告）。
+ *   - 平均 |quick vs BOM| 偏差必须小于补全前基准 42.2%（回归锁，防偏差反弹）；
+ *   - 单组最大 |偏差| < 75%（当前最差组 french/120㎡ 为 -70%，锁定不恶化）；
+ *   - 偏差方向不再要求一致：补全后 modern/italian 中大面积组已出现小幅正偏差（±6% 内），
+ *     说明 quick 与 BOM 在收敛区交叉，是健康信号而非异常。
  */
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -23,8 +25,14 @@ test('M4-A 对账矩阵：quick_estimate vs BOM vs 系数法（15 组）', () =>
     assert.ok(r.quick_idr > 0, `${r.style}/${r.area} quick 总价应 > 0`);
     assert.ok(r.bom_idr > 0, `${r.style}/${r.area} BOM 总价应 > 0`);
     assert.ok(r.quote_fitout_idr > 0, `${r.style}/${r.area} fitout 应 > 0`);
+    assert.ok(
+      Math.abs(r.diff_vs_bom_pct) < 75,
+      `${r.style}/${r.area} 单组偏差 ${r.diff_vs_bom_pct}% 超出 ±75% 锁定线`
+    );
   }
-  // 偏差方向一致性：P1 骨架缺数导致 quick 系统性低于 BOM（全部同号则口径性偏差，可解释）
-  const signs = new Set(summary.rows.map((r) => Math.sign(r.diff_vs_bom_pct)));
-  assert.equal(signs.size, 1, 'quick vs BOM 偏差方向应一致（口径性缺数可解释）');
+  // 回归锁：平均偏差不得反弹回数据补全前（42.2%）以上
+  assert.ok(
+    summary.mean_abs_diff_pct < 42.2,
+    `平均偏差 ${summary.mean_abs_diff_pct}% 反弹至补全前基准 42.2% 以上`
+  );
 });
